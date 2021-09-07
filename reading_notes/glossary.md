@@ -1,2 +1,16 @@
 tumor MRD describes can- cer cells that remain following complete clinical and radiological response to therapeutic interventions
 https://insight.jci.org/articles/view/147929
+
+
+
+
+
+median absolute deviation
+
+median of the absolute deviations from data's median
+
+$MAD=median(|X_i - \tilde{X}|)$ where $\tilde{X} = median(X)$
+
+ is a measure of [statistical dispersion](https://en.wikipedia.org/wiki/Statistical_dispersion). Moreover, the MAD is a [robust statistic](https://en.wikipedia.org/wiki/Robust_statistic), being more resilient to outliers in a data set;a [robust](https://en.wikipedia.org/wiki/Robust_statistics) measure of the [variability](https://en.wikipedia.org/wiki/Statistical_dispersion) of a [univariate](https://en.wikipedia.org/wiki/Univariate) sample of [quantitative data](https://en.wikipedia.org/wiki/Quantitative_data)
+
+often used to select highly variable gene (e.g. Campbell and Yau 2018:  select ~5'000 genes with MAD in log(TPM+1) expression > 0 or > sqrt(0.5))

@@ -59,9 +59,19 @@ EPIC array data from JHU samples were converted to 450K meth- ylation profiles u
 
 R package Scater
 
- unsupervised pathway enrichment analysis using **Reactome30**
+
+
+The clusters were tested for functional enrichment with a hypergeometric test and categories from Gene Ontology (www.geneontology.org/), KEGG (http://www.genome.jp/kegg/), and Reactome databases (http://www.reactome.org/), using the topGO [99]with a ‘weight01’ algorithm, Category and ReactomePA libraries, respectively
+
+ https://github.com/bioFAM/MOFA. 
+
+Sankey diagrams in R https://christophergandrud.github.io/networkD3/#sankey
 
 ### Python packages
+
+ https://github.com/bioFAM/MOFA. 
+
+https:// github.com/BeautyOfWeb/Multiview-AutoEncoder 
 
 ### Public data
 
@@ -117,3 +127,164 @@ https://github.com/markrobinsonuzh/conquer
 *conquer* (**con**sistent **qu**antification of **e**xternal **R**NA-seq data sets) repository, which provides access to consistently processed, analysis-ready single-cell RNA-seq data sets, together with quality  control and exploratory analysis reports
 
 http://imlspenticton.uzh.ch:3838/conquer/
+
+
+
+
+
+https://osf.io/gqrz9  ([Tatlow and Piccolo 2016](https://www.nature.com/articles/srep39259)) RNA-seq data from TCGA and CCLE -> transcript level expression estimates; can be combined to gene level expression estimates using Scater (eg. Campbell and Yau 2018)
+
+
+
+https://github.com/mskcc/RNAseqDB
+
+
+
+CPTAC datasets
+
+Oslo2 landscape cohort
+
+ubiquitination data (Kim et al 2011)
+
+Cosmic: genes causally associated wiht cancer
+
+protein/mRNA half-life data: Schwanhäusser et al. 2011 (mice)
+
+
+
+Cancer-related SAAVs are cataloged in the CanProvar and COSMIC databases.
+
+
+
+published cell line perturbation experiments from the Genomics of Drug Sensitivity in Cancer (GDSC) resource (Iorio et al., 2016; Yang et al., 2013)
+
+
+
+Clinical Proteomic Tumor Analysis Consortium (CPTAC) CPTAC contains mass spectrometry-based proteomic analysis of tumors from TCGA. The aim of CPTAC is to create a proteogenomic resource where dysregulated proteins and phosphorylation sites can be identified and potentially connected to genomic alterations.
+
+Proteomics Identification Database (PRIDE)
+
+PRIDE aims to be a resource for open access sharing of mass spectrometry data, not just across cancer. They currently have over 9200 datasets available, including 297 breast cancer datasets.
+
+
+
+
+
+GENIE GENIE combines genomic and clinical data in an attempt to associate genomic alterations with phenotypic changes
+
+
+
+ GXB GXB compiles immunological transcriptomic data
+
+
+
+Human Proteome Organization (HUPO) The human proteome project, run by HUPO aims to identify all the proteins in the human proteome and to begin to assess their functionalities and interactions
+
+
+
+Transciptome Alterations in Cancer Omnibus (TACCO)
+
+TACCO is a resource for identifying differentially regulated transcripts within different cancer types and combining these with survival data to determine prognosis
+
+
+
+COSMIC
+
+COSMIC contains data from over 13 million tumor samples, identifying 6 million coding mutations and over 19 million non-coding mutations. This resource collates all genes implicated in cancer through somatic mutation, of which 719 are currently listed
+
+
+
+MOSCATO trial where druggable genomic aberrations were identified and targeted in patients (Massard et al., 2017
+
+
+
+protein complexes, specifically the CORUM database
+
+
+
+
+
+Sweden Cancerome Analysis Network-Breast (SCAN-B)
+
+
+
+GO semantic similarity between genes can be calculated using tools GOSemSim (Yu et al. 2010) or GOssTo (Yu et al. 2010)
+
+
+
+functional association between genes using data mining and text mining and can be valuable and reliable resources for generating a prior matrix, e.g., STING (Von Mering et al. 2005) and AraNet (Lee et al. 2010)
+
+
+
+s an interactive online resource with navigable
+proteomics, transcriptomics, and drug sensitivity profiles at
+https://lehtio-lab.se/forall/.
+
+
+
+the first large-scale multi-focal breast cancer proteomic study of 330 tumor regions which associated cancer cell function, pathological parameters, and spatial localization of each tumor region. 
+
+All raw data are available via ProteomeXchange with identifier PXD024190.
+
+
+
+MSigDB [93]website (http://software. broadinstitute.org/gsea/msigdb/) the v5.1 C7 (‘immuno- logic signatures’) collection
+
+
+
+subcellular localization was retrieved from the
+Human Protein Atlas [97](www.proteinatlas.org).
+
+
+
+ unsupervised pathway enrichment analysis using **Reactome30**
+
+
+
+We used ARACNe [100] to infer edges between the
+hubs and the expressed genes. 
+
+
+
+TF genes identified with ei- ther or both of two alternative annotations: (1) the human genes with a symbol annotated with the term ‘GO: 0003700’ in the Gene Ontology Consortium database (www.geneontology.org) or (2) the Ensembl gene ID re- trieved by querying the BioMart service (http://grch37. ensembl.org/) with the Gene Ontology ID ‘GO:0003700
+
+
+
+DNase-Seq data were obtained from ENCODE (http:// hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/ wgEncodeUwDgf, sample ‘wgEncodeUwDgfTregwb7849 5824’) with DNase hypersensitivity (DHS) peaks. Protein- binding footprints (FP) within the DHS peaks were identi- fied by scanning the DHS intervals for gaps in the signals using Wellington [101],
+
+
+
+We considered data from three different public PPI data repositories (Human Interactome database [106], STRING v10.0 [107], and iRefIndex [108]), and integrated them into a large human PPI network with
+
+
+
+To derive association scores from the Open Targets re- source (www.opentargets.org) the version from September 2016 was used
+
+
+
+o draw a treemap using the treemap library
+
+
+
+TcellSubC: An Atlas of the Subcellular Proteome of Human T Cells
+
+
+
+implemented the pypgatk package and the pgdb workflow to create proteogenomics databases based on ENSEMBL resources
+
+The tools allow the generation of protein sequences from novel protein-coding transcripts by performing a three-frame translation of pseudogenes, lncRNAs, and other non-canonical transcripts, such as those produced by alternative splicing events. It also includes exonic out-of-frame translation from otherwise canonical protein-coding mRNAs. Moreover, the tool enables the generation of variant protein sequences from multiple sources of genomic variants including COSMIC, cBioportal, gnomAD, and mutations detected from sequencing of patient samples
+
+pypgatk: (https://github.com/bigbio/py-pgatk/), and pgdb: (https://github.com/nf- core/pgdb ) 
+
+the Proteomics-Genomics DataBase (pgdb - https://nf-co.re/pgdb) workflow
+
+
+
+(Dietrich et al, 2018
+
+a cohort of 200 patient samples of chronic lymphocytic leukaemia, profiled for somatic mutations, RNA expression, DNA methylation and ex vivo drug responses
+
+
+
+Mertins et al. 2016 e quantitative mass-spectrometry-based proteomic and phosphoproteomic analyses of 105 genomically annotated breast cancers, of which 77 provided high-quality data
+
