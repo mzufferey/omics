@@ -22,6 +22,24 @@ http://bioconductor.org/packages/release/bioc/vignettes/recount/inst/doc/recount
 
 https://github.com/agitter/single-cell-pseudotime
 
+
+
+https://bioconnector.github.io/workshops/ (e.g.https://bioconnector.github.io/workshops/r-survival.html)
+
+
+
+https://yulab-smu.top/biomedical-knowledge-mining-book/
+
+
+
+https://github.com/kevinblighe?tab=repositories; among which https://github.com/kevinblighe/EnhancedVolcano
+
+
+
+https://github.com/kevinblighe/awesome-single-cell
+
+List of software packages (and the people developing these methods) for single-cell data analysis, including RNA-seq, ATAC-seq, etc. Contributions welcome...
+
 ### Articles of particular interest
 
 - [Uncovering pseudotemporal trajectories with covariates from single cell and bulk expression data](http://www.doi.org/10.1038/s41467-018-04696-6), Campbell and Yau 2018 ([reading_notes](reading_notes/Uncovering_pseudotemporal_trajectories_campbell.md))
@@ -66,6 +84,20 @@ The clusters were tested for functional enrichment with a hypergeometric test an
  https://github.com/bioFAM/MOFA. 
 
 Sankey diagrams in R https://christophergandrud.github.io/networkD3/#sankey
+
+
+
+recount3, a resource consisting of over 750,000 publicly available human and mouse RNA
+sequencing (RNA-seq) samples uniformly processed by our new Monorail analysis pipeline. To facilitate
+access to the data, we provide the recount3 and snapcount R/Bioconductor packages as well as
+complementary web resources. Using these tools, data can be downloaded as study-level summaries or
+queried for specific exon-exon junctions, genes, samples, or other features. Monorail can be used to
+process local and/or private data, allowing results to be directly compared to any study in recount3. Taken
+together, our tools help biologists maximize the utility of publicly available RNA-seq data, especially to
+improve their understanding of newly collected data. recount3 is available from http://rna.recount.
+bio
+
+ReactomePA https://yulab-smu.top/biomedical-knowledge-mining-book
 
 ### Python packages
 
@@ -288,3 +320,55 @@ a cohort of 200 patient samples of chronic lymphocytic leukaemia, profiled for s
 
 Mertins et al. 2016 e quantitative mass-spectrometry-based proteomic and phosphoproteomic analyses of 105 genomically annotated breast cancers, of which 77 provided high-quality data
 
+
+
+
+
+##### **PCaDB**                   http://bioinfo.jialab-ucr.org/PCaDB/  
+
+PCaDB is a comprehensive and interactive database for transcriptomes from prostate cancer population cohorts.            We collected 50 transcriptomics datasets with 7,231 samples from public data repositories,            including TCGA, cBioPortal, GEO, and ArrayExpress. A standard bioinformatics pipeline is used to download and            process the expression data and metadata.           PCaDB provides a user-friendly interface for the comprehensive analysis of individual            genes, prognostic signatures, and the whole transcriptomes to elucidate the molecular            heterogeneity in PCa, understand the mechanisms of tumor initiation and progression,            as well as develop and validate prognostic signatures in large independent cohorts
+
+
+
+https://cptac-data-portal.georgetown.edu/cptac/s?id=393177
+
+
+
+
+
+Characterizing genetic influences on DNA methylation (DNAm) provides an  opportunity to understand mechanisms underpinning gene regulation and  disease. In the present study, we describe results of DNAm quantitative  trait locus (mQTL) analyses on 32,851 participants, identifying genetic  variants associated with DNAm at 420,509 DNAm sites in blood. http://mqtldb.godmc.org.uk/ 
+
+
+
+The Human Developmental Cell Atlas (HDCA) initiative, which is part of  the Human Cell Atlas, aims to create a comprehensive reference map of  cells during development
+
+
+
+The marked improvements in massive parallel sequencing coupled with  single-cell sample preparations and data deconvolution have allowed  single-cell RNA sequencing (scRNA-seq) to become a powerful approach to  characterize the gene expression profile in single cells ([*1*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R1), [*2*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R2)). The objective of the international collaborative effort Human Cell Atlas ([www.humancellatlas.org](http://www.humancellatlas.org)) takes advantage of this new technology platform to study the  distinctive gene expression profiles on RNA level across diverse cell  and tissue types and connect this information with classical cellular  descriptions, such as location and morphology ([*3*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R3)). 
+
+The objective of the Human Protein Atlas (HPA) ([www.proteinatlas.org](http://www.proteinatlas.org)) effort is to take advantage of these bioimaging approaches to map the  expression of all human protein-coding genes across all major human  cells, tissues, and organs.
+
+
+
+ an effort to combine the information from these two efforts to create a publicly available HPA Single Cell Type Atlas with genome-wide  expression data from scRNA-seq experiments integrated with the spatial  antibody-based bioimaging data.  a Single Cell Type Atlas has been 
+launched (www.proteinatlas.org/celltype)  A single–cell type transcriptomics map of  
+human tissues
+
+
+
+http://gent2.appex.kr/
+
+Now, GENT2 contains more than 68,000 samples and has several new useful  functions. First, GENT2 now provides gene expression across 72 different tissues compared to 57 in GENT. Second, with increasing importance of  tumor subtypes, GENT2 provides an option to study the differential  expression and its prognostic significance based on tumor subtypes.  Third, whenever available, GENT2 provides prognostic information of a  gene of interest. Fourth, GENT2 provides a meta-analysis of survival  information to provide users more reliable prognostic value of a gene of interest.
+
+
+
+**[OncoLnc](http://www.oncolnc.org/)**: [oncolnc.org](http://www.oncolnc.org/)
+
+- Focus on survival analysis and RNA-seq data.
+- Simple query interface across all cancers for any mRNA, miRNA, or lncRNA gene (try SERPINA1)
+- Precomputed Cox PH regression for every gene, for every cancer
+- Kaplan-Meier plots produced on demand
+
+[TANRIC](http://ibl.mdanderson.org/tanric/_design/basic/index.html): focus on noncoding RNA
+
+[MEXPRESS](http://mexpress.be/): focus on methylation and gene expression

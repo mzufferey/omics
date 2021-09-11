@@ -223,8 +223,7 @@ $y_{ng}= λ_gz_n + ϵ_{ng}, ϵ_{ng} \sim  N(0, τ^{-1}_g)$
 * $z_n$ = the latent measure of progression for sample $n$ 
 * $λ_g$  = the factor loading for feature $g$ :  it essentially describes the evolution of $g$ along the trajectory. 
 
-ith the entry in the nth row and pth
-column given by xnp
+ith the entry in the nth row and pth column given by xnp
 
 However, it is conceivable that the evolution of feature $g$ along the trajectory is not identical for all samples but is instead affected by a set of **external covariates**. Note that we **expect such features to be “static” and should not correlate with the trajectory itself**. 
 

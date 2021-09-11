@@ -13,7 +13,7 @@ initial analysis: (Mertins et al., 2016).
 
 
 
-argest cohort to date of BRCA samples that were acquired to minimize ischemic time, maximizing fidelity and reducing pre- analytical variability
+largest cohort to date of BRCA samples that were acquired to minimize ischemic time, maximizing fidelity and reducing pre- analytical variability
 
 the first comprehensive report of the BRCA acetylome
 
