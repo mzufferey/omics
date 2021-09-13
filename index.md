@@ -99,6 +99,29 @@ bio
 
 ReactomePA https://yulab-smu.top/biomedical-knowledge-mining-book
 
+
+
+Data science with R https://garrettgman.github.io/
+
+scenic, a computational method for simultaneous gene regulatory network reconstruction and cell-state identification from single-cell rna-seq data (http://scenic. aertslab.org).
+
+
+
+Multi-omics Master- Regulator Analysis (MOMA). MOMA integrates gene expression and genomic alterations profiles to identify MR proteins and MR modules that represent the key effectors of a tumor’s mutational landscape and are thus responsible for implementing its associ- ated cancer cell identity.
+
+The full code base for PathTurbEr is available in here: https://github.co m/Akmazad/PathTurbEr/ 
+
+y Bayesian approach in discovering novel driver bio-markers in aberrant STPs given high-throughput gene expression (GE) data. 
+
+
+
+sgnesR (Stochastic Gene Network Expression Simulator in R) is an R package that provides an interface to simulate gene expression data from a given gene network using the stochastic simulation algorithm (SSA)
+
+
+
+e a method that compares multiple networks ofunlimited size at the level oflinks and nodes. Our novel method, CoDiNA (Co-expression Differencial Network Analysis), is imple-
+mented as an R package that also includes an interactive tool for network visualization
+
 ### Python packages
 
  https://github.com/bioFAM/MOFA. 
@@ -372,3 +395,100 @@ Now, GENT2 contains more than 68,000 samples and has several new useful  functio
 [TANRIC](http://ibl.mdanderson.org/tanric/_design/basic/index.html): focus on noncoding RNA
 
 [MEXPRESS](http://mexpress.be/): focus on methylation and gene expression
+
+
+
+
+
+The Database of Interacting Proteins (DIP: http://dip.doe-mbi.ucla.edu) is a database that documents experimentally determined protein–protein interactions. https://doi.org/10.1093/nar/30.1.303
+
+
+
+ MR4Cancer: a web server prioritizing master regulators for cancer  https://doi.org/10.1093/bioinformatics/bty658 http://cis.hku.hk/MR4Cancer
+
+
+
+Tovar et al. 2015
+
+An important step for this algorithm is the selection of the Transcription Factors, since they will determine the rest of the cal- culation. A proper annotation of transcription factors is crucial for an accurate description of the process under investigation. Here, we used the HGU133A annotation file, in which we found 1142 TFs (Supplementary Material 1). This list was compared with other three lists. Those lists are available in Shimoni and Alvarez (2013), Vaquerizas et al. (2009) and http://www.bioguo.org/AnimalTFDB/ Animal Transcription Factor DataBase, respectively. We want to stress that all four lists show consistency among them
+
+
+
+d fusion events (FUSs) reported by Pipeline for RNA-Sequencing Data Analysis (PRADA) (Torres- Garcı´a et al., 2014)(
+
+
+
+VIPER has been extensively validated as an accurate method-
+ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay.
+
+
+
+human protein-protein interaction networks as of the HINT database2
+
+
+
+essential genes from the online gene essentiality data- base (OGEE)24 and the Database of Essential genes (DEG)25
+
+
+
+1,471 manually curated sequence-specific
+DNA-binding transcription factors28,29 and 501 genes from the Kinome NetworkX database27 that collects kinase information from the literature and other databases
+
+
+
+17,511 phosphorylated proteins, 6,928 acetylated
+proteins and 5,418 methylated proteins from the PhosphoSitePlus database44
+
+
+
+genes that were annotated with a signaling function without recep-
+tor domain function from Gene Ontology (GO)45 as well as 5,701 genes that carried a trans-membrane protein domain
+
+95,722 links between 209 human transcription factor and 8,910 human genes from the TRANSFAC42 database as provided by mSigDB
+
+
+
+a set of protein abundances30 in human cell lines. Beck, M. et al. The quantitative proteome of a human cell line. Mol Syst Biol 7, 549 (2011)
+
+Interactome mapping :There are several widely-used databases – BioGrid,16
+IntAct,17 HPRD,18 iRefWeb,19 DIP,20
+MINT,21 MIPS22 and VisAnt23 – that curate both categories of interactions for humans and other model organisms.
+
+HINT also distinguishes between interactions curated from small-scale studies and those obtained from high-throughput experiments.
+
+
+
+WikiPathways6, Ingenuity Pathway Analysis (qiagen.com), KEGG7, and Reactome8
+
+
+
+
+
+marina to infer master regulator
+
+
+
+the Human Protein Reference Database (HPRD) [28], as one of the most com- prehensive protein interaction databases, only covers less than half of human protein-coding genes. Therefore, (Zhang et al. 2011)
+
+
+
+known associations between disease phenotypes and genes extracted from the Online Mendelian Inheritance in Man (OMIM) database
+
+he Human Protein Reference Database (HPRD) contains human protein-protein interactions that are manually extracted from the literature by expert biolo- gists [28].
+
+Biological General Repository for Interaction Data- sets (BioGRID) contains protein and genetic interactions of major model organism specie
+
+the Biomolecular Interaction Network Database (BIND) contains both high-throughput and manually curated interactions between biological molecules [30]. 
+
+the IntAct molecular interaction database (IntAct) contains protein-protein interaction derived from literature [
+
+he Molecular INTeraction database (MINT) contains information about physical interactions between pro- teins [32]. 
+
+
+
+cataloging of protein–protein interactions across
+species and conditions into databases such as STRING6
+
+The protein interaction data were derived from the BioGRID database. 
+
+The publicly available data sets, such as Biological General Repository for Interaction Datasets (BioGRID, https://thebiogrid.org/), Saccharomyces Gen- ome Database (SGD, http://www.yeastgenome.org/), Hu- man Protein Reference Database (HPRD, http:// www.hprd.org/), Search Tool for the Retrieval of Interacting Genes/Proteins (STRING: http://www.string- db.org/)
