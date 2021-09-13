@@ -585,3 +585,187 @@ of two populations. The framework allows any association measure to be used, and
 4. Repeat steps 1–3 for each pathway
   G ∈ ?
 
+Estimation of association networks. The first step is to estimate the gene-gene association network within each group.
+
+Differential connectivity score. The differential network analysis measures the change in a set of connections
+EG |∈ <
+⊂= ?
+() {( ,) ,, } for a given pathwayG ∈ ?. We generalize the differential connectivity score
+ij ij Gi j
+proposed in earlier work44 by the p-norm of the difference in connectivity scores in E
+
+tests for significance: This sets up a permutation testing procedure that can be used to estimate a p-value for d under the null, whereby permutations of the group labels are used, i.e. the observations are shuffled between groups. The total number of distinct permutations will often be quite large even for moderate sample sizes.
+
+
+
+### Guo et al. 2018
+
+identify the personalized-sample driver genes from the cancer omics data due to the lack of samples for each individual. To circumvent this problem, here we present a novel single-sample controller strategy (SCS) to identify personalized driver mutation profiles from net- work controllability perspective
+
+SCS integrates mutation data and expression data into a reference molecular network for each patient to obtain the driver mutation profiles in a personalized-sample manner
+
+The key idea of SCS is to detect those mutated genes which can achieve the transition from the normal state to the disease state based on each individual omics data from network controllability perspective
+
+The MATLAB-package for our SCS is freely available from http:// sysbio.sibcb.ac.cn/cb/chenlab/software.htm
+
+d Single-sample Controller Strategy (SCS) to assess the im- pact potential of gene mutations on the changes in gene expression patterns. Intuitively, we consider mutations as controllers and gene expression profiles as states in a network, and thus SCS aims to de- tect a small number of mutation genes (i.e. driver genes) which can achieve the transition from the normal state to the disease state from the network controllability viewpoint, based on each individual gene expression data. Our
+
+integrates the mutation data and expression data to a gene-gene regulation network for each pa- tient. I
+
+we aim to identify the minimal number of Individual mutations to control the Individual differentially ex- pressed genes (DEGs) in the Individual gene network
+
+The main steps of SCS method include: 
+
+(1) to obtain personalized DEGs for each patient by comparing the expression profile of the tumor sample with that of the corresponding normal sample, and then extract the individual gene regulations from the expert-curated databases; 
+
+(2) to identify the minimal number of in- dividual mutations with network controllability on the maximal coverage of individual DEGs in the individual gene network and 
+
+(3) based on the dynamic network control theory, to rank and select the driver genes from individual mutations according to the uncovered consensus modules consisting of confidence-weighted paths from the driver genes to the target genes on the gene network. 
+
+SCS considers the cancer- specific or patient-specific mutated network (topology) for predict- ing individual driver genes.
+
+SCS ranks poten- tial driver genes based on their influence on the overall differential expressions of its downstream genes in the individual molecular net- work instead of the collective molecular network.
+
+apply the Condorcet method (Pihur et al., 2008) to determine the sum- mary ranking of genes in a patient population
+
+SCS classifies driver genes regardless of mutation fre- quency, it allows us possibly to discover rare (infrequent) driver genes. Finally,
+
+to bridge the personalized driver mutation discovery problem and the structural network controllability prob- lem. Therefore,
+
+
+
+##### Ma et al. 2016
+
+several methods for active learning of casual networks has been developed recently14–18. The active learning methods utilize both observational and experimental data to discover causal networks. These methods typically first construct a draft of the causal network, generally represented as an unori- ented or partially oriented graph, from observational data. Then, the methods select a variable for experimen- tation/manipulation to further refine the graph. The experimental data obtained from the targeted experiment is used to update the draft of the causal network. The process of variable selection, experimentation, and causal network update is repeated until some termination criterion is satisfied, e.g. all edges in the causal network are oriented. Since randomized controlled experiments are costly, active learning methods employ various heuris- tics when selecting variables for experimentation in order to minimize the required number of experiments. It
+
+Among the active learning methods examined in this study, ODLP variants achieved the best local pathway
+reconstruction quality with low cost on the 5 transcription factors examined. In
+
+
+
+##### Maere et al.  2008
+
+the distance measures used in traditional clustering algorithms have difficulties in detecting one of the most prominent features of perturbational data, namely partial correlations between expression profiles. Biclustering methods on the other hand are specifically designed to capture such partial correlations. However, most biclustering algorithms do not provide measures for pair-wise expression correlation between genes, but rely on emergent properties of groups of genes and conditions (modules) in order to identify statistically significant subpatterns in the data. This reliance complicates the elucidation of less modular regions in the underlying transcriptional network.
+
+gene expression profiles are discretized into three categories (upregulated, downregulated, unchanged) based on p-values for differential ex- pression. For each pair of profiles, we then assess the probability that the observed overlap of upregulated and downregulated fields is generated by chance. The resulting correlation p-values are corrected for multiple testing and translated to edges in a coexpression net- work, which is then clustered into (overlapping) expression modules using a graph clustering procedure that identifies densely connected components in the network. Relevant condition sets are then determined for all modules and the modules are screened for enrichment of Gene Ontology categories and transcription factor binding sites. Finally, a regulation pro- gram is learned for each module in an attempt to explain the expression behavior of the module’s genes as a function of the expression of a limited set of regulators (transcription factors and signal transducers). 
+
+ENIGMA, that addresses some of these issues. ENIGMA leverages differential expression analysis results to extract expression modules from perturbational gene expression data. 
+
+
+
+Our goal was to build a method that: (i) leverages differential expression analy- sis results to extract co-differential expression networks and expression modules from perturbational gene expres- sion data, (ii) is able to detect significant partial coexpression relationships between genes and overlap between modules, (iii) depends on parameters that can be auto- matically optimized or set on reasonably objective grounds. (iv) produces a realistic amount of modules, and (v) visually integrates the expression modules with other data types such as Gene Ontology (GO) information [28], transcription factor (TF) binding data, protein and genetic interactions, in order to facilitate the biological interpreta- tion of the results. 
+
+ENIGMA takes as input a set of perturbational expression data, externally calculated p-values for differ- ential expression (e.g. using the limma package in Biocon- ductor [29]) and other data types if available. ENIGMA uses a novel combinatorial statistic to assess which pairs
+of genes are significantly co-differentially expressed (henceforth abbreviated as coexpressed for the purpose of readability). The resulting coexpression p-values are cor- rected for multiple testing and translated to edges in a coexpression network, which is clustered into expression modules (i.e. groups of significantly co-differentially expressed genes) using a graph-based clustering algorithm inspired on the MCODE algorithm [30]. The clustering procedure depends on two parameters that control the density of individual modules and the overlap between modules. The main reason why we chose a two-tier clus- tering approach (data → coexpression network → cluster- ing) is that it allows simulated annealing-based optimization of the clustering parameters to obtain opti- mal coverage of the coexpression network, in terms of module overlap and redundancy. The
+
+In the post- processing phase, ENIGMA determines relevant condition sets for each module, visualizes their substructure and overlap with other modules, screens the modules for enriched GO categories, suggests potential regulators for the modules based on regulator-module coexpression links and enrichment of TF binding sites, and overlays protein and genetic interaction data.
+
+
+
+### Mahajan et al. 2021
+
+We combined these epigenomic datasets and integrated them with the reference human protein interactome using a novel network propagation approach.
+
+a network-based approach to integrate multi-omic epigenetic datasets.
+
+At a conceptual level, tumor mutations and features derived from epigenomic datasets drive large-scale cell behavior in similar ways. Individual mutations or chromatin features may exert a weaker, more localized influence, but groups of mutations or epigenetic marks will exert a stronger, systemic influence by influencing multiple components of the underlying molecular network. Thus, both mutations and epigenetic features represent biological priors that are weak or uninformative when considered in isolation but are strong when analyzed together in the context of the underlying topological network structure. A network-based approach can be used to filter out isolated noisy signals and hone in on biologically significant pathways of genes that mutations or epigenomic changes would target at multiple points.
+
+a novel network-based approach to propagate epigenomic signals
+derived from our ATAC-seq and CUT&RUN studies and thus uncover network modules that are likely to drive Tfh cell differentiation. Our approach is based on the premise that biologically relevant epigenetic signatures reflect the need for coordinated regulation of genes that encode interacting proteins. A similar conceptual premise has been used to identify subnetworks enriched for mutations in cancer genomics and network-based GWAS (Cowen et al., 2017; Leiserson et al., 2013, 2015; Reyna et al., 2018; Vandin et al., 2011). The
+
+he underlying technique of network propagation represents a powerful way to combine a wide range of signals taking into account the structure of the underlying network. We implemented network propagation using random walk with restart, which is equivalent to an insulated heat diffusion process ((Cowen et al., 2017; Leiserson et al., 2013, 2015; Reyna et al., 2018; Vandin et al., 2011)). We used this approach to unify features derived from the different epigenomic datasets and discover networks driving Tfh cell differentiation. 
+
+we incorporated higher-order relationships between proteins encoded by these genes using the high-quality (i.e., each edge is validated experimentally using multiple independent assays) reference human protein interactome network (Cusick et al., 2009; Das and Yu, 2012).
+
+
+
+Each of the epigenetic signals analyzed exhibited distinct trends across the four stages of Tfh cell differentiation. These differences likely reflect complementary regulatory processes underlying the differentiation of this polarized cell type (Fig. 1d). We expect that these processes all involve regulating the expression of an underlying set of components that drive the transition from naive to GC Tfh, and multi-omic integration strategies will be required to uncover these core genes. We focused on the discovery of trajectories using the epigenomic data. The transcriptomic data was used as an orthogonal dataset to validate the identified trajectories.
+
+Next, for each differentiation pattern, peaks from each dataset were aggregated into gene-centric scores using a proximity-weighted count heuristic (Fig. 2b) based on first principles underlying the organization of promoters and enhancers. Gene-centric scores from each dataset were then combined by weighting the datasets equally, as we did not have any a priori information regarding relative information context across the datasets. We refer to each gene’s score as its “peak proximity score” (PPS), which we can calculate for each possible differentiation pattern and use as a surrogate for gene regulation
+
+We ran network propagation through HotNet2 using the combined PPS’s for each protein’s gene as seed values (Figs. 3a, 3b). HotNet2 helps us incorporate the topological structure of the underlying protein interaction network as an informative prior on how proteins are functionally related to one another
+
+The use of network propagation is motivated by the hypothesis that proteins encoded by relevant genes relevant to Tfh cell differentiation are more likely to interact with one another and make up cohesive network submodules (Fig. 3b). Further, our approach can help filter out genes that may not play a role in Tfh cell differentiation but nevertheless show similar epigenetic patterns to relevant genes
+
+network propagation constitutes the final step in a three-step pipeline: identification of the most likely patterns of Tfh cell differentiation, generation of gene-centric scores using a proximity-weighted count heuristic (i.e. calculation of PPS’s), and network propagation using these scores as seeds.
+
+we adapted the HotNet2 algorithm to identify protein network modules enriched for signals derived from ATAC-seq and CUT&RUN datasets obtained from Tfh cells at four stages of differentiation within a healthy human subject’s tonsil. By framing the search for drivers as a search for identifying protein subnetworks with concentrated epigenomic signals, our approach recovered known regulators of Tfh cell differentiation, and we have implicated several novel candidate genes involved in Tfh cell differentiation. 
+
+
+
+network propagation represents a flexible and broadly useful approach for studying biological processes that require the integration of disparate epigenomic datasets. This
+
+
+
+Calculation of a gene-centric peak proximity scores
+For a biological (EBSeq) pattern of interest, peak proximity scores (PPS’s) for a gene (“gene- centric PPS”) were calculated for a biological pattern of interest by calculating a weighted sum of the number of peak clusters from the pattern in the gene’s vicinity using distance-based weights to reflect the varying contributions of promoter (± 10 kb) [3x weight], proximal enhancer (± 25 kb) [2x weight] and distal enhancers (± 250 kb) [1x weight] to gene regulation. Gene-centric PPS scores were first calculated individually for each epigenomic dataset. These were then combined into a final PPS score using equal weights for the different datasets.
+
+Network propagation using random walk with restart
+For each pattern, we used network propagation to integrate the gene-centric scores. We used the random walk with restart algorithm (equivalent to an insulated heat diffusion process) as implemented in HotNet2 (Leiserson et al., 2015) to identify high scoring sub-networks. Relevant HotNet2 code is available at https://github.com/raphael-group/hotnet2. We ran network propagation on the union of the high-quality reference human binary and co-complex protein interactomes (Das and Yu, 2012). 
+
+
+
+##### Mall et al. 2017
+
+The ability to detect statistical relevant changes in the interaction patterns induced by the progression of the disease can lead to the discovery of novel relevant signatures. Several procedures have been recently proposed to detect sub-network differences in pairwise labeled weighted networks. Methods: In this paper, we propose an improvement over the state-of-the-art based on the Generalized Hamming Distance adopted for evaluating the topological difference between two networks and estimating its statistical significance. The proposed procedure exploits a more effective model selection criteria to generate p-values for statistical significance and is more efficient in terms of computational time and prediction accuracy than literature methods. Moreover, the structure of the proposed algorithm allows for a faster parallelized implementation.
+
+
+
+### Matsubara et al. 2019
+
+merges proteome and transcriptome data 
+
+spectral clustering of the network and map resulting eigenvectors from the 2nd and 3d smallest eigenvalues into 2D space which preserves topological distance and cluster structure
+
+map gene expression profiles onto this mapping->generate a set of image-like representation of protein networks processed by deep deconvolutional layers
+
+PPIs from HINT database
+
+
+
+##### Wouters et al. 2019
+
+cancer cells from each sample form a distinct cluster per patient, whereas the corresponding normal host cells from various patients cluster together according to their cell type (Tirosh et al. 2016; Puram et al. 2017; Lambrechts et al. 2018). This observation is somewhat counterintuitive because cells with similar gene expression profiles are known to occur in multiple tumors, for instance cells in specific cell cycle stages. 
+
+gene regulatory network inference using SCENIC has been shown to normalize away part of these tumor- specific differences, resulting in one pan-tumor cluster of cycling cells (Aibar et al. 2017). Nonetheless, the unsupervised discovery of common transcriptional states remains a challenge
+
+SCENIC network inference to the single-cell expression matrix
+
+. A transcription factor with its candidate targets is called a regulon. SCENIC yields a regulon-cell matrix with regulon activities across all single cells, and provides therefore an alternative dimensionality reduction. A UMAP visualization based on the regulon-cell matrix reveals three candidate cell states in an unsupervised manner,
+
+
+
+##### Xie et al. 2020
+
+methods are urgently needed which can separate the impact of true regulatory elements from stochastic changes and downstream effects. We propose the differential network flow (DNF) method to identify key regulators of progression in development or disease. Given the network representation of consecutive biological states, DNF quantifies the essentiality of each node by differ- ences in the distribution of network flow, which are capable of capturing comprehensive topological dif- ferences from local to global feature domains. 
+
+s a new approach for quantifying the essentiality of genes across networks of different biological states
+
+The existing differential network analy- sis methods mainly fall into two categories. The first category is focused on capturing linear or nonlinear correlation differences in gene expression between two gene regulatory networks (GRNs). For instance, DDN [10] is the first algorithm to detect topological differences by lasso regression in network inference. DISCERN computes a novel perturbation score to capture how likely a given gene has a distinct set of regulators between different condi- tions, which is shown to be robust to errors in network structure estimation. pDNA [12] incorporates prior information into differ- ential network analysis using non-paranormal graphical models, which relaxes the assumption of normality of omics data to find more cancer-related genes
+
+
+
+The existing differential network analy- sis methods mainly fall into two categories. The first category is focused on capturing linear or nonlinear correlation differences in gene expression between two gene regulatory networks (GRNs). For instance, DDN [10] is the first algorithm to detect topological differences by lasso regression in network inference. DISCERN computes a novel perturbation score to capture how likely a given gene has a distinct set of regulators between different condi- tions, which is shown to be robust to errors in network structure estimation. pDNA [12] incorporates prior information into differ- ential network analysis using non-paranormal graphical models, which relaxes the assumption of normality of omics data to find more cancer-related genes
+
+The second category is focused on topological differences
+between constructed GRNs. For instance, DEC captures the global differential eigenvector connectivity to prioritize nodes in net- works [7]. DiffRank [13] computes the linear combination of differ- ential connectivity and differential betweenness centrality to order genes. DCloc [14] computes the average proportion of changes of each node’s neighborhood as a significance score by iteratively removing edges with different thresholds. DiffNet [15] evaluates topological differences between two networks based on general- ized hamming distance and its statistical significance. TKDS [8] measures the importance of genes by calculating the graphlet vec- tor distance
+
+Two issues remain which the above methods fail to address.
+First, all the above methods utilize networks which assume the existence of edges based on co-expression 
+
+The second issue is more subtle. While techniques such as spec-
+tral analysis provide a global perspective on connectivity, these approaches fail to encapsulate the flow of information inherent in all biological networks. Network
+
+we propose the differential network flow (DNF)
+method to identify key regulators between two networks under different biological conditions. This algorithm is built upon the idea of network flow and information theory. Rewiring of a GRN can be characterized as a dynamic pattern of network flow [19], such a flow-based model captures multiple (from local to global) features of network structure. Information theory is able to quantify the uncertainty in networks, making networks built upon information-theoretic measurements a more acceptable representation of biological systems at the molecular scale [20]. Therefore, DNF is capable of capturing comprehensive topo- logical differences by quantifying the flow in a network.
+
+DNF is built upon the ideas of network flow and information
+theory. The novelty of DNF lies in quantifying node-to-node infor- mation entropy according to the network flow in a gene regulatory network, and in characterizing each node as a distribution of net- work flow, which is equal to the distribution of information entropy. The distribution differences of one gene in different net- works represents its essentiality in the biological process responsi- ble for the network’s evolution. Genes are ordered by the magnitude of this difference to establish a ranking
+
+we
+employ a three-step process to integrate both transcriptomics and proteomics datasets in GRN-construction. First, a network skeleton is built by differential expression analysis using the tran- scriptomics dataset. Specifically, the skeleton gene sets are selected based on a given criterion, such asjlog2FoldChangej > u, p-value < v, where u represents the fold change of gene expression and v rep- resents the statistical significance of differential expression. Sec- ond, the known corresponding protein–protein interactions in the STRING database (http://string-db.org) are used to establish the gene-gene network for the selected genes. For example, sup- pose p skeleton genes are selected in the first step, then a network skeleton with p nodes is described by an adjacency matrix Ai;j, such that Ai;j >0, i, j =1, ..., p, if protein i and protein j are functionally associated. Finally, the absolute value of the spearman correlation coefficient (scc) of expression is adopted to estimate the strength of connections between adjacent genes, and edges Ai;jfor which scc(i, j) < 0.1 are discarded (see
+
+we construct a pair of GRNs based on a specific transcriptomics dataset (e.g. cancer and control samples) and a generic proteomics dataset
+
+
+
