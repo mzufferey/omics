@@ -1171,3 +1171,10 @@ ofthe network.
 ##### Zhang et al. 2017
 
 We propose a new differential network analysis method to address the above challenges. Instead of using Gaussian graphical models, we employ a non-paranormal graphical model that can relax the normality assumption. We develop a principled model to take into account the following prior information: (i) a differential edge less likely exists between two genes that do not participate together in the same pathway; (ii) changes in the networks are driven by certain regula- tor genes that are perturbed across different cellular states and (iii) the differential networks esti- mated from multi-view gene expression data likely share common structures.
+
+
+
+##### Ben Guebila et al. 2021
+
+ GRAND (https://grand.networkmedicine.org) as a database for computationally-inferred, context-specific gene  regulatory network models that can be compared between biological  states, or used to predict which drugs produce changes in regulatory  network structure. The database includes 12 468 genome-scale networks  covering 36 human tissues, 28 cancers, 1378 unperturbed cell lines, as  well as 173 013 TF and gene targeting scores for 2858 small  molecule-induced cell line perturbation paired with phenotypic  information. GRAND allows the networks to be queried using phenotypic  information and visualized using a variety of interactive tools.
+

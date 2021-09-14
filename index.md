@@ -129,11 +129,41 @@ of two populations. The framework allows any association measure to be used, and
 
 
 
+ six additional mutual information methods in the MINET R package (ARACNE, CLR, MIM, MINET, MRNET, MRNETB) [[43](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007241#pcbi.1007241.ref043)
+
 ### Python packages
 
  https://github.com/bioFAM/MOFA. 
 
 https:// github.com/BeautyOfWeb/Multiview-AutoEncoder 
+
+
+
+https://github.com/raphael-group/hotnet2
+
+HotNet2 identifies subnetworks of a protein-protein interaction network with more mutations ("heat") than expected.
+
+
+
+### Other tools
+
+clustering and heatmap visualization 
+
+(https://software.broadinstitute.org/GENE-E/index.html). Pearson
+
+https://software.broadinstitute.org/morpheus/
+
+
+
+GO enrichment by Gorilla (http://cbl- gorilla.cs.technion.ac.il) 
+
+
+
+e screened for enrichment in MSigDB and chromosome positions using the hypergeometric testing implemented in the GeneListEnrich shiny tool (https://github.com/aleferna/BCLandscape_Shiny/tree/master/GeneListCompare)
+
+
+
+gephi
 
 ### Public data
 
@@ -507,3 +537,16 @@ PPIs from HINT database
 
 
 pathway enrichment analysis, using Kyoto Encyclopedia of Genes and Genomes (KEGG), Biocarta, and Reactome pathways from the Molecular Signature Database (MSigDB) (
+
+This was further complemented by incorporating Kyoto Encyclopedia of Gene and Genomes (KEGG) ([Ogata et al., 1999](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0180)) PFAM protein domains ([Sonnhammer et al., 1998](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0240)) and INTERPRO protein domains ([Mitchell et al., 2014](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0160)) information of the selected genes.
+
+list of transcription factors in the TFCheckpoint curated database (Tripathi et al., 2013).
+
+
+
+
+
+ GRAND (https://grand.networkmedicine.org) as a database for computationally-inferred, context-specific gene  regulatory network models that can be compared between biological  states, or used to predict which drugs produce changes in regulatory  network structure. The database includes 12 468 genome-scale networks  covering 36 human tissues, 28 cancers, 1378 unperturbed cell lines, as  well as 173 013 TF and gene targeting scores for 2858 small  molecule-induced cell line perturbation paired with phenotypic  information. GRAND allows the networks to be queried using phenotypic  information and visualized using a variety of interactive tools.
+
+(http://www.proteinatlas.org),
+
