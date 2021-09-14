@@ -769,3 +769,313 @@ we construct a pair of GRNs based on a specific transcriptomics dataset (e.g. ca
 
 
 
+### Walsh et al. 2017
+
+A model of transcriptional regulation in breast carcinoma is assembled with ARACNe
+
+Interrogating this network reveals a transcriptional hierarchy underlying metastasis
+
+
+
+we reverse engineered and inter- rogated a breast cancer-specific transcriptional interaction network (interactome) to define tran- scriptional control structures causally respon- sible for regulating genetic programs underlying breast cancer metastasis in individual patients.
+
+we ap- proached metastatic progression as a transition between two cellular states defined by the differential gene expression signa- ture of these states in the same patient, using patient-matched primary and metastatic samples. 
+
+we investigated the specific transcriptional regulators responsible for initiating this transition, and ultimately for maintaining the stability of the metastatic state, based on their mechanistic ability to regulate differentially expressed genes (i.e., the transition signature).
+
+the specific transcriptional regulators that determine such cancer-related state transitions can be efficiently and systematically elucidated by interrogating tu- mor-specific transcriptional networks (henceforth interac- tomes) with representative differential gene expression signa- tures, using the virtual inference of protein activity by regulon enrichment analysis (VIPER) algorithm (Alvarez et al., 2016), which further extends the master regulator inference algorithm (MARINa) (Lefebvre et al., 2010) to the analysis of single samples
+
+we first assembled a breast cancer-specific regulatory network, using the algorithm for the reconstruction of accurate cellular networks (ARACNe) (Basso et al., 2005; Margolin et al., 2006b). 
+
+Then we identified differen- tial gene expression signatures representing same-patient cell state transitions from primary tumors to lymph node metas- tases, using both ER-positive (ER+) and triple-negative breast cancer (TNBC) samples. 
+
+Finally, we used the VIPER algorithm to prioritize transcriptional regulators that are the most likely causal determinants of these metastasis-related signatures
+
+
+
+we first characterized the transcriptional signature representative of breast carcinoma metastatic pro- gression (metastasis [MET] gene expression signature [MET- GES]). This was achieved by differential expression analysis of patient-matched primary tumors and lymph node metastases from 20 ER+ and 11 TNBC patients
+
+To identify the genes that causally implement the MET-GES,
+thus representing candidate causal determinants of breast carci- noma metastatic progression, we utilized the VIPER algorithm
+
+To assemble a breast carcinoma-specific interactome, we analyzed 851 The Cancer Genome Atlas (TCGA) breast carcinoma gene expression pro- files using the ARACNe algorithm
+
+ARACNe is an information theory-based approach to infer mechanistic interactions between transcription factors (TFs) and target genes based on large sets of gene expression data, which has proven very effective in assembling interac- tomes for VIPER analysis (Alvarez
+
+The ARACNe-inferred breast cancer interactome included 1,748 TFs, regulating 18,783 target genes through 365,634 transcriptional interactions.
+
+Finally, we inferred the regulatory proteins that are candi-
+date drivers of the MET-GES by VIPER analysis of the breast carcinoma interactome. The
+
+The algorithm prioritizes the regulatory proteins that are the most likely determinants of an observed differential expression signature, and thus of the associated cell state transition, by assessing the enrichment of their direct targets (regulons) in differentially expressed signature genes (i.e., in genes that are over- or underexpressed during metastatic progression, in this case). Thus, the ARACNe-inferred regulon of each regulatory protein (Table S2) is used as a highly multi- plexed, endogenous reporter for its role in physically controlling metastatic progression.
+
+We used the statistical significance, estimated by sample permutation analysis, to rank-sort the list of putative MRs of the metastatic phenotype in ER+ breast cancer and TNBC (Table S3). Given the strong concordance between ER+ and TNBC MET-GES and between candidate MRs of the two subtypes (Figures S1B–S1D), we inferred the MRs of metastatic progression of breast carcinoma regardless of subtype by VIPER analysis of a subtype-agnostic MET-GES. This generated a single ranked list of breast cancer metastatic progression candidate MRs (breast cancer [BRCA]), indepen- dent of hormonal status
+
+A breast carcinoma context-specific network model of transcriptional regula- tion was assembled with the ARACNe, based on 851 RNA-seq expression pro- files obtained from TCGA. ARACNe was run with 100 bootstraps, a p value threshold of 10?8, and 0 data processing inequality (DPI) tolerance, generating a network of 1,748 TFs associated with 18,783 target genes by 459,569 inter- actions. The regulatory models were generated from the ARACNe results using the VIPER package from Bioconductor (http://bioconductor.org/packages/ release/bioc/html/viper.html)
+
+The gene expression signatures for 20 ER+ and 11 TNBC metastases (MET-
+GES) were computed with paired Student’s t test by comparing their profiles against the matching primary tumor ones. Then, the enrichment of each regula- tory protein regulon on the MET-GESs was inferred by the VIPER algorithm (Al- varez et al., 2016; Aytes et al., 2014), as implemented in the VIPERpackage for R available fromBioconductor (https://www.bioconductor.org/packages/release/ bioc/html/viper.html). Statistical
+
+For single patient-based analysis, gene expression signatures were computed by comparing each MET expression profile with the matching pri- mary tumor expression profile. A null model for statistical testing was gener- ated by permuting the samples uniformly at random 1,000 times
+
+
+
+##### Van de Sande et al. 2020
+
+SCENIC reconstructs regulons (i.e., transcription factors and their target genes) assesses the activity of these discovered regulons in individual cells and uses these cellular activity patterns to find meaningful clusters of cells. Here
+
+. First, coexpression modules are inferred using a regression per-target approach (GRNBoost2). Next, the indirect targets are pruned from these modules using cis- regulatory motif discovery (cisTarget). Lastly, the activity of these regulons is quantified via an enrichment score for the regulon’s target genes (AUCell). 
+
+the SCENIC pipeline consists of three steps. First, candidate regulatory modules are inferred from coexpression patterns between genes (Steps 5 and 6). Next, coexpression modules are refined by the elimination of indirect targets using TF motif information (Step 6). Finally, the activity of these discovered regulons is measured in each individual cell and used for clustering (Steps 7 and 8; Fig. 1)
+
+<u>Network inference</u> (Step 5) In a first step, given a predefined list of TFs, regulatory interactions between these factors and putative target genes are inferred via regression-based network inference10 from the expression or count matrix. More specifically, for every expressed gene, a regression model is built that predicts the expression of this gene across cells (the response) from the expression of these predefined TFs (the independent variables or regressors). A regulatory interaction between gene and TF is inferred by assessing the importance of these factors in the regression model
+
+Our workflow relies on a tree-based regression model and, by default, uses an efficient and distributed implementation based on gradient boosting machine regression (i.e., GRNBoost2 (ref. 11)). This algorithm is a reimplementation of the GENIE3 algorithm, which was based on a random forest1
+
+The output of this step is a list of adjacencies connecting a TF with a target gene. A weight or importance is associated with these connections to distinguish strong from weak regulatory interactions
+
+<u>Module generation</u> (Step 6) From these regulatory interactions, inferred from coexpression patterns, modules (i.e., a TF and its predicted target genes) are generated
+
+Multiple strategies are combined so that, for every factor, multiple modules of different sizes are created
+
+Subsequently, modules are differentiated between transcriptional activation and repression based
+on the correlation patterns between the expression of the regulator and its targets: t
+
+, the resulting modules with <20 genes are not retained, as these modules tend to be less
+stable and more sensitive to target gene dropout.
+
+<u>Motif enrichment and TF-regulon prediction</u> (cisTarget step; Step 6) Modules contain direct and indirect targets of a regulator because these regulatory interactions are only inferred based on coexpression patterns. Therefore, in this step, the putative regulatory regions of these target genes are searched for enriched motifs by comparing scores of cis-regulatory modules (CRMs) near the genes in the module, with the remaining genes in the genome. CRM scoring is done using hidden Markov models, with a large collection of position weight matrices (PWMs) following the procedures described in iRegulon13 and i-cisTarget14,15. If the motif of the regulator TF is significantly enriched in one of its modules, this regulator and its predicted targets are retained for further analysis.
+
+<u>Cellular enrichment</u> (AUCell step; Step 7) A similar ranking and recovery framework is used to quantify the activity of the predicted regulons in the individual cells that make up the scRNA-seq experiment. In detail, each individual cell’s tran- scriptome is modeled as a whole-genome ranking based on the expression of its genes. The enrichment of a regulon is subsequently assessed via recovery of its targetome on the cell’s whole- genome ranking. The AUC metric measures the relative biological activity of a regulon in a given cell
+
+(Optional) <u>Binarization of cellular regulon activity</u>
+
+<u>Clustering of cells based on regulon activity</u> (Step 8) Quantification of regulon activity via AUCell is a biological dimensional reduction: the number of discovered regulons (k) is typically much lower than the number of genes (n), and therefore each cell can be represented by a k-dimensional vector instead of being represented by a point in n-dimensional space.
+
+This eliminates the need to reduce the dimensionality via principal component analysis (PCA)
+before applying a nonlinear projection technique such as t-distributed stochastic neighbor embedding (t-SNE) or uniform approximation and projection (UMAP) for rendering visual groupings16.In addition, this regulon-based clustering also reveals the GRNs underlying the gene expression profiles
+
+
+
+##### Wu et al. 2021
+
+In this study, we propose a new recognition method of driver modules, named ECSWalk to solve the issue of mutated gene heterogeneity and improve the accuracy of driver modules detection, based on human protein–protein interaction networks and pan-cancer somatic mutation data. This study first utilizes high mutual exclusivity and high coverage between mutation genes and topological structure similarity of the nodes in complex networks to calculate interaction weights between genes. Second, the method of random walk with restart is utilized to construct a weighted directed network, and the strong connectivity principle of the directed graph is utilized to create the initial candidate modules with a certain number of genes. Finally, the large modules in the candidate modules are split using induced subgraph method, and the small modules are expanded using a greedy strategy to obtain the optimal driver modules. 
+
+although the previous methods can
+detect the gene sets with high mutual exclusivity and high coverage, they just focus on the mutual exclusivity and cov- erage between genes, instead of the topological structure of complex networks. To effectively solve the problem of mutated gene heterogeneity and improve the accuracy of driver modules, this study proposes a driver module detec- tion algorithm (ECSWalk) based on gene mutation and human protein–protein interaction network. The algorithm takes into account aspects, such as high mutual exclusivity and high coverage between genes, and high similarity of topological structure. First,
+
+First, the complex network topology analysis method is used in human protein–protein interaction network data to calculate the topological similarity between network nodes, and then the two characteristics of high cov- erage and high mutual exclusivity of the mutated genes are combined to obtain the weight of the vertices and edges in the human protein–protein network. The weights of vertices in the human protein–protein network are obtained accord- ing to the coverage of mutated gene, and the random walk with restart strategy is utilized to calculate the weights of edges in the network by the three characteristics, namely, the coverage, the mutual exclusivity, and the similarity of the topological structure between the nodes
+
+Second, based on the weighted network constructed in the previous step, the large modules are split into several candidate gene sets using the method of the induced subgraph. In addition, the greedy strategy is utilized to add the nodes in the leaf module to the seed module to achieve the optimal gene sets. These mutated gene sets with high mutual exclusivity, high coverage and high similarity of the topological structure are likely to work as driver modules in cancer
+
+
+
+##### Wang et al. 2019
+
+we explore evolutionary algorithms, and their applications with sparse matrix representations. Our approach can speed up the optimization process and find good solutions, uncovering the underlying GRNs
+
+##### Wu et al. 2021
+
+ShareNet, a Bayesian framework for boosting the accuracy of cell type-specific gene regulatory networks by propagating information across related cell types via an information sharing structure that is adaptively optimized for a given single-cell dataset.
+
+The techniques we introduce can be used with a range of general network inference algorithms to enhance the output for each cell type. We
+
+We introduce ShareNet, a Bayesian information sharing frame-
+work for increasing the accuracy of predicting cell type-specific regulatory associations from single-cell transcriptomic data (Fig. 1b). Our framework draws upon the intuition that many of the regu- latory interactions (and non-interactions) are shared across different cell types, due to shared developmental lineages, regulatory pro- grams, or biophysical constraints. Thus, by propagating information across related cell types, we hope to reduce noise and boost the ac- curacy of inferred GRNs in all cell types. Since we do not have full knowledge of the sharing patterns underlying a given dataset, we designed our framework to adaptively learn a multifactorial, infor- mation sharing structure that best explains the data in all the study’s cell types. Importantly, our framework is widely applicable, as it can serve as an additional layer on top of existing state-of-the-art network inference algorithms to enhance their accuracy in estimat- ing the GRNs of all cell types in a dataset. 
+
+
+
+### Saelens et al. 2018
+
+numerous alternative module detection methods have been proposed, which improve upon clustering by handling co-expression in only a subset of samples, modelling the regulatory network, and/or allowing overlap between modules. In this study we use known regulatory networks to do a comprehensive and robust evaluation of these different methods
+
+decomposition methods outperform all other strategies, while we do not find a clear advantage of biclustering and network inference-based approaches on large gene expression datasets. Using
+
+Modules in this context are defined as groups of genes with similar expression profiles, which also tend to be functionally related and co-regulated. 
+
+The most popular approach, clustering, has been used since the first gene expression datasets became available and is still the most widely used to this day6–8,10. However, in the context of gene expression, clustering methods suffer from three main drawbacks.
+
+
+
+First, clustering methods only look at co-expression among all samples. As transcriptional regulation is highly context specific12, clustering potentially misses local co-expression effects which are present in only a subset of all biological samples. 
+
+Second, most clustering methods are unable to assign genes to multiple modules. The issue of overlap between modules is especially problematic given the increasing evidence that gene regulation is highly combina- torial and that gene products can participate in multiple path- ways13,14. A
+
+A third limitation of clustering methods is that they ignore the regulatory relationships between genes. As the	variation in target gene expression can at least be partly explained by variation in transcription factor expression15, including this information could therefore boost module detection.
+
+Decom- position methods16 and biclustering17
+try to handle local co-
+expression and overlap. These methods differ from clustering because they allow that genes within a module do not need to be co-expressed in all biological samples, but that a sample can influence the expression of a module to a certain degree (decomposition methods) or not at all (biclustering methods).
+
+Two other alternative methods, direct network inference15 (direct NI) and iterative NI18, use the expression data to additionally model the regulatory relationships between the genes.
+
+However, because clustering methods do not detect local co-expression effects, they could potentially miss relevant modules or exclude important genes from a module. In use cases where it can be desirable that all modules are discovered in a dataset, e.g., to generate signatures for disease, therapy and prevention4,11,32,orto find a set of genes responsible for a biological function, methods that detect such local co-expression and/or overlapping modules could therefore provide a substantial advantage. Consistent with this, we found that decomposition methods based on ICA were better at reco- vering known modules consistently across datasets.
+
+a third major application of co- expression modules is in the inference of gene regulatory net- works, where modules can be used to improve the network by combining information from several genes33 but can also improve the ease of interpretation. When we assessed the accuracy of the inferred network by combining a state-of-the-art network infer- ence methods with different module detection methods, we found that ICA-based decomposition methods lead to the highest improvement in accuracy (primarily
+
+##### Parikh et al. 2010 
+
+we describe a Bayesian network approach that addresses a specific network within a large dataset to discover new components. Our algorithm draws individual genes from a large gene-expression repository, and ranks them as potential members of a known pathway. We
+
+Information theory approaches, such as ARACNE, compare expres- sion profiles between all genes using mutual information as a generalized measure of correlation
+
+Bayesian networks are useful because they can model higher than pairwise orders of dependences between genes and can incorporate existing knowledge 
+
+We used Bayesian networks [20] to model the core PKA pathway (Figure
+
+
+
+##### Suo et al. 2015
+
+An analysis pipeline is built for integrating genomic and transcriptomic alterations from whole-exome and RNA sequence data and functional data from protein function prediction and gene interaction networks.
+
+The method accumulates evidence for the functional implications of mutated potential driver genes found within and across patients. A driver-gene score (DGscore) is developed to capture the cumulative effect of such genes.
+
+To contribute to the score, a gene has to be frequently mutated, with high or moderate mutational impact at protein level, exhibiting an extreme expression and functionally linked to many differentially expressed neighbors in the func- tional gene network. The
+
+these methods do not utilize iso- form-level information and the potential drivers are generally not validated in terms of patients’ clinical outcomes such as survival
+
+we summarize the effects of potential driver genes into a single value DGscore and assess its clinical value as prognostic biomarker. In
+
+
+
+##### Pillai et al. 2021
+
+Various markers or regulators associated with distinct phenotypes in melanoma have been identified, but, how does a network of interactions among these regulators give rise to multiple “attractor” states and phenotypic switching remains elusive. 
+
+we inferred a network of transcription factors (TFs) that act as master regulators for gene signatures of diverse cell-states in melanoma. Dynamical simulations of this network predicted how this network can settle into different “attractors” (TF expression patterns), suggesting that TF network dynamics drives the emergence of phenotypic heterogeneity.
+
+To identify the master regulators for the differentially expressed genes obtained from WGCNA, we used geWorkbench (Floratos et al., 2010). At first, we identified a baseline transcriptional interaction network for the dataset, using ARACNE (Algorithm for the Reconstruction of Accurate Cellular Networks) (Margolin et al., 2006). A p-value of 10-7 was set to determine the mutual information threshold and the software was run for 100 bootstraps with data processing inequality set to 0. Fisher’s exact test was used to identify master regulators from a list of candidate master regulators (Lambert et al., 2018). Only those transcription factors (TFs) enriched for in the WGCNA modules with p-value < 0.05 were considered for further analysis. This list was cross validated against CHEA, ENCODE and ARCHS4 databases by using EnrichR (Chen et al., 2013) to identify potential TFs regulating each module. Only those TFs identified by both analyses (ARACNE and EnrichR) were considered as master regulators (Table
+
+RAndom CIrcuit PErturbation (RACIPE) (Huang et al., 2017) was used to generate an ensemble of ordinary differential equation (ODE) models. Each model represents a collection of modified Hills equations for each gene, with randomized kinetics parameters sampled from user-defined ranges.
+
+##### Ronellenfitsch et al. 2017
+
+Complimentary to perturbation approaches, we extract functionally related groups of genes by analyzing the standing variation within a sampled population. To distinguish bi- ologically meaningful patterns from uninterpretable noise, we focus on correlated variation and develop a novel density-based clustering approach that takes advantage of a percolation transition generically arising in random, uncorrelated data.
+
+we address the complementary challenge of identifying the underlying regulatory relationships among genes from the standing variation in expression across sampled individuals. Rather than seeking to fully infer the underlying gene regulatory network topology from this inherently (and often prohibitively) noisy class of data (11, 14), we focus on identifying functional modules — sets of genes that demon- strate significant evidence for co-regulation. Extracting gene modules from standing variation can be addressed by clustering expression patterns across samples, and has been attempted in the past with varying degrees of success (13, 15–20). Yet a primary challenge remains to distinguish true regulatory relationships from noise, and these efforts have depended on expert insights about the specific biological systems to appro- priately pre-filter genes, tune analysis parameters, and filter results. We have developed a novel, data-driven approach motivated
+by the theory of percolation on random graphs (21–24). The method is conceptually simple yet robustly applicable, reliably yielding interpretable gene clusters across diverse data sets without fine-tuned optimization and filtering steps. We exploit the generic behavior of random geometric networks close to the percolation critical point, from which we devise a null model for the noise. This noise model in turn provides a basis for identifying statistically significant branches within the cluster hierarchy
+
+.We leverage the standing variation across unperturbed samples to reveal functional modules in gene regulatory net- works (Fig. 1A). Groups of functionally related genes are expected to share a common pattern of expression variation across samples, the similarity of which can be quantified by a correlation-based distance measure
+
+##### McClure et al. 2019
+
+ six additional mutual information methods in the MINET R package (ARACNE, CLR, MIM, MINET, MRNET, MRNETB) [[43](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007241#pcbi.1007241.ref043)
+
+
+
+### Cao et al. 2021
+
+we 5 propose a computational framework called GLUE (graph-linked unified embedding), which utilizes 6 accessible prior knowledge about regulatory interactions to bridge the gaps between feature spaces
+
+we introduce GLUE (graph-linked unified embedding), a modular framework for integrating 28 unpaired single-cell multi-omics data and inferring regulatory interactions simultaneously. By 29 modeling the regulatory interactions across omics layers explicitly, GLUE bridges the gaps between 30 various omics-specific feature spaces in a biologically intuitive manner.
+
+Integrating unpaired single-cell multi-omics data via graph-guided embeddings
+
+we model cell states as low-dimensional cell embeddings learned 7 through variational autoencoders27, 28. Given their intrinsic differences in biological nature and assay 8 technology, each omics layer is equipped with a separate autoencoder that uses a probabilistic 9 generative model tailored to the layer-specific feature space
+
+Taking advantage of prior biological knowledge, we propose the use of a knowledge-based graph 2 (“guidance graph”) that explicitly models cross-layer regulatory interactions for linking layer- 3 specific feature spaces; the vertices in the graph correspond to the features of different omics layers, 4 and edges represent signed regulatory interactions.
+
+, adversarial multimodal alignment is performed as an iterative optimization procedure, guided 8 by feature embeddings encoded from the graph2
+
+GLUE employs omics-specific variational autoencoders to learn low-dimensional cell embeddings from each omics 14 layer. The data dimensionality and generative distribution can differ across omics layers, but the cell embedding 15 dimensions are shared. A graph variational autoencoder is used to learn feature embeddings from the prior 16 knowledge-based guidance graph; these embeddings are then used as data decoder parameters. The feature 17 embeddings effectively link the omics-specific autoencoders to ensure a consistent embedding orientation. Last, an 18 omics discriminator is employed to align the cell embeddings of different omics layers via adversarial learning.
+
+Combining omics-specific autoencoders with graph-based coupling and adversarial alignment, we 24 designed and implemented the GLUE framework for unpaired single-cell multi-omics data 25 integration with superior accuracy and robustness. By modeling regulatory interactions across omics 26 layers explicitly, GLUE uniquely supports model-based regulatory inference for unpaired multi- 27 omics datasets, exhibiting even higher reliability than regular correlation analysis on paired datasets
+
+The whole package of GLUE, along with tutorials and demo 30 cases, is available online at https://github.com/gao-lab/GLUE for the community.
+
+
+
+##### Tapia-Carrillo et al. 2019
+
+an extension of the original Master Regulator Inference Algorithm (MARINa) analysis. This modified version of MARINa utilizes a restricted molecular signature containing genes from the 25 human pathways in KEGG's signal transduction category.
+
+TMRs were inferred using the MARINa (Lefebvre et al., 2010). MARINa identifies TMRs through an enrichment of TF regulons (a TF with its targets) with differentially expressed genes between the two phenotypes (breast cancer vs. adjacent healthy mammary tissue). TMR inference with MARINa requires as input a network of regulons, a gene expression, molecular signature, and a null model (Lefebvre et al., 2010) (Figure
+
+To obtain a regulon set from the data, we used the expression
+matrix of the tumor samples and a list of transcription factors in the TFCheckpoint curated database (Tripathi et al., 2013
+
+As a first step, transcription factors are associated with other
+genes expressed in the tissue. We used the mutual information- based algorithm ARACNe
+(Margolin et al., 2006) which
+calculates the pairwise mutual information for a pair of genes using the empirical probability distributions of their expression levels. For this network all possible interactions between TFs and genes in the expression matrix were calculated and kept if itspvalue was below 0.005
+
+Mutual information can detect both indirect and direct
+relationships. ARACNe constrains the number of indirect interactions applying the data processing inequality theorem (DPI), which considers that, in a triangle of interactions, the weakest one has a greater probability of being indirect if its difference is large with respect to the other two interactions (Hernández-Lemus
+
+The
+type of association (activation or repression) of the transcription factors is determined from the Spearman correlation of the TF with the levels of expression of all its targets (Lefebvre et al., 2010). This calculation was performed by the aracne2regulon function in the viper R package (Alvarez et al., 2016). This function transforms the undirected MI network from ARACNE into a regulons network that is directed.
+
+In the standard MARINa workflow, the molecular signature is built by comparing the expression level distributions of all genes between two conditions (e.g., healthy and diseased). For this work we built a molecular signature using only those genes annotated within the signal transduction pathways category in the KEGG database (Kanehisa
+
+
+
+To estimate the probability that a gene set enrichment score depends on the biological context and thus is not merely random, a null model was generated by random permutation between cases and control samples and recalculating differential expression values
+
+With the molecular signature, the regulon network and the null model, MARINa estimated the top regulons that enrich the most differentially expressed genes in the molecular signature through a gene set enrichment analysis
+
+The difference of this work with respect to MARINa lies in
+the use of a specific set of genes (signal transduction signature) which produces a ranking of the regulons for this specific subset. It is important to note that the regulons network used as input is the same as in regular MARINa, but the ranking is focused on the specific gene signature. The set of genes that constitute each regulon may include genes that are not in the molecular signature and can be part of a more diverse range of biological functions than signal transduction. This is the reason why we performed a subsequent enrichment analysis of the regulons with all KEGG human pathways
+
+
+
+##### Grechkin et al. 2016
+
+DISCERN takes two expression datasets as input: an expression dataset of diseased tis- sues from patients with a disease of interest and another expression dataset from matching normal tissues. DISCERN estimates the extent to which each gene is perturbed—having distinct regulator connectivity in the inferred gene-regulator dependencies between the dis- ease and normal conditions. This approach has distinct advantages over existing methods. First, DISCERN infers conditional dependencies between candidate regulators and genes, where conditional dependence relationships discriminate the evidence for direct interac- tions from indirect interactions more precisely than pairwise correlation. Second, DISCERN uses a new likelihood-based scoring function to alleviate concerns about accuracy of the specific edges inferred in a particular network.
+
+Most analysis methods that compare gene expression datasets from two conditions address the question ofwhich genes are significantly differentially expressed between conditions. The DISCERN method addresses a distinct question concerning which genes are significantly rewired in the inferred gene-regulator network in disease tissues
+
+
+
+### Alvarez et al. 2016
+
+We have previously shown that regulon analysis, using the master
+regulator inference algorithm (MARINa), can help identify aberrantly activated tumor drivers17–21. However, this requires multiple samples representing the same tumor phenotype and cannot be used to assess aberrant protein activity from individual samples. To
+
+
+
+VIPER infers protein activity by systematically analyzing expression of the protein’s regulon, which is strongly tumor-context-dependent20 (Fig. 1b). We used the algorithm for the reconstruction of accurate cellular networks (ARACNe23; Online Methods) to systematically infer regulons from tissue-specific gene expression data (
+
+We extended ARACNe to detect maximum information path targets (Online Methods), as originally proposed in ref. 21, to allow identification of regulons that report on the activity of proteins representing indirect regu- lators of transcriptional target expression, such as signaling proteins
+
+VIPER is based on a probabilistic framework that directly
+integrates target ‘mode of regulation’, that is, whether targets are activated or repressed (Fig. 1b and Supplementary Figs. 1 and 2), statistical confidence in regulator-target interactions (Fig. 1b) and target overlap between different regulators (pleiotropy) (Fig. 1d) to compute the enrichment of a protein’s regulon in differentially expressed genes (Online Methods). Several
+
+VIPER uses a fully probabilistic yet efficient enrichment analysis framework, supporting seamless integration of genes with different likelihoods of representing activated, repressed or undetermined targets, and probabilistic weighting of low vs. high-likelihood protein targets. To achieve this, we introduce analytic rank-based enrichment analysis (aREA) a statistical analysis based on the mean of ranks (Fig. 1c and Online Methods). Differential protein activity is quantitatively inferred as the normalized enrichment score computed by aREA.
+Systematic
+
+
+
+##### Jung 2019
+
+We propose a method of Knowledge-based Evaluation of Dependency DifferentialitY (KEDDY), which is a statistical test for differential functional protein networks of a set of genes be- tween two conditions with utilizing known functional protein–protein interaction information. Unlike other approaches focused on differential expressions of individual genes or differentiality of individual interactions, KEDDY compares two conditions by evaluating the probability distributions of functional protein networks based on known functional protein–protein interactions
+
+
+
+##### Gundogdu et al. 
+
+the deep neural networks constrained by several types of prior biological information, e.g. signaling pathway information, as a way to reduce the dimensionality of the scRNA-seq data.
+
+including in the DNN architecture pathway knowledge allows obtaining a smaller architecture (less nodes and hence faster inference), which is easier to interpret [22] and that performs as well as other methodologies in a set of cell type identi?cation benchmarks
+
+Prior Biological Information Integration
+In order to incorporate the biological priors, the ?rst hidden layer was adjusted in two ways: 1) each neuron/node corresponds to one biological unit, in this case there are as many neurons as pathways and 2) the weights that arrive to a neuron are ?xed to zero when no input gene participates in the pathway associated to the node. In this way, biological priors were incorporated using known gene clusters with de?ned functions (the pathways) at the same time that the size of the model is reduced, which can help with over-?tting as well as training and inference time
+
+
+
+##### Giorgi et al. 2014
+
+t CINDy (Conditional Inference of Network Dynamics), a novel algorithm for the genome-wide, context specific inference of regulatory dependencies between signaling protein and transcription factor activity, from gene expression data. The algorithm uses a novel adaptive partitioning methodology to accurately estimate the full Condition Mutual Information (CMI) between a transcription factor and its targets, given the expression of a signaling protein
+
+
+
+##### Morone et al. 2015
+
+we map the problem onto optimal percolation in random networks to identify the minimal set of influencers, which arises by minimizing the energy ofa many-body system, where the form of the interactions is fixed by the non- backtracking matrix15
+ofthe network.
+
+
+
+##### Zhang et al. 2017
+
+We propose a new differential network analysis method to address the above challenges. Instead of using Gaussian graphical models, we employ a non-paranormal graphical model that can relax the normality assumption. We develop a principled model to take into account the following prior information: (i) a differential edge less likely exists between two genes that do not participate together in the same pathway; (ii) changes in the networks are driven by certain regula- tor genes that are perturbed across different cellular states and (iii) the differential networks esti- mated from multi-view gene expression data likely share common structures.

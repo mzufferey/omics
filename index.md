@@ -122,6 +122,13 @@ sgnesR (Stochastic Gene Network Expression Simulator in R) is an R package that 
 e a method that compares multiple networks ofunlimited size at the level oflinks and nodes. Our novel method, CoDiNA (Co-expression Differencial Network Analysis), is imple-
 mented as an R package that also includes an interactive tool for network visualization
 
+
+
+This report proposes a framework for integrating known genetic pathways into a differential network analysis
+of two populations. The framework allows any association measure to be used, and a general measure for differen- tial connectivity is considered. Statistical significance is evaluated through a permutation testing procedure. The methodology is implemented in R and is available on GitHub at https://github.com/tgrimes/dnapath
+
+
+
 ### Python packages
 
  https://github.com/bioFAM/MOFA. 
@@ -492,3 +499,11 @@ species and conditions into databases such as STRING6
 The protein interaction data were derived from the BioGRID database. 
 
 The publicly available data sets, such as Biological General Repository for Interaction Datasets (BioGRID, https://thebiogrid.org/), Saccharomyces Gen- ome Database (SGD, http://www.yeastgenome.org/), Hu- man Protein Reference Database (HPRD, http:// www.hprd.org/), Search Tool for the Retrieval of Interacting Genes/Proteins (STRING: http://www.string- db.org/)
+
+
+
+PPIs from HINT database
+
+
+
+pathway enrichment analysis, using Kyoto Encyclopedia of Genes and Genomes (KEGG), Biocarta, and Reactome pathways from the Molecular Signature Database (MSigDB) (
