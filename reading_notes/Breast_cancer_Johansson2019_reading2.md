@@ -601,3 +601,9 @@ biomarkers validated for therapy decision making
 * germline BRCA mutations
 * PD-L1 (IHC)
   * predictive for immunotherapy
+
+
+
+
+
+we identified 73 breast cancer pa- tients from the TCGA and CPTAC projects matched whole slide images, RNA-seq, and proteomic data.

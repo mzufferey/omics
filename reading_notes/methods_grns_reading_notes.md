@@ -1387,9 +1387,60 @@ models, we split it in several branches. Then, we used Gene Ontology analyses to
 
 One obvious limitation of proteomics when compared with genomics is that genomics can measure the expression of all known genes in the same experiment, whereas proteomics only provides a measurement of peptides that are both detected and identified. This
 
+##### Zhan et al. 2019
+
+we identified 73 breast cancer pa- tients from the TCGA and CPTAC projects matched whole slide images, RNA-seq, and proteomic data. By calculating 100 different morphological features and correlating them with the transcriptomic and proteomic data, we inferred four major biological processes asso- ciated with various interpretable morphological fea- tures. These processes include metabolism, cell cycle, immune response, and extracellular matrix development, which are all hallmarks of cancers and the associated mor- phological features are related to area, density, and shapes of epithelial cells, fibroblasts, and lymphocytes. In addition, protein specific biological processes were inferred solely from proteomic data, suggesting the importance of pro- teomic data in obtaining a holistic understanding of the molecular basis for tumor tissue morphology. 
 
 
 
+TCGA aggregates an extensive col- lection of omics and clinical datasets from large cohorts of patients for more than 30 types of cancers (24). It also ar- chives histopathology images for solid tumor samples from which omics data were sampled. Currently, more than 24,000 histopathology images are available and can be visualized at the Cancer Digital Slide Archive (CDSA, http://cancer. digitalslidearchive.net/). In addition, The NCI Clinical Proteomic Tumor Analysis Consortium (CPTAC) (https://proteomics. cancer.gov/programs/cptac) program also provides high- throughput proteomic data for some of the TCGA tumor spec- imens such as breast cancer, ovarian cancer, and colorectal cancer based on mass-spectrometry technology. These
 
 
+
+Based on this pipeline we performed a series of analysis correlating and integrating molecular data, morphological features, and clinical outcome using data from TCGA and CPTAC Breast invasive carcinoma (BRCA) project.
+
+First, we performed a correlative analysis between multi-omics data (including pro- teomic, transcriptomics data) and morphological features ex- tracted from histopathology images. We observed that pro- teomic and transcriptomic data shared consistent correlation pattern with various morphological features at genome scale. However, comparing to transcriptomics data, proteomic data can identify specific protein-related biological processes as- sociated with morphological features that otherwise cannot be inferred from transcriptomic data. More comprehensive analysis revealed that four major categories of biology pro- cesses related to the hallmarks of cancer (6) are associated with different morphological feature based on the correlated proteomic data. Furthermore, we examined the relationship between nuclear morphology and patient outcome (i.e. sur- vival time). Both prognostically favorable and unfavorable morphological features have been identified. The biological processes associated with these prognostic morphological features were also identified based on proteomic data. The biological processes such as immune responses, cell cycle, and extracellular matrix development have been previously associated with cancer patient outcome. In summary, our work linked molecular data, morphology, and clinical out- come, which led to new insights and hypotheses into the relationships between cancer tissue development and molec- ular events, thus contributing to a more comprehensive un- derstanding of breast cancer. The entire process and work- flow can be applied to other cancers.
+
+
+
+we performed correlation analysis between imaging features and mRNA or protein (MS- based global proteomic data) profiles by calculating Spear- man’s rank correlation coefficients (?). 
+
+we compared the distribution of correlation coefficients
+for image-mRNA and image-protein pairs for individual morpho- logical features
+
+automated image analysis was carried out and ten types of cell-level features from tissue images were extracted following the three main steps: 1) nuclei segmentation, 2) cell-level feature measurement, and 3) aggregation of cell-level measurements into patient-level statistics.
+
+In Step 1, the nuclei of all cells in the image are automatically segmented based on our previous workflow (31). In Step 2, ten types of cell-level features were ex- tracted, including seven types of morphological and spatial traits and three types of pixel traits in the RGB color space. The seven types of morphological and spatial features of cell nuclei were: major axis length (Major_Axis), minor axis length (Minor_Axis), the ratio of major to minor axis length (Ratio), nuclear area (Area), mean distance to neighboring cells (Mean_Distance), maximum distance to neighboring cells (Max_Distance), and minimum distance to neighboring cells 
+(Min_Distance).
+
+ ). The seven types of morphological and spatial fea- tures of cell nuclei can be summarized as nucleic area (Area), nucleic shape (Major_Axis, Minor_Axis, and Ratio), and cell density (Mean_ Distance, Max_Distance and Min_Distance). In Step 3, 5-bin histo- gram and five distribution statistics (i.e. mean, standard deviation or S.D., skewness, kurtosis, and entropy) were calculated for each of the ten types of morphological features to aggregate the measurements over the whole slide image. Thus for each type of feature, ten meas- urements (i.e. five histogram bins and five distribution statistics) were generated and 100 image features were generated in total for the ten types of morphological features. The centers of the five bins were determined by clustering each type of cell-level features from all patients instead of a single patient, which ensured that the histogram features are comparable and consistent across the entire patient cohort. The value of each feature based on the five bins of the histogram represented the relative percentage of corresponding im- age feature over the entire slide for a patient.
+
+
+
+##### Yanovich et al. 2018
+
+utilized mass spectrometry–based proteomic anal-ysis on more than 130 clinical breast samples to demon-strate intertumor heterogeneity across three breast cancer
+subtypes and healthy tissue.
+
+classification ambigu- ities still exist, and although multiple studies have been focusing onmolecularcharacterization ofbreast cancerprofiles, the clinical routine still relies primarily on immunostaining of ER, PR, and HER2 as a basis for classification (10).
+
+
+
+Previously, the TCGA performed reversed-phase protein arrays (RPPA) in order to evaluate how genetic alterations affect the protein level. However, this method is limited to hundreds of pre-selected proteins and several phos- phorylation sites, and does not provide a system-wide view ofthe proteome. Analyzing
+
+
+
+Analyzing the cancer proteome in an unbiased man- ner, two recent mass spectrometry (MS)-based proteomics studies analyzed dozens of tumors and evaluated the relevance of gene- expression levels to the proteome level. 
+
+
+
+In the first study, we analyzed a cohort of 40 breast tumors derived from different subtypes, quantified the proteins using the super-SILAC technol- ogy (11), and reached the depth of more than 10,000 proteins
+
+
+
+The second study, which was conducted by the Clinical Proteomic Tumor Analysis Consortium (CPTAC; ref. 13), ana- lyzed MS-based proteomics and phosphoproteomics data from a cohort containing 77 samples, used iTRAQ quantification and reached the depth of 12,553 proteins and 33,239 phosphoryla- tion sites. They further integrated the proteomic with the genomic profiles of the same cohort from the TCGA, and associated the mutational landscape with the corresponding proteomic and phosphoproteomic profiles. 
+
+Both studies showed limited con- cordance between the overall protein and mRNA profiles. This was evident both in the 19-protein signature identified by Tya- nova and colleagues, in which a third was found to be regulated exclusively on the proteomic level, and also in the global protein– mRNA correlation analysis of the CPTAC, which resulted in a median Pearson correlation of 0.39
+
+The larger scope of the CPTAC study enabled them to perform unsupervised classification of the tumors and identify novel proteomic and phosphoproteomic subgroups. Compared with the four expected mRNA-based subtypes, they identified only three proteomic groups, out of which two corresponded to the known classification (a basal cluster and a luminal cluster), whereas the third one was a new "stromal-enriched" cluster. This cluster was characterized by samples originating from all sub- types, and thus maybe associated with stroma-rich regions within the tumors
 

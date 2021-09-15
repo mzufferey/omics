@@ -137,7 +137,7 @@ The PAM505 classifier, which is also deployed in Genefu Bioconductor package20, 
 
 
 
-
+Proteomic data were accessed and downloaded using the R package “TCGA-Assembler 2” (27, 28) from the CPTAC
 
 ### Python packages
 
@@ -168,6 +168,12 @@ GO enrichment by Gorilla (http://cbl- gorilla.cs.technion.ac.il)
 
 
 e screened for enrichment in MSigDB and chromosome positions using the hypergeometric testing implemented in the GeneListEnrich shiny tool (https://github.com/aleferna/BCLandscape_Shiny/tree/master/GeneListCompare)
+
+
+
+Gene ontology (GO) analyses were performed using ToppGene (https//topgene.cchmc.org)(
+
+
 
 
 
@@ -572,3 +578,8 @@ Gene Active Ranking Profile (GARP)-normalized data were obtained from the COLT d
 
 
 
+Significant pathway annotations (FDR < 0.05) from the Panther over-representa- tion test (database: GOBP complete, http://www.pantherdb. org/) were used to annotate each cluster
+
+
+
+TCGA aggregates an extensive col- lection of omics and clinical datasets from large cohorts of patients for more than 30 types of cancers (24). It also ar- chives histopathology images for solid tumor samples from which omics data were sampled. Currently, more than 24,000 histopathology images are available and can be visualized at the Cancer Digital Slide Archive (CDSA, http://cancer. digitalslidearchive.net/). In addition, The NCI Clinical Proteomic Tumor Analysis Consortium (CPTAC) (https://proteomics. cancer.gov/programs/cptac) program also provides high- throughput proteomic data for some of the TCGA tumor spec- imens such as breast cancer, ovarian cancer, and colorectal cancer based on mass-spectrometry technology. These
