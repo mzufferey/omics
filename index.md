@@ -131,6 +131,14 @@ of two populations. The framework allows any association measure to be used, and
 
  six additional mutual information methods in the MINET R package (ARACNE, CLR, MIM, MINET, MRNET, MRNETB) [[43](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007241#pcbi.1007241.ref043)
 
+
+
+The PAM505 classifier, which is also deployed in Genefu Bioconductor package20, makes calls based on the 50 gene centroid correlation distance to LA, LB, Basal, Her2 and normal-like centroids
+
+
+
+
+
 ### Python packages
 
  https://github.com/bioFAM/MOFA. 
@@ -549,4 +557,18 @@ list of transcription factors in the TFCheckpoint curated database (Tripathi et 
  GRAND (https://grand.networkmedicine.org) as a database for computationally-inferred, context-specific gene  regulatory network models that can be compared between biological  states, or used to predict which drugs produce changes in regulatory  network structure. The database includes 12 468 genome-scale networks  covering 36 human tissues, 28 cancers, 1378 unperturbed cell lines, as  well as 173 013 TF and gene targeting scores for 2858 small  molecule-induced cell line perturbation paired with phenotypic  information. GRAND allows the networks to be queried using phenotypic  information and visualized using a variety of interactive tools.
 
 (http://www.proteinatlas.org),
+
+
+
+we examined genomic-based patterns of oncogenic pathway activity, the tumor microenvironment and other important features in human breast tumors using a panel of 52 previously published gene expression signatures (Supplementary Table - An integrated genomics approach identifies drivers of proliferation in luminal-subtype human breast cancer)
+
+
+
+an RNAi proliferation screen in which a genome-wide shRNA library (~16,000 genes) had been used to identify essential genes (An integrated genomics approach identifies drivers of proliferation in luminal-subtype human breast cancer) Marcotte et al. 2012
+
+
+
+Gene Active Ranking Profile (GARP)-normalized data were obtained from the COLT database
+
+
 

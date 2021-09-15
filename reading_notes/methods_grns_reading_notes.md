@@ -57,6 +57,54 @@ We adopt a linear regression model to explain disease similarities in the phenot
 
 
 
+### Neapolitan et al. (2013)
+
+the expression level of genes in signaling pathways can be modeled using a causal Bayesian network (BN) that is altered in tumorous tissue. 
+
+the expression levels of genes that code for proteins on a signal transduction network (STP) are causally related and that this causal structure is altered when the STP is involved in cancer.
+
+
+
+. We identified all the genes related to each of the 22 pathways and developed separate gene expression datasets for each pathway. We obtained significant results indicating that the causal structure of the expression levels of genes coding for proteins on STPs, which are believed to be implicated in both breast cancer and in all cancers, is more altered in the cases relative to the controls than the causal structure of the randomly chosen pathways.
+
+To address the second issue (the prediction of how stimu-
+lations and inhibitions will affect the overall activity of the STP), we need a causal model of the variables related to an STP
+
+STPs can be modeled as causal Bayesian networks (BNs) if each node in the network represents the phosphorylation activity of a protein. A strength of BNs is that they represent probabilis- tic relationships, and therefore they can manage the noise in biological data. A second strength is that they can model the natural causal relationships in biology
+
+the central
+hypothesis to be investigated in this paper is that the expres- sion levels of genes that code for proteins on a given STP are causally related, and that this causal structure is altered when the STP is involved in a particular cancer. If this hypothesis is correct, using the ample gene expression datasets and BN learning algorithms, we can learn the causal network struc- ture of the gene expression levels in an STP that is altered in a given cancer, and then identify driver genes based on the topology of the network.
+
+A BN consists of a directed acyclic graph (DAG) G = (V, E) whose nodeset V contains random variables and whose edges E represent relationships among the random variables, the prior prob- ability distribution of every root variable in the DAG and the conditional probability distribution of every non-root variable given each set of values of its parents. Often the DAG is a causal DAG, which is a DAG containing the edge X → Y only if X is a direct cause of Y.29 The probability dis- tribution of the variables in a BN must satisfy the Markov condition, which states that each variable in the network is probabilistically independent of its non-descendents condi- tional on its parents.
+
+In the constraint-based approach,30 we learn a DAG
+model from the conditional independencies that the data sug- gest are present in the generative probability distribution P. In the score-based approach, we assign a score to a DAG based on how well the DAG fits the data.
+
+The Bayesian score is the probability of the Data given the DAG model.31 A popular variant of this score is the Bayesian Dirichlet equivalent uni- form (BDeu) score.32 If
+
+Kyoto Encyclopedia of Genes and Genomes (KEGG)43 has a collection of manually drawn pathways representing our knowledge of about 136 pathways. STPs are not thought to be stand-alone networks, but rather they have inter-pathway communication.4
+
+
+
+If we represent the phosphorylation level of each pro-
+tein in an STP by a random variable and draw an arc from X to Y if there is an edge from protein X to protein Y in the STP, then we are modeling the STP as a BN. For this BN to represent the joint probability distribution of the random variables, the Markov condition must be satisfied. Woolf et al.22
+argue that the steady-state concentrations
+should satisfy this condition
+
+
+
+to investigate whether the causal structure of the expression levels of genes on an STP is altered when the STP is involved in cancer, we compared results obtained using the breast cancer data for 5 STPs implicated in breast cancer, 7 STPs implicated in other cancers, and 10 random pathways. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -433,6 +481,8 @@ over existing gene regulatory network inference methods. Firstly, BMNPGRN can fi
 
 
 
+
+
 ### Matsubara et al. 2019
 
 merges proteome and transcriptome data 
@@ -442,6 +492,18 @@ spectral clustering of the network and map resulting eigenvectors from the 2nd a
 map gene expression profiles onto this mapping->generate a set of image-like representation of protein networks processed by deep deconvolutional layers
 
 PPIs from HINT database
+
+
+
+### Wani et al. 2019 - review
+
+Network based integration and inference Network based integration approaches provide the easiest and
+simplest way to integrate different types of network data into a single unified representation. It
+
+Similarity Network Fusion (SNF) (Wang et al., 2014) is a typical
+example of constructing merged networks by employing network based data integration principal. SNF integrates expression data (mRNA, miRNA) and DNA methylation data and creates a network of samples (i.e., patients) for each data type and then builds an integrated network from the fusion of individual networks.
+
+Integrative gene regulatory network (iGRN) (Zarayeneh et al. 2017 , is another similar network integration technique that combines gene expression data with CNV and DNA methylation data.
 
 
 
@@ -510,6 +572,41 @@ input: correlation network or or can also be Consensus Networks (CN) derived fro
 
 
 
+### Trilla-Fuertes et al. 2020
+
+n previous works, our group defined a new hormonal receptor positive subgroup, the TN-like subtype, which had a prognosis and a molecular profile more similar to triple negative tumors. In this study, prote- omics and Bayesian networks were used to characterize protein relationships in 96 breast tumor samples. Components obtained by these methods had a clear functional structure.
+
+Undirected probabilistic graphical models (PGM), based on a Bayesian approach, allow characterizing differences between tumor samples at functional level [2, 3, 6, 7]. In this study we explored the utility ofBayesian networks in the molecular characterization ofbreast cancer.
+
+The main feature oftargeted Bayesian networks is that they provide a hierar- chical structure and targeted relationships between proteins
+
+
+
+PGM are graph-based representations ofjoint probability distributions where nodes represent random variables and edges (directed or undirected) represent stochastic dependencies among the variables. In particular, we have used a type ofPGM called Bayesian networks (BN)
+
+With these models, the dependences between the variables in our data are specified by a directed acyclic graph (DAG). The obtained networks will indicate causality i.e. if protein A and B are connected and protein A changes its expression value, protein B changes its expres- sion value as well
+
+we find the BN that best explains our data [23]. There are different algorithms to
+learn a DAG from data but we have selected the well-known PC algorithm (named as its inven- tors Peter Spirtes and Clark Glymour), a constraint-based structure learning algorithm [24] based on conditional independence tests. The PC algorithm was shown to be consistent in high-dimensional settings [25]. Moreover, an order-independent version ofthe PC algorithm, called PC-stable, was proposed in [26]. All these procedures are implemented in R within packages pcalg [25] and graph [27]. We used protein expression data without other a priori information.
+
+our data are represented by a large graph that can be partitioned into several connected components. Then, we focused on finding suitable subgraphs that give us a much clearer understanding ofthe interrelations therein
+
+Using proteomics data, directed acyclic graphs (DAG) were performed. Altogether, it was pos- sible to establish 789 edges ofwhich 662 were guided and 127 are undetermined
+
+We characterized components from DAG analysis. Components including less than 9
+nodes were dismissed because they were little informative. All components were named with the number ofnodes included by the DAG analysis. Afterwards, components were interrogated for biological function
+
+Component activities were calculated for each node. There were significant differences between ER-true, TN-like and TNBC tumors in the component activity for component 23: mitochondria, component 17: RNA binding, component 13: extracellular matrix, and compo- nent 10: extracellular exosome (Fig
+
+we used proteomics and DAG to characterize relationships between proteins in breast cancer tumor samples
+
+our DAG method supplies directed relationships between proteins and a hierarchical structure. Tradi- tionally, protein-protein interaction (PPI) networks, such as STRING, are based in relation- ships described in the literature. However, we built a directed network, i.e. a graph formed by edges with a direction, using protein expression data without other a priori information, so it was possible to propose new hypotheses about protein interactions. We used probabilistic graphical models (PGM) because they offer a way to relate many random variables with a com- plex dependency structure
+
+
+
+arrows in directed networks indicate causality
+between two proteins. This approach allows making hypotheses about causal relationships between proteins and proposes a hierarchical structure.
+
 
 
 ### Li et al. 2020
@@ -525,6 +622,68 @@ we have provided a framework to reveal the
 underlying mechanism of fast-aging and slow-aging in mammals based on landscape and flux theory. We predict the key genes and interactions in the fast-aging and slow-aging processes.
 
 
+
+### Lee et al. 2020
+
+heterogeneous multi-layered network (HMLN) has proven successful in integrating diverse biological data for the representation of the hierarchy of biological system
+
+relation inference
+(or link prediction) can be formulated as a problem in a homogenous network, a multiplex network, or a heterogeneous multi-layered network (HMLN), as shown in Figure 1.In a homogenous network (Figure 1A), all nodes from different domains, as well as intra-domain and cross-domain relations, are treated equally. In contrast, multiplex and multi-layered networks separate different types of nodes and relations. A multiplex network is often used to represent homogeneous nodes that have different types of characterizations (a.k.a. views). For example, a gene can be characterized by multiple measurements ofgene expression, essentiality, literature citation, phylogenetic profile, neighborhood in the interaction network, biological pathway involved, Gene Ontology annotation, protein domain profile etc. (Hwang et al., 2019). Each type of measurement can form a unique type of link between genes (Figure 1B). In a HMLN (Figure 1C), multiple types of heterogeneous nodes are involved. The nodes from each type are grouped into a single layer and treated separately. In the same vein, different types of intra-domain and cross-domain relations are marked differently in a multi-layered network. We note that more complex network representations, such as multiplex multi- layered network, may be needed in real applications. In this review, we focus on the cross-domain relation inference (or link prediction) problem for the HMLN. Readers can refer other excellent reviews of the multiplex networks (Chauvel et al., 2019)
+
+Compared to a homogeneous single-layered network, a unique topological characteristic of a multi-layered network lies in its cross-layer relation or dependency structure in addition to intra- layer connectivity.
+
+The cross-layer relation inference problem is conceptually related to collaborative filtering (Goldberg et al., 1992). Commonly used collaborative filtering methods can be classified into two groups: neighborhood methods (Breese et al., 1998) and latent factor methods (Koren et al., 2009). As the latent factor approach is generally more effective in capturing the implicit cross-layer relations, many variants ofthis methodology, such as recommended systems (Portugal et al., 2018), have been proposed to address relation inference problems in a two-layered network (Gao et al., 2019; Xuan et al., 2019). However, few methods have been developed for the multi-layered network.
+
+
+
+Besides the traditional algorithms, like matrix factorization, random walk, and meta-path, introduced in previous sections, the embedding of HMLN can also benefit from Deep Learning techniques, especially the Neural Networks (NNs). Though NNs are initially proposed to learn the embedding of data, such as texts, images, and videos, they have shown powerful performance when dealing with graph structured data, which exist in non-Euclidean domain. Due to the growing interests and demands in recent years, Graph Neural Networks (GNNs) have been proposed to learn the embedding of graphs
+
+
+
+A GNN consists of a number of hidden layers that employ iterative, propagation procedures in order to transform different node and edge features. Each layer takes the output of the previous layer as the input. With graph structured data, GNNs adopt element (node or edge) features X and the graph structure A as input to learn the representation of each element hi,or graph hG, for different tasks. Each hidden layer employs the
+“aggregation” functions and the “update” functions (Battaglia et al., 2018). Each aggregation function r takes a set of node or edge features as input and reduces it to a single element which represents the aggregated information. The aggregations usually operate on the nearest neighbors or the local subgraphs of each element to capture local information gradually. Since the permutation invariance of the input holds in graph data, the r functions must also have the same property. These functions can take variable numbers of arguments. Commonly used r functions include sum (Xu et al., 2019), mean (Kipf and Welling, 2017), max-pooling (Hamilton et al., 2017)and attention mechanism (Velickovic et al., 2018; Wang et al., 2019; Fan et al., 2019). Update functions f are applied across all elements to compute per-element updates after the aggregations. In the final layer, the generated embedding can be fed into the classification/prediction layer, and the whole model is trained for different (e.g. node classification, link prediction) tasks
+
+
+
+the meta-path based GNN shares the same limitations of other meta-path based algorithms. New types of GNNs, those that explicitly take different types of relations into consideration, are needed for the link prediction problem in HMLN
+
+
+
+Yao et al. integrated multi-omics data to construct a three-
+layered network model MetPriCNet, which consists of metabolite network, gene network, phenotype network, metabolite-phenotype network, metabolite-gene network, and gene-phenotype network (Yao et al., 2015). Afterwards, an RWR algorithm is applied to prioritize metabolites associated with diseases
+
+
+
+the RWRmethod
+has been used to identify other molecular dysregulations that are associated with diseases based on the multi-layered network model. To
+
+### Baur et al. 2020 - review
+
+there are two major approaches to model gene regulatory networks [15]. 
+
+1- The first approach predicts regulatory proteins, for example, TFs, chromatin remodelers, and signaling proteins that determine a gene’s expression level (Figure 1b). 
+
+2- The second approach identifies CREs affecting gene expression levels (Figure 1c), that is, TF binding sites in or near the promoter, or distal enhancers interacting with the promoter through chromatin loop- ing [2].
+
+CRE=cis-regulatory element
+
+A context-specific regulatory network is defined as a network that captures interactions between regulatory proteins and target genes in a particular context, such as a developmental stage, tissue, disease, or environment
+
+While there are a large number of mathematical formalisms to represent regulatory net- works [16], we focus on statistical models, which include information-theoretic methods [17], dependency net- works [18,19], Bayesian networks [20], and Gaussian graphical models [21]. Given
+
+*<u>Incorporating prior to constrain network structure and estimate regulator activity</u>* 
+
+To enable more comprehensive network inference, sequence-specific motif-derived edges can be incorpo- rated as prior knowledge to encourage the network inference algorithm to include edges from the prior. Prior-based regulatory network inference can use either a structure prior approach [18,20] or parameter prior approach [24]. With the structure-based prior, one puts a prior probability distribution on the graph structure, such that an edge with motif support is more likely to be included in the regulatory network model. For example, Chasman et al. [23] used DNase-seq filtered motifs as a structure prior for a network inference algorithm [18] and context-specific gene expression data of hindbrain and spinal cord development to infer a regulatory network in neuroepithelial stem cells. The parameter prior framework has been used within a regularized regression setting [24], which learns a sparse network by penalizing edge addition while optimizing prediction of a target’s expression level. The prior can be used to reduce the penalty for addition of an edge in the network [24]
+
+
+
+Newer methods have used the prior network to addi- tionally estimate hidden TFactivity (TFA) to overcome the assumption that mRNA levels must correlate with the regulator’s protein activity on a gene’s promoter [24,27]. TFA estimation takes in an initial, noisy regu- latory network and expression and models the expres- sion as a product of the hidden TFAs and a refined network structure [27]. The TFA can be estimated independently followed by network inference, for example, modified least absolute shrinkage and selec- tion operator with stability approach to regularization selection (mLASSO-StARS) [24], or in a single iterative algorithm, for example, Network Reprogramming using EXpression (NetRex) [27]. mLASSO-StARS [24] learns a dependency network by solving a set of independent Least Absolute Shrinkage and Selection Operator (LASSO) regression problems, one per gene. Both mRNA and TFA are used as potential predictors of a target gene’s expression. NetRex [27] jointly estimates both the TFA and the network to explain the expression data by using regularization to penalize the mismatch in the number of edges of the inferred and prior networks. NetRex updates the prior network until the rewired
+
+network and the estimated TFA optimally explains the expression data. Both NetRex and mLASSO-StARS need to specify the hyperparameters to obtain a final network structure. mLASSO-StARS uses StARS to select the hyperparameters by controlling the average instability of edges. NetRex uses a grid search over hyperparameters and obtains the final result from the consensus of multiple nearly optimal settings. NetRex has additional constraints that can better capture core- gulatory relationships in gene modules but can make network inference computationally expensive. These approaches were shown to improve the quality of inferred networks and were useful for identifying key regulators and targets in mammalian [23,24] and insect [27] systems
+
+<u>*Network inference across multiple contexts*</u> 
+
+Often data from multiple contexts are available and a key question is to define regulatory networks for each context and identify similarities and differences. Although one approach would be to infer networks for each context independently [28], examining multiple contexts simultaneously could improve the quality of the inferred networks [21,29], make comparisons easier [30,31], and help in scenarios with low sample sizes [32]. To enable simultaneous network inference across multiple conditions, several approaches have used multi-task learning (MTL) (Figure 2a) [33]. In MTL, related tasks are jointly solved while sharing the infor- mation across tasks. In one class of methods, a regulatory network is modeled as a Gaussian Graphical Model (GGM), which represents the genome-wide expression levels of genes as a multivariate Gaussian and the network structure by a precision matrix. One GGM approach, JRmGRN [21], models each condition’s network as sum of two sparse precision matrices, one for condition-specific components and the second for shared component across all conditions. JRmGRN additionally regularized the shared network to favor more hub genes and was more effective at identifying shared hubs and context-specific network components than existing approaches. While JRmGRN models each condition with one precision matrix, another GGM- based approach, NETI2 [31], additionally models the intrasample heterogeneity, which is common in tumor samples because they represent a mix of cancerous and non-cancerous cells. NETI2 infers cancer subtypee specific networks and a network for non-cancerous cells shared across the subtypes. The proportion of cancerous and non-cancerous cells for each sample is known; however, the expression of each cell type is not known and is estimated using an expectationemaximization algorithm. On The Cancer Genome Atlas (TCGA) data [34] for different breast cancer subtypes, NETI2 captured subtype-specific gene hubs that exhibited reduced connections in the non-cancerous network
 
 
 
@@ -571,9 +730,19 @@ For each pattern, we used network propagation to integrate the gene-centric scor
 
 
 
+### Duan et al. 2021
 
+Refuting the widely held intuition that incorporating more types of omics data always produces better results, our analyses showed that there are situations where integrating more omics data negatively impacts the performance of integration methods. Our analyses also suggested several effective combi- nations for most cancers under our studies, which may be of particular interest to research- ers in omics data analysis.
 
+we observed that the methods NEMO and SNF perform very well in all three criteria
 
+several commonly-used combinations ofomics data types can indeed improve the accuracy of all the ten methods as measured by both clustering and clinical metrics. On the other hand, our analysis indicates that integrating more types ofomics data may negatively impact the performance on cancer subtyping, refuting the widely held intuition that incorporating more types ofomics data always helps produce better results
+
+using the four omics data types for integration analysis were not always better than the results obtained by using three or two-omics data types. Similarly, the results ofthe three-omics integration were not always bet- ter than the results oftwo-omics integration. While this observation is counter-intuitive and deserves further investigation, we believe that it is the consequence ofthree intertwined fac- tors: (1) the negatively-correlated noises in the omics data which may cancel out useful infor- mation; (2) the redundancy in different types ofomics data; and (3) the computational/ statistical challenges that integrating excessive datasets impose on the integration methods pre- venting them from making the best use ofthe information, if any, in the multi-omics datasets, to calculate optimal solutions.
+
+another surprising observation on the significance ofDNA methylation data in the effectiveness ofintegration methods
+
+Our analysis on the effectiveness ofthe 11 possible combinations, however, shows that only one combination in 2 and 3 omics datasets can be considered to be effective. This is unexpected as methylation had been proven to play an important role in cancer and has been the most common data type used in previous research on integrated multi-omics data for cancer subtyping. We leave it to future work to understand this unexpected phenomenon, but speculate that it is the result of the following three factors ofour experiments: (1) certain characteristics ofthe methylation data that do not fit the model assumption ofsome ofthe ten integration methods, resulting in a much lower overall effectiveness score for those ofthe methylation-participating combina- tions in our evaluation; (2) the data processing step in which we mapped all the features to genes in methylation and CNV datasets as previous studies did, resulting in a loss ofsome sig- nificant information; and (3) performance criterion that uses clinical-based metrics as well as clustering-based metrics, in comparison to previous studies where only one metric may be used
 
 ### Paull et al. 2021 - MOMA
 
@@ -740,7 +909,35 @@ we have employed a fully Bayesian approach to infer the posteriori ofparameters 
 
 
 
+##### Raj-Kumar et al. 2019
 
+Principle Component Analysis-based iterative PAM50 subtyping (PCA-PAM50) to perform intrinsic subtyping in ER status unbalanced cohorts
+
+This method leverages PCA and iterative PAM50 calls to derive the gene expression-based ER status and a subsequent ER-balanced subset for gene centering.
+
+Applying PCA-PAM50 to three different breast cancer study cohorts, we observed improved consistency (by 6–9.3%) between intrinsic and clinical subtyping for all three cohorts. Particularly, a more aggressive subset of luminal A (LA) tumors as evidenced by higher MKI67 gene expression and worse patient survival outcomes, were reclassified as luminal B (LB) increasing the LB subtype consistency with IHC by 25–49%.
+
+ftp://ftp.wriwindber.org
+
+PCA-PAM50 enhances the consistency of breast cancer intrinsic and clinical subtyping by reclassifying an aggressive subset of LA tumors into LB. PCA-PAM50
+
+The originally defined normal-like1 (Normal) breast cancer subtype is now less frequently used6–8. Clinical subtyping of BC is based on immunohistochemistry (IHC) assays for the estrogen receptor (ER), progesterone receptor (PR), and human epidermal growth factor receptor 2 (HER2). More institutions now include Ki67, thus classifying tumors into triple-negative (TN; ER−/PR−/HER2−), HER2+ (ER−/PR−/HER2+), LA (ER+/HER2−/Ki67−), LB1 (ER+/HER2−/Ki67+) and LB2 (ER+/HER2+)9–12. For clarity, we will refer to clinical subtyping as IHC subtyping
+
+IHC subtyping is the only accepted molecular assay for patient treatment decision-making13–17. BC intrinsic and clinical subtypes do not completely match even when comparing intra-subtypes, especially for LB18
+
+The PAM505 classifier, which is also deployed in Genefu Bioconductor package20, makes calls based on the 50 gene centroid correlation distance to LA, LB, Basal, Her2 and normal-like centroids
+
+the application of the PAM50 algorithm has its challenges. The two main challenges are (1) balancing ER status and
+
+(2) the gene centering procedures5,21. The PAM50 classifier works accurately if the original cohort/dataset is ER status-balanced. However this is often not the case with most genome-wide studies. In such cases, a conventional strategy is to choose a subset which is ER status-balanced and use the median derived from that subset to gene center the entire cohort. In practice, an ER-balanced subset is chosen based on IHC-defined ER status. There have been reports that IHC-defined ER status, which is based on protein expression, not being completely consistent with ER status defined by gene expression22,23. This inconsistency may impact the accuracy of the subsequent gene centering procedure which is aimed to minimize the bias of the dynamic range of the expression profile per sequencing technology. As a result, such inconsistency may contribute to the discrepancy between the IHC and PAM50 subtyping results.
+
+Hence, we explored the possibility of using a gene expression-based ER-balanced sub- set for gene centering leveraging principal component analyses (PCA) and iterative PAM50 calls to avoid intro- ducing protein expression-based data into a gene expression-based subtyping method. We validated our method termed PCA-PAM50 usig three different primary breast tumor datasets: an in-house 118 patients cohort, The Cancer Genome Atlas (TCGA)24 Breast cancer RNA-Seq 1097 patients cohort obtained from the Genomic Data Commons [https://gdc.cancer.gov/], and the Molecular Taxonomy of Breast Cancer International Consortium (METABRIC)25 discovery set of 997 patients. Our method resulted in improved consistency between PAM50 calls and IHC subtypes compared to the conventional method for all three cohorts, and this improved consistency is attributable to re-classification of an aggressive subset of LA tumors as LB
+
+The PAM50 calls resulting from the use of the primary ER-balanced subset are called conventional intrinsic subtypes. The secondary ER-balanced set was based on principal com- ponent 1 (PC1) separation that agreed with IHC status: ER-negative
+
+The PAM50 calls result- ing from the use of the secondary ER-balanced subset are called intermediate intrinsic subtype. The tertiary ER-balanced set was based on the intermediate intrinsic subtype’s Basal and LA calls
+
+The PAM50 calls resulting from the use of the tertiary ER-balanced set are called refined intrinsic subtype
 
 
 
@@ -1177,4 +1374,22 @@ We propose a new differential network analysis method to address the above chall
 ##### Ben Guebila et al. 2021
 
  GRAND (https://grand.networkmedicine.org) as a database for computationally-inferred, context-specific gene  regulatory network models that can be compared between biological  states, or used to predict which drugs produce changes in regulatory  network structure. The database includes 12 468 genome-scale networks  covering 36 human tissues, 28 cancers, 1378 unperturbed cell lines, as  well as 173 013 TF and gene targeting scores for 2858 small  molecule-induced cell line perturbation paired with phenotypic  information. GRAND allows the networks to be queried using phenotypic  information and visualized using a variety of interactive tools.
+
+
+
+##### Gamez et al. 2015
+
+Statistical analyses were conducted to associate miRNAs and
+proteins. As a first approach to describe associations present in our database, we choose probabilistic graphical models com- patible with high dimensionality. The result is an undirected graphical model with local minimum Bayesian Information Criterion (BIC; ref. 14) obtained after executing the next steps: first the spanning tree with maximum likelihood is found and then (I), a forward search is performed by successively adding edges that reduce the BIC and still preserve the decomposability (15) of the initial graph (II). In the first stage, in order to learn a Markov tree structure from a random sample of a supposed multidimensional normal population, we used the extension of the Chow–Liu solution (16), according to which, for categorical data, the maximum likelihood structure is given by the max- imum weight spanning tree (17) with empirical mutual infor- mation quantities (18) as edge weights. In the Gaussian case, a similar reasoning applies, but now the mutual information value is ?(1/2)log(1 ? r2), where r is the empirical correlation coefficient between the two variables (nodes) joined by the edge. Given that the algorithm is invariant under monotone transformations of the variables, r2 can be used as a weight. In the second phase, we introduce the BIC criterion that penalizes more complex models and then, simpler graphs are generated. This is a fundamental objective in high-dimensional problems. Both methods are implemented in the open-source statistical programming language R (19). In particular, the functions minForest and stepw,inthe gRapHD package (20), are used for phases I and II, respectively
+
+ Functional node identification and activity measurement To identify functional nodes within the probabilistic graphical
+models, we split it in several branches. Then, we used Gene Ontology analyses to investigate which function or functions were over-represented in each branch. To measure the functional activity ofeach node, we calculated the mean expression ofall the proteins included in one branch related with a concrete function. Differences in node activity between ERþ and TNBC samples were assessed by class comparison analyses
+
+One obvious limitation of proteomics when compared with genomics is that genomics can measure the expression of all known genes in the same experiment, whereas proteomics only provides a measurement of peptides that are both detected and identified. This
+
+
+
+
+
+
 

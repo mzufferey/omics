@@ -8,8 +8,6 @@ www. breastcancerlandscape.org
 
 an unbiased analysis of **breast tumor proteomes**, inclusive of **9995 proteins** quantified across all tumors, for the first time **recapitulates BC subtypes**. 
 
-
-
 **poor-prognosis basal-like and luminal B tumors are further subdivided by immune component infiltration**, suggesting the current classification is incomplete
 
 proteome-based **networks** distinguish **functional protein modules** for breast tumor groups, with co-expression of EGFR and MET marking ductal carcinoma in situ regions of normal-like tumors and lending to a **more accurate classification** of this poorly defined subtype
