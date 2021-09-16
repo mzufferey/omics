@@ -139,6 +139,15 @@ The PAM505 classifier, which is also deployed in Genefu Bioconductor package20, 
 
 Proteomic data were accessed and downloaded using the R package “TCGA-Assembler 2” (27, 28) from the CPTAC
 
+
+
+All computations were carried out on the R platform. Package “fastICA” which implements the iterative FastICA algorithm (15) was used to extract non-Gaussian independent components with logcosh contrast function. Components were subsequently assigned to clusters using the “cluster” package. Clusters were visualized with 2d t-SNE using the R package “tsne.” The number of clusters was determined as equal to number of components extracted at each run of ICA. When the number of samples is small comparing to the number of features, which is usually the case for biological data, it is convenient to retrieve as many as independent signal sources as possible, and the number of compo- nents extracted is equal to sample size
+
+
+
+The package “pcaMethods” was used to calculate principal com-
+ponents for comparison with independent components. In
+
 ### Python packages
 
  https://github.com/bioFAM/MOFA. 
@@ -175,9 +184,19 @@ Gene ontology (GO) analyses were performed using ToppGene (https//topgene.cchmc.
 
 
 
+CIBERSORT RNA-based estimates of overall I-TME provided by CI- BERSORT absolute scores (immune cell infiltration from RNA data)
 
 
-gephi
+
+A website for interactive visualization of the multi-omics dataset is available at: http://prot-shiny-vm.broadinstitute.org:3838/ CPTAC-BRCA2020. The
+
+
+
+gephi for graph vizualization
+
+
+
+
 
 ### Public data
 
@@ -583,3 +602,41 @@ Significant pathway annotations (FDR < 0.05) from the Panther over-representa- t
 
 
 TCGA aggregates an extensive col- lection of omics and clinical datasets from large cohorts of patients for more than 30 types of cancers (24). It also ar- chives histopathology images for solid tumor samples from which omics data were sampled. Currently, more than 24,000 histopathology images are available and can be visualized at the Cancer Digital Slide Archive (CDSA, http://cancer. digitalslidearchive.net/). In addition, The NCI Clinical Proteomic Tumor Analysis Consortium (CPTAC) (https://proteomics. cancer.gov/programs/cptac) program also provides high- throughput proteomic data for some of the TCGA tumor spec- imens such as breast cancer, ovarian cancer, and colorectal cancer based on mass-spectrometry technology. These
+
+
+
+To facilitate use and dissemination of the data, we have developed a web resource (https://zucchini.gs. washington.edu/BreastCancerProteome/) in which protein abundances can be queried and correlated to genomic and drug sensitivity data, as presented below. 
+
+
+
+m the Genomics of Drug Sensitivity in Cancer (CRx) resource (Yang et al., 2013)
+
+
+
+e https://lincs.hms.harvard.edu/db/datasets/20343
+
+We performed quantitative proteomics on 61 human-derived breast cancer cell lines to a depth of ~13,000 proteins. The
+
+. All datasets are freely available as public resources on the LINCS portal.
+
+7197 proteins measured in all cell lines
+
+
+
+single cell data breast cancer
+
+scRNA-seq data are available for in-browser exploration and download through the Broad Institute Single Cell portal at https://singlecell. broadinstitute.org/single_cell/study/SCP1039. Processed scRNA-seq data from this study are also available through the Gene Expression Omnibus under accession number GSE176078.
+
+
+
+known interaction pairs from CORUM database
+
+
+
+
+
+essential survival gene datasets from The Cancer Dependency Map, the latter of which catalogs genes driving cancer progression
+
+
+
+BioMuta and BioXpress: mutation and expression knowledgebases for cancer biomarker discovery

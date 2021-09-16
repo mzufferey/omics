@@ -25,11 +25,11 @@
 
 ### Zhang et al. 2011
 
-a linear model to explain similarities between disease phenotypes using gene proximities that are quantified by diffusion kernels of one or more PPI networks. We solve this model via a Bayesian approach, and we derive an analytic form for Bayes factor that naturally measures the strength of association between a query disease and a candidate gene and thus can be used as a score to prioritize candidate genes
+a linear model to explain similarities between disease phenotypes using gene proximities that are quantified by diffusion kernels of one or more PPI networks. We solve this model via a **Bayesian approach**, and we derive an analytic form for Bayes factor that naturally measures the strength of association between a query disease and a candidate gene and thus can be used as a score to prioritize candidate genes
 
 This method is intrinsically capable of integrating multiple PPI networks
 
-The Bayesian regression approach can achieve much higher performance than the existing CIPHER approach and the ordinary linear regression method.
+The **Bayesian regression approach** can achieve much higher performance than the existing CIPHER approach and the ordinary linear regression method.
 
 Most existing computational methods for inferring causative genes from candidates are formulated as a one-class novelty learning problem that is usually solved with the guilt-by-association principle,  which suggests to compute a score from functional genomics data to quantify the strength of association between a query dis- ease and a candidate gene, and then rank candidate genes according to their scores to facilitate the selection of susceptibility genes [4].
 
@@ -38,8 +38,8 @@ cient of similarities between phenotypes and closeness of genes in a single prot
 
 However, PPI networks are far from complete.
 
-we propose a Bayesian
-regression approach that can be used with either a single PPI network or multiple networks to prioritize candidate genes. We adopt a linear model to explain disease simi- larity using gene proximity, and we solve this model via a Bayesian approach, which yields an analytic form of Bayes factor for measuring the strength of association between a query disease and a candidate gene. We then use Bayes factors as scores to prioritize candidate genes. We show the validity of assumptions of this approach, and we demonstrate the effectiveness of this approach on five PPI networks via large scale leave-one-out cross- validation experiments and comprehensive statistical analysis. We further show the capability of our approach in integrating multiple PPI networks
+we propose a **Bayesian**
+**regression approach that can be used with either a single PPI network or multiple networks to prioritize candidate genes**. We adopt a linear model to explain disease simi- larity using gene proximity, and we solve this model via a Bayesian approach, which yields an analytic form of Bayes factor for measuring the strength of association between a query disease and a candidate gene. We then use Bayes factors as scores to prioritize candidate genes. We show the validity of assumptions of this approach, and we demonstrate the effectiveness of this approach on five PPI networks via large scale leave-one-out cross- validation experiments and comprehensive statistical analysis. We further show the capability of our approach in integrating multiple PPI networks
 
 known associations between disease phenotypes and genes extracted from the Online Mendelian Inheritance in Man (OMIM) database
 
@@ -59,7 +59,7 @@ We adopt a linear regression model to explain disease similarities in the phenot
 
 ### Neapolitan et al. (2013)
 
-the expression level of genes in signaling pathways can be modeled using a causal Bayesian network (BN) that is altered in tumorous tissue. 
+the **expression level of genes in signaling pathways can be modeled using a causal Bayesian network (BN)** that is altered in tumorous tissue. 
 
 the expression levels of genes that code for proteins on a signal transduction network (STP) are causally related and that this causal structure is altered when the STP is involved in cancer.
 
@@ -103,14 +103,6 @@ to investigate whether the causal structure of the expression levels of genes on
 
 
 
-
-
-
-
-
-
-
-
 ### Tovar et al. 2015
 
 880 microar-
@@ -118,12 +110,12 @@ ray expression profiles from several experimental datasets that are available on
 
 
 
-First, we generated a network for every known human TF in the primary breast cancer gene expression dataset by using the Algorithm for the Reconstruction of Accurate Cellu- lar Networks (ARACNE) (Basso et al., 2005; Margolin et al., 2006). ARACNE is a computational algorithm widely used to identify statistical relationships among genes, by calculating the mutual information (MI) between gene pairs from microarray expression data (Basso et al., 2005; Margolin et al., 2004)
+First, we **generated a network for every known human TF in the primary breast cancer gene expression dataset by using the Algorithm for the Reconstruction of Accurate Cellu- lar Networks (ARACNE)** (Basso et al., 2005; Margolin et al., 2006). ARACNE is a computational algorithm widely used to identify statistical relationships among genes, by calculating the mutual information (MI) between gene pairs from microarray expression data (Basso et al., 2005; Margolin et al., 2004)
 
 
 
-MARINais designed to infer transcription factors that control the
-transition between two phenotypes A and B, as well as the mainte- by the activation or repression of specific TFs then their targets nance of the latter phenotype. If the A→B transition is supported should be among the most differentially expressed genes between the two cellular phenotypes, with activated and repressed targets at opposite ends of the expression range. MARINa estimates the importance and biological relevance of a TF on a given phenotype by computing the statistical significance of the overlap between its regulon and the gene expression signature using sample per- mutation to estimate the distribution of the enrichment score (ES) (Subramanian et al., 2005) in the null condition (Lefebvre et al. 2010)
+**MARINais designed to infer transcription factors that control the**
+**transition between two phenotypes A and B, as well as the mainte- by the activation or repression of specific TFs then their targets nance of the latter phenotype.** If the A→B transition is supported should be among the most differentially expressed genes between the two cellular phenotypes, with activated and repressed targets at opposite ends of the expression range. **MARINa estimates the importance and biological relevance of a TF on a given phenotype by computing the statistical significance of the overlap between its regulon and the gene expression signature using sample per- mutation to estimate the distribution of the enrichment score (ES) (Subramanian et al., 2005) in the null condition (Lefebvre et al. 2010)**
 
 
 
@@ -135,7 +127,7 @@ shadowingand synergy ofTMRsover their target gene sets (Lefebvre et al., 2010).
 
 
 
-Causal network (CN) analysis
+**Causal network (CN) analysis**
 
 (the Ingenuity Knowledge Base
 (IKB)). IKB reports a series of experimentally observed cause- effect relationships related to transcription, expression, activation, molecular modification, binding events and transport processes
@@ -146,8 +138,7 @@ Network informa- tion was supplied with differential expression analysis between
 
 
 
-Causal network (CN) analysis was performed with the Inge-
-nuity Pathway Analysis method ((IPA®,
+Causal network (CN) analysis was performed with the Ingenuity Pathway Analysis method ((IPA®,
 
 
 
@@ -185,6 +176,41 @@ MR Analysis MRs for a specific gene expression signature were defined as TFs who
 
 
 
+### Mertins et al. 2016
+
+Here we describe quantitative mass-spectrometry-based proteomic and phosphoproteomic analyses of 105 genomically annotated breast cancers, of which 77 provided high-quality data
+
+To provide greater analytical breadth, the NCI Clinical Proteomic Tumor Analysis Consortium (CPTAC) is using mass spectrometry to analyse the proteomes of genome-annotated TCGA tumour samples5,
+
+The cohort included a balanced rep- resentation of PAM50-defined intrinsic subtypes9 including 25 basal- like, 29 luminal A, 33 luminal B, and 18 HER2 (ERBB2)-enriched tumours, along with 3 normal breast tissue samples. Samples were analysed by high-resolution accurate-mass tandem mass spectrom- etry (MS/MS) that included extensive peptide fractionation and phosphopeptide enrichment (Extended Data Fig. 1a)
+
+12,553 proteins (10,062 genes) and 33,239 phosphosites, with their relative abundances quantified across tumours, were used in subsequent analyses in this study.
+
+clustering analyses were first restricted to the reduced set of PAM50 genes. When RNA data for the 50 PAM50 genes were clustered directly (without using a classifier), the clus- tering was similar to the TCGA PAM50 annotation (second anno- tation bar in Fig. 3a). Restricting both the RNA and proteome data to the set of 35 PAM50 genes observed in the proteome produced a similar result (bottom two annotation bars in Fig. 3a), and all of the major PAM50 groups were recapitulated in the proteome almost as well as in the RNA data
+
+Global proteome and phosphoproteome data were then used to identify proteome subtypes in an unsupervised manner. Consensus clustering identified basal-enriched, luminal-enriched, and stromal-enriched clusters (Extended Data Figs 6a–d, 7a). Unlike the clustering observed with PAM50 genes, mRNA-defined HER2- enriched tumours were distributed across these three proteomic sub- groups. 
+
+The basal-enriched and luminal-enriched groups showed a strong overlap with the mRNA-based PAM50 basal-like and luminal subgroups, whereas stromal-enriched proteome subtype represented a mix of all PAM50 mRNA-based subtypes, and has a significantly enriched stromal signature (Extended Data Fig. 3e). Among the stromal-enriched tumours there was strong representation of reac- tive type I tumours, as classified by RPPA (Supplementary Table 12), showing agreement between the RPPA and mass-spectrometry-based protein analyses for the detection of a tumour subgroup characterized by stromal gene expression1
+
+As the basal- and luminal-enriched proteome subgroups are
+coherent, pathway analyses were conducted on these two subtypes, using the stromal-enriched subgroup as a control to assess spec- ificity (Fig. 3c, Extended Data Fig. 7b, Supplementary Table 13). The luminal-enriched subgroup was exclusively enriched for oestradiol- and ESR1-driven gene sets. In contrast, multiple gene sets were enriched and upregulated specifically in the basal-like tumours. Particularly extensive basal-like enrichment was seen for MYC target genes; for cell cycle, checkpoint, and DNA repair pathways including regulators AURKA/B, ATM, ATR, CHEK1/2, and BRCA1/2; and for immune response/inflammation, including T-cell, B-cell, and neutro- phil signatures. The complementarity of transcriptional, proteomic, and phosphoproteomic data was also highlighted in these analyses (Extended Data Fig. 7c, d)
+
+
+
+Using phosphorylation status as a proxy for activity, phosphop-
+roteome profiling can theoretically be used to develop a signalling- pathway-based cancer classification. K-means consensus clustering was therefore performed on pathways derived from single sample gene set enrichment analysis (GSEA) of phosphopeptide data (Methods, Supplementary Tables 14 and 15). Of four robustly segregated groups, subgroups 2 and 3 substantially recapitulated the stromal- and luminal-enriched proteomic subgroups, respectively (Fig. 3d, Extended Data Fig. 8a). Subgroup 4 included a majority of tumours from the basal-enriched proteomic subgroup, but was admixed par- ticularly with luminal-enriched samples. This subgroup was defined by high levels of cell cycle and checkpoint activity. All basal and a majority of non-basal samples in this subgroup had TP53 mutations. Consistent with high levels of cell cycle activity, a multivariate kinase– phosphosite abundance regression analysis highlighted CDK1 as one of the most highly connected kinases in this study (Extended Data Fig. 8b, Supplementary Table 16). Subgroup 1 was a novel subgroup defined exclusively in the phosphoproteome pathway activity domain, with no enrichment for either proteomic or PAM50 subtypes. It was defined by G protein, G-protein-coupled receptor, and inositol phos- phate metabolism signatures, as well as ionotropic glutamate signal- ling (Fig. 3d). Co-expression patterns among genes/proteins across different subgroups were also analysed using a Joint Random Forest method25 that identified network modules, such as an MMP9 mod- ule, with different interaction patterns between basal-enriched and luminal-enriched subgroups. These latter patterns appeared specific to the proteome-level data (Extended Data Fig. 8c–f, Supplementary Table 17 and Supplementary Methods)
+
+
+
+A central goal in breast cancer research has been the identification
+of druggable kinases beyond HER2
+
+
+
+
+
+
+
 ### Alvarez et al. 2016
 
 We have previously shown that regulon analysis, using the master
@@ -205,7 +231,7 @@ VIPER uses a fully probabilistic yet efficient enrichment analysis framework, su
 
 ### Aibar et al. 2017
 
-scenic, a computational method for simultaneous gene regulatory network reconstruction and cell-state identification from single-cell rna-seq data (http://scenic. aertslab.org). on a compendium of single-cell data from tumors and brain, we demonstrate that cis-regulatory analysis can be exploited to guide the identification of transcription factors and cell states. scenic provides critical biological insights into the mechanisms driving cellular heterogeneity.
+**scenic, a computational method for simultaneous gene regulatory network reconstruction and cell-state identification from single-cell rna-seq data** (http://scenic. aertslab.org). on a compendium of single-cell data from tumors and brain, we demonstrate that cis-regulatory analysis can be exploited to guide the identification of transcription factors and cell states. scenic provides critical biological insights into the mechanisms driving cellular heterogeneity.
 
 
 
@@ -214,9 +240,9 @@ SCENIC workflow consists of three steps (Fig. 1a, Supplementary Fig. 1 and see O
 we developed the AUCell algorithm to score
 the activity of each regulon in each cell (Supplementary Figs. 1c and 2, and see Online Methods). For a given regulon, comparing AUCell scores across cells makes it possible to identify which cells have significantly higher subnetwork activity. The resulting binary activity matrix has reduced dimensionality, which can be useful for downstream analyses.
 
-SCENIC workflow. SCENIC is a workflow based on three new R/bioconductor packages: (i) GENIE3, to identify potential TF targets based on coexpression; (ii) RcisTarget, to perform the TF- motif enrichment analysis and identify the direct targets (regu- lons); and (iii) AUCell, to score the activity of regulons (or other gene sets) on single cells. We
+**SCENIC workflow. SCENIC is a workflow based on three new R/bioconductor packages: (i) GENIE3, to identify potential TF targets based on coexpression; (ii) RcisTarget, to perform the TF- motif enrichment analysis and identify the direct targets (regu- lons); and (iii) AUCell, to score the activity of regulons (or other gene sets) on single cells.** We
 
-GENIE3. GENIE3 (ref. 8) is a method for inferring gene regula- tory networks from gene expression data. In brief, it trains ran- dom forest models predicting the expression of each gene in the data set and uses as input the expression of the TFs. The different models are then used to derive weights for the TFs, measuring their respective relevance for the prediction of the expression of each target gene. The highest weights can be translated into TF-target regulatory links8. Since GENIE3 uses random-forest regression, it has the added value of allowing complex (e.g., non- linear) coexpression relationships between a TF and its candidate targets
+**GENIE3. GENIE3 (ref. 8) is a method for inferring gene regula- tory networks from gene expression data. In brief, it trains ran- dom forest models predicting the expression of each gene in the data set and uses as input the expression of the TFs. The different models are then used to derive weights for the TFs, measuring their respective relevance for the prediction of the expression of each target gene.** The highest weights can be translated into TF-target regulatory links8. Since GENIE3 uses random-forest regression, it has the added value of allowing complex (e.g., non- linear) coexpression relationships between a TF and its candidate targets
 
 The input to GENIE3 is an expression matrix. The preferred
 expression values are gene-summarized counts (which might or might not use unique molecular identifiers, UMIs25). Other meas- urements, such as counts or transcripts per million (TPM) and FPKM/RPKM are also accepted as input. However, note that the first network-inference step is based on coexpression, and some authors recommend avoiding within-sample normalizations (i.e., TPM) for this task because they may induce artificial covaria- tion26
@@ -225,9 +251,9 @@ The output of GENIE3 is a table with the genes, the potential regulators, and th
 
 GRNBoost. GRNBoost is based on the same concept as GENIE3: inferring regulators for each target gene purely from the gene expression matrix. However, GRNBoost does so using the gra- dient-boosting machines (GBM)28 implementation from the XGBoost library29. A GBM is an ensemble learning algorithm that uses boosting30 as a strategy to combine multiple weak learners, like shallow trees, into a strong one. This contrasts with random forest, the method used by GENIE3, which uses bag- ging (bootstrap aggregation) for model averaging to improve regression accuracy. GRNBoost uses gradient-boosted stumps (regression trees of depth 1)31 as the base learner. GRNBoost’s main contribution is casting this multiple regression approach into a Map/Reduce32 framework based on Apache Spark2
 
-RcisTarget. RcisTarget is a new R/Bioconductor implementation of the motif enrichment framework of i-cisTarget and iRegulon RcisTarget identifies enriched TF-binding motifs and candidate transcription factors for a gene list. In brief, RcisTarget is based on two steps. First, it selects DNA motifs that are significantly over- represented in the surroundings of the transcription start site (TSS) of the genes in the gene set. This is achieved by applying a recovery-based method on a database that contains genome-wide cross-species rankings for each motif. The motifs that are anno- tated to the corresponding TF and obtain a normalized enrich- ment score (NES) > 3.0 are retained. Next, for each motif and gene set, RcisTarget predicts candidate target genes (i.e., genes in the gene set that are ranked above the leading edge). 
+RcisTarget. RcisTarget is a new R/Bioconductor implementation of the motif enrichment framework of i-cisTarget and i**Regulon RcisTarget identifies enriched TF-binding motifs and candidate transcription factors for a gene list.** In brief, RcisTarget is based on two steps. First, it selects DNA motifs that are significantly over- represented in the surroundings of the transcription start site (TSS) of the genes in the gene set. This is achieved by applying a recovery-based method on a database that contains genome-wide cross-species rankings for each motif. The motifs that are anno- tated to the corresponding TF and obtain a normalized enrich- ment score (NES) > 3.0 are retained. Next, for each motif and gene set, RcisTarget predicts candidate target genes (i.e., genes in the gene set that are ranked above the leading edge). 
 
-AUCell. AUCell is a new method that allows researchers to iden- tify cells with active gene regulatory networks in single-cell RNA- seq data. The input to AUCell is a gene set, and the output is the gene set ‘activity’ in each cell. In SCENIC, these gene sets are the regulons, which consist of the TFs and their putative targets. AUCell calculates the enrichment of the regulon as an area under the recovery curve (AUC) across the ranking of all genes in a par- ticular cell, whereby genes are ranked by their expression value. This method is therefore independent of the gene expression units and the normalization procedure
+AUCell. **AUCell is a new method that allows researchers to iden- tify cells with active gene regulatory networks in single-cell RNA- seq data.** The input to AUCell is a gene set, and the output is the gene set ‘activity’ in each cell. In SCENIC, these gene sets are the regulons, which consist of the TFs and their putative targets. AUCell calculates the enrichment of the regulon as an area under the recovery curve (AUC) across the ranking of all genes in a par- ticular cell, whereby genes are ranked by their expression value. This method is therefore independent of the gene expression units and the normalization procedure
 
 Cell clustering based on gene regulatory networks. The cell regulon activity is summarized in a matrix in which the columns represent the cells and the rows the regulons. In the binary regu- lon activity matrix, the coordinates of the matrix that correspond to active regulons in a given cell will contain a “1,” and “0” oth- erwise. The equivalent matrix, which contains the continuous AUC values for each cell regulon, is normally referred to as the AUC activity matrix. Clustering of either of the regulon activ- ity matrices reveals groups of regulons (jointly, a network) that are recurrently active across a subset of cells. The binary activity matrix tends to highlight higher order similarities across cells (and therefore highly reduces batch effects and technical biases); on the other hand, the AUC matrix allows researchers to observe more subtle changes. 
 
@@ -237,9 +263,9 @@ Cell clustering based on gene regulatory networks. The cell regulon activity is 
 
 ### Gao et al. 2017
 
-identifying cancer pathway modules through coordination between coverage and exclusivity.
+i**dentifying cancer pathway modules through coordination between coverage and exclusivity.**
 
-CovEx, to predict the specific patient oriented modules by 1) discovering candidate modules for each considered gene, 2) extracting significant candidates by harmonizing coverage and exclusivity and, 3) further selecting the patient oriented modules based on a set cover model.
+**CovEx, to predict the specific patient oriented modules by 1) discovering candidate modules for each considered gene, 2) extracting significant candidates by harmonizing coverage and exclusivity and, 3) further selecting the patient oriented modules based on a set cover model.**
 
 https:// sourceforge.net/projects/cancer-pathway/files/
 
@@ -275,14 +301,14 @@ Biologically, each patient should have at least one driver module, and the drive
 
 ### Fu et al. 2017
 
-d probabilistic graphical model to develop a new method that integrates genetic interaction and protein interaction data and infers exquisitely detailed pathway structure. We modeled the pathway network as Bayesian network and applied this model to infer pathways for the coherent subsets of the global genetic interaction profiles, and the available data set of endoplasmic reticulum genes.
+d probabilistic graphical model to develop a new method that integrates genetic interaction and protein interaction data and infers exquisitely detailed pathway structure. **We modeled the pathway network as Bayesian network** and applied this model to infer pathways for the coherent subsets of the global genetic interaction profiles, and the available data set of endoplasmic reticulum genes.
 
 The protein interaction data were derived from the BioGRID database. Our
 
 . In order to automatically identify detailed pathway structures using high-throughput genetic interaction data, the activity pathway network (APN) was developed [26]. However, these available approaches cannot fully take advantages of the comple- mentarity between protein and genetic interaction data to infer the biological pathway structures.
 
-we present a Bayesian model that inte-
-grates high-throughput protein and genetic interaction data to reconstruct detailed biological pathway structures. The model can organize related genes into the corre- sponding pathways, arrange the order of genes within each pathway, and decide the orientation of each intercon- nection. Based
+we present **a Bayesian model that inte-**
+**grates high-throughput protein and genetic interaction data to reconstruct detailed biological pathway structures. The model can organize related genes into the corre- sponding pathways, arrange the order of genes within each pathway, and d**ecide the orientation of each intercon- nection. Based
 
 Based on protein interaction network, the model predicts detailed pathway structures by using genetic interaction information to delete redundancy edges and reorient the kept edges in the network.
 
@@ -296,7 +322,7 @@ our model is able to improve computational efficiency of stochastic simulation a
 
 ### Walsh et al. 2017
 
-A model of transcriptional regulation in breast carcinoma is assembled with ARACNe
+A model of transcriptional regulation in breast carcinoma is assembled with **ARACNe**
 
 Interrogating this network reveals a transcriptional hierarchy underlying metastasis
 
@@ -308,13 +334,13 @@ we ap- proached metastatic progression as a transition between two cellular stat
 
 we investigated the specific transcriptional regulators responsible for initiating this transition, and ultimately for maintaining the stability of the metastatic state, based on their mechanistic ability to regulate differentially expressed genes (i.e., the transition signature).
 
-the specific transcriptional regulators that determine such cancer-related state transitions can be efficiently and systematically elucidated by interrogating tu- mor-specific transcriptional networks (henceforth interac- tomes) with representative differential gene expression signa- tures, using the virtual inference of protein activity by regulon enrichment analysis (VIPER) algorithm (Alvarez et al., 2016), which further extends the master regulator inference algorithm (MARINa) (Lefebvre et al., 2010) to the analysis of single samples
+the specific transcriptional regulators that determine such cancer-related state transitions can be efficiently and systematically elucidated by interrogating tu- mor-specific transcriptional networks (henceforth interac- tomes) with representative differential gene expression signa- tures, **using the virtual inference of protein activity by regulon enrichment analysis (VIPER) algorithm (Alvarez et al., 2016), which further extends the master regulator inference algorithm (MARINa)** (Lefebvre et al., 2010) to the analysis of single samples
 
 we first assembled a breast cancer-specific regulatory network, using the algorithm for the reconstruction of accurate cellular networks (ARACNe) (Basso et al., 2005; Margolin et al., 2006b). 
 
 Then we identified differen- tial gene expression signatures representing same-patient cell state transitions from primary tumors to lymph node metas- tases, using both ER-positive (ER+) and triple-negative breast cancer (TNBC) samples. 
 
-Finally, we used the VIPER algorithm to prioritize transcriptional regulators that are the most likely causal determinants of these metastasis-related signatures
+Finally, we **used the VIPER algorithm to prioritize transcriptional regulators that are the most likely causal determinants of these metastasis-related signatures**
 
 
 
@@ -325,12 +351,12 @@ thus representing candidate causal determinants of breast carci- noma metastatic
 
 To assemble a breast carcinoma-specific interactome, we analyzed 851 The Cancer Genome Atlas (TCGA) breast carcinoma gene expression pro- files using the ARACNe algorithm
 
-ARACNe is an information theory-based approach to infer mechanistic interactions between transcription factors (TFs) and target genes based on large sets of gene expression data, which has proven very effective in assembling interac- tomes for VIPER analysis (Alvarez
+**ARACNe is an information theory-based approach to infer mechanistic interactions between transcription factors (TFs) and target genes based on large sets of gene expression data, which has proven very effective in assembling interac- tomes for VIPER analysis** (Alvarez
 
-The ARACNe-inferred breast cancer interactome included 1,748 TFs, regulating 18,783 target genes through 365,634 transcriptional interactions.
+The **ARACNe-inferred breast cancer interactome included 1,748 TFs, regulating 18,783 target genes through 365,634 transcriptional interactions.**
 
-Finally, we inferred the regulatory proteins that are candi-
-date drivers of the MET-GES by VIPER analysis of the breast carcinoma interactome. The
+**Finally, we inferred the regulatory proteins that are candi-**
+**date drivers of the MET-GES by VIPER analysis of the breast carcinoma interactome.** The
 
 The algorithm prioritizes the regulatory proteins that are the most likely determinants of an observed differential expression signature, and thus of the associated cell state transition, by assessing the enrichment of their direct targets (regulons) in differentially expressed signature genes (i.e., in genes that are over- or underexpressed during metastatic progression, in this case). Thus, the ARACNe-inferred regulon of each regulatory protein (Table S2) is used as a highly multi- plexed, endogenous reporter for its role in physically controlling metastatic progression.
 
@@ -347,7 +373,7 @@ For single patient-based analysis, gene expression signatures were computed by c
 
 ### Guo et al. 2018
 
-identify the personalized-sample driver genes from the cancer omics data due to the lack of samples for each individual. To circumvent this problem, here we present a novel single-sample controller strategy (SCS) to identify personalized driver mutation profiles from net- work controllability perspective
+identify the personalized-sample driver genes from the cancer omics data due to the lack of samples for each individual. To circumvent this problem, here we present a novel **single-sample controller strategy (SCS)** to identify personalized driver mutation profiles from net- work controllability perspective
 
 SCS integrates mutation data and expression data into a reference molecular network for each patient to obtain the driver mutation profiles in a personalized-sample manner
 
@@ -415,7 +441,7 @@ a third major application of co- expression modules is in the inference of gene 
 
 We propose a network-based method to detect cancer specific driver modules (CSDM) in a certain cancer type to other cancer types.
 
-We construct the specific network of a cancer by combining specific coverage and mutual exclusivity in all cancer types, to catch the specificity of the cancer at the pathway level.
+We construct **the specific network of a cancer by combining specific coverage and mutual exclusivity** in all cancer types, to catch the specificity of the cancer at the pathway level.
 
 In this work, we propose a network-based method to detect cancer specific driver modules
 (CSDM), which can catch the specificity of a certain cancer type to other cancer types at the pathway level. A cancer specific driver module must have high coverage and high exclusivity in a certain cancer, and a higher percentage of samples in this cancer than other cancer types. We first construct the specific network for a certain cancer type by integrating specific coverage and mutual exclusivity in all cancer types. Then, we use a greedy algorithm to detect all of the specific driver modules in the specific network. 
@@ -441,9 +467,9 @@ that have at least three genes as the specific driver modules. This greedy algor
 
 ### Boltz et al. 2019
 
-determined collective influencers (CI), defined as network nodes that damage the integrity of the underlying networks to the utmost degree
+determined **collective influencers (CI)**, defined as network nodes that damage the integrity of the underlying networks to the utmost degree
 
-Morone and Makse22 introduced an optimization method to determine an optimized set of nodes termed collective influencers (CI). Such nodes were obtained via optimal percolation theory through the investigation of their propensity to damage the underlying network, strongly emphasizing the role of weakly con- nected nodes. Wondering if collective influencers in protein-protein interaction network carry biological signif- icance, we expected that collective protein influencers were enriched with e.g. disease or essential genes. Within the human interactome, CI proteins were indeed enriched with essential, regulatory, signaling and disease genes as well as drug targets, strongly suggesting that such well-defined protein groups have significance. Furthermore, we found that CI proteins were evolutionarily conserved as CI proteins in evolutionarily conserved networks in different organisms.
+Morone and Makse22 introduced **an optimization method to determine an optimized set of nodes termed collective influencers (CI). Such nodes were obtained via optimal percolation theory through the investigation of their propensity to damage the underlying network, strongly emphasizing the role of weakly con- nected nodes**. Wondering if collective influencers in protein-protein interaction network carry biological signif- icance, we expected that collective protein influencers were enriched with e.g. disease or essential genes. Within the human interactome, CI proteins were indeed enriched with essential, regulatory, signaling and disease genes as well as drug targets, strongly suggesting that such well-defined protein groups have significance. Furthermore, we found that CI proteins were evolutionarily conserved as CI proteins in evolutionarily conserved networks in different organisms.
 Results
 
 , a set of collective influencers (CI) is defined as the minimum set of nodes that, upon deletion, destroy the largest connected component of the underlying network22
@@ -465,7 +491,7 @@ ref22 = Morone, F. & Makse, H. A. Influence maximization in complex networks thr
 
 ### Yuan et al. 2019
 
-we propose an approach, which use biweight midcorrelation to measure the correlation between factors and make use of nonconvex penalty based sparse regression for gene regulatory network inference (BMNPGRN). BMNCGRN incorporates multi-omics data (including DNA methylation and copy number variation) and their interactions in gene regulatory network model. The experimental results on synthetic datasets show that BMNPGRN outperforms popular and state-of-the-art methods (including DCGRN, ARACNE and CLR) under false positive control. Furthermore, we applied BMNPGRN on breast cancer (BRCA) data from The Cancer Genome Atlas database and provided gene regulatory network.
+we propose an approach, which use **biweight midcorrelation to measure the correlation between factors and make use of nonconvex penalty based sparse regression for gene regulatory network inference (BMNPGRN)**. BMNCGRN incorporates multi-omics data (including DNA methylation and copy number variation) and their interactions in gene regulatory network model. The experimental results on synthetic datasets show that BMNPGRN outperforms popular and state-of-the-art methods (including DCGRN, ARACNE and CLR) under false positive control. Furthermore, we applied BMNPGRN on breast cancer (BRCA) data from The Cancer Genome Atlas database and provided gene regulatory network.
 
 
 
@@ -487,9 +513,9 @@ over existing gene regulatory network inference methods. Firstly, BMNPGRN can fi
 
 merges proteome and transcriptome data 
 
-spectral clustering of the network and map resulting eigenvectors from the 2nd and 3d smallest eigenvalues into 2D space which preserves topological distance and cluster structure
+**spectral clustering** of the network and map resulting eigenvectors from the 2nd and 3d smallest eigenvalues into 2D space which preserves topological distance and cluster structure
 
-map gene expression profiles onto this mapping->generate a set of image-like representation of protein networks processed by deep deconvolutional layers
+map gene expression profiles onto this mapping->generate a set of image-like representation of protein networks processed by **deep deconvolutional layers**
 
 PPIs from HINT database
 
@@ -500,10 +526,10 @@ PPIs from HINT database
 Network based integration and inference Network based integration approaches provide the easiest and
 simplest way to integrate different types of network data into a single unified representation. It
 
-Similarity Network Fusion (SNF) (Wang et al., 2014) is a typical
+**Similarity Network Fusion (SNF) (**Wang et al., 2014) is a typical
 example of constructing merged networks by employing network based data integration principal. SNF integrates expression data (mRNA, miRNA) and DNA methylation data and creates a network of samples (i.e., patients) for each data type and then builds an integrated network from the fusion of individual networks.
 
-Integrative gene regulatory network (iGRN) (Zarayeneh et al. 2017 , is another similar network integration technique that combines gene expression data with CNV and DNA methylation data.
+Integrative gene regulatory network (iGRN) (Zarayeneh et al. 2017 , is another similar **network integration technique** that combines gene expression data with CNV and DNA methylation data.
 
 
 
@@ -547,7 +573,7 @@ tests for significance: This sets up a permutation testing procedure that can be
 
 ### Gysi et al. 2020
 
-a method for the systematic comparison of an unlimited number of networks, with unlimited number of transcripts: Co-expression Differential Net- work Analysis (CoDiNA).
+a method for the systematic comparison of an unlimited number of networks, with unlimited number of transcripts: **Co-expression Differential Net- work Analysis (CoDiNA).**
 
 CoDiNA detects links and nodes that are common, specific or different among the networks
 
@@ -576,7 +602,7 @@ input: correlation network or or can also be Consensus Networks (CN) derived fro
 
 n previous works, our group defined a new hormonal receptor positive subgroup, the TN-like subtype, which had a prognosis and a molecular profile more similar to triple negative tumors. In this study, prote- omics and Bayesian networks were used to characterize protein relationships in 96 breast tumor samples. Components obtained by these methods had a clear functional structure.
 
-Undirected probabilistic graphical models (PGM), based on a Bayesian approach, allow characterizing differences between tumor samples at functional level [2, 3, 6, 7]. In this study we explored the utility ofBayesian networks in the molecular characterization ofbreast cancer.
+**Undirected probabilistic graphical models (PGM),** based on a Bayesian approach, allow characterizing differences between tumor samples at functional level [2, 3, 6, 7]. In this study we explored the utility ofBayesian networks in the molecular characterization ofbreast cancer.
 
 The main feature oftargeted Bayesian networks is that they provide a hierar- chical structure and targeted relationships between proteins
 
@@ -584,7 +610,7 @@ The main feature oftargeted Bayesian networks is that they provide a hierar- chi
 
 PGM are graph-based representations ofjoint probability distributions where nodes represent random variables and edges (directed or undirected) represent stochastic dependencies among the variables. In particular, we have used a type ofPGM called Bayesian networks (BN)
 
-With these models, the dependences between the variables in our data are specified by a directed acyclic graph (DAG). The obtained networks will indicate causality i.e. if protein A and B are connected and protein A changes its expression value, protein B changes its expres- sion value as well
+With these models, the dependences between the variables in our data are specified by a directed acyclic graph (**DAG**). The obtained networks will indicate causality i.e. if protein A and B are connected and protein A changes its expression value, protein B changes its expres- sion value as well
 
 we find the BN that best explains our data [23]. There are different algorithms to
 learn a DAG from data but we have selected the well-known PC algorithm (named as its inven- tors Peter Spirtes and Clark Glymour), a constraint-based structure learning algorithm [24] based on conditional independence tests. The PC algorithm was shown to be consistent in high-dimensional settings [25]. Moreover, an order-independent version ofthe PC algorithm, called PC-stable, was proposed in [26]. All these procedures are implemented in R within packages pcalg [25] and graph [27]. We used protein expression data without other a priori information.
@@ -619,13 +645,13 @@ A biological system is naturally subject to intrinsic and extrinsic fluctuations
 , we presented a mathematical model to describe the dynamic features of the mammalian cellular aging process. We built the underlying gene regulatory network by integrating the information from previous experimental studies. The genes and wirings in the gene regulatory network were formed, and the dynamics of gene expression was described by nine non- linear ordinary differential equations. 
 
 we have provided a framework to reveal the
-underlying mechanism of fast-aging and slow-aging in mammals based on landscape and flux theory. We predict the key genes and interactions in the fast-aging and slow-aging processes.
+underlying mechanism of fast-aging and slow-aging in mammals based on **landscape and flux theory**. We predict the key genes and interactions in the fast-aging and slow-aging processes.
 
 
 
 ### Lee et al. 2020
 
-heterogeneous multi-layered network (HMLN) has proven successful in integrating diverse biological data for the representation of the hierarchy of biological system
+**heterogeneous multi-layered network (HMLN) has proven successful in integrating diverse biological data for the representation of the hierarchy of biological system**
 
 relation inference
 (or link prediction) can be formulated as a problem in a homogenous network, a multiplex network, or a heterogeneous multi-layered network (HMLN), as shown in Figure 1.In a homogenous network (Figure 1A), all nodes from different domains, as well as intra-domain and cross-domain relations, are treated equally. In contrast, multiplex and multi-layered networks separate different types of nodes and relations. A multiplex network is often used to represent homogeneous nodes that have different types of characterizations (a.k.a. views). For example, a gene can be characterized by multiple measurements ofgene expression, essentiality, literature citation, phylogenetic profile, neighborhood in the interaction network, biological pathway involved, Gene Ontology annotation, protein domain profile etc. (Hwang et al., 2019). Each type of measurement can form a unique type of link between genes (Figure 1B). In a HMLN (Figure 1C), multiple types of heterogeneous nodes are involved. The nodes from each type are grouped into a single layer and treated separately. In the same vein, different types of intra-domain and cross-domain relations are marked differently in a multi-layered network. We note that more complex network representations, such as multiplex multi- layered network, may be needed in real applications. In this review, we focus on the cross-domain relation inference (or link prediction) problem for the HMLN. Readers can refer other excellent reviews of the multiplex networks (Chauvel et al., 2019)
@@ -673,13 +699,20 @@ While there are a large number of mathematical formalisms to represent regulator
 
 *<u>Incorporating prior to constrain network structure and estimate regulator activity</u>* 
 
-To enable more comprehensive network inference, sequence-specific motif-derived edges can be incorpo- rated as prior knowledge to encourage the network inference algorithm to include edges from the prior. Prior-based regulatory network inference can use either a structure prior approach [18,20] or parameter prior approach [24]. With the structure-based prior, one puts a prior probability distribution on the graph structure, such that an edge with motif support is more likely to be included in the regulatory network model. For example, Chasman et al. [23] used DNase-seq filtered motifs as a structure prior for a network inference algorithm [18] and context-specific gene expression data of hindbrain and spinal cord development to infer a regulatory network in neuroepithelial stem cells. The parameter prior framework has been used within a regularized regression setting [24], which learns a sparse network by penalizing edge addition while optimizing prediction of a target’s expression level. The prior can be used to reduce the penalty for addition of an edge in the network [24]
+Prior-based regulatory network inference can use either 
+
+* a structure prior approach
+  * prior probability distribution on the graph structure, such that an edge with motif support is more likely to be included in the regulatory network model
+  * examples: For example, Chasman et al. [23] used DNase-seq filtered motifs as a structure prior for a network inference algorithm [18] and context-specific gene expression data of hindbrain and spinal cord development to infer a regulatory network in neuroepithelial stem cells. 
+* a parameter prior approach 
+  * regularized regression setting [24], which learns a sparse network by penalizing edge addition while optimizing prediction of a target’s expression level
+  * the prior can be used to reduce the penalty for addition of an edge in the network [24]
 
 
 
-Newer methods have used the prior network to addi- tionally estimate hidden TFactivity (TFA) to overcome the assumption that mRNA levels must correlate with the regulator’s protein activity on a gene’s promoter [24,27]. TFA estimation takes in an initial, noisy regu- latory network and expression and models the expres- sion as a product of the hidden TFAs and a refined network structure [27]. The TFA can be estimated independently followed by network inference, for example, modified least absolute shrinkage and selec- tion operator with stability approach to regularization selection (mLASSO-StARS) [24], or in a single iterative algorithm, for example, Network Reprogramming using EXpression (NetRex) [27]. mLASSO-StARS [24] learns a dependency network by solving a set of independent Least Absolute Shrinkage and Selection Operator (LASSO) regression problems, one per gene. Both mRNA and TFA are used as potential predictors of a target gene’s expression. NetRex [27] jointly estimates both the TFA and the network to explain the expression data by using regularization to penalize the mismatch in the number of edges of the inferred and prior networks. NetRex updates the prior network until the rewired
+Newer methods have used the prior network to addi- tionally estimate hidden TFactivity (TFA) to overcome the assumption that mRNA levels must correlate with the regulator’s protein activity on a gene’s promoter [24,27]. **TFA estimation takes in an initial, noisy regu- latory network and expression and models the expres- sion as a product of the hidden TFAs and a refined network structure** [27]. The TFA can be estimated independently followed by network inference, for example, modified least absolute shrinkage and selec- tion operator with stability approach to regularization selection (mLASSO-StARS) [24], or in a single iterative algorithm, for example, Network Reprogramming using EXpression (NetRex) [27]. mLASSO-StARS [24] learns a dependency network by solving a set of independent Least Absolute Shrinkage and Selection Operator (LASSO) regression problems, one per gene. Both mRNA and TFA are used as potential predictors of a target gene’s expression. NetRex [27] jointly estimates both the TFA and the network to explain the expression data by using regularization to penalize the mismatch in the number of edges of the inferred and prior networks. NetRex updates the prior network until the rewired network and the estimated TFA optimally explains the expression data. Both NetRex and mLASSO-StARS need to specify the hyperparameters to obtain a final network structure. mLASSO-StARS uses StARS to select the hyperparameters by controlling the average instability of edges. NetRex uses a grid search over hyperparameters and obtains the final result from the consensus of multiple nearly optimal settings. NetRex has additional constraints that can better capture core- gulatory relationships in gene modules but can make network inference computationally expensive. These approaches were shown to improve the quality of inferred networks and were useful for identifying key regulators and targets in mammalian [23,24] and insect [27] systems
 
-network and the estimated TFA optimally explains the expression data. Both NetRex and mLASSO-StARS need to specify the hyperparameters to obtain a final network structure. mLASSO-StARS uses StARS to select the hyperparameters by controlling the average instability of edges. NetRex uses a grid search over hyperparameters and obtains the final result from the consensus of multiple nearly optimal settings. NetRex has additional constraints that can better capture core- gulatory relationships in gene modules but can make network inference computationally expensive. These approaches were shown to improve the quality of inferred networks and were useful for identifying key regulators and targets in mammalian [23,24] and insect [27] systems
+
 
 <u>*Network inference across multiple contexts*</u> 
 
@@ -689,7 +722,7 @@ Often data from multiple contexts are available and a key question is to define 
 
 ### Mahajan et al. 2021
 
-We combined these epigenomic datasets and integrated them with the reference human protein interactome using a novel network propagation approach.
+We combined these epigenomic datasets and integrated them with the reference human protein interactome using a novel **network propagation** approach.
 
 a network-based approach to integrate multi-omic epigenetic datasets.
 
@@ -698,7 +731,7 @@ At a conceptual level, tumor mutations and features derived from epigenomic data
 a novel network-based approach to propagate epigenomic signals
 derived from our ATAC-seq and CUT&RUN studies and thus uncover network modules that are likely to drive Tfh cell differentiation. Our approach is based on the premise that biologically relevant epigenetic signatures reflect the need for coordinated regulation of genes that encode interacting proteins. A similar conceptual premise has been used to identify subnetworks enriched for mutations in cancer genomics and network-based GWAS (Cowen et al., 2017; Leiserson et al., 2013, 2015; Reyna et al., 2018; Vandin et al., 2011). The
 
-he underlying technique of network propagation represents a powerful way to combine a wide range of signals taking into account the structure of the underlying network. We implemented network propagation using random walk with restart, which is equivalent to an insulated heat diffusion process ((Cowen et al., 2017; Leiserson et al., 2013, 2015; Reyna et al., 2018; Vandin et al., 2011)). We used this approach to unify features derived from the different epigenomic datasets and discover networks driving Tfh cell differentiation. 
+he underlying technique of network propagation represents a powerful way to combine a wide range of signals taking into account the structure of the underlying network. **We implemented network propagation using random walk with restart, which is equivalent to an insulated heat diffusion process** ((Cowen et al., 2017; Leiserson et al., 2013, 2015; Reyna et al., 2018; Vandin et al., 2011)). **We used this approach to unify features derived from the different epigenomic datasets and discover networks driving Tfh cell differentiation.** 
 
 we incorporated higher-order relationships between proteins encoded by these genes using the high-quality (i.e., each edge is validated experimentally using multiple independent assays) reference human protein interactome network (Cusick et al., 2009; Das and Yu, 2012).
 
@@ -708,13 +741,13 @@ Each of the epigenetic signals analyzed exhibited distinct trends across the fou
 
 Next, for each differentiation pattern, peaks from each dataset were aggregated into gene-centric scores using a proximity-weighted count heuristic (Fig. 2b) based on first principles underlying the organization of promoters and enhancers. Gene-centric scores from each dataset were then combined by weighting the datasets equally, as we did not have any a priori information regarding relative information context across the datasets. We refer to each gene’s score as its “peak proximity score” (PPS), which we can calculate for each possible differentiation pattern and use as a surrogate for gene regulation
 
-We ran network propagation through HotNet2 using the combined PPS’s for each protein’s gene as seed values (Figs. 3a, 3b). HotNet2 helps us incorporate the topological structure of the underlying protein interaction network as an informative prior on how proteins are functionally related to one another
+**We ran network propagation through HotNet2 using the combined PPS’s for each protein’s gene as seed values (Figs. 3a, 3b). HotNet2 helps us incorporate the topological structure of the underlying protein interaction network as an informative prior on how proteins are functionally related to one another**
 
-The use of network propagation is motivated by the hypothesis that proteins encoded by relevant genes relevant to Tfh cell differentiation are more likely to interact with one another and make up cohesive network submodules (Fig. 3b). Further, our approach can help filter out genes that may not play a role in Tfh cell differentiation but nevertheless show similar epigenetic patterns to relevant genes
+**The use of network propagation is motivated by the hypothesis that proteins encoded by relevant genes relevant to Tfh cell differentiation are more likely to interact with one another and make up cohesive network submodules (Fig. 3b). Further, our approach can help filter out genes that may not play a role in Tfh cell differentiation but nevertheless show similar epigenetic patterns to relevant genes**
 
-network propagation constitutes the final step in a three-step pipeline: identification of the most likely patterns of Tfh cell differentiation, generation of gene-centric scores using a proximity-weighted count heuristic (i.e. calculation of PPS’s), and network propagation using these scores as seeds.
+**network propagation constitutes the final step in a three-step pipeline: identification of the most likely patterns of Tfh cell differentiation, generation of gene-centric scores using a proximity-weighted count heuristic (i.e. calculation of PPS’s), and network propagation using these scores as seeds.**
 
-we adapted the HotNet2 algorithm to identify protein network modules enriched for signals derived from ATAC-seq and CUT&RUN datasets obtained from Tfh cells at four stages of differentiation within a healthy human subject’s tonsil. By framing the search for drivers as a search for identifying protein subnetworks with concentrated epigenomic signals, our approach recovered known regulators of Tfh cell differentiation, and we have implicated several novel candidate genes involved in Tfh cell differentiation. 
+**we adapted the HotNet2 algorithm to identify protein network modules enriched for signals derived from ATAC-seq and CUT&RUN datasets obtained from Tfh cells at four stages of differentiation within a healthy human subject’s tonsil. By framing the search for drivers as a search for identifying protein subnetworks with concentrated epigenomic signals, our approach recovered known regulators of Tfh cell differentiation, and we have implicated several novel candidate genes involved in Tfh cell differentiation.** 
 
 
 
@@ -732,7 +765,7 @@ For each pattern, we used network propagation to integrate the gene-centric scor
 
 ### Duan et al. 2021
 
-Refuting the widely held intuition that incorporating more types of omics data always produces better results, our analyses showed that there are situations where integrating more omics data negatively impacts the performance of integration methods. Our analyses also suggested several effective combi- nations for most cancers under our studies, which may be of particular interest to research- ers in omics data analysis.
+Refuting the widely held intuition that incorporating more types of omics data always produces better results, **our analyses showed that there are situations where integrating more omics data negatively impacts the performance of integration methods.** Our analyses also suggested several effective combi- nations for most cancers under our studies, which may be of particular interest to research- ers in omics data analysis.
 
 we observed that the methods NEMO and SNF perform very well in all three criteria
 
@@ -742,7 +775,7 @@ using the four omics data types for integration analysis were not always better 
 
 another surprising observation on the significance ofDNA methylation data in the effectiveness ofintegration methods
 
-Our analysis on the effectiveness ofthe 11 possible combinations, however, shows that only one combination in 2 and 3 omics datasets can be considered to be effective. This is unexpected as methylation had been proven to play an important role in cancer and has been the most common data type used in previous research on integrated multi-omics data for cancer subtyping. We leave it to future work to understand this unexpected phenomenon, but speculate that it is the result of the following three factors ofour experiments: (1) certain characteristics ofthe methylation data that do not fit the model assumption ofsome ofthe ten integration methods, resulting in a much lower overall effectiveness score for those ofthe methylation-participating combina- tions in our evaluation; (2) the data processing step in which we mapped all the features to genes in methylation and CNV datasets as previous studies did, resulting in a loss ofsome sig- nificant information; and (3) performance criterion that uses clinical-based metrics as well as clustering-based metrics, in comparison to previous studies where only one metric may be used
+**Our analysis on the effectiveness ofthe 11 possible combinations, however, shows that only one combination in 2 and 3 omics datasets can be considered to be effective.** This is unexpected as methylation had been proven to play an important role in cancer and has been the most common data type used in previous research on integrated multi-omics data for cancer subtyping. We leave it to future work to understand this unexpected phenomenon, but speculate that it is the result of the following three factors ofour experiments: (1) certain characteristics ofthe methylation data that do not fit the model assumption ofsome ofthe ten integration methods, resulting in a much lower overall effectiveness score for those ofthe methylation-participating combina- tions in our evaluation; (2) the data processing step in which we mapped all the features to genes in methylation and CNV datasets as previous studies did, resulting in a loss ofsome sig- nificant information; and (3) performance criterion that uses clinical-based metrics as well as clustering-based metrics, in comparison to previous studies where only one metric may be used
 
 ### Paull et al. 2021 - MOMA
 
@@ -752,7 +785,7 @@ Our analysis on the effectiveness ofthe 11 possible combinations, however, shows
 
 Of all somatic alterations detected in each individual sample, >50%were predicted to induce aberrant MR activity, yielding insight into mechanisms linking tumor genetics and transcriptional identity and establishing non-oncogene dependencies.
 
-step1: gene expression profiles from 20 TCGA cohorts (Table S1) were first transformed to protein activity profiles by using the Virtual Proteomics by Enriched Regulon Analysis (VIPER) al- gorithm
+**step1: gene expression profiles from 20 TCGA cohorts (Table S1) were first transformed to protein activity profiles by using the Virtual Proteomics by Enriched Regulon Analysis (VIPER) al- gorithm**
 
 Candidate MR proteins were then identified by Fisher’s integration of p values from (1) their VIPER-measured activity, (2) functional genetic al- terations in their upstream pathways by Driver-Gene Inference by Genetical-Genomic Information Theory (DIGGIT) analysis (Chen et al., 2014), and (3) additional structure and literature- based evidence supporting direct protein-protein interactions between MRs and proteins harboring genetic alterations, via the Predicting Protein-Protein Interactions (PrePPI) algorithm (Zhang et al., 2012) (steps 2 and 3) (Figure
 
@@ -760,10 +793,10 @@ Candidate MR proteins were then identified by Fisher’s integration of p values
 
 vector of integrated (Log_10 p)2 (MOMA scores) to weigh each MR’s contribution in a tumor subtype clustering step (step 4) (Figure S1D). Finally, genomic saturation analysis upstream of top candidate MRs identified those most likely to control the subtype transcriptional identity (step 5) (Figure S1D). Finally, this was followed by identification and functional characteriza- tion of MR block sub-modules, termed MR-Blocks (MRBs), recurring across multiple subtypes (step 6) (Figure S1E). See STAR methods for a detailed description of each step
 
-VIPER has been extensively validated as an accurate method-
-ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay. To generate accurate regulons for 2,506 regulatory proteins annotated as transcription factors (TFs) and co-transcription factors (co-TFs) in Gene Ontology (GO) (Ash- burner et al., 2000; The Gene Ontology Consortium, 2019), we used Algorithm for the Reconstruction of Accurate Cellular Net- works (ARACNe) (Basso et al., 2005); see STAR methods for ARACNe and VIPER accuracy metrics
+**VIPER has been extensively validated as an accurate method-**
+**ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay. To generate accurate regulons for 2,506 regulatory proteins annotated as transcription factors (TFs) and co-transcription factors (co-TFs) in Gene Ontology (GO) (Ash- burner et al., 2000; The Gene Ontology Consortium, 2019), we used Algorithm for the Reconstruction of Accurate Cellular Net- works (ARACNe) (Basso et al., 2005); see STAR methods for ARACNe and VIPER accuracy metrics**
 
-For each candidate MR, we first identified candidate upstream modulator proteins by using the Conditional Inference of Network Dynamics (CINDy) algorithm (Giorgi et al., 2014) and then assessed whether the presence of genomic alterations in their encoding genes was associated with differential MR activity (activity Quantitative Trait Locus analysis [aQTL]). These two steps comprise the DIGGIT algorithm, which was highly effective in elucidating key driver mutations missed by prior analyses in GBM
+**For each candidate MR, we first identified candidate upstream modulator proteins by using the Conditional Inference of Network Dynamics (CINDy) algorithm (Giorgi et al., 2014) and then assessed whether the presence of genomic alterations in their encoding genes was associated with differential MR activity (activity Quantitative Trait Locus analysis [aQTL]). These two steps comprise the DIGGIT algorithm, which was highly effective in elucidating key driver mutations missed by prior analyses in GBM**
 
 . Minimum cohort size reflected the need to generate accurate regulatory network models by using the ARACNe algorithm
 
@@ -771,19 +804,19 @@ For each candidate MR, we first identified candidate upstream modulator proteins
 
 ### Cao et al. 2021
 
-we 5 propose a computational framework called GLUE (graph-linked unified embedding), which utilizes 6 accessible prior knowledge about regulatory interactions to bridge the gaps between feature spaces
+we 5 propose a **computational framework called GLUE (graph-linked unified embedding), which utilizes 6 accessible prior knowledge about regulatory interactions to bridge the gaps between feature spaces**
 
-we introduce GLUE (graph-linked unified embedding), a modular framework for integrating 28 unpaired single-cell multi-omics data and inferring regulatory interactions simultaneously. By 29 modeling the regulatory interactions across omics layers explicitly, GLUE bridges the gaps between 30 various omics-specific feature spaces in a biologically intuitive manner.
+**we introduce GLUE (graph-linked unified embedding), a modular framework for integrating 28 unpaired single-cell multi-omics data and inferring regulatory interactions simultaneously. By 29 modeling the regulatory interactions across omics layers explicitly, GLUE bridges the gaps between 30 various omics-specific feature spaces in a biologically intuitive manner.**
 
-Integrating unpaired single-cell multi-omics data via graph-guided embeddings
+**Integrating unpaired single-cell multi-omics data via graph-guided embeddings**
 
 we model cell states as low-dimensional cell embeddings learned 7 through variational autoencoders27, 28. Given their intrinsic differences in biological nature and assay 8 technology, each omics layer is equipped with a separate autoencoder that uses a probabilistic 9 generative model tailored to the layer-specific feature space
 
-Taking advantage of prior biological knowledge, we propose the use of a knowledge-based graph 2 (“guidance graph”) that explicitly models cross-layer regulatory interactions for linking layer- 3 specific feature spaces; the vertices in the graph correspond to the features of different omics layers, 4 and edges represent signed regulatory interactions.
+**Taking advantage of prior biological knowledge, we propose the use of a knowledge-based graph 2 (“guidance graph”) that explicitly models cross-layer regulatory interactions for linking layer- 3 specific feature spaces**; the vertices in the graph correspond to the features of different omics layers, 4 and edges represent signed regulatory interactions.
 
 , adversarial multimodal alignment is performed as an iterative optimization procedure, guided 8 by feature embeddings encoded from the graph2
 
-GLUE employs omics-specific variational autoencoders to learn low-dimensional cell embeddings from each omics 14 layer. The data dimensionality and generative distribution can differ across omics layers, but the cell embedding 15 dimensions are shared. A graph variational autoencoder is used to learn feature embeddings from the prior 16 knowledge-based guidance graph; these embeddings are then used as data decoder parameters. The feature 17 embeddings effectively link the omics-specific autoencoders to ensure a consistent embedding orientation. Last, an 18 omics discriminator is employed to align the cell embeddings of different omics layers via adversarial learning.
+**GLUE employs omics-specific variational autoencoders to learn low-dimensional cell embeddings from each omics 14 layer.** The data dimensionality and generative distribution can differ across omics layers, but the cell embedding 15 dimensions are shared. A graph variational autoencoder is used to learn feature embeddings from the prior 16 knowledge-based guidance graph; these embeddings are then used as data decoder parameters. The feature 17 embeddings effectively link the omics-specific autoencoders to ensure a consistent embedding orientation. Last, an 18 omics discriminator is employed to align the cell embeddings of different omics layers via adversarial learning.
 
 Combining omics-specific autoencoders with graph-based coupling and adversarial alignment, we 24 designed and implemented the GLUE framework for unpaired single-cell multi-omics data 25 integration with superior accuracy and robustness. By modeling regulatory interactions across omics 26 layers explicitly, GLUE uniquely supports model-based regulatory inference for unpaired multi- 27 omics datasets, exhibiting even higher reliability than regular correlation analysis on paired datasets
 
@@ -853,7 +886,7 @@ comparative evaluation of nine state-of-the art gene regulatory network inferenc
 
 ##### Brunner et al. 2021
 
-a novel stochastic dynamical systems model that predicts gene expression levels from methylation data of genes in a given GRN. 
+a novel **stochastic dynamical systems model that predicts gene expression levels from methylation data of genes in a given GRN**. 
 
 https://github.com/kordk/stoch_epi_lib.
 
@@ -868,13 +901,15 @@ epigenetic changes in a gene regulatory network (GRN). Dynamical systems integra
 
 ##### Azad et al. 2021
 
-methodologies with a fully Bayesian approach in discovering novel driver bio-markers in aberrant STPs given high-throughput gene expression (GE) data.
+Signalling transduction pathways (STPs) 
+
+methodologies with **a fully Bayesian approach in discovering novel driver bio-markers in aberrant STPs given high-throughput gene expression (GE) data**.
 
 ‘PathTurbEr’ (Pathway Perturbation Driver) uses the GE dataset derived from the lapatinib (an EGFR/HER dual inhibitor) sensitive and resistant samples from breast cancer cell lines (SKBR3).
 
 Differential expression analysis revealed 512 differentially expressed genes (DEGs) and their pathway enrichment revealed 13 highly perturbed singalling pathways in lapatinib resistance, including PI3K-AKT, Chemokine, Hippo and TGF-β singalling pathways.
 
-the aberration in TGF-β STP was modelled as a causal Bayesian network (BN) using three MCMC sampling methods, i.e. Neighbourhood sampler (NS) and Hit-and-Run (HAR) sampler that potentially yield robust inference with lower chances of getting stuck at local optima and faster convergence compared to other state-of-art methods. Next,
+the aberration in TGF-β STP was modelled as a **causal Bayesian network (BN)** using three MCMC sampling methods, i.e. Neighbourhood sampler (NS) and Hit-and-Run (HAR) sampler that potentially yield robust inference with lower chances of getting stuck at local optima and faster convergence compared to other state-of-art methods. Next,
 
 , we examined the structural features of the optimal BN as a statistical process that generates the global structure using p1-model, a special class of Exponential Random Graph Models (ERGMs), and MCMC methods for their hyper-parameter sampling.
 
@@ -899,7 +934,7 @@ modelled the signal transduction path- ways (STPs) as Bayesian Networks (BNs),
 
 
 
-a fully Bayesian statistical modelling approach for analysing the statistical aspect of the perturbed STP structure yielded from the MCMC sampling algorithms of BN structure learning (see previous subsection). We have used p1-model, initially proposed by Holland and Leinhardt [18], is a special class of exponential families of distributions, for this study that offers robust and flexible parametric models, which are used to evaluate the probability that a gene to be hub in the perturbation network inferred in previous subsection
+**a fully Bayesian statistical modelling approach for analysing the statistical aspect of the perturbed STP structure** yielded from the MCMC sampling algorithms of BN structure learning (see previous subsection). We have used p1-model, initially proposed by Holland and Leinhardt [18], is a special class of exponential families of distributions, for this study that offers robust and flexible parametric models, which are used to evaluate the probability that a gene to be hub in the perturbation network inferred in previous subsection
 
 , the exponential family of distribution (i.e. p1-model) is a common choice for Pr(u) as it explicitly allows the distributions parameters to be tied with dif- ferent network statistics (e.g. global density of nodes, in-degree, out-degree, etc.) that control the formation of that network at the first place
 
@@ -911,9 +946,9 @@ we have employed a fully Bayesian approach to infer the posteriori ofparameters 
 
 ##### Raj-Kumar et al. 2019
 
-Principle Component Analysis-based iterative PAM50 subtyping (PCA-PAM50) to perform intrinsic subtyping in ER status unbalanced cohorts
+**Principle Component Analysis-based iterative PAM50 subtyping (PCA-PAM50) to perform intrinsic subtyping in ER status unbalanced cohort**s
 
-This method leverages PCA and iterative PAM50 calls to derive the gene expression-based ER status and a subsequent ER-balanced subset for gene centering.
+This method leverages **PCA and iterative PAM50 calls to derive the gene expression-based ER status and a subsequent ER-balanced subset for gene centering.**
 
 Applying PCA-PAM50 to three different breast cancer study cohorts, we observed improved consistency (by 6–9.3%) between intrinsic and clinical subtyping for all three cohorts. Particularly, a more aggressive subset of luminal A (LA) tumors as evidenced by higher MKI67 gene expression and worse patient survival outcomes, were reclassified as luminal B (LB) increasing the LB subtype consistency with IHC by 25–49%.
 
@@ -949,7 +984,7 @@ sgnesR (Stochastic Gene Network Expression Simulator in R) is an R package that 
 
 ##### Zhang et al. 2020
 
-we propose a new framework with a new metric to identify driver modules with low-frequency mutation genes, called iCDModule. Inspired by the gravity model, we integrate the coverage and mutual exclusivity in mutation information, define a new metric between gene pairs, called mutation impact distance, to help identifying potential driver genes sets, including those have extremely low mutation rates but play an important role in functional networks. A genetic network is constructed by combining the defined mutation impact distance and then the driver module identification problem is formalized as the maximum clique solution problem, and an improved ant colony optimization algorithm is used to solve it. iCDModule is applied to TCGA breast cancer, glioblastoma, ovarian cancer to test performance.
+we propose a new framework with a new metric to identify driver modules with low-frequency mutation genes, called **iCDModule. Inspired by the gravity model, we integrate the coverage and mutual exclusivity in mutation information, define a new metric between gene pairs, called mutation impact distance, to help identifying potential driver genes sets**, including those have extremely low mutation rates but play an important role in functional networks. A genetic network is constructed by combining the defined mutation impact distance and then the driver module identification problem is formalized as the maximum clique solution problem, and an improved ant colony optimization algorithm is used to solve it. iCDModule is applied to TCGA breast cancer, glioblastoma, ovarian cancer to test performance.
 
 MDPFinder [9], Multi-dendrix [12], ComMDP and SpeMDP [13] used integer linear programming for settling the problem of maximum cover-exclusive sub-matrix to detect driver pathways.
 
@@ -969,7 +1004,7 @@ The problem of driver module identification is transformed into a maximum clique
 
 ##### Gosline et al. 2012
 
-SAMNet, for Simultaneous Analysis of Multiple Networks, that is able to interpret diverse assays over multiple perturbations. The algorithm uses a constrained optimization approach to integrate mRNA expression data with upstream genes, selecting edges in the protein–protein interaction network that best explain the changes across all perturbations
+**SAMNet, for Simultaneous Analysis of Multiple Networks, that is able to interpret diverse assays over multiple perturbations.** The algorithm uses a constrained optimization approach to integrate mRNA expression data with upstream genes, selecting edges in the protein–protein interaction network that best explain the changes across all perturbations
 
 The result is a putative set of protein interactions that succinctly summarizes the results from all experiments, highlighting the network elements unique to each perturbation.
 
@@ -990,7 +1025,7 @@ SAMNet is a powerful tool for modeling diverse sources of high throughput data a
 
 ##### Gabr et al. 2013
 
-, we consider the problem of finding causal orderings of nodes in such protein interaction networks to discover signaling pathways. We adopt color coding technique to address this problem. Color coding method may fail with some probability. 
+, we consider **the problem of finding causal orderings of nodes in such protein interaction networks to discover signaling pathways. We adopt color coding technique to address this problem.** Color coding method may fail with some probability. 
 
 . Our key contribution in this paper is elimination of the key conservative assumptions made by the traditional color coding methods while computing its success probability. We do this by carefully establishing the relationship between node colors, network topology and success probability. 
 
@@ -1000,7 +1035,7 @@ SAMNet is a powerful tool for modeling diverse sources of high throughput data a
 
 ##### Erdogdu et al. 2017
 
-Formulate the induction and control of gene regulatory networks (GRNs) from gene expression data using Partially Observable Markov Decision Processes (POMDPs)
+Formulate the induction and control of gene regulatory networks (GRNs) from gene expression data using **Partially Observable Markov Decision Processes (POMDPs)**
 
 partial observability would be a more natural and realistic method for handling the control of GRNs
 
@@ -1023,7 +1058,7 @@ lem in a more natural and realistic way, mainly as a Partially Observable Markov
 
 ##### Li et al. 2020
 
-To identify driver modules with rarely mutated genes, we propose a functional similarity index to quantify the functional relationship between rarely mutated genes and other ones in the same module. Then, we develop a method to detect Driver Modules with Rarely mutated Genes (DMRG) by incorporating the functional similarity, coverage and mutual exclusivity
+To identify driver modules with rarely mutated genes, we propose **a functional similarity index to quantify the functional relationship between rarely mutated genes and other ones in the same module**. Then, we develop a method to detect **Driver Modules with Rarely mutated Genes (DMRG)** by incorporating the functional similarity, coverage and mutual exclusivity
 
 If a rarely mutated gene is in- cluded in a driver module, the functional relationships between this rare gene and other ones in the same module can be high. Thus, we propose a functional similarity index to quantify these relationships with network propagation, which can amplify weak similarities between different genes. This functional similarity can successfully capture functional relationship between driver genes with any mutation frequencies in the same driver module, especially for rarely mutated genes. Then, we develop a method to detect Driver Modules with Rarely mutated Genes (aka, DMRG) by incorporating the functional similarity, coverage and mutual exclusivity. 
 
@@ -1046,11 +1081,11 @@ number of genes of a given network shared across species
 
 ##### Ihmels et al. 2005
 
-the ‘‘differential clustering algorithm’’ for revealing conserved and diverged co-expression patterns. 
+the ‘‘**differential clustering algorithm’**’ for revealing conserved and diverged co-expression patterns. 
 
 Existing approaches for comparative gene expression analyses emphasize mostly conserved co-regulation patterns, rather than differences in expression patterns [8,9,11].
 
-To better capture differential expression patterns, we developed a novel approach, termed the differential clustering algorithm (DCA), for systematically characterizing both similarities and differences in the fine structure of co-regulation patterns
+To better capture differential expression patterns, we developed a novel approach, termed the **differential clustering algorithm (DCA), for systematically characterizing both similarities and differences in the fine structure of co-regulation patterns**
 
 The DCA is applied to a set of orthologous genes that are
 present in both organisms. As a first step, the pair-wise correlations between these genes are measured in each organism separately, defining two pair-wise correlation matrices (PCMs) of the same dimension (i.e., the number of orthologous genes) (Figure 2A). Next, the PCM of the primary (‘‘reference’’) organism is clustered, assigning genes into subsets that are co-expressed in this organism, but not necessarily in the second (‘‘target’’) organism. Finally, the genes within each co-expressed subgroup are re-ordered, by clustering according to the PCM of the target organism. This procedure is performed twice, reciprocally, such that each PCM is used once for the primary and once for secondary clustering, yielding two distinct orderings of the genes.
@@ -1061,7 +1096,7 @@ An automatic scoring method is then applied to classify clusters into one ofthe 
 
 ##### Kao et al. 2004
 
-For complex transcriptional networks, more sophisticated tools are required to deconvolute the contribution of each regulator. Here, we demonstrate the utility of network component analysis in determining multiple transcription factor activities based on transcriptome profiles and available connectivity information regarding network connectiv- ity. We
+For complex transcriptional networks, more sophisticated tools are required to **deconvolute the contribution of each regulator**. Here, we demonstrate the utility of **network component analysis in determining multiple transcription factor activities based on transcriptome profiles and available connectivity information regarding network connectiv- ity**
 
 NCA takes advantage of the connectivity information to decompose DNA microarray data to determine both TFA and the control strength (CS) of each regulatory pair
 
@@ -1079,7 +1114,7 @@ words, each regulatory signal cannot be expressed as a linear combination of the
 
 ##### Ma et al. 2016
 
-several methods for active learning of casual networks has been developed recently14–18. The active learning methods utilize both observational and experimental data to discover causal networks. These methods typically first construct a draft of the causal network, generally represented as an unori- ented or partially oriented graph, from observational data. Then, the methods select a variable for experimen- tation/manipulation to further refine the graph. The experimental data obtained from the targeted experiment is used to update the draft of the causal network. The process of variable selection, experimentation, and causal network update is repeated until some termination criterion is satisfied, e.g. all edges in the causal network are oriented. Since randomized controlled experiments are costly, active learning methods employ various heuris- tics when selecting variables for experimentation in order to minimize the required number of experiments. It
+several methods for **active learning of causal networks** has been developed recently14–18. The active learning methods utilize both observational and experimental data to discover causal networks. These methods typically first construct a draft of the causal network, generally represented as an unori- ented or partially oriented graph, from observational data. Then, the methods select a variable for experimen- tation/manipulation to further refine the graph. The experimental data obtained from the targeted experiment is used to update the draft of the causal network. The process of variable selection, experimentation, and causal network update is repeated until some termination criterion is satisfied, e.g. all edges in the causal network are oriented. Since randomized controlled experiments are costly, active learning methods employ various heuris- tics when selecting variables for experimentation in order to minimize the required number of experiments. It
 
 Among the active learning methods examined in this study, ODLP variants achieved the best local pathway
 reconstruction quality with low cost on the 5 transcription factors examined. In
@@ -1092,7 +1127,7 @@ the distance measures used in traditional clustering algorithms have difficultie
 
 gene expression profiles are discretized into three categories (upregulated, downregulated, unchanged) based on p-values for differential ex- pression. For each pair of profiles, we then assess the probability that the observed overlap of upregulated and downregulated fields is generated by chance. The resulting correlation p-values are corrected for multiple testing and translated to edges in a coexpression net- work, which is then clustered into (overlapping) expression modules using a graph clustering procedure that identifies densely connected components in the network. Relevant condition sets are then determined for all modules and the modules are screened for enrichment of Gene Ontology categories and transcription factor binding sites. Finally, a regulation pro- gram is learned for each module in an attempt to explain the expression behavior of the module’s genes as a function of the expression of a limited set of regulators (transcription factors and signal transducers). 
 
-ENIGMA, that addresses some of these issues. ENIGMA leverages differential expression analysis results to extract expression modules from perturbational gene expression data. 
+ENIGMA, that addresses some of these issues. **ENIGMA leverages differential expression analysis results to extract expression modules from perturbational gene expression data.** 
 
 
 
@@ -1109,7 +1144,7 @@ In the post- processing phase, ENIGMA determines relevant condition sets for eac
 
 ##### Mall et al. 2017
 
-The ability to detect statistical relevant changes in the interaction patterns induced by the progression of the disease can lead to the discovery of novel relevant signatures. Several procedures have been recently proposed to detect sub-network differences in pairwise labeled weighted networks. Methods: In this paper, we propose an improvement over the state-of-the-art based on the Generalized Hamming Distance adopted for evaluating the topological difference between two networks and estimating its statistical significance. The proposed procedure exploits a more effective model selection criteria to generate p-values for statistical significance and is more efficient in terms of computational time and prediction accuracy than literature methods. Moreover, the structure of the proposed algorithm allows for a faster parallelized implementation.
+The ability to detect statistical relevant changes in the interaction patterns induced by the progression of the disease can lead to the discovery of novel relevant signatures. Several procedures have been recently proposed to detect sub-network differences in pairwise labeled weighted networks. Methods: In this paper, we propose an **improvement over the state-of-the-art based on the Generalized Hamming Distance adopted for evaluating the topological difference between two networks and estimating its statistical significance.** The proposed procedure exploits a more effective model selection criteria to generate p-values for statistical significance and is more efficient in terms of computational time and prediction accuracy than literature methods. Moreover, the structure of the proposed algorithm allows for a faster parallelized implementation.
 
 
 
@@ -1123,15 +1158,15 @@ cancer cells from each sample form a distinct cluster per patient, whereas the c
 
 gene regulatory network inference using SCENIC has been shown to normalize away part of these tumor- specific differences, resulting in one pan-tumor cluster of cycling cells (Aibar et al. 2017). Nonetheless, the unsupervised discovery of common transcriptional states remains a challenge
 
-SCENIC network inference to the single-cell expression matrix
+**SCENIC network inference to the single-cell expression matrix**
 
-. A transcription factor with its candidate targets is called a regulon. SCENIC yields a regulon-cell matrix with regulon activities across all single cells, and provides therefore an alternative dimensionality reduction. A UMAP visualization based on the regulon-cell matrix reveals three candidate cell states in an unsupervised manner,
+**. A transcription factor with its candidate targets is called a regulon. SCENIC yields a regulon-cell matrix with regulon activities across all single cells, and provides therefore an alternative dimensionality reduction**. A UMAP visualization based on the regulon-cell matrix reveals three candidate cell states in an unsupervised manner,
 
 
 
 ##### Xie et al. 2020
 
-methods are urgently needed which can separate the impact of true regulatory elements from stochastic changes and downstream effects. We propose the differential network flow (DNF) method to identify key regulators of progression in development or disease. Given the network representation of consecutive biological states, DNF quantifies the essentiality of each node by differ- ences in the distribution of network flow, which are capable of capturing comprehensive topological dif- ferences from local to global feature domains. 
+methods are urgently needed which can separate the impact of true regulatory elements from stochastic changes and downstream effects. We propose **the differential network flow (DNF) method to identify key regulators of progression in development or disease.** **Given the network representation of consecutive biological states, DNF quantifies the essentiality of each node by differ- ences in the distribution of network flow, which are capable of capturing comprehensive topological dif- ferences from local to global feature domains.** 
 
 s a new approach for quantifying the essentiality of genes across networks of different biological states
 
@@ -1150,14 +1185,14 @@ First, all the above methods utilize networks which assume the existence of edge
 The second issue is more subtle. While techniques such as spec-
 tral analysis provide a global perspective on connectivity, these approaches fail to encapsulate the flow of information inherent in all biological networks. Network
 
-we propose the differential network flow (DNF)
-method to identify key regulators between two networks under different biological conditions. This algorithm is built upon the idea of network flow and information theory. Rewiring of a GRN can be characterized as a dynamic pattern of network flow [19], such a flow-based model captures multiple (from local to global) features of network structure. Information theory is able to quantify the uncertainty in networks, making networks built upon information-theoretic measurements a more acceptable representation of biological systems at the molecular scale [20]. Therefore, DNF is capable of capturing comprehensive topo- logical differences by quantifying the flow in a network.
+we propose **the differential network flow (DNF)**
+**method to identify key regulators between two networks under different biological conditions. This algorithm is built upon the idea of network flow and information theory.** Rewiring of a GRN can be characterized as a dynamic pattern of network flow [19], such a flow-based model captures multiple (from local to global) features of network structure. Information theory is able to quantify the uncertainty in networks, making networks built upon information-theoretic measurements a more acceptable representation of biological systems at the molecular scale [20]. Therefore, DNF is capable of capturing comprehensive topo- logical differences by quantifying the flow in a network.
 
 DNF is built upon the ideas of network flow and information
 theory. The novelty of DNF lies in quantifying node-to-node infor- mation entropy according to the network flow in a gene regulatory network, and in characterizing each node as a distribution of net- work flow, which is equal to the distribution of information entropy. The distribution differences of one gene in different net- works represents its essentiality in the biological process responsi- ble for the network’s evolution. Genes are ordered by the magnitude of this difference to establish a ranking
 
 we
-employ a three-step process to integrate both transcriptomics and proteomics datasets in GRN-construction. First, a network skeleton is built by differential expression analysis using the tran- scriptomics dataset. Specifically, the skeleton gene sets are selected based on a given criterion, such asjlog2FoldChangej > u, p-value < v, where u represents the fold change of gene expression and v rep- resents the statistical significance of differential expression. Sec- ond, the known corresponding protein–protein interactions in the STRING database (http://string-db.org) are used to establish the gene-gene network for the selected genes. For example, sup- pose p skeleton genes are selected in the first step, then a network skeleton with p nodes is described by an adjacency matrix Ai;j, such that Ai;j >0, i, j =1, ..., p, if protein i and protein j are functionally associated. Finally, the absolute value of the spearman correlation coefficient (scc) of expression is adopted to estimate the strength of connections between adjacent genes, and edges Ai;jfor which scc(i, j) < 0.1 are discarded (see
+**employ a three-step process to integrate both transcriptomics and proteomics datasets in GRN-construction.** First, a network skeleton is built by differential expression analysis using the tran- scriptomics dataset. Specifically, the skeleton gene sets are selected based on a given criterion, such asjlog2FoldChangej > u, p-value < v, where u represents the fold change of gene expression and v rep- resents the statistical significance of differential expression. Sec- ond, the known corresponding protein–protein interactions in the STRING database (http://string-db.org) are used to establish the gene-gene network for the selected genes. For example, sup- pose p skeleton genes are selected in the first step, then a network skeleton with p nodes is described by an adjacency matrix Ai;j, such that Ai;j >0, i, j =1, ..., p, if protein i and protein j are functionally associated. Finally, the absolute value of the spearman correlation coefficient (scc) of expression is adopted to estimate the strength of connections between adjacent genes, and edges Ai;jfor which scc(i, j) < 0.1 are discarded (see
 
 we construct a pair of GRNs based on a specific transcriptomics dataset (e.g. cancer and control samples) and a generic proteomics dataset
 
@@ -1173,7 +1208,7 @@ SCENIC reconstructs regulons (i.e., transcription factors and their target genes
 
 . First, coexpression modules are inferred using a regression per-target approach (GRNBoost2). Next, the indirect targets are pruned from these modules using cis- regulatory motif discovery (cisTarget). Lastly, the activity of these regulons is quantified via an enrichment score for the regulon’s target genes (AUCell). 
 
-the SCENIC pipeline consists of three steps. First, candidate regulatory modules are inferred from coexpression patterns between genes (Steps 5 and 6). Next, coexpression modules are refined by the elimination of indirect targets using TF motif information (Step 6). Finally, the activity of these discovered regulons is measured in each individual cell and used for clustering (Steps 7 and 8; Fig. 1)
+t**he SCENIC pipeline consists of three steps. First, candidate regulatory modules are inferred from coexpression patterns between genes (Steps 5 and 6). Next, coexpression modules are refined by the elimination of indirect targets using TF motif information (Step 6). Finally, the activity of these discovered regulons is measured in each individual cell and used for clustering (**Steps 7 and 8; Fig. 1)
 
 <u>Network inference</u> (Step 5) In a first step, given a predefined list of TFs, regulatory interactions between these factors and putative target genes are inferred via regression-based network inference10 from the expression or count matrix. More specifically, for every expressed gene, a regression model is built that predicts the expression of this gene across cells (the response) from the expression of these predefined TFs (the independent variables or regressors). A regulatory interaction between gene and TF is inferred by assessing the importance of these factors in the regression model
 
@@ -1206,7 +1241,7 @@ before applying a nonlinear projection technique such as t-distributed stochasti
 
 ##### Wu et al. 2021
 
-In this study, we propose a new recognition method of driver modules, named ECSWalk to solve the issue of mutated gene heterogeneity and improve the accuracy of driver modules detection, based on human protein–protein interaction networks and pan-cancer somatic mutation data. This study first utilizes high mutual exclusivity and high coverage between mutation genes and topological structure similarity of the nodes in complex networks to calculate interaction weights between genes. Second, the method of random walk with restart is utilized to construct a weighted directed network, and the strong connectivity principle of the directed graph is utilized to create the initial candidate modules with a certain number of genes. Finally, the large modules in the candidate modules are split using induced subgraph method, and the small modules are expanded using a greedy strategy to obtain the optimal driver modules. 
+In this study, we propose a new recognition method of driver modules, named **ECSWalk to solve the issue of mutated gene heterogeneity and improve the accuracy of driver modules detection, based on human protein–protein interaction networks and pan-cancer somatic mutation data**. This study first utilizes high mutual exclusivity and high coverage between mutation genes and topological structure similarity of the nodes in complex networks to calculate interaction weights between genes. Second, the method of random walk with restart is utilized to construct a weighted directed network, and the strong connectivity principle of the directed graph is utilized to create the initial candidate modules with a certain number of genes. Finally, the large modules in the candidate modules are split using induced subgraph method, and the small modules are expanded using a greedy strategy to obtain the optimal driver modules. 
 
 although the previous methods can
 detect the gene sets with high mutual exclusivity and high coverage, they just focus on the mutual exclusivity and cov- erage between genes, instead of the topological structure of complex networks. To effectively solve the problem of mutated gene heterogeneity and improve the accuracy of driver modules, this study proposes a driver module detec- tion algorithm (ECSWalk) based on gene mutation and human protein–protein interaction network. The algorithm takes into account aspects, such as high mutual exclusivity and high coverage between genes, and high similarity of topological structure. First,
@@ -1219,11 +1254,11 @@ Second, based on the weighted network constructed in the previous step, the larg
 
 ##### Wang et al. 2019
 
-we explore evolutionary algorithms, and their applications with sparse matrix representations. Our approach can speed up the optimization process and find good solutions, uncovering the underlying GRNs
+we explore **evolutionary algorithms**, and their applications with sparse matrix representations. Our approach can speed up the optimization process and find good solutions, uncovering the underlying GRNs
 
 ##### Wu et al. 2021
 
-ShareNet, a Bayesian framework for boosting the accuracy of cell type-specific gene regulatory networks by propagating information across related cell types via an information sharing structure that is adaptively optimized for a given single-cell dataset.
+**ShareNet, a Bayesian framework for boosting the accuracy of cell type-specific gene regulatory networks by propagating information across related cell** types via an information sharing structure that is adaptively optimized for a given single-cell dataset.
 
 The techniques we introduce can be used with a range of general network inference algorithms to enhance the output for each cell type. We
 
@@ -1236,7 +1271,7 @@ work for increasing the accuracy of predicting cell type-specific regulatory ass
 
 ##### Parikh et al. 2010 
 
-we describe a Bayesian network approach that addresses a specific network within a large dataset to discover new components. Our algorithm draws individual genes from a large gene-expression repository, and ranks them as potential members of a known pathway. We
+we describe **a Bayesian network approach that addresses a specific network within a large dataset to discover new components**. Our algorithm draws individual genes from a large gene-expression repository, and ranks them as potential members of a known pathway. We
 
 Information theory approaches, such as ARACNE, compare expres- sion profiles between all genes using mutual information as a generalized measure of correlation
 
@@ -1248,7 +1283,7 @@ We used Bayesian networks [20] to model the core PKA pathway (Figure
 
 ##### Suo et al. 2015
 
-An analysis pipeline is built for integrating genomic and transcriptomic alterations from whole-exome and RNA sequence data and functional data from protein function prediction and gene interaction networks.
+An analysis pipeline is built for **integrating genomic and transcriptomic alterations from whole-exome and RNA sequence data and functional data** from protein function prediction and gene interaction networks.
 
 The method accumulates evidence for the functional implications of mutated potential driver genes found within and across patients. A driver-gene score (DGscore) is developed to capture the cumulative effect of such genes.
 
@@ -1266,18 +1301,20 @@ Various markers or regulators associated with distinct phenotypes in melanoma ha
 
 we inferred a network of transcription factors (TFs) that act as master regulators for gene signatures of diverse cell-states in melanoma. Dynamical simulations of this network predicted how this network can settle into different “attractors” (TF expression patterns), suggesting that TF network dynamics drives the emergence of phenotypic heterogeneity.
 
-To identify the master regulators for the differentially expressed genes obtained from WGCNA, we used geWorkbench (Floratos et al., 2010). At first, we identified a baseline transcriptional interaction network for the dataset, using ARACNE (Algorithm for the Reconstruction of Accurate Cellular Networks) (Margolin et al., 2006). A p-value of 10-7 was set to determine the mutual information threshold and the software was run for 100 bootstraps with data processing inequality set to 0. Fisher’s exact test was used to identify master regulators from a list of candidate master regulators (Lambert et al., 2018). Only those transcription factors (TFs) enriched for in the WGCNA modules with p-value < 0.05 were considered for further analysis. This list was cross validated against CHEA, ENCODE and ARCHS4 databases by using EnrichR (Chen et al., 2013) to identify potential TFs regulating each module. Only those TFs identified by both analyses (ARACNE and EnrichR) were considered as master regulators (Table
+**To identify the master regulators for the differentially expressed genes obtained from WGCNA, we used geWorkbench (Floratos et al., 2010). At first, we identified a baseline transcriptional interaction network for the dataset, using ARACNE (Algorithm for the Reconstruction of Accurate Cellular Networks) (Margolin et al., 2006).** A p-value of 10-7 was set to determine the mutual information threshold and the software was run for 100 bootstraps with data processing inequality set to 0. Fisher’s exact test was used to identify master regulators from a list of candidate master regulators (Lambert et al., 2018). Only those transcription factors (TFs) enriched for in the WGCNA modules with p-value < 0.05 were considered for further analysis. This list was cross validated against CHEA, ENCODE and ARCHS4 databases by using EnrichR (Chen et al., 2013) to identify potential TFs regulating each module. Only those TFs identified by both analyses (ARACNE and EnrichR) were considered as master regulators (Table
 
 RAndom CIrcuit PErturbation (RACIPE) (Huang et al., 2017) was used to generate an ensemble of ordinary differential equation (ODE) models. Each model represents a collection of modified Hills equations for each gene, with randomized kinetics parameters sampled from user-defined ranges.
 
 ##### Ronellenfitsch et al. 2017
 
-Complimentary to perturbation approaches, we extract functionally related groups of genes by analyzing the standing variation within a sampled population. To distinguish bi- ologically meaningful patterns from uninterpretable noise, we focus on correlated variation and develop a novel density-based clustering approach that takes advantage of a percolation transition generically arising in random, uncorrelated data.
+Complimentary to perturbation approaches, we extract functionally related groups of genes by analyzing the standing variation within a sampled population. To distinguish bi- ologically meaningful patterns from uninterpretable noise, we focus on correlated variation and develop a novel **density-based clustering approach that takes advantage of a percolation transition generically arising in random, uncorrelated data.**
 
-we address the complementary challenge of identifying the underlying regulatory relationships among genes from the standing variation in expression across sampled individuals. Rather than seeking to fully infer the underlying gene regulatory network topology from this inherently (and often prohibitively) noisy class of data (11, 14), we focus on identifying functional modules — sets of genes that demon- strate significant evidence for co-regulation. Extracting gene modules from standing variation can be addressed by clustering expression patterns across samples, and has been attempted in the past with varying degrees of success (13, 15–20). Yet a primary challenge remains to distinguish true regulatory relationships from noise, and these efforts have depended on expert insights about the specific biological systems to appro- priately pre-filter genes, tune analysis parameters, and filter results. We have developed a novel, data-driven approach motivated
-by the theory of percolation on random graphs (21–24). The method is conceptually simple yet robustly applicable, reliably yielding interpretable gene clusters across diverse data sets without fine-tuned optimization and filtering steps. We exploit the generic behavior of random geometric networks close to the percolation critical point, from which we devise a null model for the noise. This noise model in turn provides a basis for identifying statistically significant branches within the cluster hierarchy
+we address the complementary challenge of **identifying the underlying regulatory relationships among genes from the standing variation in expression across sampled individuals.** **Rather than seeking to fully infer the underlying gene regulatory network topology from this inherently (and often prohibitively) noisy class of data (11, 14), we focus on identifying functional modules — sets of genes that demon- strate significant evidence for co-regulation.** Extracting gene modules from standing variation can be addressed by clustering expression patterns across samples, and has been attempted in the past with varying degrees of success (13, 15–20). Yet a primary challenge remains to distinguish true regulatory relationships from noise, and these efforts have depended on expert insights about the specific biological systems to appro- priately pre-filter genes, tune analysis parameters, and filter results. We have developed a novel, **data-driven approach motivated**
+**by the theory of percolation on random graphs** (21–24). The method is conceptually simple yet robustly applicable, reliably yielding interpretable gene clusters across diverse data sets without fine-tuned optimization and filtering steps. We exploit the generic behavior of random geometric networks close to the percolation critical point, from which we devise a null model for the noise. This noise model in turn provides a basis for identifying statistically significant branches within the cluster hierarchy
 
 .We leverage the standing variation across unperturbed samples to reveal functional modules in gene regulatory net- works (Fig. 1A). Groups of functionally related genes are expected to share a common pattern of expression variation across samples, the similarity of which can be quantified by a correlation-based distance measure
+
+
 
 ##### McClure et al. 2019
 
@@ -1291,9 +1328,9 @@ by the theory of percolation on random graphs (21–24). The method is conceptua
 
 ##### Tapia-Carrillo et al. 2019
 
-an extension of the original Master Regulator Inference Algorithm (MARINa) analysis. This modified version of MARINa utilizes a restricted molecular signature containing genes from the 25 human pathways in KEGG's signal transduction category.
+**an extension of the original Master Regulator Inference Algorithm (MARINa) analysis. This modified version of MARINa utilizes a restricted molecular signature containing genes from the 25 human pathways in KEGG's signal transduction category.**
 
-TMRs were inferred using the MARINa (Lefebvre et al., 2010). MARINa identifies TMRs through an enrichment of TF regulons (a TF with its targets) with differentially expressed genes between the two phenotypes (breast cancer vs. adjacent healthy mammary tissue). TMR inference with MARINa requires as input a network of regulons, a gene expression, molecular signature, and a null model (Lefebvre et al., 2010) (Figure
+TMRs were inferred using the MARINa (Lefebvre et al., 2010). **MARINa identifies TMRs through an enrichment of TF regulons (a TF with its targets) with differentially expressed genes between the two phenotypes (breast cancer vs. adjacent healthy mammary tissue). TMR inference with MARINa requires as input a network of regulons, a gene expression, molecular signature, and a null model** (Lefebvre et al., 2010) (Figure
 
 To obtain a regulon set from the data, we used the expression
 matrix of the tumor samples and a list of transcription factors in the TFCheckpoint curated database (Tripathi et al., 2013
@@ -1307,15 +1344,15 @@ Mutual information can detect both indirect and direct
 relationships. ARACNe constrains the number of indirect interactions applying the data processing inequality theorem (DPI), which considers that, in a triangle of interactions, the weakest one has a greater probability of being indirect if its difference is large with respect to the other two interactions (Hernández-Lemus
 
 The
-type of association (activation or repression) of the transcription factors is determined from the Spearman correlation of the TF with the levels of expression of all its targets (Lefebvre et al., 2010). This calculation was performed by the aracne2regulon function in the viper R package (Alvarez et al., 2016). This function transforms the undirected MI network from ARACNE into a regulons network that is directed.
+type of association (activation or repression) of the transcription factors is determined from the Spearman correlation of the TF with the levels of expression of all its targets (Lefebvre et al., 2010). This calculation was performed by the **aracne2regulon function in the viper R package (Alvarez et al., 2016). This function transforms the undirected MI network from ARACNE into a regulons network that is directed.**
 
-In the standard MARINa workflow, the molecular signature is built by comparing the expression level distributions of all genes between two conditions (e.g., healthy and diseased). For this work we built a molecular signature using only those genes annotated within the signal transduction pathways category in the KEGG database (Kanehisa
+**in the standard MARINa workflow, the molecular signature is built by comparing the expression level distributions of all genes between two conditions (e.g., healthy and diseased). For this work we built a molecular signature using only those genes annotated within the signal transduction pathways category in the KEGG database** (Kanehisa
 
 
 
 To estimate the probability that a gene set enrichment score depends on the biological context and thus is not merely random, a null model was generated by random permutation between cases and control samples and recalculating differential expression values
 
-With the molecular signature, the regulon network and the null model, MARINa estimated the top regulons that enrich the most differentially expressed genes in the molecular signature through a gene set enrichment analysis
+**With the molecular signature, the regulon network and the null model, MARINa estimated the top regulons that enrich the most differentially expressed genes in the molecular signature through a gene set enrichment analysis**
 
 The difference of this work with respect to MARINa lies in
 the use of a specific set of genes (signal transduction signature) which produces a ranking of the regulons for this specific subset. It is important to note that the regulons network used as input is the same as in regular MARINa, but the ranking is focused on the specific gene signature. The set of genes that constitute each regulon may include genes that are not in the molecular signature and can be part of a more diverse range of biological functions than signal transduction. This is the reason why we performed a subsequent enrichment analysis of the regulons with all KEGG human pathways
@@ -1324,9 +1361,9 @@ the use of a specific set of genes (signal transduction signature) which produce
 
 ##### Grechkin et al. 2016
 
-DISCERN takes two expression datasets as input: an expression dataset of diseased tis- sues from patients with a disease of interest and another expression dataset from matching normal tissues. DISCERN estimates the extent to which each gene is perturbed—having distinct regulator connectivity in the inferred gene-regulator dependencies between the dis- ease and normal conditions. This approach has distinct advantages over existing methods. First, DISCERN infers conditional dependencies between candidate regulators and genes, where conditional dependence relationships discriminate the evidence for direct interac- tions from indirect interactions more precisely than pairwise correlation. Second, DISCERN uses a new likelihood-based scoring function to alleviate concerns about accuracy of the specific edges inferred in a particular network.
+DISCERN takes two expression datasets as input: an expression dataset of diseased tis- sues from patients with a disease of interest and another expression dataset from matching normal tissues. **DISCERN estimates the extent to which each gene is perturbed—having distinct regulator connectivity in the inferred gene-regulator dependencies between the dis- ease and normal conditions**. This approach has distinct advantages over existing methods. First, DISCERN infers conditional dependencies between candidate regulators and genes, where conditional dependence relationships discriminate the evidence for direct interac- tions from indirect interactions more precisely than pairwise correlation. Second, DISCERN uses a new likelihood-based scoring function to alleviate concerns about accuracy of the specific edges inferred in a particular network.
 
-Most analysis methods that compare gene expression datasets from two conditions address the question ofwhich genes are significantly differentially expressed between conditions. The DISCERN method addresses a distinct question concerning which genes are significantly rewired in the inferred gene-regulator network in disease tissues
+Most analysis methods that compare gene expression datasets from two conditions address the question ofwhich genes are significantly differentially expressed between conditions. **The DISCERN method addresses a distinct question concerning which genes are significantly rewired in the inferred gene-regulator network in disease tissues**
 
 
 
@@ -1337,7 +1374,7 @@ Most analysis methods that compare gene expression datasets from two conditions 
 
 ##### Jung 2019
 
-We propose a method of Knowledge-based Evaluation of Dependency DifferentialitY (KEDDY), which is a statistical test for differential functional protein networks of a set of genes be- tween two conditions with utilizing known functional protein–protein interaction information. Unlike other approaches focused on differential expressions of individual genes or differentiality of individual interactions, KEDDY compares two conditions by evaluating the probability distributions of functional protein networks based on known functional protein–protein interactions
+We propose a method of Knowledge-based Evaluation of Dependency DifferentialitY (KEDDY), which is a statistical test for differential functional protein networks of a set of genes be- tween two conditions with utilizing known functional protein–protein interaction information. Unlike other approaches focused on differential expressions of individual genes or differentiality of individual interactions, **KEDDY compares two conditions by evaluating the probability distributions of functional protein networks based on known functional protein–protein interactions**
 
 
 
@@ -1345,29 +1382,29 @@ We propose a method of Knowledge-based Evaluation of Dependency DifferentialitY 
 
 the deep neural networks constrained by several types of prior biological information, e.g. signaling pathway information, as a way to reduce the dimensionality of the scRNA-seq data.
 
-including in the DNN architecture pathway knowledge allows obtaining a smaller architecture (less nodes and hence faster inference), which is easier to interpret [22] and that performs as well as other methodologies in a set of cell type identi?cation benchmarks
+**including in the DNN architecture pathway knowledge allows obtaining a smaller architecture** (less nodes and hence faster inference), which is easier to interpret [22] and that performs as well as other methodologies in a set of cell type identi?cation benchmarks
 
-Prior Biological Information Integration
-In order to incorporate the biological priors, the ?rst hidden layer was adjusted in two ways: 1) each neuron/node corresponds to one biological unit, in this case there are as many neurons as pathways and 2) the weights that arrive to a neuron are ?xed to zero when no input gene participates in the pathway associated to the node. In this way, biological priors were incorporated using known gene clusters with de?ned functions (the pathways) at the same time that the size of the model is reduced, which can help with over-?tting as well as training and inference time
+**Prior Biological Information Integration**
+**In order to incorporate the biological priors, the ?rst hidden layer was adjusted in two ways: 1) each neuron/node corresponds to one biological unit, in this case there are as many neurons as pathways and 2) the weights that arrive to a neuron are ?xed to zero when no input gene participates in the pathway associated to the node. In this way, biological priors were incorporated using known gene clusters with de?ned functions (the pathways) at the same time that the size of the model is reduced, which can help with over-?tting as well as training and inference time**
 
 
 
 ##### Giorgi et al. 2014
 
-t CINDy (Conditional Inference of Network Dynamics), a novel algorithm for the genome-wide, context specific inference of regulatory dependencies between signaling protein and transcription factor activity, from gene expression data. The algorithm uses a novel adaptive partitioning methodology to accurately estimate the full Condition Mutual Information (CMI) between a transcription factor and its targets, given the expression of a signaling protein
+**CINDy (Conditional Inference of Network Dynamics), a novel algorithm for the genome-wide, context specific inference of regulatory dependencies between signaling protein and transcription factor activity, from gene expression data. T**he algorithm uses a novel adaptive partitioning methodology to accurately estimate the full Condition Mutual Information (CMI) between a transcription factor and its targets, given the expression of a signaling protein
 
 
 
 ##### Morone et al. 2015
 
-we map the problem onto optimal percolation in random networks to identify the minimal set of influencers, which arises by minimizing the energy ofa many-body system, where the form of the interactions is fixed by the non- backtracking matrix15
+we map the problem onto **optimal percolation in random networks to identify the minimal set of influencers**, which arises by minimizing the energy ofa many-body system, where the form of the interactions is fixed by the non- backtracking matrix15
 ofthe network.
 
 
 
 ##### Zhang et al. 2017
 
-We propose a new differential network analysis method to address the above challenges. Instead of using Gaussian graphical models, we employ a non-paranormal graphical model that can relax the normality assumption. We develop a principled model to take into account the following prior information: (i) a differential edge less likely exists between two genes that do not participate together in the same pathway; (ii) changes in the networks are driven by certain regula- tor genes that are perturbed across different cellular states and (iii) the differential networks esti- mated from multi-view gene expression data likely share common structures.
+We propose a **new differential network analysis method to address the above challenges. Instead of using Gaussian graphical models, we employ a non-paranormal graphical model that can relax the normality assumption. We develop a principled model to take into account the following prior information: (i) a differential edge less likely exists between two genes that do not participate together in the same pathway; (ii) changes in the networks are driven by certain regula- tor genes that are perturbed across different cellular states and (iii) the differential networks esti- mated from multi-view gene expression data likely share common structures**.
 
 
 
@@ -1380,10 +1417,10 @@ We propose a new differential network analysis method to address the above chall
 ##### Gamez et al. 2015
 
 Statistical analyses were conducted to associate miRNAs and
-proteins. As a first approach to describe associations present in our database, we choose probabilistic graphical models com- patible with high dimensionality. The result is an undirected graphical model with local minimum Bayesian Information Criterion (BIC; ref. 14) obtained after executing the next steps: first the spanning tree with maximum likelihood is found and then (I), a forward search is performed by successively adding edges that reduce the BIC and still preserve the decomposability (15) of the initial graph (II). In the first stage, in order to learn a Markov tree structure from a random sample of a supposed multidimensional normal population, we used the extension of the Chow–Liu solution (16), according to which, for categorical data, the maximum likelihood structure is given by the max- imum weight spanning tree (17) with empirical mutual infor- mation quantities (18) as edge weights. In the Gaussian case, a similar reasoning applies, but now the mutual information value is ?(1/2)log(1 ? r2), where r is the empirical correlation coefficient between the two variables (nodes) joined by the edge. Given that the algorithm is invariant under monotone transformations of the variables, r2 can be used as a weight. In the second phase, we introduce the BIC criterion that penalizes more complex models and then, simpler graphs are generated. This is a fundamental objective in high-dimensional problems. Both methods are implemented in the open-source statistical programming language R (19). In particular, the functions minForest and stepw,inthe gRapHD package (20), are used for phases I and II, respectively
+proteins. As a first approach to describe associations present in our database, we choose **probabilistic graphical models** com- patible with high dimensionality. The result is an undirected graphical model with local minimum Bayesian Information Criterion (BIC; ref. 14) obtained after executing the next steps: first the spanning tree with maximum likelihood is found and then (I), a forward search is performed by successively adding edges that reduce the BIC and still preserve the decomposability (15) of the initial graph (II). In the first stage, in order to learn a Markov tree structure from a random sample of a supposed multidimensional normal population, we used the extension of the Chow–Liu solution (16), according to which, for categorical data, the maximum likelihood structure is given by the max- imum weight spanning tree (17) with empirical mutual infor- mation quantities (18) as edge weights. In the Gaussian case, a similar reasoning applies, but now the mutual information value is ?(1/2)log(1 ? r2), where r is the empirical correlation coefficient between the two variables (nodes) joined by the edge. Given that the algorithm is invariant under monotone transformations of the variables, r2 can be used as a weight. In the second phase, we introduce the BIC criterion that penalizes more complex models and then, simpler graphs are generated. This is a fundamental objective in high-dimensional problems. Both methods are implemented in the open-source statistical programming language R (19). In particular, the functions minForest and stepw,inthe gRapHD package (20), are used for phases I and II, respectively
 
  Functional node identification and activity measurement To identify functional nodes within the probabilistic graphical
-models, we split it in several branches. Then, we used Gene Ontology analyses to investigate which function or functions were over-represented in each branch. To measure the functional activity ofeach node, we calculated the mean expression ofall the proteins included in one branch related with a concrete function. Differences in node activity between ERþ and TNBC samples were assessed by class comparison analyses
+models, we split it in several branches. Then, we used **Gene Ontology analyses to investigate which function or functions were over-represented in each branch.** To measure the functional activity ofeach node, we calculated the mean expression ofall the proteins included in one branch related with a concrete function. Differences in node activity between ERþ and TNBC samples were assessed by class comparison analyses
 
 One obvious limitation of proteomics when compared with genomics is that genomics can measure the expression of all known genes in the same experiment, whereas proteomics only provides a measurement of peptides that are both detected and identified. This
 
@@ -1443,4 +1480,482 @@ The second study, which was conducted by the Clinical Proteomic Tumor Analysis C
 Both studies showed limited con- cordance between the overall protein and mRNA profiles. This was evident both in the 19-protein signature identified by Tya- nova and colleagues, in which a third was found to be regulated exclusively on the proteomic level, and also in the global protein– mRNA correlation analysis of the CPTAC, which resulted in a median Pearson correlation of 0.39
 
 The larger scope of the CPTAC study enabled them to perform unsupervised classification of the tumors and identify novel proteomic and phosphoproteomic subgroups. Compared with the four expected mRNA-based subtypes, they identified only three proteomic groups, out of which two corresponded to the known classification (a basal cluster and a luminal cluster), whereas the third one was a new "stromal-enriched" cluster. This cluster was characterized by samples originating from all sub- types, and thus maybe associated with stroma-rich regions within the tumors
+
+In this study, in order to explore intertumor heterogeneity and examine proteomics-based classification, we integrated three datasets from both published and unpublished resources, all generated using the same approach. The entire cohort consisted of 212 formalin-fixed paraffin-embedded (FFPE) samples origi- nating from different breast cancer subtypes, as well as healthy tissue. Out ofthese, 131 samples were selected for analysis, based onthe data qualityandsample annotation. Unsupervised analysis of the integrated cohort enabled us to identify a novel luminal breast cancer subtype. Comparing our findings to independent published data, we found that this classification is reproduced only on the proteomic level. This proteomic cohort enabled us to both support and challenge the known breast cancer classifica- tion, and thus to facilitate the analysis of similarities and differ- ences between distinct omics levels.
+
+
+
+Batch effects originating from the dataset integration-related variability were corrected for using principal component analysis (PCA) and component subtraction. We found that the second component of a PCA separates between datasets (9% of the variation), and therefore subtracted this component before inte- grated downstream analysis.
+
+
+
+For the **consensus clustering analysis**, ratios across samples and
+across proteins were z-score normalized followed by their clus- tering using the consensus cluster algorithm (26). The algorithm performs multiple iterations ofhierarchical clustering, whereas in each iteration only a subset ofthe data is considered and the range of the number of output clusters is determined by the user. This results in a separate consensus matrix for each number ofclusters, describing the frequency oftwo samples clustering together out of the total number of iterations. We used R environment (version 3.2.3) and the ConsensusClusterPlus package (27)
+
+
+
+Kyoto Encyclopedia ofGenes and Genomes (KEGG) pathway proteomaps
+
+
+
+classified the 109 tumor samples using the consensus clustering algorithm (26).
+
+
+
+Exami- nation of the distribution of the classical subtypes between the consensus clusters showed partial concordance with the known classification; most TN samples belonged to consensus cluster (CC) 4; HER2 samples spread across clusters; and ERþ samples (LumA or LumB) were divided into three clusters (Fig. 2B). These analyses, as well as t-SNE analysis (Fig. 2C), revealed that although CC1,CC2,andCC3are all associated withERþsamples, CC2 and CC3 are closer to the TN-enriched cluster, CC4; and CC1 is relatively segregated from them. Notably, running the consen- sus clustering algorithm with k¼ 3, the ERþCC2 was co-clustered (Supplementary Fig. S2C). To examine whether contaminating with the ER? CC4, thus indicating their higher global proximity we repeated the analysis and omitted all extracellular matrix (ECM) proteins from the dataset using Gene Ontology Cellular Component annotation. Re-analyzing with consensus clustering resulted in three clusters, reproducing CC1 and CC3, and creating a combined cluster of CC2 and CC4. This suggests that ECM proteins do not play a key role in the separation of the luminal samples (
+
+
+
+Previous studies highlighted major differences in unsupervised
+classification based on proteomic compared to the genomic approaches (1–3, 7). We therefore sought to examine whether the proteomic signature of differentially expressed proteins in CC2 and CC3 also separates the LumA samples based on their RNA profiles. In contrast to the separation based on the protein levels (Fig. 5C), hierarchical clustering oftheRNAdata ofthe same genes showed no clear differentiation between the intrinsic sub- types, even when sorted according to subtype (Fig. 5D). We applied the same analysis to an independent gene expression dataset, from the Metabric study (2012). Sorting the samples according to the 10 integrative clusters identified in the Metabric analysis and plotting the gene expression of the same signature yielded results similar to the TCGA RNA analysis, and did not manage to differentiate clearly between the clusters (Fig.
+
+
+
+
+
+Unsupervised tumor classification using the consensus clustering algorithm separated the data into four clusters, consisting of TN-enriched group, and three ER+ enriched groups,  while HER2 samples were distributed across groups
+
+
+
+The inability to identify a distinct group of HER2 samples in proteomics data might stem from the diverse phenotype of these tumors beyond HER2 expression. This result was previously shown by the CPTAC consortium (13) using similar techniques and a smaller cohort, and also by the Metabric study (2), which shows that HER2 is high in several integrative clusters based on copy number aberrations and mRNA expression. Additionally, a mass cytometry-based proteomic analysis of breast cancer also suggested that HER2 expressing cells do not represent a single phenotype, and are instead characterized byvariable expression of other proteins (44). The RPPA results did separate the HER2 subtype, presumably due to the pre-selection of a large number of HER2 related proteins in the arrays. In the current work, we consistently assessed HER2 and its associated proteins in an unbiased manner. They were indeed high in the HER2 clinical subtype, but showed variable expression across consensus clus- ters. While the importance ofHER2 is not questionable given the efficacy of HER2-directed therapies, our results suggest that this pathway affects only a subset of the proteome and does not represent a distinct subtype when examining the global proteome profiles. Thus, it is useful as a therapeutic marker rather than a representative of a defined tumor subtype. Additional
+
+major discrepancies have been identified between all 'omics'- based classifications (including ours), which are based on aver- aging of large tumor regions, as compared to IHC approaches. Apart from potentially overlooking the effect of tumor microen- vironment components (e.g., ECM,immune infiltrates, and fibro- blasts), "averaging" the cancer cells masks the intratumor hetero- geneity that is well documented in breast cancer (45, 46). This intratumor heterogeneity is likely to underlie some of the
+observed inconsistencies between classification using the clinical IHC approaches and the "omics" approaches
+
+
+
+
+
+Comprehensive investigation of the three ERþ clusters identified one LumB cluster and two LumA clusters. One of the two 
+LumA clusters was characterized with increased activity of TN- associated signaling proteins, thus suggesting a novel, sub- subtype of LumA tumors.
+
+Our classification was validated using an independent dataset obtained from TCGA, which also assisted in the characterization of this novel subtype as potentially more aggressive and therapy resistant. The mechanism underlying this resistance relies on the coordinated interaction between ER itself and growth factor signaling protein
+
+For example, KRT18 TN-enriched CC4; and the TN markers EGFR and CD44 were was significantly higher in all ERþ clusters compared to the significantly higher in CC4 when compared to CC3 and CC1, respectively. Examination of the LumB marker MKI67 suggested thatCC1 represents this subtype. This was further supported byan enrichment analysis that identified gene sets ofRB1-regulated and MYC-related targets, with which LumB subtype is known to be associated (1), as significantly enriched withinCC1samples when compared to either CC2 or CC3 (Supplementary Fig. S3A). This analysis also showed that the majority of significantly enriched processes are higher in CC1 in both comparisons. Very few processes are higher in CC2 and CC3, and the common ones include mostly interferon related pathways
+
+
+
+Having associated CC4 with TN subtype and CC1 with LumB subtype, CC2 and CC3 remained as two possible LumA clusters
+
+### Cao et al. 2021
+
+In this study, an integrated strategy with a combination of tran- scriptomics, proteomics, glycomics and glycoproteomics was applied to explore the dysregulation of glycogenes, glycan structures and glycoproteins in chemoresistance of breast cancer cells. In paclitaxel (PTX) resistant MCF7 cells, 19 differentially expressed N-glycan-related proteins were identified, of which MGAT4A was the most significantly down-regulated, consistent with decrease in MGAT4A expression at mRNA level in PTX treated BC cells. Glycomic analysis consistently revealed suppressed levels of multi-antennary branching structures using MALDI-TOF/TOF-MS and lectin microarray. Several target glycoproteins bearing suppressed levels of multi- antennary branching structures were identified, and ERK signaling pathway was strongly suppressed in PTX resistant MCF7 cells. Our findings demonstrated the aberrant levels of multi-antennary branching structures and their target glycoproteins on PTX resistance.
+
+
+
+N.B we are aware that not splitting the datasets is bias and will produce over-fitted models; however, here it is important to note that we do not use the results of **LASSO regression as a stand-alone method for selecting proteins**, but as a way of filtering results from differential abundance analysis
+
+We performed LASSO regression with tenfold cross- validation, as implemented in the R-package, GLMNET [50]. We used contrasts from the differential expression analysis which yielded significant hits, including (a) BC subtype, (b) TIL status, and (c) hormone receptor sta- tus of ER and PgR as a response
+
+The full set of pro- teins retained after filtering were used as input for the LASSO regression. We
+
+We ran each LASSO model 10 times with 10 different random seeds and extracted the overlap of selected proteins across runs to a consensus set
+
+We performed RF with the contrasts from the DAA, which yielded significant hits, including (a) breast can- cer subtype; (b) TIL status, and (c) hormone receptor status of ER and PgR as a response. 
+
+
+
+
+
+### Liu et al. 2019
+
+**independent component analysis (ICA)** to human breast cancer proteogenomics data to retrieve mechanistic information. We show that as an unsupervised feature extraction method, ICA was able to construct signatures with known biological relevance on both transcriptome and proteome levels. Moreover, pro- teome and transcriptome signatures can be associated by their respective correlation with patient clinical features, providing an integrated description of phenotype-related biological processes. 
+
+**independent component analysis to proteomic and transcriptomic data of 77 breast cancer samples to extract pathway-level molecular signa- tures**
+
+
+
+Independent component analysis (ICA) is an unsuper- vised learning method widely used in signal processing and has been applied to cancer genomics with notable success
+
+This approach decomposes the molecular profiles into linear combinations of non-Gaussian independent sources or components, each of which is comprised of weighted contri- butions from individual genes. Therefore, ICA reduces the dimensionality of original data by representing the molecular profile of each sample as weighted sum of several “meta- genes” or “meta-proteins,” and the weight of specific meta- gene/protein (mixing scores) in one sample reflects the “ac- tivity” of that component in the sample.
+
+Different from the more conventional dimension reduction method of principal component analysis (PCA), which seeks to find uncorrelated factors that explain the variance among the data, and works the best when the underlying components are normally dis- tributed, ICA are able to discover more informative represen- tations of high-dimensional biological signals, which are usually super-Gaussian and contain more close-to-zero values than a normally-distributed sample
+
+
+
+As **clinical features are also available for the CPTAC samples, molecular signa- tures can be constructed from clusters of meta-genes/pro- teins that show activity patterns correlated with these clinical features**.
+
+
+
+taking advantage of a specific clinical fea- ture as an “anchor,” this method may help extract patterns at different biological levels and across different cohorts, which may originate from the same cellular functionality
+
+
+
+signatures extracted from different data sets were filtered based on their intrinsic stability and association with known clinical features (see Experimental Procedures below) and grouped into modules that showed similar correlation pat- terns to clinical features. 
+
+Subsequent gene set enrichment analysis revealed the biological relevance of these modules to
+
+
+
+Independent Component Analysis—Data were presented in a p ⫻ n
+matrix X with genes in rows and samples in columns. The goal of ICA is to decompose the p ⫻ n data matrix into the product of a source matrix S (p ⫻ k) and a mixing matrix A (k ⫻ n). The ith column of the source matrix represents coefficients of each of the p genes for the ith inde- pendent component. The coefficient vector of each component could be considered as p random samples that revealed probability distribu- tion of a specific random variable. The mutual information between any pair of such variables is minimized, and the components are therefore statistically independent. Genes with coefficients of positive or negative values in the same component indicated that their levels may be en- hanced or suppressed in the same biological process. The ith row of the mixing matrix represents contributions of the ith component in the source matrix to profiles of each of the n samples. Rows of the mixing matrix therefore record the activity of each components (or meta-genes/ meta-proteins) across n samples.
+
+
+
+All computations were carried out on the R platform. Package “fastICA” which implements the iterative FastICA algorithm (15) was used to extract non-Gaussian independent components with logcosh contrast function. Components were subsequently assigned to clusters using the “cluster” package. Clusters were visualized with 2d t-SNE using the R package “tsne.” The number of clusters was determined as equal to number of components extracted at each run of ICA. When the number of samples is small comparing to the number of features, which is usually the case for biological data, it is convenient to retrieve as many as independent signal sources as possible, and the number of compo- nents extracted is equal to sample size
+
+The package “pcaMethods” was used to calculate principal com-
+ponents for comparison with independent components. 
+
+Each cluster was also associated with clinical features as following: First, 22 clinical features were recoded into ordinal variables (supplemental Table S1). Second, ordinary linear regression models were built with corre- sponding mixing scores for members in a component cluster to predict each of the ordinal responses. Counts of significant associa- tions between components and clinical features (p value for the slope coefficient ⬍ 5.9 ⫻ 10⫺7, Bonferroni correction at ␣⫽ 0.01 level) were tabulated. Hierarchical clustering with complete linkage was applied to the clinical associations of independent components clusters ex- tracted from both transcriptome and proteome data.
+
+The stability of these signatures could be inspected by visu- alizing all meta-genes and meta-proteins with t-distributed stochastic neighbor embedding (t-SNE), a widely used dimen- sionality reduction technique (19) 
+
+We recoded 22 clinical features into ordinal factors and used linear regres- sion to assess their correlation with activity scores of meta- genes or meta-proteins in each signature cluster. To select the most significant associations, Bonferroni correction was applied to control for multiple comparisons at ␣ ⫽ 0.01 level, such that a nominal p value of 5.9 ⫻ 10⫺7
+was set as the
+significance threshold (corrected ␣ ⫽ 0.01/(77 ⫻ 22)). Within
+
+The biological relevance of the clusters identified with ICA
+could be further validated by inspecting the average gene coefficients (the centroids of the clusters).
+
+The corre- lation between mixing scores and clinical features provided a valuable opportunity to find the link between independently extracted components from different data types
+
+
+
+**To integrate**
+**the proteomic and transcriptomic information with guidance from clinical relevance, we applied the hierarchical clustering algorithm to the vectors of clinical association counts for the most clinically relevant meta-protein and meta-gene clusters**
+
+
+
+Proteome and transcriptome signatures could therefore be grouped based on their similarity in functional indications, as the metric of direct correlation between gene coefficients of different signatures was limited by noise introduced by high dimensionality (supplemental
+
+Combined network vi- sualization of GO terms enriched in proteome and transcrip- tome signatures allowed us to examine complementary func- tional modules on different biological levels.
+
+### Krug et al. 2020
+
+
+
+Proteogenomic analyses of 122 primary breast cancers provide insights into clinically relevant biology, including cell cycle dysregulation, tumor immunogenicity, aberrant metabolism, and heterogeneity in therapeutic target expression.
+
+‘‘proteogenomics’’ approachwas applied to 122 treatment-naive primary breast cancers accrued to preserve post-translational modifications, including protein phosphoryla- tion and acetylation.
+
+Proteogenomics challenged standard breast cancer diagnoses, provided detailed anal- ysis of the ERBB2 amplicon, defined tumor subsets that could benefit from immune checkpoint therapy, and allowed more accurate assessment of Rb status for prediction of CDK4/6 inhibitor responsiveness
+
+. Phospho- proteomicsprofilesuncoverednovelassociationsbetweentumorsuppressorlossandtargetable kinases.Ace- tylproteomeanalysis highlightedacetylationonkeynuclear proteins involved in theDNAdamage responseand revealed cross-talk between cytoplasmic and mitochondrial acetylation and metabolism. Our
+
+Proteogenomics is an approach to tumor profiling that com-
+bines next-generation DNA and RNA sequencing with mass spectrometry-based proteomics to provide deep, unbiased quantification of proteins and post-translational modifications such as phosphorylation
+
+The Clinical Pro- teomic Tumor Analysis Consortium (CPTAC) seeks to perform deep-scale proteogenomics profiling across multiple cancer types. Our initial proteogenomics analysis of BRCA using resid- ual samples from The Cancer Genome Atlas (TCGA) provided proof of principle that proteogenomics represented an advance in BRCA profiling (Mertins
+
+proteogenomics characterization of the largest cohort to date of BRCA samples that were acquired to minimize ischemic time, maximizing fidelity and reducing pre- analytical variability. We offer the first comprehensive report of the BRCA acetylome;
+
+The PAM50 model was applied to RNA sequencing (RNA-seq)
+data to determine representation of intrinsic subtypes (Parker
+
+Somatic copy number alteration (SCNA) data were analyzed to detect focal and arm-level events (Mermel et al., 2011; Figures S2C and S2D) with confirmation of anticipated effects on mRNA and protein abundance 
+
+To explore intrinsic cohort structure using the full complement of proteogenomics data, single-omic and multi-omics clustering were performed for SCNA, mRNA, protein, and individual phos- phosite and acetylation site abundance using non-negative ma- trix factorization (NMF) (Lee
+
+Although NMF yielded between two and six clusters in single-omic ana- lyses (Figure S3A), integrative multi-omics analysis converged on four NMF clusters, with	
+
+Clusters designated luminal A-inclusive (NMF LumA-I) and basal-inclusive (NMF Basal-I) were almost entirely composed of tumors with the cor- responding PAM50 assignments
+
+
+
+Two clusters showed sample compositions that were discor-
+dant with PAM50 subtypes. The luminal B-inclusive cluster (NMF LumB-I) comprised all but one LumB case but also included a subset of PAM50 LumA samples. A
+
+The two luminal clusters also showed remarkable dichotomies in pathway space, supporting the concept that, although heterogeneous, these are biologically separate tumor types. For example, cancer hallmark gene set enrichment scores for LumA-I versus LumB-I were significantly anti-correlated even though estrogen response-related terms were positively enriched in both (Figures
+
+Notably, a mixed PAM50 LumA/B cluster was also observed when clus- tering the global RNA data in isolation, indicating that PAM50 classification, a method simplified for clinical purposes, does not capture all biological distinctions between LumA and LumB
+
+random
+forest classifiers were trained on protein or mRNA data to distin- guish PAM50 LumA samples assigned to the NMF LumB-I clus- ter from PAM50 LumA samples assigned to the NMF LumA-I cluster. When these classifiers were applied to METABRIC data (Curtis et al., 2012), samples from patients with NMF fea- tures that drove PAM50 LumA samples into the NMF LumB-I cluster had outcomes that were intermediate between the re- maining PAM50 LumA samples and the PAM50 LumB samples (Figure 1C; Figure S3K). This finding supports the NMF assign- ment of some PAM50 LumA samples to the higher-risk LumB-I cluster.
+
+HER2-inclusive cluster (NMF HER2-I) was remarkably het- erogeneous. Although predominantly composed of HER2-en- riched PAM50 subtype samples and samples with centrally confirmed, clinically positive ERBB2 status, NMF HER2-I also included tumors from all four other PAM50 subtypes, suggesting the presence of unifying biological features in NMF informatic space that are absent in the PAM50-based classification
+
+To identify putative therapeutic targets specific for each NMF subtype, phosphoproteomic data were used as kinase activation surrogates
+
+Phosphorylated kinases enriched in each NMF subtype were identified using outlier enrichment analysis (Black- Sheep Python package) (Blumenberg
+
+The BlackSheep approach also associated phosphorylated ki-
+nase outliers with recurrent somatic mutations (Figure
+
+Tumor metabolic characteristics were profiled at the level of the proteome, and unsupervised clustering of differentially expressed (DE) metabolism-related proteins
+
+Protein acetylation (Ac) has been implicated in cellular meta-
+bolism in addition to roles in epigenetic regulation
+
+
+
+RNA-based immune cell deconvolution signatures and protein- level signatures for immune modulators (Thorsson et al., 2019) revealed a range of immune-related features across all four intrinsic subtypes (Table S6), including the immune checkpoint proteins PD1 and PD-L1 at the RNA and phosphosite levels
+
+. RNA level profiles inferred for individual acquired and innate immune cell types generally tracked with CIBERSORT absolute scores in each sub- type (
+
+RNA-based estimates of overall I-TME provided by CI- BERSORT absolute scores
+
+
+
+Finally, stromal, fibroblast, mast cell, endothelial cell, and neutrophil signatures were elevated in PAM50 LumA tumors with higher CIBERSORT scores but lower overall in LumB and Basal tumors
+
+
+
+To identify potential drivers of immunogenicity across common BRCA subtypes, PD-L1 mRNA levels were correlated separately with proteomics data from PAM50 luminal and basal cases 
+
+
+
+Proliferation rate is a critical prognostic feature in BRCA, and the cell cycle is a target for endocrine therapy (Ellis et al., 2017) and CDK4/6 inhibition in ER+, ERBB2? advanced BRCA (Pernas et al., 2018).
+
+
+
+To compare PG fea- tures with cell cycle control in hormone receptor (HR)+/ERBB2 PG? and triple-negative BRCA (TNBC) tumors, the multi-gene proliferation score (MGPS; Figure 6A; Table S6) was generated for each sample (Ellis
+
+e high-quality, multi-omics resource we created allows inves- tigators to explore correlations between the genomic landscape and the downstream effects in the BRCA proteome, phospho- proteome, and acetylproteome, extending and refining analytical opportunities provided by prior studies (Bouchal et al., 2019; Jo- hansson et al., 2019; Mertins et al., 2016; Tyanova et al., 2016).
+Figure
+
+
+
+he entire workflow described under ‘Multi-omics clustering’ has been implemented as a module for Broad’s cloud platform Terra
+(https://app.terra.bio/). The docker containers encapsulating the source code and required R-packages for NMF clustering and ssGSEA have been submitted to Dockerhub
+
+
+
+**non-negative matrix factorization algorithm (NMF) was used to decipher de novo mutation signa- tures in cancer somatic mutations stratified by 96 base substitutions in tri-nucleotide sequence contexts**
+
+
+
+SignatureA- nalyzer exploited the **Bayesian variant of the NMF algorithm** and enabled an inference for the optimal number of signatures from the data itself at a balance between data fidelity (likelihood) and model complexity (regularization) (Kasar
+
+the inferred signatures were compared against known signatures derived from COSMIC (Tate et al., 2019) and cosine similarity was calculated to identify the best match. Mutational
+
+
+
+APOBEC enrich- ment was also assessed using TrinucleotideMatrix and plotApobecDiff functions of the maftool package (Mayakonda
+
+
+
+Non-negative matrix factorization (NMF) implemented in the NMF R-package (Gaujoux and Seoighe, 2010) was used to perform un- supervised clustering of tumor samples and to identify proteogenomic features (proteins, phosphosites, acetylsites, RNA transcripts and somatic copy number alterations) that showed characteristic abundance patterns for each cluster. Briefly, given a factorization rank k (where k is the number of clusters), NMF decomposes a px n data matrix Vinto two matrices Wand H such that multiplication of Wand H approximates V. Matrix H is a kx n matrix whose entries represent weights for each sample (1 to N) to contribute to each cluster (1 to k), whereas matrix Wis a px k matrix representing weights for each feature (1 to p) to contribute to each cluster (1 to k). Matrix H was used to assign samples to clusters by choosing the k with maximum score in each column of H. For each sample, we calculated a cluster membership score as the maximal fractional score of the corresponding column in matrix H. We defined a ’’clus- ter core’’ as the set of samples with cluster membership score > 0.5. Matrix W containing the weights of each feature in a certain cluster was used to derive a list of representative features separating the clusters using the method proposed in Kim and Park (2007). Cluster-specific features were further subjected to a 2-sample moderated t test (Ritchie et al., 2015) comparing the feature abundance between the respective cluster and all other clusters. Derived p values were adjusted for multiple hypothesis testing using the methods proposed in Benjamini and Hochberg (1995)
+
+
+
+To enable integrative multi-omics clustering, we required all data types (and converted if necessary) to represent ratios to either a common reference measured in each TMT plex (proteome, phosphoproteome, acetylproteome) or an in-silico common reference calculated as the median abundance across all samples (mRNA, see ‘‘RNA quantification’’). All data tables were then concatenated and only features quantified in all tumors were used for subsequent analysis. Features with the lowest standard deviation (bottom 5th percentile) across all samples were deemed uninformative and were removed from the dataset. Each row in the data matrix was further scaled and standardized such that all features from different data types were represented as z-scores.
+
+
+
+Since NMF requires a non-negative input matrix, the data matrix of z-scores was further converted into a non-negative matrix as follows:
+1) Create one data matrix with all negative numbers zeroed. 
+2) Create another data matrix with all positive numbers zeroed and the signs of all negative numbers removed.
+3) Concatenate both matrices resulting in a data matrix twice as large as the original, but with positive values only and zeros and hence appropriate for NMF.
+    The resulting matrix was then subjected to NMF analysis leveraging the NMF R-package (Gaujoux and Seoighe, 2010) and using
+    the factorization method described in Brunet et al. (2004).
+
+To determine the optimal factorization rank k (number of clusters) for the multi-omic data matrix, a range of clusters between k = 2 and 8 was tested. For each k we factorized matrix Vusing 50 iterations with random initializations of Wand H. To determine the optimal factorization rank we calculated two metrics for each k: 1) cophenetic correlation coefficient measuring how well the intrinsic structure of the data was recapitulated after clustering and 2) the dispersion coefficient of the consensus matrix as defined in Kim and Park (2007) measuring the reproducibility of the clustering across 50 iter- ations. The optimal k was defined as the maximum of the product of both metrics for cluster numbers between k = 3 and 8 
+
+
+
+Having determined the optimal factorization rank k, and in order to achieve robust factorization of the multi-omics data matrix V, the
+NMF analysis was repeated using 1000 iterations with random initializations of Wand H and partitioning of samples into clusters as described above. Due to the non-negative transformation applied to the z-scored data matrix as described above, matrixWof feature weights contained two separate weights for positive and negative z-scores of each feature, respectively.
+
+
+
+In order to reverse the non- negative transformation and to derive a single signed weight for each feature, each row in matrixWwas first normalized by dividing by the sum of feature weights in each row. Weights per feature and cluster were then aggregated by keeping the maximal normalized weight and multiplying with the sign of the z-score from the initial data matrix. Thus, the resulting transformed version of matrixWsigned contained signed cluster weights for each feature present in the input matrix
+
+
+
+In order to functionally characterize the clustering results, normalized enrichment scores (NES) of cancer-relevant gene sets were calculated by projecting the matrix of signed multi-omic feature weights (Wsigned) onto Hallmark pathway gene sets (Liberzon et al., 2015) using ssGSEA (Barbie et al., 2009). To derive a single weight for each gene measured across multiple omics data types (protein, RNA, phosphorylation site, acetylation site) we retained the weight with maximal absolute amplitude
+
+
+
+### Bouchal et al. 2019
+
+Proteotyping of 96 breast tumors by SWATH mass spectrometry
+
+we present a quanti- tative proteotyping approach based on sequential windowed acquisition of all theoretical fragment ion spectra (SWATH) mass spectrometry and establish key proteins for breast tumor classification. The study is based on 96 tissue samples representing five conventional breast cancer subtypes. SWATH proteotype patterns largely recapitulate these sub- types; however, they also reveal varying heterogene- ity within the conventional subtypes, with triple nega- tive tumors being the most heterogeneous. Proteins that contribute most strongly to the proteotype- based classification include INPP4B, CDK1, and ERBB2 and are associated with estrogen receptor (ER) status, tumor grade status, and HER2 status
+
+SWATH-MS Data Matrix Consisting of 2,842 Consistently Quantified Proteins across 96 Patient Samples
+
+We performed **unsupervised hierarchical clustering on the proteotypes of the pooled samples**. Figure 1A shows that pools of lymph-node-positive and negative samples of each subtype clustered closely together, indicating high reproduc- ibility of our measurements. Moreover, clustering revealed proteotype similarity between less aggressive luminal A and luminal B subtypes, whereas the more aggressive HER2 and triple-negative subtypes formed a separate cluster. The luminal B HER2+ group was more similar to the cluster with high aggressiveness, in agreement with its worse therapy response
+
+we systematically correlated the quantitative proteo-
+types of the 96 individually measured breast cancer samples and ordered the resulting correlation coefficients according to the classical tumor subtypes
+
+we found a high correlation of some samples of the HER2- enriched subtype with some (mostly lymph-node-positive) luminal B HER2+ samples, indicating that a higher degree of similarity in HER2+ tumors of luminal B and HER2-enriched subtypes were apparent from the proteotype
+
+we found that clus- tering by proteotypes closely recapitulates conventional tumor subtyping, but we also found that some of these subtypes are more heterogeneous (triple-negative tumors) than others
+
+we next constructed **a decision tree** to classify the 96 tumors into the five conventional subtypes based on their proteotypes
+
+we compared our comprehensive SWATH-MS da- taset against the five microarray datasets of 883 patients mentioned above
+
+6% of protein-level observations and 7%–15% of transcript-level observations (depending on the set of patients) exhibited statistically significant changes
+
+13%–28% of differentially abundant proteins also showed a statistically significant change with the same di- rection on the transcript level. From the reverse perspective, 9%–18% of significantly regulated transcripts showed a signifi- cant change with the same trend also on protein level
+
+A decision tree constructed from the five independent transcriptomics datasets using expression data for 1,036 genes resulted in a tree with three nodes and similar structure
+
+
+
+##### Yasar et al. 2020
+
+The approach used in variable selection is the **Penalized Logistic Regression model**. Penalized Logistic Regression adds a penalty parameter (also known as regularization) to logistic regression, which has a lot of variables so that the coefficients of variables that contribute less to the model are zero. The most frequently used punished regression model is **Lasso regression**. The coefficients of some variables that contribute less to the Lasso regression are forced to be exactly zero. Only the most important variables are kept in the final model. The lasso logistic regression model established in the study has been applied 100 times, and variables that included more than 15 in the model have been included in the study
+
+The deep learning model constructed in this study is based on a multi-layer feed-forward artificial neural network trained with stochastic gradient descent using the back- propagation technique.
+
+**The aim of this study is to classify the molecular subclasses of breast cancer using a deep learning algorithm based on proteomic data.**
+
+In the deep learning model based on proteomics data, the protein code and relative importances of the top 10 proteins, which are also important in classifying subtypes of breast cancer
+
+
+
+##### Osz et al. 2021
+
+integrate available proteome-level breast cancer datasets to identify and validate new prognostic biomarker candidates.
+
+We established a database integrating protein expression data and survival information from four independent cohorts for 1229 breast cancer patients.
+
+(n proteins = 7'432)
+
+
+
+### Lawrence et al. 2015
+
+integrate these results with data generated in-house and from publicly accessible genomics and drug sensitivity resources
+
+
+
+quantitative proteomics anal- ysis of 20 human-derived breast cell lines and 4 primary breast tumors to a depth of more than 12,000 distinct proteins
+
+We integrated proteomics data with exome sequence resources to identify genomic aberrations that affect protein expression. We per- formed a high-throughput drug screen to identify protein markers of drug sensitivity and understand the mechanisms of drug resistance
+
+We assembled a panel of 20 human breast cell lines and four clinical tumors to analyze the proteomic landscape of TNBC (Fig- ure 1A). These included 16 triple-negative cell lines covering mesenchymal-, luminal-, and basal-like subtypes, as well as three receptor-positive and one non-tumorigenic cell line to serve as a basis for comparison (Lehmann
+
+To facilitate use and dissemination of the data, we have developed a web resource (https://zucchini.gs. washington.edu/BreastCancerProteome/) in which protein abundances can be queried and correlated to genomic and drug sensitivity data, as presented below. 
+
+We used hierarchical clus- tering to identify patterns based on correlation of protein expres- sion profiles. This approach classified the panel of cell lines into two overarching groups containing four clusters (Figure 3A). To illustrate the relationship between driver gene alterations and proteome profiles, we show the most frequent census mutations and copy-number aberrations for each cell line
+
+As has been observed previously (Cancer Genome Atlas Network, 2012), PIK3CA mutations were associated with luminal breast cancer subtypes (80% of the cell lines in cluster 1), whereas TP53 mutations were characteristic of TNBC (100% of the cell lines in clusters 3 and 4). Mutations in the tumor suppressor NF1 were exclusive to the mesen- chymal-like subtype (cluster 4) and BCR mutations were exclu- sive to luminal cells (cluster 1).
+
+To better illustrate this, we used principal component analysis (PCA) to project the distances between each proteome onto a two-dimensional coordinate system. Some of the sample proteomes formed tight clusters, while others were more distantly related to those in the same group
+
+The composition of each cluster showed striking similarity to subtypes defined by mRNA expression arrays and morpholog- ical studies
+
+To better understand the biology of each subtype, we compared the distribution of protein abundance within gene ontology categories. Interest- ingly, luminal-like cells expressed higher levels of pathways associated with proliferation, such as cell cycle, growth factor signaling, metabolism, and DNA damage repair mechanisms (Figure 3E; Figure S3B). TNBC cell types, particularly the tumors and more invasive cells, expressed higher levels of pathways associated with metastasis, such as ECM-receptor interaction, cell adhesion, and angiogenesis (Figure 3E; Figure S3B). The ex- pressions of proliferation and metastasis pathways were mutu- ally exclusive, an observation also made in an analysis of mRNA expression profiles from claudin-low tumors (Prat et al., 2010). Thus, therapies targeting immune and metastatic sig- naling are an exciting avenue for TNBC treatment
+
+despite overall concor- dance of whole proteome profiles with various cellular pheno- types, in most cases the expression of particular cancer proteins did not uniformly belong to one subtype or another
+
+
+
+The identification and quantification of protein isoforms resulting from alternative splicing is a significant challenge in proteomics, arising from the reduced number of isoform-specific peptides that are amenable to analysis by mass spectrometry. For this da- taset, we first relied on isoform-specific peptides to unambigu- ously identify proteins mapping to the same gene in the Uniprot sequence database. This led to the identification of 1,860 protein isoforms that corresponded to 844 genes, 52 of which were members of the COSMIC census. Next, we examined the relative quantification of protein isoforms. Protein isoforms share long segments of identical sequence but are missing certain protein domains, resulting in altered signal intensity from those parts of the protein.
+
+
+
+We integrated publicly avail- able exome sequence and gene CN data from COSMIC (Forbes et al., 2011) with proteome profiles from 18 cell lines. Protein abundance trended positively with gene CN.
+
+
+
+We reasoned that mutations in certain driver genes, such as
+those in the same signaling pathway, would likely converge to regulate common effectors. To determine the global effects of driver gene mutations on protein expression, we systematically evaluated gene-protein associations for frequently mutated census genes (n R 3 cell lines) by comparing the abundance of each protein in cell lines with versus without a mutation, and plotted this information as a network.
+
+it demonstrates that dysregulation of cell-cycle protein abundance may be a common effect of diverse genetic mutations.
+
+We reasoned that mutations in certain driver genes, such as
+those in the same signaling pathway, would likely converge to regulate common effectors. To determine the global effects of driver gene mutations on protein expression, we systematically evaluated gene-protein associations for frequently mutated census genes (n R 3 cell lines) by comparing the abundance of each protein in cell lines with versus without a mutation, and plotted this information as a network.
+
+Proteomics of Drug Sensitivity To generate a resource for drug sensitivity prediction, we screened the 16 TNBC cell lines from our panel against a library of 160 compounds at eight different concentrations spanning four orders of magnitude. We used this data to determine the IC50, defined as the dose required to reach a 50% reduction in cell viability, for each drug in each cell line
+
+
+
+Next, we combined our pharmacological dataset with publicly accessible data from the Genomics of Drug Sensitivity in Cancer (CRx) resource (Yang et al., 2013) and performed regression analysis against mass spectrometry-derived protein abun- dances to discover proteomic markers of drug sensitivity or resistance. We used hierarchical clustering to analyze global patterns among drug sensitivity-protein expression relation- ships, revealing many distinct clusters (Figure 7B). Drugs target- ing proteins in the same pathway (e.g., BRAF andMEK inhibitors) showed similar correlation profiles. Interestingly, proteins that were part of the same pathways or complexes also clustered together, which did not occur using protein expression data alone
+
+
+
+**the integration of proteomics and drug sensitivity data using regression analysis** provides a rich resource to iden- tify unexpected modes of action and to discover new features of target pathways.
+
+to demonstrate the potential clinical utility of these re-
+sults, we asked how many proteins from the drug association analysis could be identified in primary tumors. We found that 73% (6,798/9,292) were quantifiable in the four clinical speci- mens we analyzed (Figure
+
+
+
+##### Kalocsay et al. 2020
+
+We performed quantitative proteomics on 61 human-derived breast cancer cell lines to a depth of ~13,000 proteins. The
+
+. All datasets are freely available as public resources on the LINCS portal.
+
+e https://lincs.hms.harvard.edu/db/datasets/20343
+
+
+
+### **Wu et al. 2021**
+
+**SCSubtype: intrinsic subtyping for scRNA-seq data**. Since unsu- pervised clustering could not be used to find recurring neoplastic cell gene expression features between tumors, we asked whether we could classify cells using the established PAM50 method. Due to the inherent sparsity of single-cell data, we developed a scRNA-seq-compatible method for intrinsic molecular subtyp- ing. We constructed ‘pseudobulk’ profiles from scRNA-seq for each tumor and applied the PAM50 centroid predictor. To identify a robust training set, we used hierarchical clustering of the pseu- dobulk samples with The Cancer Genome Atlas (TCGA) dataset of 1,100 breast tumors using an approximate 2,000-gene intrinsic breast cancer gene list3
+(Extended Data Fig. 2a,b). Training samples
+were selected from those with concordance between pseudobulk PAM50 subtype calls and TCGA clusters
+
+
+
+To further validate SCSubtype, we calculated the degree of epi- thelial cell differentiation (DScore)33
+and proliferation34 , both of
+which are independently associated with the molecular subtype of each cell. Basal_SC cells tended to have low DScores and high proliferation scores whereas LumA_SC cells showed high DScores and low proliferation scores (Fig. 2d and Extended Data Fig. 2e), as observed across PAM50 subtypes in TCGA (Extended Data Fig. 2f)
+
+we inves- tigated the biological pathways driving intratumor transcriptional heterogeneity (ITTH) in an unsupervised manner, using integrative clustering of tumors with at least 50 neoplastic cells, to generate 574 gene signatures of ITTH. These gene signatures identified seven robust groups, ‘gene modules’ (GMs), based on their Jaccard simi- larity (Extended Data Fig. 3a). Each GM was defined with 200 genes that had the highest frequency of occurrence across the ITTH gene signatures and individual tumors (Supplementary Table 5), mini- mizing the contribution of a single tumor to any particular module
+
+Gene-set enrichment identified shared and distinct functional
+features of these GMs (Fig. 2e). GM4 was uniquely enriched for hall- marks of cell cycle and proliferation (for example, E2F_TARGETS)  driven by genes including MKI67, PCNA and CDK1
+
+Spatially mapping breast cancer heterogeneity. To gain insights into the spatial organization of cell types, we performed spatially resolved transcriptomics on six samples
+
+
+
+We
+earlier showed that GMs were enriched for distinct
+microenvironment-associated pathways and factors; thus, we hypothesized that GMs would be spatially organized in breast tumors. We
+
+we define the cellular architecture of breast tumors at three levels. First, a detailed cellular taxonomy that includes new cell types and states and new methods for characterizing cellular heterogeneity (Fig. 8g). Second, a spatial map of cellular locations and interactions within tumors that reveals coor- dination of tumor and host cell phenotypes within tissue and reveals spatial relationships between cells. Third, using deconvolution, we observed groups of tumors with similar cell type proportions and prognostic associations, named ecotypes, often driven by spe- cific clusters of co-segregating cells
+
+
+
+We **deconvoluted all primary breast tumor** datasets in the
+METABRIC cohort40
+. Supporting the validity of the predictions,
+and SCSubtype, we observed significant enrichment (Wilcoxon test, P < 2.2 × 10−16
+) of the four SCSubtypes in tumors with matching
+bulk-PAM50 classifications. Significant enrichment (Wilcoxon test, P < 2.2 × 10−16
+) of cycling cells in basal, LumB and HER2E tumors was
+also shown (Extended Data Fig. 10c). Consensus clustering revealed nine tumor clusters with similar estimated cellular composition (‘ecotypes’) (Fig. 8a–c). These ecotypes displayed correlation with tumor subtype, SCSubtype cell distributions and a diversity of major cell types (Fig. 8a). Ecotype 3 (E3) was enriched for tumors contain- ing Basal_SC, Cycling and Luminal_Progenitor cells (the presump- tive cell of origin for basal breast cancers28
+) and a basal bulk PAM50
+subtype (Fig. 8a,b). In contrast, E1, E5, E6, E8 and E9 consisted pre- dominantly of luminal cells. Ecotypes also possessed unique patterns of stromal and immune cell enrichment. E4 was highly enriched for immune cells associated with antitumor immunity (Fig. 8a), includ- ing exhausted CD8 T cells (LAG3/c8), along with TH
+1 (IL7R/c1) and
+central memory CD4 T cells (CCR7/c0). E2 primarily consisted of LumA and normal-like tumors (Fig. 8b) and was defined by a clus- ter of mesenchymal cell types, including endothelial CXCL12+
+and
+ACKR1+ cells, s1 MSC iCAFs and depletion of cycling cells (Fig. 8a)
+
+
+
+we investigated the association between ecotypes and the
+integrative genomic clusters identified in the METABRIC cohort40 (Extended Data Fig. 10l). E3 had a high proportion of cancers from integrative genomic cluster 10, which also predominantly con- sisted of basal-like tumors with similarly poor 5-year survival. E7 had a high proportion of ERBB2-amplified and HER2E integrative genomic cluster 5 tumors. These were the worst prognosis groups in both the METABRIC and ecotype analyses. However, most ecotypes did not clearly associate with a specific integrative genomic cluster or PAM50 subtype, which is reflected by the role of stromal and immune cells in defining ecotypes. This lack of unique association suggests that ecotypes are not a simple surrogate for molecular or genomic subtypes
+
+
+
+**Pseudotemporal ordering to infer cell trajectories.** Cell differentiation was inferred for mesenchymal cells (CAFs, PVLs and endothelial cells) using the Monocle 2 (ref. 46
+) v.2.10.1 with default parameters as recommended by the
+developers. Integrated gene expression matrices from each cell type were first exported from Seurat v.3 into Monocle to construct a CellDataSet. All variable genes defined by the differentialGeneTest function (cutoff of q < 0.001) were used for cell ordering with the setOrderingFilter function. Dimensionality reduction was performed with no normalization methods and the DDRTree reduction method in the reduceDimension step
+
+
+
+Differential gene expression, module and pathway enrichment. Differential gene expression was performed using MAST67
+v.1.8.2. All DEGs from each
+cluster (log fold change >0.5, P threshold of 0.05 and adjusted P threshold of 0.05; Supplementary Tables 9 and 10) were used as input into the ClusterProfiler package69
+v.3.14.0 for gene ontology functional enrichment. Results were clustered,
+scaled and visualized using the pheatmap package v.1.0.12. Cytotoxic, TAM and dysfunctional T cell gene expression signatures were assigned using the AddModuleScore function in Seurat v.3.0.0 (ref. 36
+). The list of genes used for
+dysfunctional T cells were adopted from Li et al.38. The TAM gene list was adopted from Cassetta et al.10
+. The cytotoxic gene list consists of 12 genes that translate to
+effector cytotoxic proteins (GZMA, GZMB, GZMH, GZMK, GZMM, GNLY, PRF1 and FASLG) and well-described cytotoxic T cell activation markers (IFNG, TNF, IL2R and IL2).
+
+
+
+**Tumor ecotype analysis using deconvolution.** CIBERSORTx57 v.1.0 and DWLS58 (accessed from https://github.com/dtsoucas/DWLS on 30/11/2020) were
+used to deconvolute predicted cell fractions from a number of bulk transcript profiling datasets (see Supplementary Note for specific parameters). To prevent confounding of cycling cell types, we first assigned all neoplastic epithelial cells with a proliferation score greater than 0 as cycling and then combined these with cycling cell states from all other cell types to generate a single cycling cell state. Normalized METABRIC expression matrices, clinical information and PAM50 subtype classifications were obtained from METABRIC (https:// www.cbioportal.org/study/summary?id=brca_metabric). Tumor ecotypes in the METABRIC cohort were identified using SKmeans-based consensus clustering (as implemented in cola v.1.2.0) of the predicted cell fraction from either CIBERSORTx or DWLS in each bulk METABRIC patient tumor. When comparing ecotypes between methods (that is, consensus clustering results from using the cell abundances of all cell types or just the 32 significantly correlated cell types from CIBERSORTx deconvolution and the consensus clustering results from CIBERSORTx or DWLS cell abundances), the number of tumor ecotypes was fixed as 9 and the tumor overlaps between all ecotype pairs was calculated (Supplementary Tables 7 and 8). Common ecotypes were then identified by identifying the ecotype pairs with the largest average METABRIC tumor overlap. Differences in survival between ecotypes were assessed using Kaplan–Meier analysis and log-rank test statistics using the survival v.2.44-1.1 and survminer v.0.4.7 R packages
+
+
+
+All processed scRNA-seq data are available for in-browser exploration and download through the Broad Institute Single Cell portal at https://singlecell. broadinstitute.org/single_cell/study/SCP1039. Processed scRNA-seq data from this study are also available through the Gene Expression Omnibus under accession number GSE176078
+
+
+
+Code related to the analyses in this study can be found on GitHub at https://github. com/Swarbricklab-code/BrCa_cell_atlas
+
+
 

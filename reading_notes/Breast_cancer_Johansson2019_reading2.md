@@ -607,3 +607,48 @@ biomarkers validated for therapy decision making
 
 
 we identified 73 breast cancer pa- tients from the TCGA and CPTAC projects matched whole slide images, RNA-seq, and proteomic data.
+
+
+
+
+
+
+
+Ciriello et al. 2016
+
+A comprehensive analysis of 817 breast tumor samples determines invasive lobular carcinoma as a molecularly distinct disease with characteristic genetic features, providing key information for patient stratification that may allow a more informed clinical follow- up.
+
+invasive ductal (IDC), invasive lobular (ILC), mixed ductal/lobular (Mixed), and other-type (Other) carcinoma.
+
+PAM50 intrinsic subtypes are not equally distributed across breast cancer subtype
+
+lobular tumors were pre- dominantly classified as luminal A (LumA) (Figure 1A) and being typically ER+ tumors characterized by low levels of proliferation markers (Table S1). ER
+
+we identified recurrent alter-
+ations across all 817 samples and separately in ILC and IDC PAM50 subtypes (luminal A, n = 201, luminal B, n = 122, HER2-enriched, n = 51, and basal-like, n = 107).
+
+We first analyzed the transcriptional landscape of mixed
+tumors using the ISOpure algorithm (Quon et al., 2013), which deconvolves the transcriptional signal of each queried tumor to estimate how much of it can be explained by one or more refer- ence populations and how much is unique. Interestingly,
+
+ILC tumors were predominantly LumA. Nonetheless,
+
+LumA samples, representing 41% of IDC (n = 201) and 83% of ILC
+
+
+
+
+
+, most TNBC is categorized as no special type (IDC‑NST)
+
+
+
+
+
+The majority of TNBCs (95%) are classified histologically as invasive mammary carcino- mas of no specific type (or, alternatively, invasive ductal carcinomas) and lack distinctive histological character- istics, but other different subtypes have been described14 (FIG. 1). The classically described medullary carcinoma, shown by gene-expression profiling to be a subgroup within TNBC15
+, is rare (0.4–1%) and characterized by
+high lymphoplasmacytic infiltration and good outcome compared to other subtypes16
+.
+
+
+
+Micropapillary **carcinomas** **are** **mostly** **of** **luminal** B
