@@ -146,7 +146,21 @@ All computations were carried out on the R platform. Package “fastICA” which
 
 
 The package “pcaMethods” was used to calculate principal com-
-ponents for comparison with independent components. In
+ponents for comparison with independent components. 
+
+
+
+Gene Set Enrichment Analysis (GSEA) implemented in the WebGestaltR R-package (Liao et al., 2019) was used to infer signatures of approved drugs (D1, 1,202 gene sets) and kinase inhibitors (D2, 1,220 gene sets) available in the drug signatures database (DSigDB; Yoo et al., 2015; http://dsigdb.tanlab.org/DSigDBv1.0/). Based
+
+
+
+Stemness scores were calculated as previously described (Malta et al., 2018). Firstly, we used MoonlightR (Colaprico et al., 2020)to query, download, and preprocess the pluripotent stem cell samples (ESC and iPSC) from the Progenitor Cell Biology Consortium (PCBC) dataset
+
+
+
+[PaxtoolsR: pathway analysis in R using Pathway Commons](https://scholar.google.ch/citations?view_op=view_citation&hl=fr&user=njFSsvYAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=njFSsvYAAAAJ:4TOpqqG69KYC)
+
+
 
 ### Python packages
 
@@ -195,6 +209,52 @@ A website for interactive visualization of the multi-omics dataset is available 
 gephi for graph vizualization
 
 
+
+The RNA-based tumor microenvironment inference tool ESTIMATE (Yoshihara et al., 2013) was used to derive the overall immune score and stromal score for each sample. 
+
+
+
+Weused an established methylation-based deconvolution method, EDec (Onuchic et al., 2016) to dissect the composition of different cell types within the whole bulk tumor. I
+
+We integrated somatic mutation, CNV, DNA methylation, RNA, protein, phosphorylation (phospho) and acetylation (acetyl) levels via iProFun (Song et al., 2019) to investigate the functional impacts of DNA alterations in GBM.
+
+
+
+functional characterization of clustering results by single sample Gene Set Enrichment Analysis (ssGSEA)
+
+n https://github.com/broadinstitute/ ssGSEA2.0
+
+
+
+PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis. -> encapsulate the complex data processing required for proteogenomics  and provide a simple interface to deploy a range of algorithms developed for data analysis, we have developed PANOPLY—a cloud-based Platform for Automated aNd reprOducible Proteogenomic data anaLYsis
+
+
+
+SignatureAnalyzer exploited the Bayesian variant of the NMF algorithm and enabled an inference for the optimal number of signatures from the data itself at a balance between the data fidelity (likelihood) and the model complexity (reg-
+
+
+
+Lolliplots for CDKN2A mutations in the CPTAC head and neck squamous cell carcinoma and this lung squamous cell carcinoma cohort were generated using the ProteinPaint web application to visualize mutations (Zhou et al., 2016). Mutations
+
+
+
+Pathway enrichment results were imported into Cytoscape (Shannon et al., 2003) using the Enrichment Map app (Merico et al., 2010) for network analysis of pathways.
+
+BreakDancer (Chen et al., 2009) and Meerkat (Yang et al., 2013) algorithms were used to detect structural variations.
+
+PARADIGM Integrated Pathway Analysis Integrated Pathway Levels (IPLs) mRNA expression, SCNA, and pathway interaction data for 80 UM samples were integrated using the PARADIGM software (Sedge- wick et al., 2013). Briefly, this procedure infers integrated pathway levels (IPLs) for genes, complexes, and processes, using pathway interactions, and genomic and functional genomic data from each patient sample. Normalized
+
+
+
+hMARINa ssMARINa MARINa was run via the VIPER R package (http://www.bioconductor.org/packages/release/bioc/html/viper.html)(Alvarez et al., 2016); and hMARINa was per- formed by extending the functionality of the package
+
+
+
+Visualization of cellular processes and pathways http://newteditor.org
+
+
+
+We have built a microarray data analysis tool, named PATIKAmad, which can be used to associate microarray data with the pathway models in mechanistic detail, and provides facilities for visualization, clustering, querying, and navigation ofbiological graphs related with loaded microarray experiments. PATIKAmad is freely available to noncommercial users as a new module ofPATIKAweb at http://web.patika.org.
 
 
 
@@ -640,3 +700,182 @@ essential survival gene datasets from The Cancer Dependency Map, the latter of w
 
 
 BioMuta and BioXpress: mutation and expression knowledgebases for cancer biomarker discovery
+
+
+
+druggability information from DGIdb (Cotto
+et al., 2018) and DEPO (Sun et al., 2018), we
+
+
+
+Weaggregated a set of interacting proteins (e.g. kinase/phosphatase-substrate or complex partners) from OmniPath (downloaded on 2018-03-29) (T€urei et al., 2016), DEPOD(downloadedon2018-03-29) (Duanet al., 2015),CORUM(downloadedon2018-06-29) (Ruepp et al., 2010), Signor2 (downloaded on 2018-10-29) (Perfetto et al., 2016), and Reactome (downloaded on 2018-11-01) 
+
+
+
+The Cancer Imaging Archive (TCIA) database.
+
+
+
+a pathway enrichment analysis of Hallmark, KEGG, and Reactome. The
+
+
+
+L1000 and P100 drug connectivity analysis
+
+Level 4 P100 data were downloaded from the LINCS Data Portal (Stathias et al., 2019) and were used to calculate drug connec-
+tivities on the phosphoprotein level as previously described (
+
+
+
+The differentially expressed genes between gene-altered and WT samples were filtered for the 978 genes measured in the L1000
+assay and then were processed using the CLUE (Subramanian et al., 2017) (summary connectivity score) and iLINCS (Pilarczyk et al., 2019) connectivity algorithms. The resulting drug connectivities were aggregated to the compound level using the summary connec- tivity score in CLUE and the Connected Perturbations Z-score in iLINCS. Target annotations for the ranked compounds were extracted from CLUE and iLINCS and combined in a single list. Level
+
+
+
+. The PreCancer Atlas (PCA) ofthe NCI envisages a histological and multi-omic mapping strategy in time and space to provide detailedmolecular, cellular, and structural characterization of premalignant lesions and how they evolve to invasivecancers
+
+
+
+Genes and Genomics (KEGG) (Kanehisa & Goto, 2000), Reactome (Joshi-Tope et al., 2005), WikiPathways (Slenter et al., 2018), and the SIGnaling Network Open Resource (SIGNOR) (Perfetto et al., 2016) have
+
+Resources such as the Human Protein Reference Database (HPRD) (Peri et al., 2004; Keshava Prasad et al., 2009), the Biological General Repository for Interaction Datasets (BioGRID) (Stark et al., 2006), and the Search Tool for Retrieval of Interacting Genes/Proteins (STRING) (Szklarczyk et al., 2019) 
+
+
+
+Popular phosphorylation focused databases such as PhosphoSitePlus (Hornbeck
+et al., 2015), PHOSIDA (Gnad et al., 2007), Phospho.ELM (Diella et al., 2004) and qPhos (Yu et al., 2019) host many phosphosites and act as repositories for both low and high-throughput data.
+
+An extensive review of phosphoproteomics resources can be found here (Savage & Zhang, 2020). 
+
+Moving away from databases acting as phosphosite repositories, many databases holding signalling information in the form of a K-S networks exist such as RegPhos (Huang et al., 2014), PhosphoNet (Safaei et al., 2011) and Phosphonetworks (Hu et al., 2014). Though they are limited to K-S interactions, they have been proven useful in providing phosphoproteomics mechanistic insight either on their own or while integrated into other databases (Rohrs et al., 2018; McGuire et al., 2017; Tong et al., 2019).
+
+
+
+study comparing PPI databases found 375 resources (Bajpai et al., 2020). 
+
+
+
+Library of Integrated Network-Based Cellular Signatures (LINCS) L1000 perturbation-response signa- tures. The scores were computed using the sig_queryl1k_tool pipeline (https://hub.docker.com/u/cmap) and the LINCS L1000 Level 5 compound (trt_cp) signatures from CLUE (https://clue.io, ‘‘Expanded CMap LINCS Resource 2020 Release’’). The
+
+
+
+Cancer-associated genes (CAG) were compiled using the Census website https://cancer.sanger.ac.uk/census. The list of genes is provided in Table S1. -> Satpathy et al. 2021
+
+
+
+We used iProFun, an integrative analysis tool to identify multi-omic molecular quantitative traits (QT) perturbed by DNA-level varia- tions. 
+
+
+
+Immunohistochemistry-based antibody-specific staining scores in lung tumors were obtained from the Human Protein Atlas (HPA, https://www.proteinatlas.org), in which tumor-specific staining is reported in four levels, i.e., high, medium, low, and not detected. 
+
+
+
+
+
+We queried the PTM signatures database (PTMsigDB) v1.9.0 downloaded from https://github.com/broadinstitute/ssGSEA2.0/ tree/master/db/ptmsigdb using the flanking amino acid sequence (+/? 7 aa) as primary identifier. We used the implementation of PTM-SEA available on GitHub (https://github.com/broadinstitute/ssGSEA2.0) using the command interface R-script (ssgsea- cli.R). The
+
+
+
+A list of known human E3 ubiquitin and ubiquitin-like ligases and DUBs was compiled from (Medvar et al., 2016; Nijman et al., 2005)
+
+
+
+Connectivity Map (CMAP)
+
+Dependency map (DepMap)
+
+CT Antigen database
+
+DepMap genetic dependency dataset (CRISPR Avana Public 20Q3) that contained 18119 genes and 789 cell lines (https://depmap.org/portal/download/ file: Achilles_gene_effect.csv). O
+
+OncoKB database for oncoprotein and tumor suppressor classification (excluded proteins that have both annotations), and used PhosphoSitePlus and Signor databases for the activating/inhibiting classification of phosphorylation sites. 
+
+NeoFlow (https://github.com/bzhanglab/neoflow) for neoantigen prediction (Wen et al., 2020). Specifically, Optitype (Szolek et al., 2014) was used to find human leukocyte antigens (HLA) for each sample based on WES data. Then we used netMHCpan (Jurtz et al., 2017) to predict HLA peptide binding affinity for somatic mutation–derived variant peptides with a length between 8-11 amino acids. The
+
+
+
+We used Customprodbj (Wen et al., 2020)(https://github.com/bzhanglab/customprodbj) for customized database construction.
+
+
+
+Remaining variant peptides were further filtered using PepQuery (http://www.pepquery.org)(Wen et al., 2019) with the p value cutoff of 0.01. Competitive filtering based on unrestricted posttranslational modification searching was enabled in PepQuery validation. The spectra of variant peptides were annotated using PDV (http://pdv.zhang-lab.org)(Li et al., 2019b
+
+
+
+Cancer/testis (CT) antigens were downloaded from the CTdatabase (Almeida et al., 2009). C
+
+
+
+PROGENy (Schubert et al., 2018) was used to generate activity scores for EGFR based on RNA expression data.
+
+Pathways were obtained in BioPax Level 3 format, and included the NCIPID and BioCarta databases from http://pid.nci.nih.gov
+and the Reactome database from http://reactome.org.
+
+
+
+Creating a Curated Transcription Factor (TF) Regulome A compendium of TFs and their targets (TF regulons) were created by combining information from four databases:
+(i) SuperPathway (Sedgewick et al., 2013): This is the same interaction network used in the PARADIGM analysis (above). Only links that correspond to regulation at the transcriptional level were retained for MARINa and hMARINa use.
+(ii) Literome (Poon et al., 2014): The network was filtered to include only transcription links in which the regulator is a known TF. (iii) Multinet (Khurana et al., 2013): The network was reduced to links that correspond to regulation on transcriptional level. (iv) ChEA (Lachmann et al., 2010): Data from the Gene Expression Atlas (Petryszak et al., 2014) was used to filter the inferred links in the ChEA database. Specifically, the context likelihood of relatedness (CLR) method (Faith et al., 2007) was used to compute a measure of association between every pair of genes. The top 10% of gene pairs based on the CLR score were intersected with the ChEA network and the overlapping pairs were added to the final combined network.
+The combined network includes 72,915 transcriptional regulatory links between 6,735 regulators and their targets. Only regulators
+with at least 15 targets were considered in the final analysis, which resulted in a final network consisting of 419 TFs with 58,363 total targets (covering a set of 12,754 unique targets). 
+
+
+
+Creating a Curated Kinase Regulome Proteins identified as kinases in Manning (Manning et al., 2002) or Uniprot (UniProt Consortium, 2014) were aggregated into a list of 546 kinases. Protein substrates were extracted from PhosphositePlus (Hornbeck et al., 2014) on March 7, 2015. Kinase-substrate interactions were retained if the kinase appeared in the Manning-Uniprot kinase list and the kinase was identified as a human protein in the PhosphositePlus database. The final compendium consisted of 5,388 links between 342 kinases and 2,260 unique substrates.
+
+
+
+Institute for Systems Biology Regulome Explorer (http://explorer.cancerregulome.org),
+
+
+
+databases that characterize pathways such as NetPath [13], KEGG [14], Reactome [11], and dozens of others.
+
+
+
+Repositories such as WikiPathways [17] and Path- wayCommons [23] now contain thousands of pathways comprised of millions of interaction
+
+
+
+Omic and Multidimensional Spatial (OMS) Atlas generated from four serial biopsies of a metastatic breast cancer patient during 3.5 years of therapy. This
+
+the HTAN Data Coordinating Center (https://humantumoratlas.org/) as
+
+
+
+aggregation of publicly available molecular interactions and biological pathway databases provided by the Pathway Commons (PC) resource.23 The aggregated data is represented in the standard Biological Pathway Exchange (BioPAX) language and provides the most complete and rich representation of the biological network models stored in PC. These complex biochemical reactions were reduced to pairwise relationships using rules to generate a Simple Interaction Format (SIF) representation of BioPAX interactions. The reduction of BioPAX interactions to the SIF allows for the representation of pairwise molecular interactions in the context of specific binary relationships. The
+
+
+
+3D structures submitted directly by authors to the Protein DataBank (PDB)
+
+
+
+
+
+Biofactoid (biofactoid.org), a web-based software system that
+empowers authors to capture and share structured human- and machine-readable summaries of molecular-level interactions described in their publications
+
+
+
+upstream regulator analysis from the commercial Ingenuity Pathway Analysis software.
+
+
+
+Pathway Commons (https://www.pathwaycommons. org) is an integrated resource of publicly available information about biological pathways including bio- chemical reactions, assembly of biomolecular com- plexes, transport and catalysis events and physical interactions involving proteins, DNA, RNA, and small molecules 
+
+www.pathguide.org
+
+
+
+(https://ccr.cancer.gov/research/ cancer-moonshot).. The Human Tumor Atlas Network (HTAN), part of the National Cancer Institute (NCI) Cancer Moonshot Initiative, will establish a clinical, experimental, computational, and organizational framework to generate infor- mative and accessible three-dimensional atlases of cancer transitions for a diverse set of tumor types. This effort complements both ongoing efforts to map healthy organs and previous large- scale cancer genomics approaches focused on bulk sequencing at a single point in time. Gener- ating single-cell, multiparametric, longitudinal atlases and integrating them with clinical outcomes should help identify novel predictive biomarkers and features as well as therapeutically relevant cell types, cell states, and cellular interactions across transitions
+
+
+
+
+
+IntAct (Orchard et al., 2014), SIGNOR (Licata et al., 2019; Perfetto et al., 2016) and Reactome (Fabregat et al., 2018)], and
+
+
+

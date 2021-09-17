@@ -1959,3 +1959,359 @@ Code related to the analyses in this study can be found on GitHub at https://git
 
 
 
+
+
+JacLy: a Jacobian-based method for the inference of metabolic interactions from the covariance of steady-state metabolome data
+
+
+
+Onecommon approach that utilizes inherent variability in steady-state data is correlation
+based inference methods, especially the Gaussian Graphical Model (GGM) approach (Çakır et al., 2009; Montastier et al., 2015; Wang et al., 2016). Correlation based approaches are capable ofdetecting strong interactions in the metabolic network to some extent. However, they infer interactions only in undirected manner, and they have limited power in the detection of weak interactions (Çakır et al., 2009). A directed network inference approach from steady-state metabolome data is also available in the literature (Steuer et al., 2003; Öksüz, Sadıkoğlu & Çakır, 2013; Çakır & Khatibipour, 2014). The approach is based on the prediction of interaction strengths from the covariance of the data. The network structure information stored in the inherent variability of the data is reflected on the covariance of the data, and later used in the prediction of interaction strengths in the form of a Jacobian matrix. The Jacobian matrix of a cellular interaction system contains a significantly high amount of valuable information both on the structure and dynamic characteristics of the system. Numbers in this matrix easily provide us with detailed information on the underlying interactions in the network, such as direction of interactions, nature of interactions (positive or negative effects), and strengths of interactions (Steuer et al., 2003; Öksüz, Sadıkoğlu & Çakır, 2013).
+
+
+
+### Cao et al. 2021 [pancreas]
+
+To investigate the association between methylation and proteomics expression, for each gene, we first calculated Z scores for its mRNA expression, protein, and phosphorylation levels and beta values for DNA methylation. We then calculated Pearson correlation scores with its associated significance between methylation and gene expression, protein, and phosphorylation levels for all pairs of genes, respectively.
+e10
+
+Non-negative matrix factorization (NMF)-based multi-omics clustering was performed similar to as previously described (Gillette
+
+Non-negative matrix factoriza-tion (NMF)-based proteogenomics subtyping using multiomics
+data from all 140 tumors
+
+
+
+### Valle et al. 2020
+
+Topic modeling was introduced to classify texts of natural language by inferring their topic structure from the frequency of words. This paper assumes that analogously the cancer subtype identity, which is crucial for the correct diagnosis and treatment plan, can be extracted from gene expression patterns with similar techniques. Focusing on breast and lung cancer, we show that state-of-the-art topic modeling techniques can successfully classify known subtypes and identify cohorts of patients with different survival probabilities. The topic structure hidden in expression data can be looked at as a biologically relevant low-dimensional data representation that can be used to build efficient classifiers of expression patterns.
+
+The problem of finding a topic structure in a dataset was recently recognized to be analogous to the community detection problem in network theory
+
+algorithms which try to identify the “topics” associated to a given document from the word usage have to face the same type of challenges we are facing here. In this analogy, the cancer samples play the role of the documents, the words are the genes, the number of times a particular word is used in a given document is the analogous of the expression level of a particular gene in a given sample. The topics are the gene sets (the “signatures”) we use to cluster samples into subtypes. The goal of topic modeling is to identify the “topic” of a given document from the word usage exactly as our goal is to identify the cancer subtype from the gene expression pattern.
+
+The major advantage of topic modeling methods with respect to standard clustering approaches is that they allow a “fuzzy” type of clustering [7]. The output of a topic modeling algorithm is a probability distribution of membership, i.e., the probability of a given document to be composed by a given set of topics and, at the same time, the probability of a word to characterize a given topic. In our context, this means that we have as output a set of values that quantify the probability of a given sample to belong to a particular cancer subtype and the relevance of a given gene in driving this identification
+
+The most popular tool to perform this kind of analysis is the so-called Latent Dirichlet Allocation
+(LDA) algorithm, which basically assumes a Dirichlet prior distribution for the topic distribution. There is no particular motivation in the natural language context as well as in our biological context for the Dirichlet prior. Its motivation comes from the fact that it allows a simple solution of the allocation problem and thus the algorithm can be efficiently applied to databases with a large number of documents and words. However, the lack of biological motivation for the prior and the large number of free parameters represent a possible limitation of LDA in our context.
+
+Another common approach, often used in addressing gene expression data, is the Nonnegative
+Matrix Factorization [8]. The major drawback of this approach is that it facilitates the detection of sharp boundaries among subtypes and this could be a limitation in very heterogeneous settings
+
+In recent years, some important advances in the field have laid the foundations for overcoming
+some of the limits of LDA. First, it has been realized [9,10] that there is a strong connection between topic modeling analysis of complex databases and the community detection problem in bipartite graphs, which is a well know and much studied problem in network theory [11]. Second, a very effective class of community detection algorithms, based on hierarchical stochastic block modeling (hSBM), has been adapted to the topic modeling task [9].
+
+we apply for the first time **hSBM-based topic modeling** to the study of cancer gene
+expression data.
+
+
+
+
+
+### Wang et al. 2021
+
+We performed Lasso linear regression between histone acety-
+
+lation sites and the protein and acetylation abundances of histone acetyltransferases (HATs), bromodomain-containing proteins (BRDs), and deacetylases (HDACs). It revealed potential connec- tions between HATs and BRDs and H2B acetylation sites, for example CREBBP and EP300, whose protein and acetylation levels showed substantial respective associations with H2B- K12, K13, K16, K17, and K21 and H2B-K21, and K24 sites (Fig- ure 5B).
+
+
+
+f CausalPath (Babur et al., 2018) to the protein and phosphoprotein expression data (Figure S7A, Table S5)showed upregulation of the hypoxia pathway in mesenchymal tumors, evi- denced by significant activation of multiple HIF-1 downstream targets (networkpermutationp= 0.0012)
+
+
+
+Using the Library of Integrated Network-Based Cellular Signa-
+
+tures (LINCS) (Keenan et al., 2018; Stathias et al., 2019), we calculated the similarity between alteration-specific RNA or phosphoprotein signatures from our study with corresponding transcriptional (L1000 assay) (Subramanian et al., 2017) and phosphoproteomic LINCS signatures (P100 assay) (Litichevskiy et al., 2018) to identify compounds predicted to reverse tumor signatures of the cohort.
+
+
+
+Multi-omics subtyping using non-negative matrix factorization (NMF) We selected the following proteogenomic features to the sample availability: CNV, bulk RNA, protein, and phosphoprotein expres- sion. Due to limited sample amounts, not all tumors were analyzed for DNA methylome, metabolome, and miRNA. We used non- negative matrix factorization (NMF) implemented in the NMF R-package (Gaujoux and Seoighe, 2010) to perform unsupervised clustering of tumor samples and to identify proteogenomic features that show characteristic expression patterns for each cluster. Briefly, given a factorization rank k (where k is the number of clusters), NMF decomposes a p 3 n data matrix V into two matricesWand H such that multiplication ofWand H approximates V. Matrix H is a k3n matrix whose entries represent weights for each sample (1 to N) to contribute to each cluster (1 to k), whereas matrixWis a p3 k matrix representing weights for each feature (1 to p) to contribute to each cluster (1 to k). Matrix Hwas used to assign samples to clusters by choosing the k with maximum score in each column of H. For each sample, we calculated a cluster membership score as the maximal fractional score of the corresponding column in matrix H. We defined a ‘‘cluster core’’ as the set of samples with cluster membership score > 0.5. Matrix Wcontaining the weights of each feature to a certain cluster was used to derive a list of representative features separating the clusters using the method proposed in (Kim and Park, 2007). To enable integrative multi-omics clustering we enforced all data types (and converted if necessary) to represent log2-ratios to
+either a common reference measured in each TMT plex (proteome, phosphoproteome), an in silico common reference calculated as the median abundance across all samples (RNA gene expression) or to gene copy numbers relative to matching normal blood sample (CNV). All data tables were then concatenated and all rows containing missing values were removed. To remove uninforma- tive features from the dataset prior to NMF clustering, we removed features with the lowest standard deviation (bottom 5th percentile) across all samples. Each row in the data matrix was further scaled and standardized such that all features from different data types were represented as z-score
+
+
+
+Unsupervised clustering of DNA methylation Methylation subtypes were segregated based on the top 8,000 most variable probes using k-means consensus clustering as previ- ously described (Sturm et al., 2012). We first removed underperforming probes (Zhou et al., 2017), and then the samples with more than 30% missing values. Remaining missing values were imputed using the mean of the corresponding probe value. We then per- formed clustering 1000 times using the ConsensusClusterPlus Rpackage
+
+
+
+Unsupervised clustering of miRNA expression Unsupervised miRNA expression subtype identification was performed on mature miRNAs expression (log2 TPM) from 98 tumors with miRNA-seq available using Louvain clustering (Blondel et al., 2008) implemented in louvain-igraph v0.6.1. Top 50 differentially expressed miRNAs from each miRNA-based subtype were selected
+
+
+
+Stemness scores were calculated as previously described (Malta et al., 2018). Firstly, we used MoonlightR (Colaprico et al., 2020)to query, download, and preprocess the pluripotent stem cell samples (ESC and iPSC) from the Progenitor Cell Biology Consortium (PCBC) dataset (D
+
+
+
+We integrated somatic mutation, CNV, DNA methylation, RNA, protein, phosphorylation (phospho) and acetylation (acetyl) levels via iProFun (Song et al., 2019) to investigate the functional impacts of DNA alterations in GBM.
+
+
+
+Weaggregated a set of interacting proteins (e.g. kinase/phosphatase-substrate or complex partners) from OmniPath (downloaded on 2018-03-29) (T€urei et al., 2016), DEPOD(downloadedon2018-03-29) (Duanet al., 2015),CORUM(downloadedon2018-06-29) (Ruepp et al., 2010), Signor2 (downloaded on 2018-10-29) (Perfetto et al., 2016), and Reactome (downloaded on 2018-11-01) (F
+
+For each kinase-substrate protein pair supported by previous experimental evidence (OmniPath, NetworKIN, DEPOD, and SIGNOR), we tested the associations between all sufficiently detected phosphosites on the substrate and the kinase. For a kinase-substrate pair to be tested, we required both kinase protein/phosphoprotein expression and phosphosite phosphorylation to be observed in at least 20 samples in the respective datasets and the overlapped dataset. We then applied the linear regression model using lm function in R to test for the relation between kinase and substrate phosphosite.
+
+
+
+Immune subtypes of the GBM tumors were generated on the consensus clustering of the cell type enrichment scores by
+
+
+
+We investigated pathways from Hallmark, KEGG, WIkipathways, and REACTOME, positively or negatively aligned with averaged H2B and H3/H4 acetylation level. H2B acetylation was calculated by averaging acetylation of all H2B peptides detected. Since H3 and H4 histones are strongly correlated with each other, we averaged acetylation of histones H3 and H4 peptides together to obtain H3/H4 acetylation value
+
+
+
+To test the association between HATs/HDACs protein and acetylation levels of histone sites, we fitted Lasso regression model with HATs/HDACs and histone protein expression as independent variables and a histone acetylation site as a dependent variable. Lasso
+
+
+
+pathways from Hallmark, KEGG, WIkipathways, and REACTOME
+
+
+
+We assumed that true biological activity of a pathway is regulated by collective changes of expression levels of majority of proteins involved in this pathway; then a difference in a pathway activity between tumors can be assessed by a difference in positioning of expression levels of proteins involved in this pathway in ranked list of expression levels of all proteins in each of tumors
+
+
+
+Following
+this idea, we assessed relative positioning of pathway proteins between tumor by determining two probabilities: (1) probability of
+pathway proteins to occupy by random chance the observed positions in a list of tumor proteins ranked by expression level from
+the top to the bottom and, similarly, (2) probability to occupy by random the observed positions in a list of expression levels ranked
+from the bottom to the top. Then, the inferred relative activation of a given pathway across tumors was assessed as a negative log-arithm of the ratio of the above ‘‘top’’ and ‘‘bottom’’ probabilities. Thus, for a pathway of a single protein, its relative activity across
+tumors was assessed as a negative log of ratio of two numbers: a number of proteins with expression level bigger than an expression
+level of given protein, and a number of proteins with expression levels less than an expression level of given protein. For pathways of
+multiple proteins, the ‘‘top’’ and ‘‘bottom’’ probabilities were computed as geometrically averaged P values computed for each of
+proteins using Fisher’s exact test, given protein’s ranks in a list of pathway proteins and in a list of ranked proteins of a tumor, a num-ber of proteins in a pathway, and the total number of proteins with the assessed expression level in a given tumor. The thermody-namic interpretation of the inferred pathway activity scoring function is a free energy associated with deviation of the system from
+equilibrium either as a result of activation or suppression. Thus, the scoring function is positive, when expression levels of pathway’s
+proteins are overrepresented among top expressed proteins of a tumor, and it is negative, when pathway’s proteins are at the bottom
+of expressed proteins of a tumor; the scoring function is close to zero, when expression levels are distributed by random. Given any
+biological axis, e.g. histone acetylation levels in each of tumors, one can determine pathways which are significantly correlated or anti
+correlated with the axis.
+
+
+
+Causative pathway interaction discovery using CausalPath To discover the causative pathway interactions in our proteomic and phosphoproteomic data, we took the normalized expression of protein with < 10% missing values and phosphoprotein with < 25% missing values across all tumor and normal samples as the input to CausalPath (commit 7c5b934). We ran CausalPath in the mode that tests the mean values between test and control groups (value-transformation = significant-change-of-mean), where the test group being the tumors of one subtype and control group being the rest of the tumors. The pathway interaction discovery data source was Pathway Commons v9 (built-in- network-resource-selection = PC). Additionally, we enabled the causal reasoning if all the downstream targets of a gene were active or inactive (calculate-network-significance = true, use-network-significance-for-causal-reasoning = true, permutations- for-significance = 10000). 
+
+
+
+### Satpathy et al. 2021
+
+We performed non-negative matrix factorization (NMF)-based single- and multi-omic unsupervised clustering on CNA, RNA, protein, phosphoprotein, and acetylprotein datasets from 108 tumors, excluding ubiquitylprotein data as it was not available for the entire cohort (Figure 1A). The five resulting multi-omic subtypes (Figures 2A and 2B; Figure S2A) were named based on their predominant pathway associations and similarities to previously defined RNA clusters (Wilkerson
+
+We used non-negative matrix factorization (NMF)-based multi-omic clustering using protein, phosphosite, acetylsite, RNA transcript and gene copy number variants (CNV) as previously described (Gillette
+
+To enable integrative multi-omic clustering we enforced all data types (and converted if necessary) to represent ratios to: (i) a com-
+mon reference measured in each TMT plex (proteome, phosphoproteome, acetylproteome), (ii) an in silico common reference calcu- lated as the median abundance across all samples (RNA expression) or (iii) to matching blood normal for CNA data. The CNA data was further filtered to only retain genes significantly altered (GISTIC2 thresholded of +2 or ?2) in at least 5% of all tumors. All data tables were then concatenated and all rows with missing values were removed. To remove uninformative features from the dataset prior to NMF clustering we removed features with the lowest standard deviation (bottom 5th percentile) across all samples. Each col- umn in the data matrix was further scaled and standardized such that all features from different data types were represented as z-scores. The resulting data matrix of z-scores into was converted to a non-negative input matrix required by NMF
+
+For functional characterization of clustering results by single sample Gene Set Enrichment Analysis (ssGSEA), we calculated normalized enrichment scores (NES) of cancer-relevant gene sets by projecting the matrix of signed multi-omic feature weights (Wsigned) onto Hallmark pathway gene sets (Liberzon et al., 2015) using ssGSEA (Barbie et al., 2009). To derive a single weight for each gene measured across multiple omics data types (protein, RNA, phosphorylation site, acetylation site, CNA) we retained the weight with maximal absolute amplitude. We used the ssGSEA implementation available on https://github.com/broadinstitute/ ssGSEA2.0 using the following parameters:
+
+The entire workflow described above has been implemented as a module for PANOPLY (Mani et al., 2020) which runs on Broad’s
+Cloud platform Terra (https://app.terra.bio/). T
+
+The CMAP (Lamb et al., 2006; Subramanian et al., 2017) is a collection of about 1.3 million gene expression profiles from cell lines treated with bioactive small molecules (?20,000 drug perturbagens), shRNA gene knockdowns (?4,300) and ectopic expression of genes. The CMAP dataset is available on GEO (Series GSE92742). For this analysis, we use the Level 5 (signatures from aggregating replicates) TouchStone dataset with 473,647 total profiles, containing 36,720 gene knock-down profiles, with measurements for 12,328 genes. See https://clue.io/GEO-guide for more information. 
+
+Protein abundance comparisons were performed between all 5NMFsubtypes using the Wilcoxon rank-sum test and p values were adjusted using the Benjamini & Hochberg method. Subtype-specific differentially expressed proteins were identified based on their differential expression (adjusted p value < 0.05) in at least 2 out of the 4 comparisons, and by having a concordant fold change among all comparisons. The identified differentially expressed genes and proteins were then filtered for gene symbols measured in the L1000 assay (978 landmark genes). These NMF-specific signatures were used as input to calculate normalized weighted connectivity scores (WTCS) against the Library of Integrated Network-Based Cellular Signatures (LINCS) L1000 perturbation-response signa- tures. The scores were computed using the sig_queryl1k_tool pipeline (https://hub.docker.com/u/cmap) and the LINCS L1000 Level 5 compound (trt_cp) signatures from CLUE (https://clue.io, ‘‘Expanded CMap LINCS Resource 2020 Release’’). 
+
+
+
+a Library of Integrated Network-Based Cellular Signatures- based (LINCS) query for compounds that reversed the EMT-E signature showed enrichment for TGFb inhibitors (
+
+Normalized connectivity scores (NCS) between the Library of Integrated Network-based Cellular Signatures (LINCS) compound signatures and the five NMF multi-omic subtype signatures at the RNA and protein level are represented in the heatmap. Each NMF signature was used to query the CMAP LINCS L1000 resource (2020 release), a collection of more than 1M response signatures of cancer cell lines to different types of chemical (e.g., drugs, tool compounds) and genetic perturbations (e.g shRNAs, sgRNAs, cDNAs). The 20 most negatively connected compounds to each NMF signature (with the most negative NCS) were then selected for visualization. 
+
+
+
+Immunohistochemistry-based antibody-specific staining scores in lung tumors were obtained from the Human Protein Atlas (HPA, https://www.proteinatlas.org), in which tumor-specific staining is reported in four levels, i.e., high, medium, low, and not detected. The protein-specific annotations such as enzymes, transcription factor, transporters, secreted, transmembrane and FDA- approved drugs targeting the protein or reported in drugbank were designated
+
+
+
+Continuous smoking score Non-negative matrix factorization (NMF) was used in deciphering mutation signatures in cancer somatic mutations stratified by 96 base substitutions in tri-nucleotide sequence contexts. To obtain a reliable signature profile, we used SomaticWrapper to call mu- tations from WGS data. SignatureAnalyzer exploited the Bayesian variant of the NMF algorithm and enabled an inference for the optimal number of signatures from the data itself at a balance between the data fidelity (likelihood) and the model complexity (reg- ularization). After decomposing into three signatures, signatures were compared against known signatures derived from COSMIC (Tate et al., 2019) and cosine similarity was calculated to identify the best match. We also sought to integrate count of total mutations, t, percentage that are signature mutations, c, and count of DNPs, n, into a continuous score, 0 < S < 1, to quantify the degree of confidence that a sample was associated with smoking signature. We referred to these quantities as the data, namely D=CC¸TC¸ N, and used Aand A’ to indicate smoking signature or lack thereof, respectively. In a Bayesian framework, it is readily shown that a suitable form is S = 1 / (1 + R), where R is the ratio of the joint probability of A’ and D to the joint probability of A and D. For example, the latter can be written P(A)・P(CjA)・P(TjA)・P(NjA) and the former similarly, where each term of the former is the complement of its respective term in this expression. Common risk statistics are invoked as priors, i.e., P(A) = 0.9 (W
+
+
+
+Ranking tumors by inferred activity of IFN-g pathway We assumed that true biological activity of a pathway is regulated by collective changes of expression levels of majority of proteins involved in this pathway. Then, a difference of a pathway activity between tumors can be assessed by a difference in positioning of expression levels of proteins involved in this pathway in ranked list of expression levels of all proteins in each of tumors. Following
+
+
+
+ssGSEA (Barbie et al., 2009) was utilized to obtain pathway scores based on RNA-seq and global prote- omics data using the R package GSVA (Ha¨nzelmann et al., 2013). For this analysis, pathways from the Reactome (Fabregat et al., 2018), KEGG (Kanehisa et al., 2017) and Hallmark (Liberzon et al., 2015) databases were
+
+Independent component analysis ICA was performed with a workflow modified from previously described (Liu et al., 2019). Decomposition was run for 100 times on the matrix of protein abundance difference between tumor/NAT pairs (n = 99). Independent components were in the form of vectors comprised with weights of all genes in the original data. Components extracted from each run were clustered using HDBSCAN al- gorithm (McInnes et al., 2017) with cosine distance as dissimilarity metric, m
+
+Correlation between the extracted signatures and known clinical characteristics were examined by regressing the corresponding mixing scores for all members of a component cluster against 64 sample annotations to obtain within-cluster average of log10 p values
+
+
+
+
+
+known interactome DBs including Omnipath, Phos- phositeplus, DEPOD, Signor, and CORUM. A
+
+
+
+To identify germline genetic variants that explain variation in tumor gene (eQTL) and protein (pQTL) expression, we utilized the gold- standard mapping pipeline at https://github.com/molgenis/systemsgenetics/wiki/eQTL-mapping-analysis-cookbook-(eQTLGen)
+
+
+
+
+
+We performed phosphosite-specific signature enrichment analysis (PTM-SEA) (Krug et al., 2019) to identify dysregulated phosphor-ylation-driven pathways.
+
+
+
+We queried the PTM signatures database (PTMsigDB) v1.9.0 downloaded from https://github.com/broadinstitute/ssGSEA2.0/ tree/master/db/ptmsigdb using the flanking amino acid sequence (+/? 7 aa) as primary identifier. We used the implementation of PTM-SEA available on GitHub (https://github.com/broadinstitute/ssGSEA2.0) using the command interface R-script (ssgsea- cli.R). The
+
+
+
+Association analysis between KGG-site abundances and E3 ligases and DUBs A list of known human E3 ubiquitin and ubiquitin-like ligases and DUBs was compiled from (Medvar et al., 2016; Nijman et al., 2005). We then fit a linear model using limma in R with the formula kgg_site_abundance ?protein_abundance, followed by empirical bayes shrinkage
+
+
+
+Genes in these site-wise clusters were used for pathway enrichment analysis against the KEGG, Reactome, and WikiPathways databases using g:profiler (Raudvere et al., 2019). Pathway enrichment was performed using a gene background containing all observable genes in the K-GG dataset. Pathway enrichment results were imported into Cytoscape (Shannon et al., 2003) using the Enrichment Map app (Merico et al., 2010) for network analysis of pathways. Pathways were connected using the gene overlap and clustered (pathway cutoff q-val < 0.1; jaccard overlap > 0.375). Each cluster was manually annotated from the pathways con- tained in it to facilitate interpretation
+
+
+
+DepMap genetic dependency dataset (CRISPR Avana Public 20Q3) that contained 18119 genes and 789 cell lines (https://depmap.org/portal/download/ file: Achilles_gene_effect.csv). O
+
+CausalPath (Babur et al., 2018) searches for known biological mechanisms that can explain correlated proteomic changes in terms of causal hypotheses
+
+OncoKB database for oncoprotein and tumor suppressor classification (excluded proteins that have both annotations), and used PhosphoSitePlus and Signor databases for the activating/inhibiting classification of phosphorylation sites. 
+
+
+
+NeoFlow (https://github.com/bzhanglab/neoflow) for neoantigen prediction (Wen et al., 2020). Specifically, Optitype (Szolek et al., 2014) was used to find human leukocyte antigens (HLA) for each sample based on WES data. Then we used netMHCpan (Jurtz et al., 2017) to predict HLA peptide binding affinity for somatic mutation–derived variant peptides with a length between 8-11 amino acids. The
+
+
+
+We used Customprodbj (Wen et al., 2020)(https://github.com/bzhanglab/customprodbj) for customized database construction.
+
+
+
+Remaining variant peptides were further filtered using PepQuery (http://www.pepquery.org)(Wen et al., 2019) with the p value cutoff of 0.01. Competitive filtering based on unrestricted posttranslational modification searching was enabled in PepQuery validation. The spectra of variant peptides were annotated using PDV (http://pdv.zhang-lab.org)(Li et al., 2019b
+
+
+
+PROGENy (Schubert et al., 2018) was used to generate activity scores for EGFR based on RNA expression data.
+
+
+
+##### Babur et al. 2010
+
+GEM (Gene Expression Modulation) is a probabilistic framework that predicts modulators, their affected targets and mode of action by combining gene ex- pression profiles, protein–protein interactions and transcription factor–target relationships.
+
+Wang et al. (5) propose MINDy, an information- theoretic algorithm for detecting modulators. They test the conditional mutual information (CMI) between the transcription factor and the target gene, and its depend- ency on the modulator candidate. This is, in essence, the aforementioned non-linearity principle. Building upon the same principle, we present GEM (Gene Expression Modulation), a probabilistic method for detecting modulators of transcription factors using a priori know- ledge and gene expression profiles. For a modulator/tran- scription factor/target triplet, GEM predicts how a modulator–factor interaction will affect the expression of the target gene. GEM improves over MINDy by detecting two new classes of interaction that would result in strong correlation but low ?CMI, can filter out logical-or cases and offers a more precise classification scheme. A detailed comparison of GEM and MINDy is provided in the discussion
+
+
+
+##### Babur et al. 2015
+
+a novel method for the identification of sets of mutually exclusive gene alterations in a given set of genomic profiles. We scan the groups of genes with a common downstream effect on the signaling network, using a mutual exclusivity criterion that ensures that each gene in the group significantly contributes to the mutual exclusivity pattern. We test the method on all available TCGA cancer genomics datasets, and detect multiple previously unreported alterations that show significant mutual exclusivity and are likely to be driver events
+
+We are expanding on these approaches by combining
+detailed prior pathway information with a novel statistical metric to improve both accuracy and biological inter- pretation and to validate the results. Specifically, we are using a large aggregated pathway model of human sig- naling processes to search groups of mutually exclusively altered genes that have a common downstream event. To
+
+
+
+##### Robertson et al. 2017
+
+Groups of samples with similar abundance profiles were identified by unsupervised consensus clustering with ConsensusClusterPlus (CCP) 1.20.0. Calculations were performed using Spearman correlations, partitioning around medoids (PAM) and 10,000 iterations
+
+
+
+PARADIGM Integrated Pathway Analysis Integrated Pathway Levels (IPLs) mRNA expression, SCNA, and pathway interaction data for 80 UM samples were integrated using the PARADIGM software (Sedge- wick et al., 2013). Briefly, this procedure infers integrated pathway levels (IPLs) for genes, complexes, and processes, using pathway interactions, and genomic and functional genomic data from each patient sample. 
+
+Pathways were obtained in BioPax Level 3 format, and included the NCIPID and BioCarta databases from http://pid.nci.nih.gov
+and the Reactome database from http://reactome.org.
+
+Differential pathway regulators of each PARADIGM clusters were identified by comparing one cluster vs. all others using the t-test
+and Wilcoxon Rank sum test with a BH FDR correction. All
+
+Hierarchical MARINa (hMARINa) Estimate of Kinase Activity MARINa is well suited for the analysis of TF activity, because TF proteins are directly involved in changes in expression of their tar- gets
+
+
+
+statistically significant findings from the PARADIGM and (h)MARINa differential pathway regulator analyses were examined for consistency. For each cluster, pathway regulators with similar findings across the two methods were identified as ‘‘consistent pathway features.’’
+
+ MARINa was run via the VIPER R package (http://www.bioconductor.org/packages/release/bioc/html/viper.html)(Alvarez et al., 2016); and hMARINa was per- formed by extending the functionality of the package
+
+
+
+PhosphositePlus and the SuperPathway (see Curated TF Regulome and Curated Kinase Regulome sections)
+
+
+
+To identify genes that were associated with time to metastasis in M3 cases, we censored time and status at 5 years for the 32 Lau-
+rent and 33 TCGA records.
+
+Creating a Curated Transcription Factor (TF) Regulome A compendium of TFs and their targets (TF regulons) were created by combining information from four databases:
+(i) SuperPathway (Sedgewick et al., 2013): This is the same interaction network used in the PARADIGM analysis (above). Only links that correspond to regulation at the transcriptional level were retained for MARINa and hMARINa use.
+(ii) Literome (Poon et al., 2014): The network was filtered to include only transcription links in which the regulator is a known TF. (iii) Multinet (Khurana et al., 2013): The network was reduced to links that correspond to regulation on transcriptional level. (iv) ChEA (Lachmann et al., 2010): Data from the Gene Expression Atlas (Petryszak et al., 2014) was used to filter the inferred links in the ChEA database. Specifically, the context likelihood of relatedness (CLR) method (Faith et al., 2007) was used to compute a measure of association between every pair of genes. The top 10% of gene pairs based on the CLR score were intersected with the ChEA network and the overlapping pairs were added to the final combined network.
+The combined network includes 72,915 transcriptional regulatory links between 6,735 regulators and their targets. Only regulators
+with at least 15 targets were considered in the final analysis, which resulted in a final network consisting of 419 TFs with 58,363 total targets (covering a set of 12,754 unique targets). Creating a Curated Kinase Regulome Proteins identified as kinases in Manning (Manning et al., 2002) or Uniprot (UniProt Consortium, 2014) were aggregated into a list of 546 kinases. Protein substrates were extracted from PhosphositePlus (Hornbeck et al., 2014) on March 7, 2015. Kinase-substrate interactions were retained if the kinase appeared in the Manning-Uniprot kinase list and the kinase was identified as a human protein in the PhosphositePlus database. The final compendium consisted of 5,388 links between 342 kinases and 2,260 unique substrates.
+
+
+
+Brett et al. 2021
+
+Omic and Multidimensional Spatial (OMS) Atlas generated from four serial biopsies of a metastatic breast cancer patient during 3.5 years of therapy. This
+
+the HTAN Data Coordinating Center (https://humantumoratlas.org/) 
+
+aggregation of publicly available molecular interactions and biological pathway databases provided by the Pathway Commons (PC) resource.23 The aggregated data is represented in the standard Biological Pathway Exchange (BioPAX) language and provides the most complete and rich representation of the biological network models stored in PC. These complex biochemical reactions were reduced to pairwise relationships using rules to generate a Simple Interaction Format (SIF) representation of BioPAX interactions. The reduction of BioPAX interactions to the SIF allows for the representation of pairwise molecular interactions in the context of specific binary relationships. The
+
+
+
+Regulon enrichment: This method leverages pathway information and gene expression data to produce regulon-based protein activity scores. Our method tests for positional shifts in experimental-evidence supported networks consisting of transcription factors and their downstream signaling pathways when projected onto a rank-sorted gene-expression signature. The gene-expression signature is derived by comparing all features to the median expression level of all samples considered within the data-set. After weights have been assigned to the regulatory network, the positive and negative edges of each regulator are rank ordered. The first component of the enrichment signature, the local delta concordance signature, is derived by capturing the concordance between the magnitude of the weight assigned to a particular edge and the ranked position of that edge. The features associated with activation, positive edges within the regulatory network, are monotonically ranked from most lowly to highly expressed in the restricted feature space, where the features that are repressed are ranked by a monotonically decreasing function. This component of the signature considers positive and negative edges independently, which captures support for an enrichment signature even if one of the edge groups is underrepresented in the network graph. The second component of the enrichment signature, the local enrichment signature, captures positional shifts in the local gene ranked signature and integrates those shifts with the weights assigned to overlapping features for a given regulon and the expression data set. The last component of the enrichment signature considers the entire feature space and projects the rank-sorted local signature onto this global ranked feature space. We derive our global enrichment signature from this projection for each regulator we consider. We use the median of robust quantile-transformed ranked positions as the enrichment scores for both the local enrichment and global enrichment signatures. We then integrate these three individual signatures together, which allows us to capture differences between individual regulator signatures within the context of an individual patient as well as at a cohort level. Reverse
+
+
+
+CausalPath (https://github.com/PathwayAndDataAnalysis/causalpath; commit 9f8d6f8) was used for integrated pathway analysis of protein, phosphoprotein, gene abundance, and transcriptional regulator activity.24 Briefly, CausalPath is a hypothesis generating tool that uses literature- grounded interactions from Pathway Commons to produce a graphical representation of causal relationships that are consistent with patterns in a multi-omic datasets.24 This integrative approach allows for holistic evaluation of signaling networks and pathway activity across longitudinal biopsies.
+
+
+
+### Boizard et al. 2021
+
+a new prioritization strategy called PRYNT (PRioritization bY protein NeTwork) that employs a combination of two closeness‑based algorithms, shortest‑path and random walk, and a contextualized protein–protein interaction (PPI) network, mainly based on clique consolidation of STRING network.
+
+
+
+Other approaches use biological networks in order to prioritize candidates (e.g. MaxLink21, ToppNet18). One of the network-based software most commonly used by biologists in order to interpret high-throughput expression data is Ingenu- ity Pathway Analysis (IPA)22. This suite is based on a PPI network containing millions of structured, manually curated experimental observations. In IPA, the “Upstream Regulator Analysis” (URA) algorithm prioritizes disease candidates using in-house causal network approach to elucidate upstream biological causes that can explain the observed molecular changes23,2
+
+
+
+One of the main limitations hampering the use of IPA is that the software is proprietary and therefore its use cannot be broadly generalized to the biology community
+
+PRYNT is based on the integration of Search Tool for the Retrieval of Interacting (STRING, version 10.5)29 PPI network and a combination of shortest-path and random walk, two closeness-based algorithms as it has been previously shown in the literature that this method outperformed other computational methods1
+
+
+
+
+
+##### Rodchenkov et al. 2020
+
+Pathway Commons (https://www.pathwaycommons. org) is an integrated resource of publicly available information about biological pathways including bio- chemical reactions, assembly of biomolecular com- plexes, transport and catalysis events and physical interactions involving proteins, DNA, RNA, and small molecules 
+
+Data is collected from multiple providers in stan- dard formats, including the Biological Pathway Ex- change (BioPAX) language and the Proteomics Stan- dards Initiative Molecular Interactions format, and then integrated. Pathway
+
+Pathway Commons provides biolo- gists with (i) tools to search this comprehensive re- source, (ii) a download site offering integrated bulk sets of pathway data (e.g. tables of interactions and gene sets), (iii) reusable software libraries for work- ing with pathway information in several program- ming languages (Java, R, Python and Javascript) and (iv) a web service for programmatically query- ing the entire dataset
+
+Pathway Commons currently con- tains data from 22 databases with 4794 detailed hu- man biochemical processes (i.e. pathways) and ∼2.3 million interactions
+
+www.pathguide.org)
+
+
+
+##### Babür et al. 2020
+
+We used CausalPath to map site-specific changes in protein phosphorylation in our data to known, causal relations curated through Pathway Commons.25 We recently developed CausalPath to mimic how a scientist might search literature sources to understand changes in protein phosphorylation within a quantitative dataset – but, on the scale of hundreds of thousands of events – and, with the computational capacity to logically infer how thousands of phosphorylation changes may have occurred. CausalPath
+
+**Babür et al. 2008**
+
+We have built a microarray data analysis tool, named PATIKAmad, which can be used to associate microarray data with the pathway models in mechanistic detail, and provides facilities for visualization, clustering, querying, and navigation ofbiological graphs related with loaded microarray experiments. PATIKAmad is freely available to noncommercial users as a new module ofPATIKAweb at http://web.patika.org
+
+d PATIKAmad, within PATIKAweb [5], which is a Web interface to the PATIKA database for querying, visu- alizing, and analyzing biological networks. 
+
+
+
+##### Touré et al. 2020
+
+A large variety of molecular interactions occurs between biomolecular components in cells. When a mo- lecular interaction results in a regulatory effect, exerted by one component onto a downstream component, a so- called ‘causal interaction’ takes place. Causal interactions constitute the building blocks in our understanding of larger regulatory networks in cells. These
+
+we propose a checklist that accommodates current representations, called the Minimum Information about a Molecular Interaction CAusal STatement (MI2CAST). 
