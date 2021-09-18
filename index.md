@@ -36,6 +36,10 @@ https://github.com/kevinblighe?tab=repositories; among which https://github.com/
 
 
 
+Data science with R https://garrettgman.github.io/
+
+
+
 https://github.com/kevinblighe/awesome-single-cell
 
 List of software packages (and the people developing these methods) for single-cell data analysis, including RNA-seq, ATAC-seq, etc. Contributions welcome...
@@ -60,22 +64,40 @@ List of software packages (and the people developing these methods) for single-c
 
 ### R packages
 
+
+
+##### Trajectory inference
+
+
+
 - **PhenoPath**. Genomic trajectories (pseudotimes) with heterogeneous genetic and environmental backgrounds. https://bioconductor.org/packages/release/bioc/html/phenopath.html.
 - **dyno**. Trajectory inference workflow. https://dynverse.org/dyno/index.html.
 
+
+
+##### Cancer genome analysis
+
 Segmented copy number data were processed using CNtools package 
 
-We inferred the similarity between individual cells in the samples and cell lines by calculating the pairwise Pearson correlation matrix C ={cor(i,j)} between any cell i from the Drop- seq experiments with any cell line, j in the CellAtlas leveraging the R package dmatch
+The PAM505 classifier, which is also deployed in Genefu Bioconductor package20, makes calls based on the 50 gene centroid correlation distance to LA, LB, Basal, Her2 and normal-like centroids
+
+y Bayesian approach in discovering novel driver bio-markers in aberrant STPs given high-throughput gene expression (GE) data. 
 
 
+
+##### Statistics 
 
 Processed IlluminaHuman450Kdata(GEO accession GSE72021,described in ref. 26) from221 tumor samples (171 serous, 18 endometrioid, 14 clear cell, 9 mucinous, and 9 other histologic cancer subtypes) was downloaded, along with accompanying clinical annotations, using the GEOquery package from Bioconductor (
 
 The InfiniumPurify R package (https://cran.r-project.org/web/ packages/InfiniumPurify/index.html) was used to estimate tumor purity levels based on DNA methylation profiles (28).
 
-EPIC array data from JHU samples were converted to 450K meth- ylation profiles using the convertArray function in the minfi pack- age,
 
-R package Scater
+
+All computations were carried out on the R platform. Package “fastICA” which implements the iterative FastICA algorithm (15) was used to extract non-Gaussian independent components with logcosh contrast function. Components were subsequently assigned to clusters using the “cluster” package. 
+
+Clusters were visualized with 2d t-SNE using the R package “tsne.” The number of clusters was determined as equal to number of components extracted at each run of ICA. When the number of samples is small comparing to the number of features, which is usually the case for biological data, it is convenient to retrieve as many as independent signal sources as possible, and the number of compo- nents extracted is equal to sample size
+
+
 
 
 
@@ -83,7 +105,23 @@ The clusters were tested for functional enrichment with a hypergeometric test an
 
  https://github.com/bioFAM/MOFA. 
 
+
+
+The package “pcaMethods” was used to calculate principal components for comparison with independent components. 
+
+
+
+
+
+##### Vizualization
+
 Sankey diagrams in R https://christophergandrud.github.io/networkD3/#sankey
+
+
+
+##### Single-cell
+
+R package Scater
 
 
 
@@ -97,11 +135,19 @@ together, our tools help biologists maximize the utility of publicly available R
 improve their understanding of newly collected data. recount3 is available from http://rna.recount.
 bio
 
+
+
+##### Gene set enrichment
+
+Gene Set Enrichment Analysis (GSEA) implemented in the WebGestaltR R-package (Liao et al., 2019) was used to infer signatures of approved drugs (D1, 1,202 gene sets) and kinase inhibitors (D2, 1,220 gene sets) available in the drug signatures database (DSigDB; Yoo et al., 2015; http://dsigdb.tanlab.org/DSigDBv1.0/). Based
+
+
+
+##### Pathway and gene network analyses
+
 ReactomePA https://yulab-smu.top/biomedical-knowledge-mining-book
 
 
-
-Data science with R https://garrettgman.github.io/
 
 scenic, a computational method for simultaneous gene regulatory network reconstruction and cell-state identification from single-cell rna-seq data (http://scenic. aertslab.org).
 
@@ -109,18 +155,21 @@ scenic, a computational method for simultaneous gene regulatory network reconstr
 
 Multi-omics Master- Regulator Analysis (MOMA). MOMA integrates gene expression and genomic alterations profiles to identify MR proteins and MR modules that represent the key effectors of a tumor’s mutational landscape and are thus responsible for implementing its associ- ated cancer cell identity.
 
+
+
 The full code base for PathTurbEr is available in here: https://github.co m/Akmazad/PathTurbEr/ 
 
-y Bayesian approach in discovering novel driver bio-markers in aberrant STPs given high-throughput gene expression (GE) data. 
+
+
+[PaxtoolsR: pathway analysis in R using Pathway Commons]
 
 
 
-sgnesR (Stochastic Gene Network Expression Simulator in R) is an R package that provides an interface to simulate gene expression data from a given gene network using the stochastic simulation algorithm (SSA)
+hMARINa ssMARINa MARINa was run via the VIPER R package (http://www.bioconductor.org/packages/release/bioc/html/viper.html)(Alvarez et al., 2016); and hMARINa was per- formed by extending the functionality of the package
 
 
 
-e a method that compares multiple networks ofunlimited size at the level oflinks and nodes. Our novel method, CoDiNA (Co-expression Differencial Network Analysis), is imple-
-mented as an R package that also includes an interactive tool for network visualization
+e a method that compares multiple networks ofunlimited size at the level oflinks and nodes. Our novel method, CoDiNA (Co-expression Differencial Network Analysis), is implemented as an R package that also includes an interactive tool for network visualization
 
 
 
@@ -133,32 +182,39 @@ of two populations. The framework allows any association measure to be used, and
 
 
 
-The PAM505 classifier, which is also deployed in Genefu Bioconductor package20, makes calls based on the 50 gene centroid correlation distance to LA, LB, Basal, Her2 and normal-like centroids
 
 
+##### Gene expression data query and processing
 
-Proteomic data were accessed and downloaded using the R package “TCGA-Assembler 2” (27, 28) from the CPTAC
+We inferred the similarity between individual cells in the samples and cell lines by calculating the pairwise Pearson correlation matrix C ={cor(i,j)} between any cell i from the Drop- seq experiments with any cell line, j in the CellAtlas leveraging the R package dmatch
 
-
-
-All computations were carried out on the R platform. Package “fastICA” which implements the iterative FastICA algorithm (15) was used to extract non-Gaussian independent components with logcosh contrast function. Components were subsequently assigned to clusters using the “cluster” package. Clusters were visualized with 2d t-SNE using the R package “tsne.” The number of clusters was determined as equal to number of components extracted at each run of ICA. When the number of samples is small comparing to the number of features, which is usually the case for biological data, it is convenient to retrieve as many as independent signal sources as possible, and the number of compo- nents extracted is equal to sample size
-
-
-
-The package “pcaMethods” was used to calculate principal com-
-ponents for comparison with independent components. 
-
-
-
-Gene Set Enrichment Analysis (GSEA) implemented in the WebGestaltR R-package (Liao et al., 2019) was used to infer signatures of approved drugs (D1, 1,202 gene sets) and kinase inhibitors (D2, 1,220 gene sets) available in the drug signatures database (DSigDB; Yoo et al., 2015; http://dsigdb.tanlab.org/DSigDBv1.0/). Based
-
-
+sgnesR (Stochastic Gene Network Expression Simulator in R) is an R package that provides an interface to simulate gene expression data from a given gene network using the stochastic simulation algorithm (SSA)
 
 Stemness scores were calculated as previously described (Malta et al., 2018). Firstly, we used MoonlightR (Colaprico et al., 2020)to query, download, and preprocess the pluripotent stem cell samples (ESC and iPSC) from the Progenitor Cell Biology Consortium (PCBC) dataset
 
 
 
-[PaxtoolsR: pathway analysis in R using Pathway Commons](https://scholar.google.ch/citations?view_op=view_citation&hl=fr&user=njFSsvYAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=njFSsvYAAAAJ:4TOpqqG69KYC)
+Recount2 - Rpackage One issue that can be encountered when planning DEA of TCGA data is  the fact that some projects on the GDC portal do not contain normal  control samples for the comparison with the tumor samples. As explained  previously, it is now possible to query data from the *Recount2* platform to increase the pool of normal samples and apply the DEA pipelines of *TCGAbiolinks* (see [Fig 4A](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006701#pcbi-1006701-g004) for a workflow). -> download GEO and GTEx
+
+
+
+##### Epigenetic data query and processing
+
+EPIC array data from JHU samples were converted to 450K meth- ylation profiles using the convertArray function in the minfi pack- age,
+
+
+
+##### Proteomic data query and processing
+
+Proteomic data were accessed and downloaded using the R package “TCGA-Assembler 2” (27, 28) from the CPTAC
+
+
+
+
+
+
+
+
 
 
 
@@ -178,11 +234,17 @@ HotNet2 identifies subnetworks of a protein-protein interaction network with mor
 
 ### Other tools
 
-clustering and heatmap visualization 
+##### clustering and heatmap visualization 
 
 (https://software.broadinstitute.org/GENE-E/index.html). Pearson
 
 https://software.broadinstitute.org/morpheus/
+
+Mor- pheus software (https://software.broadinstitute.org/ morpheus, Broad Institute). Resulting heatmap plots were created in GraphPad Prism software (La Jolla, California
+
+
+
+##### Gene set enrichment
 
 
 
@@ -196,41 +258,31 @@ e screened for enrichment in MSigDB and chromosome positions using the hypergeom
 
 Gene ontology (GO) analyses were performed using ToppGene (https//topgene.cchmc.org)(
 
+functional characterization of clustering results by single sample Gene Set Enrichment Analysis (ssGSEA)  https://github.com/broadinstitute/ ssGSEA2.0
+
+
+
+Pathway enrichment results were imported into Cytoscape (Shannon et al., 2003) using the Enrichment Map app (Merico et al., 2010) for network analysis of pathways.
+
+GO semantic similarity between genes can be calculated using tools GOSemSim (Yu et al. 2010) or GOssTo (Yu et al. 2010)
+
+
+
+**Deconvolution**
+
 
 
 CIBERSORT RNA-based estimates of overall I-TME provided by CI- BERSORT absolute scores (immune cell infiltration from RNA data)
 
+The RNA-based tumor microenvironment inference tool ESTIMATE (Yoshihara et al., 2013) was used to derive the overall immune score and stromal score for each sample. 
 
+Weused an established methylation-based deconvolution method, EDec (Onuchic et al., 2016) to dissect the composition of different cell types within the whole bulk tumor. I
+
+##### Data visualization
 
 A website for interactive visualization of the multi-omics dataset is available at: http://prot-shiny-vm.broadinstitute.org:3838/ CPTAC-BRCA2020. The
 
 
-
-gephi for graph vizualization
-
-
-
-The RNA-based tumor microenvironment inference tool ESTIMATE (Yoshihara et al., 2013) was used to derive the overall immune score and stromal score for each sample. 
-
-
-
-Weused an established methylation-based deconvolution method, EDec (Onuchic et al., 2016) to dissect the composition of different cell types within the whole bulk tumor. I
-
-We integrated somatic mutation, CNV, DNA methylation, RNA, protein, phosphorylation (phospho) and acetylation (acetyl) levels via iProFun (Song et al., 2019) to investigate the functional impacts of DNA alterations in GBM.
-
-
-
-functional characterization of clustering results by single sample Gene Set Enrichment Analysis (ssGSEA)
-
-n https://github.com/broadinstitute/ ssGSEA2.0
-
-
-
-PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis. -> encapsulate the complex data processing required for proteogenomics  and provide a simple interface to deploy a range of algorithms developed for data analysis, we have developed PANOPLY—a cloud-based Platform for Automated aNd reprOducible Proteogenomic data anaLYsis
-
-
-
-SignatureAnalyzer exploited the Bayesian variant of the NMF algorithm and enabled an inference for the optimal number of signatures from the data itself at a balance between the data fidelity (likelihood) and the model complexity (reg-
 
 
 
@@ -238,15 +290,49 @@ Lolliplots for CDKN2A mutations in the CPTAC head and neck squamous cell carcino
 
 
 
-Pathway enrichment results were imported into Cytoscape (Shannon et al., 2003) using the Enrichment Map app (Merico et al., 2010) for network analysis of pathways.
+##### Networks and pathways
+
+http://www.pathwaymapper.org/
+
+gephi for graph vizualization
+
+
+
+##### Genomics data processing
+
+
+
+
+
+We integrated somatic mutation, CNV, DNA methylation, RNA, protein, phosphorylation (phospho) and acetylation (acetyl) levels via iProFun (Song et al., 2019) to investigate the functional impacts of DNA alterations in GBM.
+
+##### Proteomics data processing
+
+
+
+PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis. -> encapsulate the complex data processing required for proteogenomics  and provide a simple interface to deploy a range of algorithms developed for data analysis, we have developed PANOPLY—a cloud-based Platform for Automated aNd reprOducible Proteogenomic data anaLYsis
+
+
+
+##### Statistics 
+
+SignatureAnalyzer exploited the Bayesian variant of the NMF algorithm and enabled an inference for the optimal number of signatures from the data itself at a balance between the data fidelity (likelihood) and the model complexity (reg-
+
+
+
+
+
+##### Cancer genome analysis
 
 BreakDancer (Chen et al., 2009) and Meerkat (Yang et al., 2013) algorithms were used to detect structural variations.
 
 PARADIGM Integrated Pathway Analysis Integrated Pathway Levels (IPLs) mRNA expression, SCNA, and pathway interaction data for 80 UM samples were integrated using the PARADIGM software (Sedge- wick et al., 2013). Briefly, this procedure infers integrated pathway levels (IPLs) for genes, complexes, and processes, using pathway interactions, and genomic and functional genomic data from each patient sample. Normalized
 
+s an interactive online resource with navigable proteomics, transcriptomics, and drug sensitivity profiles at https://lehtio-lab.se/forall/.
 
 
-hMARINa ssMARINa MARINa was run via the VIPER R package (http://www.bioconductor.org/packages/release/bioc/html/viper.html)(Alvarez et al., 2016); and hMARINa was per- formed by extending the functionality of the package
+
+##### Pathway and gene netork analyses
 
 
 
@@ -258,7 +344,73 @@ We have built a microarray data analysis tool, named PATIKAmad, which can be use
 
 
 
+pathway visualization tools ChiBE29,30 or Newt.
+
+
+
+functional association between genes using data mining and text mining and can be valuable and reliable resources for generating a prior matrix, e.g., STING (Von Mering et al. 2005) and AraNet (Lee et al. 2010)
+
+
+
+
+
 ### Public data
+
+
+
+##### Genomics
+
+To assign cell types to individual cells, we used a bulk RNA sequencing data-set from 95 cell lines collected by CellAtlas (Mabbott et al., 2013) that covered 33 major cell types in normal human tissue, including common immune, endothelial, epithelial, fibroblast and mesodermal cells. T
+
+Transcription factor peaks (bed files) processed from cistrome.org
+
+GENIE GENIE combines genomic and clinical data in an attempt to associate genomic alterations with phenotypic changes
+
+ GXB GXB compiles immunological transcriptomic data
+
+
+
+##### Epigenomics
+
+ubiquitination data (Kim et al 2011)
+
+DNase-Seq data were obtained from ENCODE (http:// hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/ wgEncodeUwDgf, sample ‘wgEncodeUwDgfTregwb7849 5824’) with DNase hypersensitivity (DHS) peaks. Protein- binding footprints (FP) within the DHS peaks were identi- fied by scanning the DHS intervals for gaps in the signals using Wellington [101],
+
+
+
+##### Proteomics
+
+Reverse Phase Protein Arrays (RPPAs) data
+
+protein complexes, specifically the CORUM database
+
+subcellular localization was retrieved from the Human Protein Atlas [97](www.proteinatlas.org).
+
+protein/mRNA half-life data: Schwanhäusser et al. 2011 (mice)
+
+
+
+Clinical Proteomic Tumor Analysis Consortium (CPTAC) CPTAC contains mass spectrometry-based proteomic analysis of tumors from TCGA. The aim of CPTAC is to create a proteogenomic resource where dysregulated proteins and phosphorylation sites can be identified and potentially connected to genomic alterations.
+
+Proteomics Identification Database (PRIDE)
+
+PRIDE aims to be a resource for open access sharing of mass spectrometry data, not just across cancer. They currently have over 9200 datasets available, including 297 breast cancer datasets.
+
+Human Proteome Organization (HUPO) The human proteome project, run by HUPO aims to identify all the proteins in the human proteome and to begin to assess their functionalities and interactions
+
+
+
+##### Gene sets
+
+
+
+##### Pathways 
+
+
+
+##### Cancer-related
+
+
 
 - **METABRIC** (proteomics, RNA-seq, ...)
 - **TCGA** (RNA-seq, methylation, ...)
@@ -267,8 +419,6 @@ We have built a microarray data analysis tool, named PATIKAmad, which can be use
 - **MCLP**: Characterization of Human Cancer Cell Lines by Reverse-phase Protein Arrays (https://doi.org/10.1016/j.ccell.2017.01.005)
 - **CCLE** The Cancer Cell Line Encyclopedia http://www.broadinstitute.org/ccle https://doi.org/10.1038/nature11003
 - Kaplan–Meier Plotter is an online database that contains comprehensive clinical and microarray data for various cancers
-
-Reverse Phase Protein Arrays (RPPAs) data
 
 OncoKB annotation
 
@@ -283,29 +433,45 @@ Cancer RNA-Seq Nexus (CRN) database
 
 . Fudan University Shanghai Cancer Center (FUSCC) presented comprehensive clinical, genomic, transcriptomic data of 465 primary TNBC19, which is the largest TNBC genomic project to date
 
+Cancer-related SAAVs are cataloged in the CanProvar and COSMIC databases.
+
+https://osf.io/gqrz9  ([Tatlow and Piccolo 2016](https://www.nature.com/articles/srep39259)) RNA-seq data from TCGA and CCLE -> transcript level expression estimates; can be combined to gene level expression estimates using Scater (eg. Campbell and Yau 2018)
+
+
+
+CPTAC datasets
+
+Oslo2 landscape cohort
 
 
 
 
-To assign cell types to individual cells, we used a bulk RNA sequencing data-set from 95 cell lines collected by CellAtlas (Mabbott et al., 2013) that covered 33 major cell types in normal human tissue, including common immune, endothelial, epithelial, fibroblast and mesodermal cells. T
+
+https://github.com/mskcc/RNAseqDB -> TCGA & GTEX for comparing normal vs tumor
+
+Cosmic: genes causally associated wiht cancer
+
+Transciptome Alterations in Cancer Omnibus (TACCO) -TACCO is a resource for identifying differentially regulated transcripts within different cancer types and combining these with survival data to determine prognosis
 
 
+
+COSMIC - COSMIC contains data from over 13 million tumor samples, identifying 6 million coding mutations and over 19 million non-coding mutations. This resource collates all genes implicated in cancer through somatic mutation, of which 719 are currently listed
+
+
+
+
+
+##### Drug
 
 gene expression and GDSC2 drug sensitivity datasets from the Genomics of Drug Sensitivity in Cancer (GDSC) (Yang et al., 2013) . 
 
+published cell line perturbation experiments from the Genomics of Drug Sensitivity in Cancer (GDSC) resource (Iorio et al., 2016; Yang et al., 2013)
+
+MOSCATO trial where druggable genomic aberrations were identified and targeted in patients (Massard et al., 2017
 
 
-Transcription factor peaks (bed files) processed from cistrome.org
 
-
-
-Recount2 - Rpackage
-
-One issue that can be encountered when planning DEA of TCGA data is  the fact that some projects on the GDC portal do not contain normal  control samples for the comparison with the tumor samples. As explained  previously, it is now possible to query data from the *Recount2* platform to increase the pool of normal samples and apply the DEA pipelines of *TCGAbiolinks* (see [Fig 4A](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006701#pcbi-1006701-g004) for a workflow).
-
--> download GEO and GTEx
-
-
+##### Single cell
 
 https://github.com/markrobinsonuzh/conquer
 
@@ -317,73 +483,9 @@ http://imlspenticton.uzh.ch:3838/conquer/
 
 
 
-https://osf.io/gqrz9  ([Tatlow and Piccolo 2016](https://www.nature.com/articles/srep39259)) RNA-seq data from TCGA and CCLE -> transcript level expression estimates; can be combined to gene level expression estimates using Scater (eg. Campbell and Yau 2018)
 
 
 
-https://github.com/mskcc/RNAseqDB
-
-
-
-CPTAC datasets
-
-Oslo2 landscape cohort
-
-ubiquitination data (Kim et al 2011)
-
-Cosmic: genes causally associated wiht cancer
-
-protein/mRNA half-life data: Schwanhäusser et al. 2011 (mice)
-
-
-
-Cancer-related SAAVs are cataloged in the CanProvar and COSMIC databases.
-
-
-
-published cell line perturbation experiments from the Genomics of Drug Sensitivity in Cancer (GDSC) resource (Iorio et al., 2016; Yang et al., 2013)
-
-
-
-Clinical Proteomic Tumor Analysis Consortium (CPTAC) CPTAC contains mass spectrometry-based proteomic analysis of tumors from TCGA. The aim of CPTAC is to create a proteogenomic resource where dysregulated proteins and phosphorylation sites can be identified and potentially connected to genomic alterations.
-
-Proteomics Identification Database (PRIDE)
-
-PRIDE aims to be a resource for open access sharing of mass spectrometry data, not just across cancer. They currently have over 9200 datasets available, including 297 breast cancer datasets.
-
-
-
-
-
-GENIE GENIE combines genomic and clinical data in an attempt to associate genomic alterations with phenotypic changes
-
-
-
- GXB GXB compiles immunological transcriptomic data
-
-
-
-Human Proteome Organization (HUPO) The human proteome project, run by HUPO aims to identify all the proteins in the human proteome and to begin to assess their functionalities and interactions
-
-
-
-Transciptome Alterations in Cancer Omnibus (TACCO)
-
-TACCO is a resource for identifying differentially regulated transcripts within different cancer types and combining these with survival data to determine prognosis
-
-
-
-COSMIC
-
-COSMIC contains data from over 13 million tumor samples, identifying 6 million coding mutations and over 19 million non-coding mutations. This resource collates all genes implicated in cancer through somatic mutation, of which 719 are currently listed
-
-
-
-MOSCATO trial where druggable genomic aberrations were identified and targeted in patients (Massard et al., 2017
-
-
-
-protein complexes, specifically the CORUM database
 
 
 
@@ -393,17 +495,9 @@ Sweden Cancerome Analysis Network-Breast (SCAN-B)
 
 
 
-GO semantic similarity between genes can be calculated using tools GOSemSim (Yu et al. 2010) or GOssTo (Yu et al. 2010)
 
 
 
-functional association between genes using data mining and text mining and can be valuable and reliable resources for generating a prior matrix, e.g., STING (Von Mering et al. 2005) and AraNet (Lee et al. 2010)
-
-
-
-s an interactive online resource with navigable
-proteomics, transcriptomics, and drug sensitivity profiles at
-https://lehtio-lab.se/forall/.
 
 
 
@@ -417,25 +511,19 @@ MSigDB [93]website (http://software. broadinstitute.org/gsea/msigdb/) the v5.1 C
 
 
 
-subcellular localization was retrieved from the
-Human Protein Atlas [97](www.proteinatlas.org).
-
 
 
  unsupervised pathway enrichment analysis using **Reactome30**
 
 
 
-We used ARACNe [100] to infer edges between the
-hubs and the expressed genes. 
+We used ARACNe [100] to infer edges between the hubs and the expressed genes. 
 
 
 
 TF genes identified with ei- ther or both of two alternative annotations: (1) the human genes with a symbol annotated with the term ‘GO: 0003700’ in the Gene Ontology Consortium database (www.geneontology.org) or (2) the Ensembl gene ID re- trieved by querying the BioMart service (http://grch37. ensembl.org/) with the Gene Ontology ID ‘GO:0003700
 
 
-
-DNase-Seq data were obtained from ENCODE (http:// hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/ wgEncodeUwDgf, sample ‘wgEncodeUwDgfTregwb7849 5824’) with DNase hypersensitivity (DHS) peaks. Protein- binding footprints (FP) within the DHS peaks were identi- fied by scanning the DHS intervals for gaps in the signals using Wellington [101],
 
 
 
@@ -879,3 +967,32 @@ IntAct (Orchard et al., 2014), SIGNOR (Licata et al., 2019; Perfetto et al., 201
 
 
 
+Searching for these patterns in Pathway Commons generated 28,517 prior relations in four different types (listed below). To increase coverage, we added relations from several other databases (PhosphoNetworks,13 iPTMnet,14 TRRUST,15 and TFactS),16 which are not in Pathway Com- mons, and increased our relationships to 39,232:
+
+
+
+We assessed the overlap of these prior relations with the ‘‘canonical pathways’’ gene sets in MSigDB to understand its coverage. This collection has 2,815 gene sets curated from the databases BioCarta, KEGG, NCI-PID, Reactome, and WikiPath- ways. 
+
+
+
+32TCGA studies that provide proteomic and phospho- proteomic measurements of tumor biopsies from various types of cancer patients. Those studies provide RPPA profiles of a total of 7,694 patients using 259 antibodies.
+
+
+
+
+
+Some of the most popular databases of biological networks.
+Database Type of Network Link Reference
+DIP PPI https://dip.doe-mbi.ucla.edu/dip/Main.cgi [11]
+MINT PPI https://mint.bio.uniroma2.it/ [12]
+IntAct PPI https://www.ebi.ac.uk/intact/ [13]
+BioGRID PPI https://thebiogrid.org/ [14]
+STRING Various https://string-db.org/ [15]
+COXPRESdb Co-expression https://coxpresdb.jp/ [16]
+SEEK Co-expression http://seek.princeton.edu/ [17
+
+
+
+see tables in: The status of causality in biological databases: data resources and data retrieval possibilities to support logical modeling
+
+Briefings in Bioinformatics, 22(4), 2021, 1–15 https://doi.org/10.1093/bib/bbaa390
