@@ -117,6 +117,8 @@ The package “pcaMethods” was used to calculate principal components for comp
 
 Sankey diagrams in R https://christophergandrud.github.io/networkD3/#sankey
 
+* treemap using the treemap library
+
 
 
 ##### Single-cell
@@ -169,6 +171,10 @@ hMARINa ssMARINa MARINa was run via the VIPER R package (http://www.bioconductor
 
 
 
+marina to infer master regulator
+
+
+
 e a method that compares multiple networks ofunlimited size at the level oflinks and nodes. Our novel method, CoDiNA (Co-expression Differencial Network Analysis), is implemented as an R package that also includes an interactive tool for network visualization
 
 
@@ -179,6 +185,11 @@ of two populations. The framework allows any association measure to be used, and
 
 
  six additional mutual information methods in the MINET R package (ARACNE, CLR, MIM, MINET, MRNET, MRNETB) [[43](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007241#pcbi.1007241.ref043)
+
+We used ARACNe [100] to infer edges between the hubs and the expressed genes. 
+
+VIPER has been extensively validated as an accurate method-
+ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay.
 
 
 
@@ -232,6 +243,12 @@ HotNet2 identifies subnetworks of a protein-protein interaction network with mor
 
 
 
+implemented the pypgatk package and the pgdb workflow to create proteogenomics databases based on ENSEMBL resources
+
+pypgatk: (https://github.com/bigbio/py-pgatk/), 
+
+
+
 ### Other tools
 
 ##### clustering and heatmap visualization 
@@ -241,6 +258,12 @@ HotNet2 identifies subnetworks of a protein-protein interaction network with mor
 https://software.broadinstitute.org/morpheus/
 
 Mor- pheus software (https://software.broadinstitute.org/ morpheus, Broad Institute). Resulting heatmap plots were created in GraphPad Prism software (La Jolla, California
+
+
+
+##### General figures
+
+bioRender.com
 
 
 
@@ -270,23 +293,18 @@ GO semantic similarity between genes can be calculated using tools GOSemSim (Yu 
 
 **Deconvolution**
 
-
-
-CIBERSORT RNA-based estimates of overall I-TME provided by CI- BERSORT absolute scores (immune cell infiltration from RNA data)
+* CIBERSORT RNA-based estimates of overall I-TME provided by CI- BERSORT absolute scores (immune cell infiltration from RNA data)
 
 The RNA-based tumor microenvironment inference tool ESTIMATE (Yoshihara et al., 2013) was used to derive the overall immune score and stromal score for each sample. 
 
-Weused an established methylation-based deconvolution method, EDec (Onuchic et al., 2016) to dissect the composition of different cell types within the whole bulk tumor. I
+Weused an established methylation-based deconvolution method, EDec (Onuchic et al., 2016) to dissect the composition of different cell types within the whole bulk tumor. 
+
+
 
 ##### Data visualization
 
-A website for interactive visualization of the multi-omics dataset is available at: http://prot-shiny-vm.broadinstitute.org:3838/ CPTAC-BRCA2020. The
-
-
-
-
-
-Lolliplots for CDKN2A mutations in the CPTAC head and neck squamous cell carcinoma and this lung squamous cell carcinoma cohort were generated using the ProteinPaint web application to visualize mutations (Zhou et al., 2016). Mutations
+* A website for interactive visualization of the multi-omics dataset is available at: http://prot-shiny-vm.broadinstitute.org:3838/ CPTAC-BRCA2020
+* Lolliplots for CDKN2A mutations in the CPTAC head and neck squamous cell carcinoma and this lung squamous cell carcinoma cohort were generated using the ProteinPaint web application to visualize mutations (Zhou et al., 2016). Mutations
 
 
 
@@ -298,25 +316,42 @@ gephi for graph vizualization
 
 
 
-##### Genomics data processing
-
-
+##### Genomics and genomics data processing
 
 
 
 We integrated somatic mutation, CNV, DNA methylation, RNA, protein, phosphorylation (phospho) and acetylation (acetyl) levels via iProFun (Song et al., 2019) to investigate the functional impacts of DNA alterations in GBM.
 
+PROGENy (Schubert et al., 2018) was used to generate activity scores for EGFR based on RNA expression data.
+
+We used iProFun, an integrative analysis tool to identify multi-omic molecular quantitative traits (QT) perturbed by DNA-level varia- tions. 
+
+
+
+
+
 ##### Proteomics data processing
 
 
 
-PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis. -> encapsulate the complex data processing required for proteogenomics  and provide a simple interface to deploy a range of algorithms developed for data analysis, we have developed PANOPLY—a cloud-based Platform for Automated aNd reprOducible Proteogenomic data anaLYsis
+* **PANOPLY**: a cloud-based platform for automated and reproducible proteogenomic data analysis. -> encapsulate the complex data processing required for proteogenomics  and provide a simple interface to deploy a range of algorithms developed for data analysis, we have developed PANOPLY—a cloud-based Platform for Automated aNd reprOducible Proteogenomic data anaLYsis
+
+* the **Proteomics-Genomics DataBase** (**pgdb** - https://nf-co.re/pgdb) workflow
+
+* **Biofactoid** (biofactoid.org), a web-based software system that
+  empowers authors to capture and share structured human- and machine-readable summaries of molecular-level interactions described in their publications
 
 
 
-##### Statistics 
 
-SignatureAnalyzer exploited the Bayesian variant of the NMF algorithm and enabled an inference for the optimal number of signatures from the data itself at a balance between the data fidelity (likelihood) and the model complexity (reg-
+
+##### Data processing and statistics 
+
+* **SignatureAnalyzer** exploited the Bayesian variant of the NMF algorithm and enabled an inference for the optimal number of signatures from the data itself at a balance between the data fidelity (likelihood) and the model complexity (reg-
+
+* **Customprodbj** (Wen et al., 2020)(https://github.com/bzhanglab/customprodbj) for customized database construction.
+
+
 
 
 
@@ -324,11 +359,15 @@ SignatureAnalyzer exploited the Bayesian variant of the NMF algorithm and enable
 
 ##### Cancer genome analysis
 
-BreakDancer (Chen et al., 2009) and Meerkat (Yang et al., 2013) algorithms were used to detect structural variations.
+* **BreakDancer** (Chen et al., 2009) and **Meerkat** (Yang et al., 2013) algorithms were used to detect structural variations.
 
-PARADIGM Integrated Pathway Analysis Integrated Pathway Levels (IPLs) mRNA expression, SCNA, and pathway interaction data for 80 UM samples were integrated using the PARADIGM software (Sedge- wick et al., 2013). Briefly, this procedure infers integrated pathway levels (IPLs) for genes, complexes, and processes, using pathway interactions, and genomic and functional genomic data from each patient sample. Normalized
+* **PARADIGM** Integrated Pathway Analysis Integrated Pathway Levels (IPLs) mRNA expression, SCNA, and pathway interaction data for 80 UM samples were integrated using the PARADIGM software (Sedge- wick et al., 2013). Briefly, this procedure infers integrated pathway levels (IPLs) for genes, complexes, and processes, using pathway interactions, and genomic and functional genomic data from each patient sample. Normalized
 
-s an interactive online resource with navigable proteomics, transcriptomics, and drug sensitivity profiles at https://lehtio-lab.se/forall/.
+* interactive online resource with navigable proteomics, transcriptomics, and drug sensitivity profiles at https://lehtio-lab.se/forall/.
+
+* fusion events (FUSs) reported by Pipeline for RNA-Sequencing Data Analysis (**PRADA**) (Torres- García et al., 2014)
+
+* **OncoLnc**: [oncolnc.org](http://www.oncolnc.org/) online tool: link TCGA survival data to mRNA, miRNA, or lncRNA expression level
 
 
 
@@ -354,481 +393,84 @@ functional association between genes using data mining and text mining and can b
 
 
 
+##### Drawing tools
+
+* biorender.com
+* Google drawing
+* Canvas
+* Vectr
+* http://www.celldesigner.org
+* http://www.cellillustrator.com
+* https://bioicons.com/
+* https://app.diagrams.net/
+* https://smart.servier.com/
+
+
+
 ### Public data
 
 
 
 ##### Genomics
 
-To assign cell types to individual cells, we used a bulk RNA sequencing data-set from 95 cell lines collected by CellAtlas (Mabbott et al., 2013) that covered 33 major cell types in normal human tissue, including common immune, endothelial, epithelial, fibroblast and mesodermal cells. T
+* CellAtlas To assign cell types to individual cells, we used a bulk RNA sequencing data-set from 95 cell lines collected by CellAtlas (Mabbott et al., 2013) that covered 33 major cell types in normal human tissue, including common immune, endothelial, epithelial, fibroblast and mesodermal cells. T
+* Transcription factor peaks (bed files) processed from cistrome.org
+* GENIE GENIE combines genomic and clinical data in an attempt to associate genomic alterations with phenotypic changes
+*  GXB GXB compiles immunological transcriptomic data
 
-Transcription factor peaks (bed files) processed from cistrome.org
+* http://gent2.appex.kr/ Now, GENT2 contains more than 68,000 samples and has several new useful  functions. First, GENT2 now provides gene expression across 72 different tissues compared to 57 in GENT. Second, with increasing importance of  tumor subtypes, GENT2 provides an option to study the differential  expression and its prognostic significance based on tumor subtypes.  Third, whenever available, GENT2 provides prognostic information of a  gene of interest. Fourth, GENT2 provides a meta-analysis of survival  information to provide users more reliable prognostic value of a gene of interest.
 
-GENIE GENIE combines genomic and clinical data in an attempt to associate genomic alterations with phenotypic changes
+[TANRIC](http://ibl.mdanderson.org/tanric/_design/basic/index.html): focus on noncoding RNA
 
- GXB GXB compiles immunological transcriptomic data
+known associations between disease phenotypes and genes extracted from the Online Mendelian Inheritance in Man (OMIM) database
 
 
 
 ##### Epigenomics
 
-ubiquitination data (Kim et al 2011)
+* ubiquitination data (Kim et al 2011)
+* DNase-Seq data were obtained from ENCODE (http:// hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/ wgEncodeUwDgf, sample ‘wgEncodeUwDgfTregwb7849 5824’) with DNase hypersensitivity (DHS) peaks. 
+* Protein- binding footprints (FP) within the DHS peaks were identi- fied by scanning the DHS intervals for gaps in the signals using Wellington [101],
 
-DNase-Seq data were obtained from ENCODE (http:// hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/ wgEncodeUwDgf, sample ‘wgEncodeUwDgfTregwb7849 5824’) with DNase hypersensitivity (DHS) peaks. Protein- binding footprints (FP) within the DHS peaks were identi- fied by scanning the DHS intervals for gaps in the signals using Wellington [101],
+* Characterizing genetic influences on DNA methylation (DNAm) provides an  opportunity to understand mechanisms underpinning gene regulation and  disease. In the present study, we describe results of DNAm quantitative  trait locus (mQTL) analyses on 32,851 participants, identifying genetic  variants associated with DNAm at 420,509 DNAm sites in blood. http://mqtldb.godmc.org.uk/ 
 
+  [MEXPRESS](http://mexpress.be/): focus on methylation and gene expression
 
+  
 
 ##### Proteomics
 
-Reverse Phase Protein Arrays (RPPAs) data
+* Reverse Phase Protein Arrays (RPPAs) data
+* protein complexes, specifically the CORUM database
+* subcellular localization was retrieved from the Human Protein Atlas [97](www.proteinatlas.org).
+* protein/mRNA half-life data: Schwanhäusser et al. 2011 (mice)
+* Clinical Proteomic Tumor Analysis Consortium (CPTAC) CPTAC contains mass spectrometry-based proteomic analysis of tumors from TCGA. The aim of CPTAC is to create a proteogenomic resource where dysregulated proteins and phosphorylation sites can be identified and potentially connected to genomic alterations. https://cptac-data-portal.georgetown.edu/cptac/s?id=393177
+* Proteomics Identification Database (PRIDE). PRIDE aims to be a resource for open access sharing of mass spectrometry data, not just across cancer. They currently have over 9200 datasets available, including 297 breast cancer datasets.
+* Human Proteome Organization (HUPO) The human proteome project, run by HUPO aims to identify all the proteins in the human proteome and to begin to assess their functionalities and interactions
 
-protein complexes, specifically the CORUM database
+* TcellSubC: An Atlas of the Subcellular Proteome of Human T Cells
 
-subcellular localization was retrieved from the Human Protein Atlas [97](www.proteinatlas.org).
+* All raw data are available via ProteomeXchange with identifier PXD024190.
 
-protein/mRNA half-life data: Schwanhäusser et al. 2011 (mice)
+* The objective of the Human Protein Atlas (HPA) ([www.proteinatlas.org](http://www.proteinatlas.org)) effort is to take advantage of these bioimaging approaches to map the  expression of all human protein-coding genes across all major human  cells, tissues, and organs.
 
+  
 
-
-Clinical Proteomic Tumor Analysis Consortium (CPTAC) CPTAC contains mass spectrometry-based proteomic analysis of tumors from TCGA. The aim of CPTAC is to create a proteogenomic resource where dysregulated proteins and phosphorylation sites can be identified and potentially connected to genomic alterations.
-
-Proteomics Identification Database (PRIDE)
-
-PRIDE aims to be a resource for open access sharing of mass spectrometry data, not just across cancer. They currently have over 9200 datasets available, including 297 breast cancer datasets.
-
-Human Proteome Organization (HUPO) The human proteome project, run by HUPO aims to identify all the proteins in the human proteome and to begin to assess their functionalities and interactions
-
-
-
-##### Gene sets
-
-
-
-##### Pathways 
-
-
-
-##### Cancer-related
-
-
-
-- **METABRIC** (proteomics, RNA-seq, ...)
-- **TCGA** (RNA-seq, methylation, ...)
-- **Protein-gene Expression Nexus**: comprehensive characterization of human cancer cell lines with proteogenomic analysis http:/combio.snu.ac.kr/pen (https://doi.org/10.1016/j.csbj.2021.08.022).
-- **CancerSEA**: a cancer single-cell state atlas http://biocc.hrbmu.edu.cn/CancerSEA/ (https://doi.org/10.1093/nar/gky939)
-- **MCLP**: Characterization of Human Cancer Cell Lines by Reverse-phase Protein Arrays (https://doi.org/10.1016/j.ccell.2017.01.005)
-- **CCLE** The Cancer Cell Line Encyclopedia http://www.broadinstitute.org/ccle https://doi.org/10.1038/nature11003
-- Kaplan–Meier Plotter is an online database that contains comprehensive clinical and microarray data for various cancers
-
-OncoKB annotation
-
-to know the metastatic genes, HCMDB (Human Cancer Metastasis Database), an integrated database
-
-predicted genes were checked for their differ- ential mRNA expression in oral cancer samples (OSCC/TSCC) in the Oncomine database (https ://www.oncom ine.org) and in the Expression Atlas (https ://www.ebi.ac.uk/gxa/). The analysis showed that POSTN, TNC and
-ential mRNA expression in oral cancer samples (OSCC/TSCC) in the Oncomine database (https ://www.oncom ine.org) and in the Expression Atlas (https ://www.ebi.ac.uk/gxa/). The analysis showed that POSTN, TNC and FSCN1 are highly upregulated in OSCC with fold changes of 5.31,
-
-Cancer RNA-Seq Nexus (CRN) database
-
-
-
-. Fudan University Shanghai Cancer Center (FUSCC) presented comprehensive clinical, genomic, transcriptomic data of 465 primary TNBC19, which is the largest TNBC genomic project to date
-
-Cancer-related SAAVs are cataloged in the CanProvar and COSMIC databases.
-
-https://osf.io/gqrz9  ([Tatlow and Piccolo 2016](https://www.nature.com/articles/srep39259)) RNA-seq data from TCGA and CCLE -> transcript level expression estimates; can be combined to gene level expression estimates using Scater (eg. Campbell and Yau 2018)
-
-
-
-CPTAC datasets
-
-Oslo2 landscape cohort
-
-
-
-
-
-https://github.com/mskcc/RNAseqDB -> TCGA & GTEX for comparing normal vs tumor
-
-Cosmic: genes causally associated wiht cancer
-
-Transciptome Alterations in Cancer Omnibus (TACCO) -TACCO is a resource for identifying differentially regulated transcripts within different cancer types and combining these with survival data to determine prognosis
-
-
-
-COSMIC - COSMIC contains data from over 13 million tumor samples, identifying 6 million coding mutations and over 19 million non-coding mutations. This resource collates all genes implicated in cancer through somatic mutation, of which 719 are currently listed
-
-
-
-
-
-##### Drug
-
-gene expression and GDSC2 drug sensitivity datasets from the Genomics of Drug Sensitivity in Cancer (GDSC) (Yang et al., 2013) . 
-
-published cell line perturbation experiments from the Genomics of Drug Sensitivity in Cancer (GDSC) resource (Iorio et al., 2016; Yang et al., 2013)
-
-MOSCATO trial where druggable genomic aberrations were identified and targeted in patients (Massard et al., 2017
-
-
-
-##### Single cell
-
-https://github.com/markrobinsonuzh/conquer
-
-*conquer* (**con**sistent **qu**antification of **e**xternal **R**NA-seq data sets) repository, which provides access to consistently processed, analysis-ready single-cell RNA-seq data sets, together with quality  control and exploratory analysis reports
-
-http://imlspenticton.uzh.ch:3838/conquer/
-
-
-
-
-
-
-
-
-
-
-
-
-
-Sweden Cancerome Analysis Network-Breast (SCAN-B)
-
-
-
-
-
-
-
-
-
-the first large-scale multi-focal breast cancer proteomic study of 330 tumor regions which associated cancer cell function, pathological parameters, and spatial localization of each tumor region. 
-
-All raw data are available via ProteomeXchange with identifier PXD024190.
-
-
-
-MSigDB [93]website (http://software. broadinstitute.org/gsea/msigdb/) the v5.1 C7 (‘immuno- logic signatures’) collection
-
-
-
-
-
- unsupervised pathway enrichment analysis using **Reactome30**
-
-
-
-We used ARACNe [100] to infer edges between the hubs and the expressed genes. 
-
-
-
-TF genes identified with ei- ther or both of two alternative annotations: (1) the human genes with a symbol annotated with the term ‘GO: 0003700’ in the Gene Ontology Consortium database (www.geneontology.org) or (2) the Ensembl gene ID re- trieved by querying the BioMart service (http://grch37. ensembl.org/) with the Gene Ontology ID ‘GO:0003700
-
-
-
-
-
-We considered data from three different public PPI data repositories (Human Interactome database [106], STRING v10.0 [107], and iRefIndex [108]), and integrated them into a large human PPI network with
-
-
-
-To derive association scores from the Open Targets re- source (www.opentargets.org) the version from September 2016 was used
-
-
-
-o draw a treemap using the treemap library
-
-
-
-TcellSubC: An Atlas of the Subcellular Proteome of Human T Cells
-
-
-
-implemented the pypgatk package and the pgdb workflow to create proteogenomics databases based on ENSEMBL resources
-
-The tools allow the generation of protein sequences from novel protein-coding transcripts by performing a three-frame translation of pseudogenes, lncRNAs, and other non-canonical transcripts, such as those produced by alternative splicing events. It also includes exonic out-of-frame translation from otherwise canonical protein-coding mRNAs. Moreover, the tool enables the generation of variant protein sequences from multiple sources of genomic variants including COSMIC, cBioportal, gnomAD, and mutations detected from sequencing of patient samples
-
-pypgatk: (https://github.com/bigbio/py-pgatk/), and pgdb: (https://github.com/nf- core/pgdb ) 
-
-the Proteomics-Genomics DataBase (pgdb - https://nf-co.re/pgdb) workflow
-
-
-
-(Dietrich et al, 2018
-
-a cohort of 200 patient samples of chronic lymphocytic leukaemia, profiled for somatic mutations, RNA expression, DNA methylation and ex vivo drug responses
-
-
-
-Mertins et al. 2016 e quantitative mass-spectrometry-based proteomic and phosphoproteomic analyses of 105 genomically annotated breast cancers, of which 77 provided high-quality data
-
-
-
-
-
-##### **PCaDB**                   http://bioinfo.jialab-ucr.org/PCaDB/  
-
-PCaDB is a comprehensive and interactive database for transcriptomes from prostate cancer population cohorts.            We collected 50 transcriptomics datasets with 7,231 samples from public data repositories,            including TCGA, cBioPortal, GEO, and ArrayExpress. A standard bioinformatics pipeline is used to download and            process the expression data and metadata.           PCaDB provides a user-friendly interface for the comprehensive analysis of individual            genes, prognostic signatures, and the whole transcriptomes to elucidate the molecular            heterogeneity in PCa, understand the mechanisms of tumor initiation and progression,            as well as develop and validate prognostic signatures in large independent cohorts
-
-
-
-https://cptac-data-portal.georgetown.edu/cptac/s?id=393177
-
-
-
-
-
-Characterizing genetic influences on DNA methylation (DNAm) provides an  opportunity to understand mechanisms underpinning gene regulation and  disease. In the present study, we describe results of DNAm quantitative  trait locus (mQTL) analyses on 32,851 participants, identifying genetic  variants associated with DNAm at 420,509 DNAm sites in blood. http://mqtldb.godmc.org.uk/ 
-
-
-
-The Human Developmental Cell Atlas (HDCA) initiative, which is part of  the Human Cell Atlas, aims to create a comprehensive reference map of  cells during development
-
-
-
-The marked improvements in massive parallel sequencing coupled with  single-cell sample preparations and data deconvolution have allowed  single-cell RNA sequencing (scRNA-seq) to become a powerful approach to  characterize the gene expression profile in single cells ([*1*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R1), [*2*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R2)). The objective of the international collaborative effort Human Cell Atlas ([www.humancellatlas.org](http://www.humancellatlas.org)) takes advantage of this new technology platform to study the  distinctive gene expression profiles on RNA level across diverse cell  and tissue types and connect this information with classical cellular  descriptions, such as location and morphology ([*3*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R3)). 
-
-The objective of the Human Protein Atlas (HPA) ([www.proteinatlas.org](http://www.proteinatlas.org)) effort is to take advantage of these bioimaging approaches to map the  expression of all human protein-coding genes across all major human  cells, tissues, and organs.
-
-
-
- an effort to combine the information from these two efforts to create a publicly available HPA Single Cell Type Atlas with genome-wide  expression data from scRNA-seq experiments integrated with the spatial  antibody-based bioimaging data.  a Single Cell Type Atlas has been 
-launched (www.proteinatlas.org/celltype)  A single–cell type transcriptomics map of  
-human tissues
-
-
-
-http://gent2.appex.kr/
-
-Now, GENT2 contains more than 68,000 samples and has several new useful  functions. First, GENT2 now provides gene expression across 72 different tissues compared to 57 in GENT. Second, with increasing importance of  tumor subtypes, GENT2 provides an option to study the differential  expression and its prognostic significance based on tumor subtypes.  Third, whenever available, GENT2 provides prognostic information of a  gene of interest. Fourth, GENT2 provides a meta-analysis of survival  information to provide users more reliable prognostic value of a gene of interest.
-
-
-
-**[OncoLnc](http://www.oncolnc.org/)**: [oncolnc.org](http://www.oncolnc.org/)
-
-- Focus on survival analysis and RNA-seq data.
-- Simple query interface across all cancers for any mRNA, miRNA, or lncRNA gene (try SERPINA1)
-- Precomputed Cox PH regression for every gene, for every cancer
-- Kaplan-Meier plots produced on demand
-
-[TANRIC](http://ibl.mdanderson.org/tanric/_design/basic/index.html): focus on noncoding RNA
-
-[MEXPRESS](http://mexpress.be/): focus on methylation and gene expression
-
-
-
-
-
-The Database of Interacting Proteins (DIP: http://dip.doe-mbi.ucla.edu) is a database that documents experimentally determined protein–protein interactions. https://doi.org/10.1093/nar/30.1.303
-
-
-
- MR4Cancer: a web server prioritizing master regulators for cancer  https://doi.org/10.1093/bioinformatics/bty658 http://cis.hku.hk/MR4Cancer
-
-
-
-Tovar et al. 2015
-
-An important step for this algorithm is the selection of the Transcription Factors, since they will determine the rest of the cal- culation. A proper annotation of transcription factors is crucial for an accurate description of the process under investigation. Here, we used the HGU133A annotation file, in which we found 1142 TFs (Supplementary Material 1). This list was compared with other three lists. Those lists are available in Shimoni and Alvarez (2013), Vaquerizas et al. (2009) and http://www.bioguo.org/AnimalTFDB/ Animal Transcription Factor DataBase, respectively. We want to stress that all four lists show consistency among them
-
-
-
-d fusion events (FUSs) reported by Pipeline for RNA-Sequencing Data Analysis (PRADA) (Torres- Garcı´a et al., 2014)(
-
-
-
-VIPER has been extensively validated as an accurate method-
-ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay.
-
-
-
-human protein-protein interaction networks as of the HINT database2
-
-
-
-essential genes from the online gene essentiality data- base (OGEE)24 and the Database of Essential genes (DEG)25
-
-
-
-1,471 manually curated sequence-specific
-DNA-binding transcription factors28,29 and 501 genes from the Kinome NetworkX database27 that collects kinase information from the literature and other databases
-
-
-
-17,511 phosphorylated proteins, 6,928 acetylated
-proteins and 5,418 methylated proteins from the PhosphoSitePlus database44
-
-
-
-genes that were annotated with a signaling function without recep-
-tor domain function from Gene Ontology (GO)45 as well as 5,701 genes that carried a trans-membrane protein domain
-
-95,722 links between 209 human transcription factor and 8,910 human genes from the TRANSFAC42 database as provided by mSigDB
-
-
+  17,511 phosphorylated proteins, 6,928 acetylated proteins and 5,418 methylated proteins from the PhosphoSitePlus database44
 
 a set of protein abundances30 in human cell lines. Beck, M. et al. The quantitative proteome of a human cell line. Mol Syst Biol 7, 549 (2011)
 
-Interactome mapping :There are several widely-used databases – BioGrid,16
-IntAct,17 HPRD,18 iRefWeb,19 DIP,20
-MINT,21 MIPS22 and VisAnt23 – that curate both categories of interactions for humans and other model organisms.
 
-HINT also distinguishes between interactions curated from small-scale studies and those obtained from high-throughput experiments.
 
+A list of known human E3 ubiquitin and ubiquitin-like ligases and DUBs was compiled from (Medvar et al., 2016; Nijman et al., 2005)
 
 
-WikiPathways6, Ingenuity Pathway Analysis (qiagen.com), KEGG7, and Reactome8
 
+32TCGA studies that provide proteomic and phospho- proteomic measurements of tumor biopsies from various types of cancer patients. Those studies provide RPPA profiles of a total of 7,694 patients using 259 antibodies.
 
 
-
-
-marina to infer master regulator
-
-
-
-the Human Protein Reference Database (HPRD) [28], as one of the most com- prehensive protein interaction databases, only covers less than half of human protein-coding genes. Therefore, (Zhang et al. 2011)
-
-
-
-known associations between disease phenotypes and genes extracted from the Online Mendelian Inheritance in Man (OMIM) database
-
-he Human Protein Reference Database (HPRD) contains human protein-protein interactions that are manually extracted from the literature by expert biolo- gists [28].
-
-Biological General Repository for Interaction Data- sets (BioGRID) contains protein and genetic interactions of major model organism specie
-
-the Biomolecular Interaction Network Database (BIND) contains both high-throughput and manually curated interactions between biological molecules [30]. 
-
-the IntAct molecular interaction database (IntAct) contains protein-protein interaction derived from literature [
-
-he Molecular INTeraction database (MINT) contains information about physical interactions between pro- teins [32]. 
-
-
-
-cataloging of protein–protein interactions across
-species and conditions into databases such as STRING6
-
-The protein interaction data were derived from the BioGRID database. 
-
-The publicly available data sets, such as Biological General Repository for Interaction Datasets (BioGRID, https://thebiogrid.org/), Saccharomyces Gen- ome Database (SGD, http://www.yeastgenome.org/), Hu- man Protein Reference Database (HPRD, http:// www.hprd.org/), Search Tool for the Retrieval of Interacting Genes/Proteins (STRING: http://www.string- db.org/)
-
-
-
-PPIs from HINT database
-
-
-
-pathway enrichment analysis, using Kyoto Encyclopedia of Genes and Genomes (KEGG), Biocarta, and Reactome pathways from the Molecular Signature Database (MSigDB) (
-
-This was further complemented by incorporating Kyoto Encyclopedia of Gene and Genomes (KEGG) ([Ogata et al., 1999](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0180)) PFAM protein domains ([Sonnhammer et al., 1998](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0240)) and INTERPRO protein domains ([Mitchell et al., 2014](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0160)) information of the selected genes.
-
-list of transcription factors in the TFCheckpoint curated database (Tripathi et al., 2013).
-
-
-
-
-
- GRAND (https://grand.networkmedicine.org) as a database for computationally-inferred, context-specific gene  regulatory network models that can be compared between biological  states, or used to predict which drugs produce changes in regulatory  network structure. The database includes 12 468 genome-scale networks  covering 36 human tissues, 28 cancers, 1378 unperturbed cell lines, as  well as 173 013 TF and gene targeting scores for 2858 small  molecule-induced cell line perturbation paired with phenotypic  information. GRAND allows the networks to be queried using phenotypic  information and visualized using a variety of interactive tools.
-
-(http://www.proteinatlas.org),
-
-
-
-we examined genomic-based patterns of oncogenic pathway activity, the tumor microenvironment and other important features in human breast tumors using a panel of 52 previously published gene expression signatures (Supplementary Table - An integrated genomics approach identifies drivers of proliferation in luminal-subtype human breast cancer)
-
-
-
-an RNAi proliferation screen in which a genome-wide shRNA library (~16,000 genes) had been used to identify essential genes (An integrated genomics approach identifies drivers of proliferation in luminal-subtype human breast cancer) Marcotte et al. 2012
-
-
-
-Gene Active Ranking Profile (GARP)-normalized data were obtained from the COLT database
-
-
-
-Significant pathway annotations (FDR < 0.05) from the Panther over-representa- tion test (database: GOBP complete, http://www.pantherdb. org/) were used to annotate each cluster
-
-
-
-TCGA aggregates an extensive col- lection of omics and clinical datasets from large cohorts of patients for more than 30 types of cancers (24). It also ar- chives histopathology images for solid tumor samples from which omics data were sampled. Currently, more than 24,000 histopathology images are available and can be visualized at the Cancer Digital Slide Archive (CDSA, http://cancer. digitalslidearchive.net/). In addition, The NCI Clinical Proteomic Tumor Analysis Consortium (CPTAC) (https://proteomics. cancer.gov/programs/cptac) program also provides high- throughput proteomic data for some of the TCGA tumor spec- imens such as breast cancer, ovarian cancer, and colorectal cancer based on mass-spectrometry technology. These
-
-
-
-To facilitate use and dissemination of the data, we have developed a web resource (https://zucchini.gs. washington.edu/BreastCancerProteome/) in which protein abundances can be queried and correlated to genomic and drug sensitivity data, as presented below. 
-
-
-
-m the Genomics of Drug Sensitivity in Cancer (CRx) resource (Yang et al., 2013)
-
-
-
-e https://lincs.hms.harvard.edu/db/datasets/20343
-
-We performed quantitative proteomics on 61 human-derived breast cancer cell lines to a depth of ~13,000 proteins. The
-
-. All datasets are freely available as public resources on the LINCS portal.
-
-7197 proteins measured in all cell lines
-
-
-
-single cell data breast cancer
-
-scRNA-seq data are available for in-browser exploration and download through the Broad Institute Single Cell portal at https://singlecell. broadinstitute.org/single_cell/study/SCP1039. Processed scRNA-seq data from this study are also available through the Gene Expression Omnibus under accession number GSE176078.
-
-
-
-known interaction pairs from CORUM database
-
-
-
-
-
-essential survival gene datasets from The Cancer Dependency Map, the latter of which catalogs genes driving cancer progression
-
-
-
-BioMuta and BioXpress: mutation and expression knowledgebases for cancer biomarker discovery
-
-
-
-druggability information from DGIdb (Cotto
-et al., 2018) and DEPO (Sun et al., 2018), we
-
-
-
-Weaggregated a set of interacting proteins (e.g. kinase/phosphatase-substrate or complex partners) from OmniPath (downloaded on 2018-03-29) (T€urei et al., 2016), DEPOD(downloadedon2018-03-29) (Duanet al., 2015),CORUM(downloadedon2018-06-29) (Ruepp et al., 2010), Signor2 (downloaded on 2018-10-29) (Perfetto et al., 2016), and Reactome (downloaded on 2018-11-01) 
-
-
-
-The Cancer Imaging Archive (TCIA) database.
-
-
-
-a pathway enrichment analysis of Hallmark, KEGG, and Reactome. The
-
-
-
-L1000 and P100 drug connectivity analysis
-
-Level 4 P100 data were downloaded from the LINCS Data Portal (Stathias et al., 2019) and were used to calculate drug connec-
-tivities on the phosphoprotein level as previously described (
-
-
-
-The differentially expressed genes between gene-altered and WT samples were filtered for the 978 genes measured in the L1000
-assay and then were processed using the CLUE (Subramanian et al., 2017) (summary connectivity score) and iLINCS (Pilarczyk et al., 2019) connectivity algorithms. The resulting drug connectivities were aggregated to the compound level using the summary connec- tivity score in CLUE and the Connected Perturbations Z-score in iLINCS. Target annotations for the ranked compounds were extracted from CLUE and iLINCS and combined in a single list. Level
-
-
-
-. The PreCancer Atlas (PCA) ofthe NCI envisages a histological and multi-omic mapping strategy in time and space to provide detailedmolecular, cellular, and structural characterization of premalignant lesions and how they evolve to invasivecancers
-
-
-
-Genes and Genomics (KEGG) (Kanehisa & Goto, 2000), Reactome (Joshi-Tope et al., 2005), WikiPathways (Slenter et al., 2018), and the SIGnaling Network Open Resource (SIGNOR) (Perfetto et al., 2016) have
 
 Resources such as the Human Protein Reference Database (HPRD) (Peri et al., 2004; Keshava Prasad et al., 2009), the Biological General Repository for Interaction Datasets (BioGRID) (Stark et al., 2006), and the Search Tool for Retrieval of Interacting Genes/Proteins (STRING) (Szklarczyk et al., 2019) 
-
-
 
 Popular phosphorylation focused databases such as PhosphoSitePlus (Hornbeck
 et al., 2015), PHOSIDA (Gnad et al., 2007), Phospho.ELM (Diella et al., 2004) and qPhos (Yu et al., 2019) host many phosphosites and act as repositories for both low and high-throughput data.
@@ -839,51 +481,17 @@ Moving away from databases acting as phosphosite repositories, many databases ho
 
 
 
-study comparing PPI databases found 375 resources (Bajpai et al., 2020). 
+http://www.proteinatlas.org
 
 
 
-Library of Integrated Network-Based Cellular Signatures (LINCS) L1000 perturbation-response signa- tures. The scores were computed using the sig_queryl1k_tool pipeline (https://hub.docker.com/u/cmap) and the LINCS L1000 Level 5 compound (trt_cp) signatures from CLUE (https://clue.io, ‘‘Expanded CMap LINCS Resource 2020 Release’’). The
-
-
-
-Cancer-associated genes (CAG) were compiled using the Census website https://cancer.sanger.ac.uk/census. The list of genes is provided in Table S1. -> Satpathy et al. 2021
-
-
-
-We used iProFun, an integrative analysis tool to identify multi-omic molecular quantitative traits (QT) perturbed by DNA-level varia- tions. 
-
-
-
-Immunohistochemistry-based antibody-specific staining scores in lung tumors were obtained from the Human Protein Atlas (HPA, https://www.proteinatlas.org), in which tumor-specific staining is reported in four levels, i.e., high, medium, low, and not detected. 
-
-
-
-
-
-We queried the PTM signatures database (PTMsigDB) v1.9.0 downloaded from https://github.com/broadinstitute/ssGSEA2.0/ tree/master/db/ptmsigdb using the flanking amino acid sequence (+/? 7 aa) as primary identifier. We used the implementation of PTM-SEA available on GitHub (https://github.com/broadinstitute/ssGSEA2.0) using the command interface R-script (ssgsea- cli.R). The
-
-
-
-A list of known human E3 ubiquitin and ubiquitin-like ligases and DUBs was compiled from (Medvar et al., 2016; Nijman et al., 2005)
-
-
-
-Connectivity Map (CMAP)
-
-Dependency map (DepMap)
-
-CT Antigen database
-
-DepMap genetic dependency dataset (CRISPR Avana Public 20Q3) that contained 18119 genes and 789 cell lines (https://depmap.org/portal/download/ file: Achilles_gene_effect.csv). O
-
-OncoKB database for oncoprotein and tumor suppressor classification (excluded proteins that have both annotations), and used PhosphoSitePlus and Signor databases for the activating/inhibiting classification of phosphorylation sites. 
+* CT Antigen database
 
 NeoFlow (https://github.com/bzhanglab/neoflow) for neoantigen prediction (Wen et al., 2020). Specifically, Optitype (Szolek et al., 2014) was used to find human leukocyte antigens (HLA) for each sample based on WES data. Then we used netMHCpan (Jurtz et al., 2017) to predict HLA peptide binding affinity for somatic mutation–derived variant peptides with a length between 8-11 amino acids. The
 
 
 
-We used Customprodbj (Wen et al., 2020)(https://github.com/bzhanglab/customprodbj) for customized database construction.
+Immunohistochemistry-based antibody-specific staining scores in lung tumors were obtained from the Human Protein Atlas (HPA, https://www.proteinatlas.org), in which tumor-specific staining is reported in four levels, i.e., high, medium, low, and not detected. 
 
 
 
@@ -895,10 +503,93 @@ Cancer/testis (CT) antigens were downloaded from the CTdatabase (Almeida et al.,
 
 
 
-PROGENy (Schubert et al., 2018) was used to generate activity scores for EGFR based on RNA expression data.
+
+
+
+
+##### Gene sets, gene ontologies, gene signatures, gene pathways and gene networks
+
+* MSigDB [93]website (http://software. broadinstitute.org/gsea/msigdb/) the v5.1 C7 (‘immuno- logic signatures’) collection
+
+* TF genes identified with ei- ther or both of two alternative annotations: (1) the human genes with a symbol annotated with the term ‘GO: 0003700’ in the Gene Ontology Consortium database (www.geneontology.org) or (2) the Ensembl gene ID re- trieved by querying the BioMart service (http://grch37. ensembl.org/) with the Gene Ontology ID ‘GO:0003700
+
+
+
+To derive association scores from the Open Targets re- source (www.opentargets.org) the version from September 2016 was used
+
+* unsupervised pathway enrichment analysis using **Reactome**
+
+
+
+The Database of Interacting Proteins (DIP: http://dip.doe-mbi.ucla.edu) is a database that documents experimentally determined protein–protein interactions. https://doi.org/10.1093/nar/30.1.303
+
+WikiPathways6, Ingenuity Pathway Analysis (qiagen.com), KEGG7, and Reactome8
+
+
+
+Tovar et al. 2015: An important step for this algorithm is the selection of the Transcription Factors, since they will determine the rest of the cal- culation. A proper annotation of transcription factors is crucial for an accurate description of the process under investigation. Here, we used the HGU133A annotation file, in which we found 1142 TFs (Supplementary Material 1). This list was compared with other three lists. Those lists are available in Shimoni and Alvarez (2013), Vaquerizas et al. (2009) and http://www.bioguo.org/AnimalTFDB/ Animal Transcription Factor DataBase, respectively. We want to stress that all four lists show consistency among them
+
+genes that were annotated with a signaling function without receptor domain function from Gene Ontology (GO)45 as well as 5,701 genes that carried a trans-membrane protein domain
+
+95,722 links between 209 human transcription factor and 8,910 human genes from the TRANSFAC42 database as provided by mSigDB
+
+
+
+
+DNA-binding transcription factors28,29 and 501 genes from the Kinome NetworkX database27 that collects kinase information from the literature and other databases
+
+
+
+ GRAND (https://grand.networkmedicine.org) as a database for computationally-inferred, context-specific gene  regulatory network models that can be compared between biological  states, or used to predict which drugs produce changes in regulatory  network structure. The database includes 12 468 genome-scale networks  covering 36 human tissues, 28 cancers, 1378 unperturbed cell lines, as  well as 173 013 TF and gene targeting scores for 2858 small  molecule-induced cell line perturbation paired with phenotypic  information. GRAND allows the networks to be queried using phenotypic  information and visualized using a variety of interactive tools.
+
+
+
+
+
+We assessed the overlap of these prior relations with the ‘‘canonical pathways’’ gene sets in MSigDB to understand its coverage. This collection has 2,815 gene sets curated from the databases BioCarta, KEGG, NCI-PID, Reactome, and WikiPath- ways. 
+
+
+
+pathway enrichment analysis, using Kyoto Encyclopedia of Genes and Genomes (KEGG), Biocarta, and Reactome pathways from the Molecular Signature Database (MSigDB) (
+
+This was further complemented by incorporating Kyoto Encyclopedia of Gene and Genomes (KEGG) ([Ogata et al., 1999](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0180)) PFAM protein domains ([Sonnhammer et al., 1998](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0240)) and INTERPRO protein domains ([Mitchell et al., 2014](https://www.sciencedirect.com/science/article/pii/S1476927119303871?casa_token=TTrIGf-vCaAAAAAA:w4xLI5CZzXwhQlJZkG0oL7wdOFfgYDNGK7CwLXnGaxygNkR6XNnWmiDSJkkiwx33yBWzwqcbkuVd#bib0160)) information of the selected genes.
+
+list of transcription factors in the TFCheckpoint curated database (Tripathi et al., 2013).
+
+IntAct (Orchard et al., 2014), SIGNOR (Licata et al., 2019; Perfetto et al., 2016) and Reactome (Fabregat et al., 2018)], and
+
+Searching for these patterns in Pathway Commons generated 28,517 prior relations in four different types (listed below). To increase coverage, we added relations from several other databases (PhosphoNetworks,13 iPTMnet,14 TRRUST,15 and TFactS),16 which are not in Pathway Com- mons, and increased our relationships to 39,232:
+
+
+
+Institute for Systems Biology Regulome Explorer (http://explorer.cancerregulome.org),
+
+databases that characterize pathways such as NetPath [13], KEGG [14], Reactome [11], and dozens of others.
+
+Repositories such as WikiPathways [17] and Path- wayCommons [23] now contain thousands of pathways comprised of millions of interaction
+
+aggregation of publicly available molecular interactions and biological pathway databases provided by the Pathway Commons (PC) resource.23 The aggregated data is represented in the standard Biological Pathway Exchange (BioPAX) language and provides the most complete and rich representation of the biological network models stored in PC. These complex biochemical reactions were reduced to pairwise relationships using rules to generate a Simple Interaction Format (SIF) representation of BioPAX interactions. The reduction of BioPAX interactions to the SIF allows for the representation of pairwise molecular interactions in the context of specific binary relationships. The
+
+
+
+Significant pathway annotations (FDR < 0.05) from the Panther over-representa- tion test (database: GOBP complete, http://www.pantherdb. org/) were used to annotate each cluster
+
+
+
+we examined genomic-based patterns of oncogenic pathway activity, the tumor microenvironment and other important features in human breast tumors using a panel of 52 previously published gene expression signatures (Supplementary Table - An integrated genomics approach identifies drivers of proliferation in luminal-subtype human breast cancer)
+
+
+
+a pathway enrichment analysis of Hallmark, KEGG, and Reactome. The
+
+Genes and Genomics (KEGG) (Kanehisa & Goto, 2000), Reactome (Joshi-Tope et al., 2005), WikiPathways (Slenter et al., 2018), and the SIGnaling Network Open Resource (SIGNOR) (Perfetto et al., 2016) have
 
 Pathways were obtained in BioPax Level 3 format, and included the NCIPID and BioCarta databases from http://pid.nci.nih.gov
 and the Reactome database from http://reactome.org.
+
+We queried the PTM signatures database (PTMsigDB) v1.9.0 downloaded from https://github.com/broadinstitute/ssGSEA2.0/ tree/master/db/ptmsigdb using the flanking amino acid sequence (+/? 7 aa) as primary identifier. We used the implementation of PTM-SEA available on GitHub (https://github.com/broadinstitute/ssGSEA2.0) using the command interface R-script (ssgsea- cli.R). The
+
+
 
 
 
@@ -914,37 +605,6 @@ Creating a Curated Kinase Regulome Proteins identified as kinases in Manning (Ma
 
 
 
-Institute for Systems Biology Regulome Explorer (http://explorer.cancerregulome.org),
-
-
-
-databases that characterize pathways such as NetPath [13], KEGG [14], Reactome [11], and dozens of others.
-
-
-
-Repositories such as WikiPathways [17] and Path- wayCommons [23] now contain thousands of pathways comprised of millions of interaction
-
-
-
-Omic and Multidimensional Spatial (OMS) Atlas generated from four serial biopsies of a metastatic breast cancer patient during 3.5 years of therapy. This
-
-the HTAN Data Coordinating Center (https://humantumoratlas.org/) as
-
-
-
-aggregation of publicly available molecular interactions and biological pathway databases provided by the Pathway Commons (PC) resource.23 The aggregated data is represented in the standard Biological Pathway Exchange (BioPAX) language and provides the most complete and rich representation of the biological network models stored in PC. These complex biochemical reactions were reduced to pairwise relationships using rules to generate a Simple Interaction Format (SIF) representation of BioPAX interactions. The reduction of BioPAX interactions to the SIF allows for the representation of pairwise molecular interactions in the context of specific binary relationships. The
-
-
-
-3D structures submitted directly by authors to the Protein DataBank (PDB)
-
-
-
-
-
-Biofactoid (biofactoid.org), a web-based software system that
-empowers authors to capture and share structured human- and machine-readable summaries of molecular-level interactions described in their publications
-
 
 
 upstream regulator analysis from the commercial Ingenuity Pathway Analysis software.
@@ -957,32 +617,23 @@ www.pathguide.org
 
 
 
-(https://ccr.cancer.gov/research/ cancer-moonshot).. The Human Tumor Atlas Network (HTAN), part of the National Cancer Institute (NCI) Cancer Moonshot Initiative, will establish a clinical, experimental, computational, and organizational framework to generate infor- mative and accessible three-dimensional atlases of cancer transitions for a diverse set of tumor types. This effort complements both ongoing efforts to map healthy organs and previous large- scale cancer genomics approaches focused on bulk sequencing at a single point in time. Gener- ating single-cell, multiparametric, longitudinal atlases and integrating them with clinical outcomes should help identify novel predictive biomarkers and features as well as therapeutically relevant cell types, cell states, and cellular interactions across transitions
+see tables in: The status of causality in biological databases: data resources and data retrieval possibilities to support logical modeling; Briefings in Bioinformatics, 22(4), 2021, 1–15 https://doi.org/10.1093/bib/bbaa390
 
 
 
 
 
-IntAct (Orchard et al., 2014), SIGNOR (Licata et al., 2019; Perfetto et al., 2016) and Reactome (Fabregat et al., 2018)], and
+##### Protein-protein interactions
 
 
 
-Searching for these patterns in Pathway Commons generated 28,517 prior relations in four different types (listed below). To increase coverage, we added relations from several other databases (PhosphoNetworks,13 iPTMnet,14 TRRUST,15 and TFactS),16 which are not in Pathway Com- mons, and increased our relationships to 39,232:
+* Human Interactome database: PPI 
+* iRefIndex: PPI
+
+* databases  that curate both categories of interactions for humans and other model organisms: BioGrid, IntAct, HPRD, iRefWeb, DIP, MINT, MIPS and VisAnt 
 
 
 
-We assessed the overlap of these prior relations with the ‘‘canonical pathways’’ gene sets in MSigDB to understand its coverage. This collection has 2,815 gene sets curated from the databases BioCarta, KEGG, NCI-PID, Reactome, and WikiPath- ways. 
-
-
-
-32TCGA studies that provide proteomic and phospho- proteomic measurements of tumor biopsies from various types of cancer patients. Those studies provide RPPA profiles of a total of 7,694 patients using 259 antibodies.
-
-
-
-
-
-Some of the most popular databases of biological networks.
-Database Type of Network Link Reference
 DIP PPI https://dip.doe-mbi.ucla.edu/dip/Main.cgi [11]
 MINT PPI https://mint.bio.uniroma2.it/ [12]
 IntAct PPI https://www.ebi.ac.uk/intact/ [13]
@@ -993,6 +644,204 @@ SEEK Co-expression http://seek.princeton.edu/ [17
 
 
 
-see tables in: The status of causality in biological databases: data resources and data retrieval possibilities to support logical modeling
+* Human Protein Reference Database (HPRD): human protein-protein interactions that are manually extracted from the literature by expert biologists;  one of the most com- prehensive protein interaction databases, only covers less than half of human protein-coding genes
 
-Briefings in Bioinformatics, 22(4), 2021, 1–15 https://doi.org/10.1093/bib/bbaa390
+* Biological General Repository for Interaction Datasets (BioGRID): protein and genetic interactions of major model organism species
+
+* Biomolecular Interaction Network Database (BIND): both high-throughput and manually curated interactions between biological molecules
+
+* IntAct: molecular interaction database (IntAct) protein-protein interactions derived from literature 
+
+* Molecular INTeraction database (MINT): information about physical interactions between proteins
+
+* STRING: catalog of protein–protein interactions across species and conditions into databases 
+
+* BioGRID: protein interaction data 
+
+* Biological General Repository for Interaction Datasets (BioGRID, https://thebiogrid.org/), Saccharomyces Gen- ome Database (SGD, http://www.yeastgenome.org/), Hu- man Protein Reference Database (HPRD, http:// www.hprd.org/), Search Tool for the Retrieval of Interacting Genes/Proteins (STRING: http://www.string- db.org/)
+
+* HINT: PPI database; also distinguishes between interactions curated from small-scale studies and those obtained from high-throughput experiments.
+
+* CORUM: known interaction pairs from 
+
+* DEPOD
+* CORUM
+* Reactome
+* Signor2
+*  OmniPath 
+* study comparing PPI databases found 375 resources (Bajpai et al., 2020). 
+
+
+
+3D structures submitted directly by authors to the Protein DataBank (PDB)
+
+##### Cancer-related
+
+*Datasets*
+
+* Fudan University Shanghai Cancer Center (FUSCC) presented comprehensive clinical, genomic, transcriptomic data of 465 primary TNBC19, which is the largest TNBC genomic project to date
+
+* https://osf.io/gqrz9  ([Tatlow and Piccolo 2016](https://www.nature.com/articles/srep39259)) RNA-seq data from **TCGA** and **CCLE** -> transcript level expression estimates; can be combined to gene level expression estimates using Scater (eg. Campbell and Yau 2018)
+
+* CPTAC datasets
+* Oslo2 landscape cohort
+* Sweden Cancerome Analysis Network-Breast (SCAN-B)
+
+* 
+
+*Variant and mutation calling* 
+
+* Cancer-related SAAVs are cataloged in the **CanProvar** and **COSMIC** databases.
+
+* 
+
+*Proteomics*
+
+- **MCLP**: Characterization of Human Cancer Cell Lines by Reverse-phase Protein Arrays (https://doi.org/10.1016/j.ccell.2017.01.005)
+- 
+
+*Genomics and gene annotation*
+
+* **HCMDB** (Human Cancer Metastasis Database), an integrated database for known metastatic genes
+
+* 
+* predicted genes were checked for their differ- ential mRNA expression in oral cancer samples (OSCC/TSCC) in the **Oncomine** database (https ://www.oncom ine.org) and in the **Expression Atlas** (https ://www.ebi.ac.uk/gxa/). 
+* **Transciptome Alterations in Cancer Omnibus** (**TACCO**) -TACCO is a resource for identifying differentially regulated transcripts within different cancer types and combining these with survival data to determine prognosis
+
+*Single cell*
+
+- **METABRIC** (proteomics, RNA-seq, ...)
+- **TCGA** (RNA-seq, methylation, ...)
+- **Protein-gene Expression Nexus**: comprehensive characterization of human cancer cell lines with proteogenomic analysis http:/combio.snu.ac.kr/pen (https://doi.org/10.1016/j.csbj.2021.08.022).
+- **CancerSEA**: a cancer single-cell state atlas http://biocc.hrbmu.edu.cn/CancerSEA/ (https://doi.org/10.1093/nar/gky939)
+- **CCLE** The Cancer Cell Line Encyclopedia http://www.broadinstitute.org/ccle https://doi.org/10.1038/nature11003
+- **Kaplan–Meier Plotter** is an online database that contains comprehensive clinical and microarray data for various cancers
+
+* **OncoKB** annotation
+
+* 
+
+* **Cancer RNA-Seq Nexus** (CRN) database; http://syslab4.nchu.edu.tw/CRN). CRN has a user-friendly web interface  designed to facilitate cancer research and personalized medicine. It is  an open resource for intuitive data exploration, providing  coding-transcript/lncRNA expression profiles to support researchers  generating new hypotheses in cancer research and personalized medicine; a database of phenotype-specific transcriptome profiling in cancer cells
+
+* 
+
+* (Dietrich et al, 2018) a cohort of 200 patient samples of chronic lymphocytic leukaemia, profiled for somatic mutations, RNA expression, DNA methylation and ex vivo drug responses
+
+* Mertins et al. 2016 e quantitative mass-spectrometry-based proteomic and phosphoproteomic analyses of 105 genomically annotated breast cancers, of which 77 provided high-quality data
+
+* https://github.com/mskcc/RNAseqDB -> **TCGA** & GTEX **data** processed for comparing normal vs tumor
+
+* **COSMIC** - COSMIC contains data from over 13 million tumor samples, identifying 6 million coding mutations and over 19 million non-coding mutations. This resource collates all genes implicated in cancer through somatic mutation, of which 719 are currently listed
+
+  
+
+* genomic variants: sources of genomic variants including **COSMIC**, **cBioportal**, **gnomAD**, and mutations detected from sequencing of patient samples
+
+* **PCaDB** is a comprehensive and interactive database for transcriptomes from prostate cancer population cohorts.            We collected 50 transcriptomics datasets with 7,231 samples from public data repositories,            including TCGA, cBioPortal, GEO, and ArrayExpress. A standard bioinformatics pipeline is used to download and            process the expression data and metadata.           PCaDB provides a user-friendly interface for the comprehensive analysis of individual            genes, prognostic signatures, and the whole transcriptomes to elucidate the molecular            heterogeneity in PCa, understand the mechanisms of tumor initiation and progression,            as well as develop and validate prognostic signatures in large independent cohorts
+* **MR4Cancer**: a web server prioritizing master regulators for cancer  https://doi.org/10.1093/bioinformatics/bty658 http://cis.hku.hk/MR4Cancer
+
+
+
+* (https://ccr.cancer.gov/research/ cancer-moonshot).. The **Human Tumor Atlas Network** (HTAN), part of the National Cancer Institute (NCI) Cancer Moonshot Initiative, will establish a clinical, experimental, computational, and organizational framework to generate infor- mative and accessible three-dimensional atlases of cancer transitions for a diverse set of tumor types. This effort complements both ongoing efforts to map healthy organs and previous large- scale cancer genomics approaches focused on bulk sequencing at a single point in time. Gener- ating single-cell, multiparametric, longitudinal atlases and integrating them with clinical outcomes should help identify novel predictive biomarkers and features as well as therapeutically relevant cell types, cell states, and cellular interactions across transitions
+
+* **TCGA** aggregates an extensive col- lection of omics and clinical datasets from large cohorts of patients for more than 30 types of cancers (24). It also ar- chives histopathology images for solid tumor samples from which omics data were sampled. Currently, more than 24,000 histopathology images are available and can be visualized at the **Cancer Digital Slide Archive** (**CDSA**, http://cancer. digitalslidearchive.net/). In addition, The NCI **Clinical Proteomic Tumor Analysis Consortium** (**CPTAC**) (https://proteomics. cancer.gov/programs/cptac) program also provides high- throughput proteomic data for some of the TCGA tumor spec- imens such as breast cancer, ovarian cancer, and colorectal cancer based on mass-spectrometry technology. 
+
+To facilitate use and dissemination of the data, we have developed a web resource (https://zucchini.gs.washington.edu/BreastCancerProteome/) in which protein abundances can be queried and correlated to genomic and drug sensitivity data, as presented below. 
+
+* The Cancer Imaging Archive (TCIA) database.
+
+* 
+
+https://lincs.hms.harvard.edu/db/datasets/20343; we performed quantitative proteomics on 61 human-derived breast cancer cell lines to a depth of ~13,000 proteins.  All datasets are freely available as public resources on the LINCS portal. 7197 proteins measured in all cell lines
+
+
+
+* **BioMuta** and **BioXpress**: mutation and expression knowledgebases for cancer biomarker discovery
+
+* Cancer-associated genes (CAG) were compiled using the **Census** website https://cancer.sanger.ac.uk/census. The list of genes is provided in Table S1. -> Satpathy et al. 2021
+
+* The **PreCancer Atlas** (PCA) ofthe NCI envisages a histological and multi-omic mapping strategy in time and space to provide detailedmolecular, cellular, and structural characterization of premalignant lesions and how they evolve to invasivecancers
+
+* **Dependency map** (DepMap) - The goal of the Dependency Map (DepMap) portal is to empower the  research community to make discoveries                    related to cancer vulnerabilities by providing open  access to key cancer dependencies analytical and visualization tools.      DepMap genetic dependency dataset (CRISPR Avana Public 20Q3) that contained 18119 genes and 789 cell lines (https://depmap.org/portal/download/ file: Achilles_gene_effect.csv). O
+
+* **OncoKB** database for oncoprotein and tumor suppressor classification (excluded proteins that have both annotations), and used PhosphoSitePlus and Signor databases for the activating/inhibiting classification of phosphorylation sites. 
+
+* **Omic and Multidimensional Spatial (OMS) Atlas** generated from four serial biopsies of a metastatic breast cancer patient during 3.5 years of therapy. This
+
+* The **Human Tumor Atlas** (HTA) (https://humantumoratlas.org/) 
+
+
+
+
+
+##### Drug drug sensitivity and perturbation datasets
+
+* gene expression and GDSC2 drug sensitivity datasets from the **Genomics of Drug Sensitivity in Cancer** (GDSC) (Yang et al., 2013) . 
+* published cell line perturbation experiments from the **Genomics of Drug Sensitivity in Cancer** (GDSC) resource (Iorio et al., 2016; Yang et al., 2013)
+* **MOSCATO** trial where druggable genomic aberrations were identified and targeted in patients (Massard et al., 2017
+
+* L1000 and P100 drug connectivity analysis; Level 4 P100 data were downloaded from the **LINCS** Data Portal (Stathias et al., 2019) and were used to calculate drug connec-
+  tivities on the phosphoprotein level as previously described (
+
+* **Library of Integrated Network-Based Cellular Signatures** (LINCS) L1000 perturbation-response signa- tures. The scores were computed using the sig_queryl1k_tool pipeline (https://hub.docker.com/u/cmap) and the LINCS L1000 Level 5 compound (trt_cp) signatures from CLUE (https://clue.io, ‘‘Expanded CMap LINCS Resource 2020 Release’’). The
+
+The differentially expressed genes between gene-altered and WT samples were filtered for the 978 genes measured in the L1000
+assay and then were processed using the **CLUE** (Subramanian et al., 2017) (summary connectivity score) and **iLINCS** (Pilarczyk et al., 2019) connectivity algorithms. The resulting drug connectivities were aggregated to the compound level using the summary connec- tivity score in CLUE and the Connected Perturbations Z-score in iLINCS. Target annotations for the ranked compounds were extracted from CLUE and iLINCS and combined in a single list. Level
+
+
+
+* **Genomics of Drug Sensitivity in Cancer** (CRx) resource (Yang et al., 2013)
+
+* essential survival gene datasets from The Cancer Dependency Map, the latter of which catalogs genes driving cancer progression
+
+* druggability information from **DGIdb** (Cotto et al., 2018) and **DEPO** (Sun et al., 2018), 
+
+* **Connectivity Map** (CMAP)   genome-scale library of cellular signatures that catalogs  transcriptional responses to chemical, genetic, and disease  perturbation. To date, the library contains more than 1 Million profiles resulting from perturbations of multiple cell types. - https://clue.io/cmap
+
+
+
+##### Single cell
+
+* https://github.com/markrobinsonuzh/conquer - ***conquer*** (**con**sistent **qu**antification of **e**xternal **R**NA-seq data sets) repository, which provides access to consistently processed, analysis-ready single-cell RNA-seq data sets, together with quality  control and exploratory analysis reports http://imlspenticton.uzh.ch:3838/conquer/
+* The marked improvements in massive parallel sequencing coupled with  single-cell sample preparations and data deconvolution have allowed  single-cell RNA sequencing (scRNA-seq) to become a powerful approach to  characterize the gene expression profile in single cells ([*1*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R1), [*2*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R2)). The objective of the international collaborative effort **Human Cell Atlas** ([www.humancellatlas.org](http://www.humancellatlas.org)) takes advantage of this new technology platform to study the  distinctive gene expression profiles on RNA level across diverse cell  and tissue types and connect this information with classical cellular  descriptions, such as location and morphology ([*3*](https://www.science.org/doi/10.1126/sciadv.abh2169#pill-R3)). 
+
+*  an effort to combine the information from these two efforts to create a publicly available HPA **Single Cell Type Atlas** with genome-wide  expression data from scRNA-seq experiments integrated with the spatial  antibody-based bioimaging data.  a Single Cell Type Atlas has been 
+  launched (www.proteinatlas.org/celltype)  A single–cell type transcriptomics map of  
+  human tissues
+* single cell data breast cancer; scRNA-seq data are available for in-browser exploration and download through the **Broad Institute Single Cell portal** at https://singlecell. broadinstitute.org/single_cell/study/SCP1039. Processed scRNA-seq data from this study are also available through the Gene Expression Omnibus under accession number GSE176078.
+
+##### Other
+
+* **Human Developmental Cell Atlas** (HDCA) initiative, which is part of  the Human Cell Atlas, aims to create a comprehensive reference map of  cells during development
+
+* an **RNAi proliferation screen** in which a genome-wide shRNA library (~16,000 genes) had been used to identify essential genes (An integrated genomics approach identifies drivers of proliferation in luminal-subtype human breast cancer) Marcotte et al. 2012
+
+* essential genes from the online **gene essentiality data- base** (OGEE) and the **Database of Essential genes** (DEG)
+
+* Gene Active Ranking Profile (GARP)-normalized data were obtained from the **COLT** database
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
