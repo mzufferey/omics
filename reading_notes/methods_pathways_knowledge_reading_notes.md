@@ -188,6 +188,36 @@ These patterns can be extended to either **cover new data sources or to capture 
 
 
 
+<u>Phosphorylation</u>
+
+* Pattern 1:  the regulator proteins activate a Conversion that adds phosphorylation to a protein, or inhibit a Conversion that removes phosphorylation from the downstream protein
+
+* Pattern 2: the regulator proteins are not modeled as regulators of a Conversion, but modeled as inputs and outputs of the same Conversion
+
+* Pattern 3: some proteins in a complex are phosphorylated, and the input complex is also designated to be the controller of the Conversion	 
+
+* Pattern 4: the controller transmits its effect through a controlling small molecule
+
+  
+
+<u>Dephosphorylation</u>
+
+* Pattern 1: the regulator proteins activate a Conversion that removes phosphorylation from a protein, or inhibit a Conversion that adds phosphorylation to the downstream protein
+* Pattern 2:  the regulator proteins are not modeled as regulators of a Conversion, but modeled as inputs and outputs of the same Conversion
+* Pattern 3: some proteins in a complex are phosphorylated, and the input complex is also designated to be the controller of the Conversion	
+* Pattern 4:  the controller transmits its effect through a controlling small molecule
+
+<u>Upregulation</u>
+
+* Pattern 1: the regulator activates a TemplateReaction
+* Pattern 2: a Conversion is used instead of a TemplateReaction
+
+<u>Downregulation</u>
+
+* Pattern 1: the regulator inhibits a TemplateReaction
+
+* Pattern 2: a Conversion is used instead of a TemplateReaction.
+
 ### Babur et al. 2021
 
 a computational method to infer causal mechanisms in cell biology by analyzing changes in high- throughput proteomic profiles on the background of prior knowledge captured in biochemical reaction knowl- edge bases
@@ -334,7 +364,7 @@ CausalPath is a great resource for high-confidence priors, which can inform the 
 
 
 
-e. Causality-focused pathway extraction approaches provide a means of transferring knowledge between contexts. CausalPath does this by detecting variation patterns of proteomic abundances and detecting their consistency with prior knowledge. A limitation of this approach is its dependency on observable variance; therefore, it cannot identify a signaling relation that does not significantly vary across the compared samples.
+ Causality-focused pathway extraction approaches provide a means of transferring knowledge between contexts. CausalPath does this by detecting variation patterns of proteomic abundances and detecting their consistency with prior knowledge. A limitation of this approach is its dependency on observable variance; therefore, it cannot identify a signaling relation that does not significantly vary across the compared samples.
 
 
 
@@ -566,5 +596,5 @@ a tumor-data driven middle-out approach toward refining a logical model of a bio
 
 
 
-Niederdorfer and Tsirvouli -> as a proof of principle that knowledge drive improves
+***$\rightarrow$ Niederdorfer and Tsirvouli -> as a proof of principle that knowledge driven analyses yield improvement ??***
 

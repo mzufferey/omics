@@ -289,6 +289,8 @@ Pathway enrichment results were imported into Cytoscape (Shannon et al., 2003) u
 
 GO semantic similarity between genes can be calculated using tools GOSemSim (Yu et al. 2010) or GOssTo (Yu et al. 2010)
 
+The biological pathways for the genes was performed using ToppFun software of ToppGene suite (Chen et al., 2009). ToppGene is a one-stop portal for gene list enrichment analysis and candidate gene prioritization based on functional annotations and protein interactions network. ToppFun detects functional enrichment of the provided gene list based on transcriptome, proteome, regulome (TFBS and miRNA), ontologies (GO, Pathway), phenotype (human disease and mouse phenotype), pharmacome (Drug-Gene associations), literature co-citation, and other features. The biological pathways with FDR < 0.05 were considered significantly affected.
+
 
 
 **Deconvolution**
@@ -316,6 +318,22 @@ gephi for graph vizualization
 
 
 
+visualization: Systems Biology Graphical Notation (SBGN) project, an effort to standardise the graphical notation used in maps of biological processes. https://sbgn.github.io/
+
+
+
+GO-Elite Pathway Analysis http://www.genmapp.org/go_elite/
+GO-Elite is designed to identify a minimal non-redundant set of biological Ontology terms or pathways to describe a particular set of genes or metabolites. Default resources include multiple ontologies (Gene, Disease, Phenotype), pathways (WikiPathways, KEGG, Pathway Commons), putative regulatory targets (transcription, microRNA, domains) and cellular biomarkers. Multiple options for pathway visualization are also available. This software can be run using an intuitive graphical user interface, through command-line arguments, using a web interface and through the program GenMAPP-CS. For program details and to get answers to common questions, check out the Manual, FAQ, Tutorials or User Group.u
+
+
+
+PathVisio https://pathvisio.github.io/
+Biological pathway creation and curation softw areu
+
+
+
+
+
 ##### Genomics and genomics data processing
 
 
@@ -328,7 +346,7 @@ We used iProFun, an integrative analysis tool to identify multi-omic molecular q
 
 
 
-
+AltAnalyze identities alternative splicing events,impacted protein isoforms, [domain composition](http://altanalyze.readthedocs.io/en/latest/DomainAnalysis) and [microRNA targeting](http://www.altanalyze.org/help.htm#microrna).  http://www.altanalyze.org/
 
 ##### Proteomics data processing
 
@@ -818,10 +836,9 @@ assay and then were processed using the **CLUE** (Subramanian et al., 2017) (sum
 
 * essential genes from the online **gene essentiality data- base** (OGEE) and the **Database of Essential genes** (DEG)
 
-* Gene Active Ranking Profile (GARP)-normalized data were obtained from the **COLT** database
+* Gene Active Ranking Profile (GARP)-normalized data were obtained from the **COLT** database http://colt.ccbr.utoronto.ca/cancer Genome-wide pooled shRNA  screens enable global identification of the genes essential for cancer  cell survival and proliferation and provide a ‘functional genetic’ map  of human cancer to complement genomic studies. Using a lentiviral shRNA  library targeting approximately 16 000 human genes and a newly developed scoring approach, we identified essential gene profiles in more than 70 breast, pancreatic and ovarian cancer cell lines. We developed a  web-accessible database system for capturing information from each step  in our standardized screening pipeline and a gene-centric search tool  for exploring shRNA activities within a given cell line or across  multiple cell lines. The database consists of a laboratory information  and management system for tracking each step of a pooled shRNA screen as well as a web interface for querying and visualization of shRNA and  gene-level performance across multiple cancer cell lines. COLT-Cancer  Version 1.0 is currently accessible at http://colt.ccbr.utoronto.ca/cancer.
 
   
-
 
 
 
