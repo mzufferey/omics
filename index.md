@@ -145,9 +145,17 @@ Gene Set Enrichment Analysis (GSEA) implemented in the WebGestaltR R-package (Li
 
 
 
+
+
+
+
 ##### Pathway and gene network analyses
 
 ReactomePA https://yulab-smu.top/biomedical-knowledge-mining-book
+
+
+
+iPAGE for pathway analyses
 
 
 
@@ -290,6 +298,10 @@ Pathway enrichment results were imported into Cytoscape (Shannon et al., 2003) u
 GO semantic similarity between genes can be calculated using tools GOSemSim (Yu et al. 2010) or GOssTo (Yu et al. 2010)
 
 The biological pathways for the genes was performed using ToppFun software of ToppGene suite (Chen et al., 2009). ToppGene is a one-stop portal for gene list enrichment analysis and candidate gene prioritization based on functional annotations and protein interactions network. ToppFun detects functional enrichment of the provided gene list based on transcriptome, proteome, regulome (TFBS and miRNA), ontologies (GO, Pathway), phenotype (human disease and mouse phenotype), pharmacome (Drug-Gene associations), literature co-citation, and other features. The biological pathways with FDR < 0.05 were considered significantly affected.
+
+
+
+FunRich 3.1.3 (http://www.funrich.org) is an independent software tool, used mainly for the functional enrichment and interaction network analysis of genes and proteins
 
 
 
