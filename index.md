@@ -139,17 +139,29 @@ bio
 
 
 
-##### Gene set enrichment
+##### Gene set and pathway enrichment
 
 Gene Set Enrichment Analysis (GSEA) implemented in the WebGestaltR R-package (Liao et al., 2019) was used to infer signatures of approved drugs (D1, 1,202 gene sets) and kinase inhibitors (D2, 1,220 gene sets) available in the drug signatures database (DSigDB; Yoo et al., 2015; http://dsigdb.tanlab.org/DSigDBv1.0/). Based
 
 
 
-
+We used FunRich to identify the KEGG pathways that were
+significantly associated with the genes
 
 
 
 ##### Pathway and gene network analyses
+
+ We develop an R packagePATHcrosstalk (available from GitHubhttps://github.com/fabotao/PATHcrosstalk) with which users can discoverpathways of interest with crosstalk effect considered
+
+
+
+MOSClip, an R package implementing a new topo-
+logical pathway analysis tool able to integrate multi-
+omic data and look for survival-associated gene
+modules
+
+
 
 ReactomePA https://yulab-smu.top/biomedical-knowledge-mining-book
 
@@ -217,6 +229,12 @@ Recount2 - Rpackage One issue that can be encountered when planning DEA of TCGA 
 
 
 
+GEO2R -> download and can provide fold changes
+
+
+
+ from TCGA obtained via the R Package curatedTCGA
+
 ##### Epigenetic data query and processing
 
 EPIC array data from JHU samples were converted to 450K meth- ylation profiles using the convertArray function in the minfi pack- age,
@@ -231,9 +249,12 @@ Proteomic data were accessed and downloaded using the R package “TCGA-Assemble
 
 
 
+a novel technique, sparse multiple canonical correlation network analysis
+(SmCCNet), for integrating multiple omics data types along with a quantitative phenotype of inter-
+est, and for constructing multi-omics networks that are specific to the phenotype. 
 
-
-
+The SmCCNet algorithm is written in R, and is freely available on
+the web at https://cran.r-project.org/web/packages/SmCCNet/index.html.
 
 
 
@@ -717,7 +738,12 @@ SEEK Co-expression http://seek.princeton.edu/ [17
 * Oslo2 landscape cohort
 * Sweden Cancerome Analysis Network-Breast (SCAN-B)
 
-* 
+
+
+
+ Gene expression-based Outcome for Breast cancer Online (GOBO database) [[24](https://www.mdpi.com/2079-7737/10/3/247/htm#B24-biology-10-00247)]. GOBO (http://co.bmc.lu.se/gobo, accessed date 26 February 2021) enables a rapid assessment of gene  expression levels, the identification of co-expressed genes and  association with the outcome for single genes, gene sets, or gene  signatures in an 1881-sample breast cancer data set, generated on  Affymetrix U133A microarrays. 
+
+
 
 *Variant and mutation calling* 
 
@@ -827,6 +853,11 @@ assay and then were processed using the **CLUE** (Subramanian et al., 2017) (sum
 * druggability information from **DGIdb** (Cotto et al., 2018) and **DEPO** (Sun et al., 2018), 
 
 * **Connectivity Map** (CMAP)   genome-scale library of cellular signatures that catalogs  transcriptional responses to chemical, genetic, and disease  perturbation. To date, the library contains more than 1 Million profiles resulting from perturbations of multiple cell types. - https://clue.io/cmap
+
+
+
+review with list of drug responses database: Deep learning for drug response prediction in cancer
+Delora Baptista, Pedro G. Ferreira and Miguel Rocha
 
 
 
