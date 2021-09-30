@@ -745,6 +745,16 @@ SEEK Co-expression http://seek.princeton.edu/ [17
 
 
 
+the PDX Encyclopedia (Gao et al., 2015), in which 399 PDX tumors of varying tissue types had been screened against a total of 40 different monotherapies and 27 combination thera- pies. The genotypes of each PDX had also been established (Gao et al., 2015), which
+
+TIMER (Tumour Immune Estimation Resource) web server is a comprehensive  resource for the systematic analysis of immune infiltrates across  diverse cancer types. (https://cistrome.shinyapps.io/timer/)
+
+TISIDB is also a web portal for tumour and immune system interaction, which integrates multiple heterogeneous data types. (http://cis.hku.hk/TISIDB/index.php) 
+
+Gene Expression Profiling Interactive Analysis (GEPIA) (http://gepia.cancer-pku.cn/index.html) [[20](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04379-y#ref-CR20)], which analyses the RNA sequencing expression from the TCGA and GTEx projects of 9736 tumours and 8587 normal samples
+
+
+
 *Variant and mutation calling* 
 
 * Cancer-related SAAVs are cataloged in the **CanProvar** and **COSMIC** databases.
@@ -810,6 +820,8 @@ To facilitate use and dissemination of the data, we have developed a web resourc
 
 https://lincs.hms.harvard.edu/db/datasets/20343; we performed quantitative proteomics on 61 human-derived breast cancer cell lines to a depth of ~13,000 proteins.  All datasets are freely available as public resources on the LINCS portal. 7197 proteins measured in all cell lines
 
+The LINCS project is arguably the most comprehensive systematic perturba- tion dataset currently available, in which multiple cell lines were treated with over tens of thousands perturbagens (e.g., small molecules or single gene knockdowns), followed by monitoring gene expression profiles using a new technology known as the L1000 assay, which utilizes ~1000 (978) landmark genes to infer the entire transcriptome7
+
 
 
 * **BioMuta** and **BioXpress**: mutation and expression knowledgebases for cancer biomarker discovery
@@ -859,6 +871,14 @@ assay and then were processed using the **CLUE** (Subramanian et al., 2017) (sum
 review with list of drug responses database: Deep learning for drug response prediction in cancer
 Delora Baptista, Pedro G. Ferreira and Miguel Rocha
 
+two large cancer
+drug screening resources: the Cancer Therapeutics Response Portal (CTRP) v2 and the Genomics of Drug Sensitivity in Cancer (GDSC) database (Seashore-Ludlow et al., 2015; Yang et al., 2013).
+
+
+
+DeepSynergy database (Preuer et al., 2018), in which all pairs of 25 drugs had
+been tested across a panel of 39 cell lines (Figure
+
 
 
 ##### Single cell
@@ -885,7 +905,7 @@ Delora Baptista, Pedro G. Ferreira and Miguel Rocha
 
 
 
-
+DisGeNET is one of the largest public collections of gene-disease asso- ciations.
 
 
 
