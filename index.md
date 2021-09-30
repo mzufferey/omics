@@ -48,6 +48,14 @@ List of software packages (and the people developing these methods) for single-c
 
 - [Uncovering pseudotemporal trajectories with covariates from single cell and bulk expression data](http://www.doi.org/10.1038/s41467-018-04696-6), Campbell and Yau 2018 ([reading_notes](reading_notes/Uncovering_pseudotemporal_trajectories_campbell.md))
 
+
+
+
+
+A comparison of single-cell trajectory inference methods -> benchmark of 45 trajectory inference methods (Saelens et al. 2019)
+
+
+
 ### Books of particular interest
 
 - 
@@ -258,6 +266,10 @@ the web at https://cran.r-project.org/web/packages/SmCCNet/index.html.
 
 
 
+[molnet](https://cran.r-project.org/package=molnet) v0.1.0: Implements a network analysis pipeline that enables integrative analysis of multi-omics data including metabolomics. It allows for  comparative conclusions between two different conditions, such as tumor  subgroups, healthy vs. disease, or generally control vs. perturbed. The  case study presented in the [vignette](https://cran.r-project.org/web/packages/molnet/vignettes/Molnet_Vignette.html) uses data published by [Krug (2020)](https://www.cell.com/cell/fulltext/S0092-8674(20)31400-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867420314008%3Fshowall%3Dtrue).
+
+
+
 ### Python packages
 
  https://github.com/bioFAM/MOFA. 
@@ -277,6 +289,16 @@ implemented the pypgatk package and the pgdb workflow to create proteogenomics d
 pypgatk: (https://github.com/bigbio/py-pgatk/), 
 
 
+
+siVAE is implemented as a Python package and is available from PyPi (https://pypi.org/project/siVAE
+
+I. We used LDVAE29 and scVI21 implemented in SCANPY76 package available from PyPi
+
+
+
+Two separate Python packages were used to compute neural network feature attributions in our experiments. We used the DeepExplain Python package that implemented all feature attribution methods (Saliency Maps, Grad*Int, DeepLIFT, IntGrad, Shapley Value) included in our experiments in reverse-mode77. We used the tensorflow-forward- ad Python package for computing Saliency Maps and Grad*Int in forward-mode78
+
+Gene Relevance, we used the published R package45. The method required the latent embeddings learned from siVAE as well as the raw count data corresponding to the embeddings.
 
 ### Other tools
 
@@ -728,6 +750,12 @@ SEEK Co-expression http://seek.princeton.edu/ [17
 
 ##### Cancer-related
 
+review with a huge list of tools and references: Vlachavas et al. 2021
+
+A Detailed Catalogue of Multi-Omics Methodologies for Identification of Putative Biomarkers and Causal Molecular Networks in Translational Cancer Research A Detailed Catalogue of Multi-Omics Methodologies for Identification of Putative Biomarkers and Causal Molecular Networks in Translational Cancer 
+
+
+
 *Datasets*
 
 * Fudan University Shanghai Cancer Center (FUSCC) presented comprehensive clinical, genomic, transcriptomic data of 465 primary TNBC19, which is the largest TNBC genomic project to date
@@ -913,7 +941,7 @@ DisGeNET is one of the largest public collections of gene-disease asso- ciations
 
 
 
-
+ISwine = an online comprehensive knowledgebase in which we incorporated almost all the published swine multi-omics data.
 
 
 
