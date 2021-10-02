@@ -158,6 +158,10 @@ significantly associated with the genes
 
 
 
+RegEnrich: An R package for gene regulator enrichment analysis reveals key role of ETS transcription factor family in interferon signaling
+
+
+
 ##### Pathway and gene network analyses
 
  We develop an R packagePATHcrosstalk (available from GitHubhttps://github.com/fabotao/PATHcrosstalk) with which users can discoverpathways of interest with crosstalk effect considered
@@ -220,6 +224,8 @@ VIPER has been extensively validated as an accurate method-
 ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay.
 
 
+
+ corto: a lightweight R package for gene network inference and master regulator analysis 
 
 
 
@@ -300,6 +306,12 @@ Two separate Python packages were used to compute neural network feature attribu
 
 Gene Relevance, we used the published R package45. The method required the latent embeddings learned from siVAE as well as the raw count data corresponding to the embeddings.
 
+
+
+GSEApy: Gene Set Enrichment Analysis in Python.
+
+
+
 ### Other tools
 
 ##### clustering and heatmap visualization 
@@ -345,6 +357,14 @@ The biological pathways for the genes was performed using ToppFun software of To
 
 
 FunRich 3.1.3 (http://www.funrich.org) is an independent software tool, used mainly for the functional enrichment and interaction network analysis of genes and proteins
+
+
+
+Currently, no software enables non-developers in accessing specific  pathway information. To fill this gap, we present BioPAX-Parser (BiP), a software tool to simply and efficiently perform access to the pathway  information encoded in BioPAX Level 3 (coming from any available public  or private database).
+
+
+
+see tools mentioned in Gene Regulatory Network Inference: An Introductory Survey Huynh-Thu & Guido Sanguinetti 2019
 
 
 
@@ -414,7 +434,7 @@ AltAnalyze identities alternative splicing events,impacted protein isoforms, [do
 * **Biofactoid** (biofactoid.org), a web-based software system that
   empowers authors to capture and share structured human- and machine-readable summaries of molecular-level interactions described in their publications
 
-
+ProTExA is a web-tool that provides a post-processing workflow for the  analysis of protein and gene expression datasets. Using network-based  bioinformatics approaches, ProTExA facilitates differential expression  analysis and co-expression network analysis as well as pathway and  post-pathway analysis.
 
 
 
@@ -558,6 +578,10 @@ http://www.proteinatlas.org
 
 
 
+ProtMapper identifies valid reference positions with high precision and reasonable recall, making it possible to filter out machine reading errors from text mining and thereby assemble a corpus of 29,400 regulatory annotations for 13,668 sites, a 2.8-fold increase over PhosphoSitePlus, the current gold standard.
+
+
+
 * CT Antigen database
 
 NeoFlow (https://github.com/bzhanglab/neoflow) for neoantigen prediction (Wen et al., 2020). Specifically, Optitype (Szolek et al., 2014) was used to find human leukocyte antigens (HLA) for each sample based on WES data. Then we used netMHCpan (Jurtz et al., 2017) to predict HLA peptide binding affinity for somatic mutation–derived variant peptides with a length between 8-11 amino acids. The
@@ -693,6 +717,10 @@ www.pathguide.org
 see tables in: The status of causality in biological databases: data resources and data retrieval possibilities to support logical modeling; Briefings in Bioinformatics, 22(4), 2021, 1–15 https://doi.org/10.1093/bib/bbaa390
 
 
+
+see tools mentioned in Computational methods to dissect gene regulatory networks in cancer Iyer et al. 2017
+
+see tools in Computational methods for Gene Regulatory Networks reconstruction and analysis: A review Delgado et al. 2019 (AI)
 
 
 
@@ -931,6 +959,9 @@ been tested across a panel of 39 cell lines (Figure
 
   
 
+gene essentiality data from: McFarland JM, Ho ZV, Kugener G, Dempster JM, Montgomery PG, Bryan JG, et al. Improved estima- tion of cancer dependencies from large-scale RNAi screens using model-based normalization and data integration. Nat Commun. 2018; 9(1):4610. Epub 2018/11/06. https://doi.org/10.1038/s41467-018- 06916-5 PubMed Central PMCID: PMC6214982. PMID: 30389920
+39.
+
 
 
 DisGeNET is one of the largest public collections of gene-disease asso- ciations.
@@ -947,9 +978,24 @@ ISwine = an online comprehensive knowledgebase in which we incorporated almost a
 
 
 
+Software tools, databases and resources in metabolomics: updates from 2018 to 2019 O'Shea and Misra 2020
 
 
 
 
 
+ CR2Cancer: a database for chromatin regulators in human cancer 
+
+
+
+
+
+very nice review with list of ressources From correlation to causation: analysis of metabolomics data using 
+systems biology approaches Rosato et al. 2018
+
+LitPathExplorer, a visual text analytics tool that integrates advanced  text mining, semi-supervised learning and interactive visualization, to  facilitate the exploration and analysis of pathway models using  statements (i.e. events) extracted automatically from the literature and organized according to levels of confidence.
+
+
+
+we developed the Biofactoid (biofactoid.org) software suite, which crowdsources structured knowledge in articles from authors. Biofactoid is a web-based system that lets scientists draw a network of interactions between genes, their products, and chemical compounds and employs smart-automation to translate user input into a structured language using the expressive power of a formal ontology. The
 

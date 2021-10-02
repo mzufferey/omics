@@ -600,7 +600,11 @@ a tumor-data driven middle-out approach toward refining a logical model of a bio
 
 
 
+**Wong et al. 2021**
 
+we developed the Biofactoid (biofactoid.org) software suite, which crowdsources structured knowledge in articles from authors.
+
+we developed the Biofactoid (biofactoid.org) software suite, which crowdsources structured knowledge in articles from authors. Biofactoid is a web-based system that lets scientists draw a network of interactions between genes, their products, and chemical compounds and employs smart-automation to translate user input into a structured language using the expressive power of a formal ontology. The
 
 ##### Database reviews:
 
