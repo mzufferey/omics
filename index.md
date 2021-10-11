@@ -119,7 +119,7 @@ The package “pcaMethods” was used to calculate principal components for comp
 
 
 
-
+Cluster reliability score (CRS) The CRS was introduced in (Alvarez et al., 2018) as a statistically sound way to assess the fit of each sample within a cluster. For each sample, a distance vector V1, representing its distance from all other samples in the same cluster and a vector V2, representing its distance from all other samples in the cohort are computed. The sample distance matrix was computed by taking the weighted VIPER scores for each sample (VIPER activity values multiplied by each MR’s MOMA Score) and calculating the pairwise Pearson correla- tions. The normalized enrichment score of V2 distances, ranked from the largest to the smallest one, in V1 distances, is then assessed using aREA. This produces a p-value that represents the tightness and separation of the cluster being considered in relation to all other samples. A cluster-wide reliability score for each cluster is assessed as the average cluster reliability (NES) of each sample in the cluster, scaled between 0 and 1. Finally, the reliability of the entire clustering solution (global cluster reliability score) is assessed as the average of the cluster-wide reliability score of all clusters in the solution.
 
 ##### Vizualization
 
@@ -159,6 +159,17 @@ significantly associated with the genes
 
 
 RegEnrich: An R package for gene regulator enrichment analysis reveals key role of ETS transcription factor family in interferon signaling
+
+aREA analysis The analytic Rank-based Enrichment Analysis (aREA) was introduced in (Alvarez et al., 2016) as an analytical methodology to assess gene set enrichment analysis statistics, producing results that are virtually identical to GSEA (Subramanian et al., 2005) without the need for time-consuming sample or gene shuffling
+
+
+
+, there exists single sample gene set enrichment analysis [57] techniques such as gene set varia- tion analysis (GSVA [27]) and fast gene set enrichment analysis (FGSEA [53]) to estimate enrichment score for each TR in a given sample.
+
+fgsea R package
+
+GSVA, a non-parametric, unsupervised technique is used
+to estimate TR regulon enrichment scores as a function of genes inside and outside the regulons analogously to a competitive gene settest[27].We use the ‘gsva’ function in the ‘gsva’ package
 
 
 
@@ -223,9 +234,13 @@ We used ARACNe [100] to infer edges between the hubs and the expressed genes.
 VIPER has been extensively validated as an accurate method-
 ology to measure a protein’s activity, on the basis of the enrichment of its tissue-specific activated and repressed tran- scriptional targets (regulon) in over and under-expressed genes (Alvarez et al., 2016)—i.e., akin to a highly multiplexed gene- reporter assay.
 
-
+The metaVIPER approach (Ding et al., 2018), available from the R VIPER package, was then used to generate two interactomes from the TCGAPRAD cohort (this manuscript) and the 2015 SU2C metastatic Castration Resistant Prostate Cancer (mCRPC) cohort (Rob-
 
  corto: a lightweight R package for gene network inference and master regulator analysis 
+
+
+
+We present a new R package, CorDiffViz, that facilitates the estimation and visualization of differential  correlation networks using multiple correlation measures and inference  methods. The software is implemented in R, HTML and Javascript, and is available at https://github.com/sqyu/CorDiffViz. Visualization has been tested for the Chrome and Firefox web browsers. A demo is available at https://diffcornet.github.io/CorDiffViz/demo.html.
 
 
 
@@ -366,6 +381,10 @@ Currently, no software enables non-developers in accessing specific  pathway inf
 
 see tools mentioned in Gene Regulatory Network Inference: An Introductory Survey Huynh-Thu & Guido Sanguinetti 2019
 
+DAVID
+
+ConsensusPathDB allows us to perform overexpression analysis on top of differentially activated MRs to identify signif- icantly enriched molecular functions (M), cellular components (C), biological process (BP), pathways (P) and protein complexes (PC). The advantage of using ConsensusPathDB over a popular tool like DAVID [31]isthatitprovidesthe option to search through multiple databases (different types of interactions) to find enriched pathways, unlike DAVID, which only uses the KEGG database. Moreover,
+
 
 
 **Deconvolution**
@@ -464,7 +483,15 @@ ProTExA is a web-tool that provides a post-processing workflow for the  analysis
 
 
 
-##### Pathway and gene netork analyses
+. We introduce the Molecular Oncology Almanac (MOAlmanac), a paired  clinical interpretation algorithm and knowledge base to enable  integrative interpretation of multimodal genomic data for point-of-care  decision making and translational-hypothesis generation. 
+
+
+
+PROGENy, a method that overcomes both limitations by leveraging a large compendium of publicly available perturbation experiments to yield a common core of Pathway RespOnsive GENes. Unlike pathway mapping methods, PROGENy can (i) recover the effect of known driver mutations, (ii) provide or improve strong markers for drug indications, and (iii) distinguish between oncogenic and tumor suppressor pathways for patient survival. https://www.nature.com/articles/s41467-017-02391-6 Schubert et al. 2018
+
+
+
+##### Pathway and gene network analyses
 
 
 
@@ -517,7 +544,14 @@ functional association between genes using data mining and text mining and can b
 
 known associations between disease phenotypes and genes extracted from the Online Mendelian Inheritance in Man (OMIM) database
 
+We generated a single-cell tumor immune atlas, jointly analyzing  published data sets of >500,000 cells from                     217 patients and 13 cancer types, providing the  basis for a patient stratification based on immune cell compositions. (Nieto et al. 2021 - A single-cell tumor immune atlas for precision oncology)
 
+miRTarBase: miRNA target database
+
+publicly available transcriptomic data from the Genomics of Drug Sensitivity in Cancer (GDSC) database
+
+, an additional validation on the set ofeight datasets
+(BLCA, BRCA, COAD, GBM, HNSC, LUAD, OV and SKCM can- cers) obtained from the PRECOG repository was conducted. F
 
 ##### Epigenomics
 
@@ -598,7 +632,11 @@ Remaining variant peptides were further filtered using PepQuery (http://www.pepq
 
 Cancer/testis (CT) antigens were downloaded from the CTdatabase (Almeida et al., 2009). C
 
+PTMsigDB 	PTM signature (for phosphorylation-driven signature analysis)
 
+PhosphoSitePlus phosphorylation site annotation
+
+Signor  phosphorylation site annotation
 
 
 
@@ -609,6 +647,14 @@ Cancer/testis (CT) antigens were downloaded from the CTdatabase (Almeida et al.,
 * MSigDB [93]website (http://software. broadinstitute.org/gsea/msigdb/) the v5.1 C7 (‘immuno- logic signatures’) collection
 
 * TF genes identified with ei- ther or both of two alternative annotations: (1) the human genes with a symbol annotated with the term ‘GO: 0003700’ in the Gene Ontology Consortium database (www.geneontology.org) or (2) the Ensembl gene ID re- trieved by querying the BioMart service (http://grch37. ensembl.org/) with the Gene Ontology ID ‘GO:0003700
+
+Finally,we perform downstream analysis of the MRs specific to ICR-L using ConsensusPathDB [35] 
+
+
+
+Each set of marker genes were systematically tested for enrichment in a chemical and genetic perturbation sig- nature (the CGP collection) curated by the Molecular Signature Database (MSigDB)
+
+
 
 
 
@@ -722,18 +768,29 @@ see tools mentioned in Computational methods to dissect gene regulatory networks
 
 see tools in Computational methods for Gene Regulatory Networks reconstruction and analysis: A review Delgado et al. 2019 (AI)
 
+see ref in A census of pathway maps   in cancer systems biology Kuenzi and Ideker 2020 https://www.nature.com/articles/s41568-020-0240-7.pdf
 
+
+
+Here, we worked within the framework of the TCGA PanCancer Atlas initiative ([Cancer Genome Atlas Research Network et al., 2013c](https://www.sciencedirect.com/science/article/pii/S0092867418303593#bib20)) to build a uniformly processed dataset and a unified data analysis  pipeline aimed at exploring similarities and differences in canonical  cancer pathway alterations across 33 cancer types. Oncogenic Signaling Pathways in The Cancer Genome Atlas Sanchez-Vega et al. 2018
+
+
+
+Biocarta, CORUM, Innate DB, KEGG, WikiPathways, Reactome, Nepath, PIC and PINdb, all of which are available in Consensus- Pathdb, for
 
 ##### Protein-protein interactions
 
-
+PrePPI (http://bhapp.c2b2.columbia.edu/PrePPI) is a database that  combines predicted and experimentally determined protein-protein  interactions (PPIs) using a Bayesian framework.
 
 * Human Interactome database: PPI 
 * iRefIndex: PPI
 
 * databases  that curate both categories of interactions for humans and other model organisms: BioGrid, IntAct, HPRD, iRefWeb, DIP, MINT, MIPS and VisAnt 
 
-
+DEPOD
+CORUM
+Signor2
+Reactome
 
 DIP PPI https://dip.doe-mbi.ucla.edu/dip/Main.cgi [11]
 MINT PPI https://mint.bio.uniroma2.it/ [12]
@@ -808,6 +865,12 @@ TIMER (Tumour Immune Estimation Resource) web server is a comprehensive  resourc
 TISIDB is also a web portal for tumour and immune system interaction, which integrates multiple heterogeneous data types. (http://cis.hku.hk/TISIDB/index.php) 
 
 Gene Expression Profiling Interactive Analysis (GEPIA) (http://gepia.cancer-pku.cn/index.html) [[20](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04379-y#ref-CR20)], which analyses the RNA sequencing expression from the TCGA and GTEx projects of 9736 tumours and 8587 normal samples
+
+
+
+Oncoprotein-specific molecular interaction maps (SigMaps) for cancer network analyses Broyde et al. 2021
+
+. We introduce SigMaps as context-specific networks, comprising modulators, effectors and cognate binding-partners of a specific oncoprotein. SigMaps are reconstructed de novo by integrating diverse evidence sources—including protein structure, gene expression and mutational profiles—via the OncoSig machine learning framework
 
 
 
@@ -935,7 +998,12 @@ drug screening resources: the Cancer Therapeutics Response Portal (CTRP) v2 and 
 DeepSynergy database (Preuer et al., 2018), in which all pairs of 25 drugs had
 been tested across a panel of 39 cell lines (Figure
 
+PRISM (Profiling Relative Inhibition Simultaneously in Mixtures) 
+GDSC (Genomics of Drug Sensitivity) 
 
+**Dependency**
+
+DepMap	a compendium of genomics, proteomics, shRNA and CRISPR based gene dependency datasets of hundreds of cell lines.
 
 ##### Single cell
 
@@ -957,7 +1025,14 @@ been tested across a panel of 39 cell lines (Figure
 
 * Gene Active Ranking Profile (GARP)-normalized data were obtained from the **COLT** database http://colt.ccbr.utoronto.ca/cancer Genome-wide pooled shRNA  screens enable global identification of the genes essential for cancer  cell survival and proliferation and provide a ‘functional genetic’ map  of human cancer to complement genomic studies. Using a lentiviral shRNA  library targeting approximately 16 000 human genes and a newly developed scoring approach, we identified essential gene profiles in more than 70 breast, pancreatic and ovarian cancer cell lines. We developed a  web-accessible database system for capturing information from each step  in our standardized screening pipeline and a gene-centric search tool  for exploring shRNA activities within a given cell line or across  multiple cell lines. The database consists of a laboratory information  and management system for tracking each step of a pooled shRNA screen as well as a web interface for querying and visualization of shRNA and  gene-level performance across multiple cancer cell lines. COLT-Cancer  Version 1.0 is currently accessible at http://colt.ccbr.utoronto.ca/cancer.
 
-  
+
+
+TCIA	digital histopathology slides
+
+
+Achilles shRNADEMETER knockout scores were downloaded from The Broad Institute for all cell lines in CCLE for all TFs a
+
+
 
 gene essentiality data from: McFarland JM, Ho ZV, Kugener G, Dempster JM, Montgomery PG, Bryan JG, et al. Improved estima- tion of cancer dependencies from large-scale RNAi screens using model-based normalization and data integration. Nat Commun. 2018; 9(1):4610. Epub 2018/11/06. https://doi.org/10.1038/s41467-018- 06916-5 PubMed Central PMCID: PMC6214982. PMID: 30389920
 39.
@@ -968,7 +1043,7 @@ DisGeNET is one of the largest public collections of gene-disease asso- ciations
 
 
 
-
+CHASM (Carter et al., 2009) and GISTIC2.0 (Mermel et al., 2011) putative driver events versus
 
 
 
@@ -999,3 +1074,6 @@ LitPathExplorer, a visual text analytics tool that integrates advanced  text min
 
 we developed the Biofactoid (biofactoid.org) software suite, which crowdsources structured knowledge in articles from authors. Biofactoid is a web-based system that lets scientists draw a network of interactions between genes, their products, and chemical compounds and employs smart-automation to translate user input into a structured language using the expressive power of a formal ontology. The
 
+
+
+see refs in                         The status of causality in biological databases: data resources and data retrieval possibilities to support logical  modeling                    (Touré et al. 2020)

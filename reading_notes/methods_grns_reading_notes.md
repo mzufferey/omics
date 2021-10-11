@@ -2348,8 +2348,6 @@ For single patient-based analysis, gene expression signatures were computed by c
 
 
 
-
-
 ##### Ietswaart et al. 2021
 
 GeneWalk (github.com/churchmanlab/genewalk) that identifies individual genes and their relevant functions critical for the experimental setting under examination. After the automatic assembly of an experiment-specific gene regulatory network, GeneWalk uses representation learning to quantify the similarity between vector representations of each gene and its GO annotations, yielding annotation significance scores that reflect the experimental context.
@@ -2367,4 +2365,151 @@ The network structure is learned through random walks using an un- supervised ne
 
 The resultant vector representations enable a quantitative comparison between genes and GO terms, highlighting the GO terms most relevant for the biological context under study
 
-, GeneWalk provides for each input gene its direct GO annotations ranked by their statistical relevance. We
+, GeneWalk provides for each input gene its direct GO annotations ranked by their statistical relevance. 
+
+
+
+##### Broyde et al. 2021
+
+Oncoprotein-specific molecular interaction maps (SigMaps) for cancer network analyses
+
+Although net- works derived from pairwise interaction assays or computational inference might mitigate the excessive simplicity and linearity of cancer pathways, they generally do not account for nor discrimi- nate between cellular contexts1
+
+we developed an integrative machine
+learning (ML) framework (**OncoSig**) for the systematic, de novo reconstruction of tumor-specific molecular interaction signaling maps (**SigMaps**), anchored on any oncoprotein of interest. Specifically,
+
+an oncoprotein-specific SigMap recapitulates the molecular architecture necessary to func- tionally modulate and mediate its activity within a specific cellular context, including its physical, cognate-binding partners. To
+
+OncoSig infers context-specific SigMaps by train- ing an ML algorithm to integrate complementary evidence from transcriptional and post-translational interactions inferred from three-dimensional (3D) structural data, as well as from gene expres- sion and mutational profiles in large-scale repositories
+
+four complementary evidence sources integrated by OncoSig. Additional evi- dence can be easily incorporated in the framework. We
+
+**example: KRAS context**
+
+1. KRAS-specific, structure-based protein–
+   protein interactions (PPIs), as inferred by the Predicting Protein– Protein Interactions (PrePPI) algorithm6,7
+   , by combining struc-
+   tural homology to protein complexes in structural databases and non-structure-related data. PrePPI scores represent the likelihood ratio (LR) of any predicted PPI based on a random interaction null model
+2. include transcriptional interactions inferred by the
+   Algorithm for the Reconstruction of Gene Regulatory Networks (ARACNe)
+3. Third, we use Virtual Inference of Protein activity by Enriched Regulon analysis (VIPER)10
+   to associate the mutational state of a
+   candidate upstream modulator protein with differential activity of the anchor protein or the mutational state of the latter with differential activity of its candidate downstream effectors. VIPER
+   measures a protein’s activity based on the expression of its transcrip- tional targets—akin to a tissue-specific, highly multiplexed gene reporter assay.
+4. Finally, we infer upstream modulators of the anchor protein using Conditional Inference of Network Dynamics (CINDy)11,12
+   —a
+   refinement of the Modulator Inference by Network Dynamics (MINDy) algorithm11
+   . CINDy uses the conditional mutual infor-
+   mation to assess changes in the mutual information between the anchor protein and its transcriptional targets as a function of the candidate modulator expression or mutational state
+
+OncoSig accounts for tumor context specificity by lever-
+aging evidence from the ARACNe, VIPER and CINDy algo- rithms, whose predictions are based on the analysis of large-scale, tumor-specific molecular profile data, whereas PrePPI provides context-independent, structure-based evidence.
+
+To integrate the evidence from these algorithms, we tested two established ML algorithms: Naive Bayes14
+(NB) and Random Forest1
+
+An advantage of the former is that the inference of specific protein–protein relationships can be easily traced back to their sup- porting evidence. In contrast, the latter is better suited to integrate non-statistically independent evidence sources. However, tracing back predictions to the specific supporting evidence is challenging
+
+input to the algorithm: matrix
+(Fig. 1c), with ~20,000 rows—one for each protein in the human proteome.
+
+The gold standard set (GSS) vector in the second col- umn describes proteins known to be functionally related (PGSS) or unrelated (NGSS) to the anchor protein
+
+Remaining columns represent ~36,000 features corresponding to PrePPI, ARACNe, CINDy and VIPER confidence scores, respectively, supporting physical or functional interactions between row-specific and column-specific proteins
+
+. For each protein, statistically sig- nificant algorithm scores are reported in different columns, hence accounting for the greater number of columns than rows
+
+The entire matrix, except for the gold standard column, is identi-
+cal for any anchor protein of choice
+
+In addition to the 61 true-positive predictions, SigMapKRAS
+LUAD
+includes 201 novel predictions at false discovery rate (FDR) = 1%
+I
+(red circles) (Fig. 2b(ii)), including 30 proteins predicted as KRAS physical interactors (11%, blue and black circles) in BioGRID21
+,
+134 druggable proteins (51%, red and black circles) in the Drug Repurposing Hub22
+and 33 proteins meeting both criteria
+
+SigMaps effectively recapitulate known biology and can help priori- tize novel functional or physical interactors, including many drug- gable ones, for validation
+
+1)PrePPI6
+predicts interactions between a protein (red) and its physical and/or functional interactors (gray). 2) The
+ARACNe algorithm9
+predicts transcription factors or signaling molecules (red) that transcriptionally regulate target genes (blue). 3) CINDy12
+predicts
+signaling molecules (orange/red) that post-translationally modify transcription factors (blue boxes), which, in turn, leads to differential expression of a transcription factor’s targets (blue diamonds). 4) The VIPeR algorithm10
+infers downstream effectors (blue) and upstream regulators (orange) for a given
+protein (red). VIPeR associates i) the protein (red) with a mis-sense mutation (black dot) with the activity change of transcription factors (blue) and ii) signaling molecules (orange) with mis-sense mutations (black dots) with activity of the protein (red). c,
+
+
+
+we developed an unsupervised version of the algorithm (OncoSigUN
+) to extend the analysis to arbi-
+trary proteins of interest, without protein-specific training sets.
+
+
+
+The term ‘pathway,’ although widely used, is a loosely defined bio- logical concept. Here we propose a fundamentally different rep- resentation (SigMap) of the signaling and regulatory machinery necessary to modulate and affect the function of a specific protein of interest in a specific tissue context, which is equivalent to a protein’s mechanism of action. 
+
+
+
+Our data suggest that SigMaps provide a more unbiased, com-
+pact and realistic representation of a protein’s mechanism of action, compared to available network representations and algorithms
+
+OncoSig generates a single integrated score repre-
+senting the probability that a protein belongs to a specific SigMap. Use of PrePPI is instrumental for identifying PPIs, whereas ARACNe, VIPER and CINDy provide critical tissue specificity and additional evidence supporting both physical and functional interactions
+
+the feature matrix (Fig. 1c) was reduced to contain only interactions with the specific protein of interest, leaving only four of the 36,000 columns, one for each of the algorithms
+
+Proteins were then scored based on aggregate voting across the ten OncoSigRF
+classifiers described
+
+The rationale is that, once a
+sufficient number of diverse training sets is available, they can be used to assess the generic contribution of each evidence source (that is, its weight) toward classification of a bona fide interaction.
+
+The features derived from the networks were as follows: mutual information
+for ARACNe, number of statistically significant triplets for CINDy, negative log P value for VIPER and LR for PrePPI. We coded each feature symmetrically, so that interactions between protein A and protein B were input into the matrix twice, once in the feature vector for A and once in the feature vector for B; all other elements in the RF feature matrix were set to zero
+
+For each of the ten oncogene-centric interactomes, proteins that are part of the PGSS were assigned a ‘1’ within the PGSS vector, whereas all other proteins were assigned a ‘0’ to represent membership in the negative gold standard set (NGSS). OncoSigRF
+
+OncoSigRF was trained and tested with each pathway’s PGSS and NGSS using Monte Carlo cross-validation77
+, creating 50 forests each with 50 trees
+
+General procedure for SigMaps and OncoSig. The feature matrix for a protein of interest consists only of those features that correspond to interactions with the protein of interest and, thus, has only four columns, one for each of the four interactomes: PrePPI, ARACNe, CINDy and VIPER. SigMap membership of each protein in the human proteome is determined by aggregate voting after querying the ten OncoSigRF
+classifiers described above (KRAS, PI3KCA, TP53, EGFR, BRAF,
+STK11, CDKN2A, NTRK3, YAP1 and CTNNB1).
+
+##### Mall et al. 2021 Network-based identification of key master regulators associated with an immune-silent cancer phenotype
+
+The availability of large genomic datasets offers an opportunity to ascertain key determinants of differential intratumoral immune response. 
+
+We follow a network-based protocol to identify transcription regulators (TRs) associated with poor immunologic antitumor activity. 
+
+We use a consensus of four different pipelines to identify TRs affecting immunologic antitumor activity
+
+* 2 state-of-the-art gene regulatory network inference techniques to determine TR regulons
+  1. regularized gradient boosting machines 
+  2. ARACNE ,
+* 3 separate enrichment techniques, 
+  1. fast gene set enrichment analysis 
+  2. gene set variation analysis 
+  3. virtual inference of protein activity by enriched regulon analysis to identify the most important TRs affecting immunologic antitumor activity. 
+
+**through an open-science competition (DREAM Chal- lenge), the authors compared various GRN inference methods on several synthetic and real datasets. In [26], the authors illus- trated the superior performance of RGBM for the DREAM Chal- lenge networks (see Supplementary Figure S1b). Hence, RGBM is the primary GRN inference technique focused on in this work**
+
+Another key component of MRA is to estimate enrichmen-
+t/activity scores for TRs in a given sample, taking into consid- eration its regulon.
+
+While techniques such as RGBM utilize a simplistic difference in average expression of positively and negatively regulated targets to estimate the activity of a TR, methods such as virtual inference of protein-activity by enriched regulon analysis (VIPER) [8] and MARINA [6] utilize a dedicated algorithm formulated to estimate TR activity tak- ing into account the TR mode of action, the TR-target gene interaction confidence and the pleiotropic nature of each target gene regulation. Moreover,
+
+**, there exists single sample gene set enrichment analysis [57] techniques such as gene set varia- tion analysis (GSVA [27]) and fast gene set enrichment analysis (FGSEA [53]) to estimate enrichment score for each TR in a given sample.** This
+
+Finally,we perform downstream analysis of the MRs specific to ICR-L using ConsensusPathDB [35] to discover corresponding enriched pathways
+
+Previously tools such as ARACNE, VIPER and NetFactor focused on tran- scription factors (TFs). Moreover, the original RGBM algorithm also exploited an active binding network based on binding sites of TFs. Recently, there have been studies [14, 47, 48]thatextend the hubs of GRNs to regulatory proteins beyond the TFs. For example, in [48], the authors considered a set of 2506 regulatory proteins annotated in GO with TF activity and transcription cofactor activity**. Our set of 3674 TRs was a superset of their set including receptors, kinases, growth factors, signal transduction proteins, transcription co-activators and cofactors as candidate regulators**
+
+Other interesting examples where hubs of the networks were
+focused on signal molecules (and not just TFs) include approach such as SigMaps [14] or surface receptors i.e. the receptors inter- actome, to identify active ligand-receptors pairs [47]. These stud- ies used ARACNE + VIPER and generalized the concept of MRA to generic signal molecules (not just TFs) as originally intended
+
+To determine the enrichment score with statistical significance for specific TR regulons, we use the ‘fgsea’ function in the ‘fgsea’ package in R

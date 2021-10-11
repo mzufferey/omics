@@ -464,4 +464,111 @@ Recently, graph neural networks (GNNs) have been successfully applied to graph-s
 
 
 
+Liu et al. 2021
 
+A proteomic and phosphoproteomic landscape of KRAS mutant cancers identifies combination therapies
+
+a proteomic and phosphoproteomic landscape of 43 KRAS mutant cancer cell lines across different tissue origins
+
+By integrating transcriptomics, proteomics, and phosphoproteomics, we identify three subsets with distinct biological, clinical, and thera- peutic characteristics. 
+
+The integrative analysis of phosphoproteome and drug sensitivity information facili- tates the identification of a set of drug combinations with therapeutic potentials. 
+
+we carried out a mass spectrometry (MS)-based quantitative proteomic and phosphoproteomic analysis of 43 KRAS mutant human cancer cell lines. By integrating multi-plat- form data types including proteome, phosphoproteome, and public transcriptome, we identified three subsets of KRAS mutant cancers. Molecular characterization of these three sub- sets enabled us to identify the prognostic difference and thera- peutic vulnerabilities of KRAS mutant cancers.
+
+Proteomics and phosphoproteomics enable multi- omics-based integrative subtyping of KRAS mutant cancer cell lines 
+
+To obtain a comprehensive understanding of the molecular heterogeneity of KRAS mutant cancers, we integrated our prote- omic and phosphoproteomic data with the publicly available transcriptomic data from the Genomics of Drug Sensitivity in Cancer (GDSC) database (Garnett
+
+A fused similarity network of the three types of omics data was acquired using a similarity network fusion (SNF) method (Liu et al., 2018; Wang et al., 2014) after data imputation (Table
+
+Unsupervised clustering for each respective layer of omics data showed that the average silhouette width of the subsets from transcriptome, proteome, or phosphoproteome alone was smaller than that of the subsets from the integrative multi-omics data (Figures S1F and S1I), suggesting that the integration of three types of omics data could better classify KRAS mutant cancers
+
+assessment of the contribution to the top 20% fea- tures of normalized mutual information (NFM), as previously described
+
+mutation types and copy number variation (CNV) of KRAS, as annotated by CCLE (Barretina
+
+Multivar- iate analysis (**permutational multivariate analysis of variance** [**PerMANOVA**]) showed that the frequency of driver gene muta- tions (summed for each sample) was significantly correlated with subset (p = 0.026) rather than tissue origin
+
+To identify the most discriminative molecular signatures
+among these subsets, we extracted the most important mo- lecular features (i.e., variables) to discriminate the subtypes using a random forest learning method (Genuer
+
+To further investigate the discriminative power of the identified
+signatures in primary samples, we performed unsupervised clus- tering of a larger cohort (n = 507) of KRASmutant clinical samples from TCGA dataset using the signature mRNAs
+
+Multivariate analysis (PerMANOVA) showed that the fre- quency of driver gene mutations (summed in each sample) was significantly correlated with both subset (p = 0.001) and tissue origin (p = 0.001) (Table
+
+To explore the potential utility of the subtyping signatures, we
+compared prognosis among the three clinical subsets. Disease-
+
+unsupervised clustering of KRAS WTTCGA clinical
+samples (including LUAD, LUSC, PAAD, COAD, and READ; n = 1,093) was conducted to assess the impact of tissue types.
+
+Together, we showed that the identified subset signatures could be used to stratify the large and independent datasets of clinical samples
+
+Bioinformatics reveals distinct molecular features of KRAS mutant subsets
+
+To obtain mechanistic insights into different clinical outcomes of the three subset-defined tumors, we carried out gene set enrich- ment analysis (GSEA) using hallmark gene sets.
+
+We further investigated the detailed pathways in each subset.
+
+Overall, the results were consistent with those of the transcriptome and prote- ome data
+
+To identify functionally important subset-specific phosphor-
+ylation, we retrieved all the functionally annotated phospho- sites from the PhosphoSitePlus database
+
+**Kinase-substrate enrich- ment analysis** 
+
+Immunoblotting further confirmed the enrichment of EGFR signaling in S2 (Figure
+
+illustrated the proteomic and phosphoproteomic alterations of frequently altered genes in a simplified RTK/RAS pathway diagram
+
+Correlation between molecular feature and drug sensitivity reveals subset-specific therapies for KRAS mutant cancers
+
+To explore the potential vulnerability of KRASmutant cancers, we compared gene dependencies among the three KRAS mutant subsets on the basis of theCancer Depen- dency Map (DepMap) dataset 
+
+RNAi-based analysis identi- fied30genes with statistically different de- pendency scores  (**gene dependency analysis**)
+
+To further identify the subset-specific therapies and their molecular indicators,
+wecalculated thedrug-proteinand drug-phosphosite correlations in each subset.
+
+. We further examined the subset-specif- ically upregulated proteins/phosphorylations of U.S. Food and Drug Administration (FDA)-approved drug targets from the Drug- Bank database (unpaired two-sided Student’s t test) (Figure S4J), suggesting a therapeutic potential worthy of further investigation.
+
+Phosphoproteome analysis reveals drug combinations for the treatment of KRAS mutant cancers
+
+KRAS mutations activate multiple downstream pathways. Previ- ous studies have shown that blockage of individual downstream pathways barely achieves therapeutic benefits (Manchado et al., 2016), suggesting a possibility of targeting signaling compensa- tion for KRAS mutant cancer treatment
+
+We therefore raised a hypothesis that two drugs showing a large number of inverse correlations to the same set of phosphoproteins (i.e., protein phosphorylation levels) might have a higher chance to show synergistic effects, in particular when these phosphoproteins are co-activated in KRAS mutant cancer
+
+we conducted a **compensatory phosphoprotein biomarker analysis** (CPBA) (Fig- ures 5A and S5A). In this analysis, we introduced a combination score to evaluate the compensatory effects, which was calcu- lated by multiplying the number of positively correlated phos- phoproteins with the number of negatively correlated phospho- proteins in each drug combination
+
+CPBA may be a useful approach to predict the ef- ficacy of drug combinations for KRAS mutant cancers
+
+Combined inhibition of DOT1L and SHP2 shows specific therapeutic benefit for S2 tumors
+
+Among the new drug combinations, we noted a pair that involves an inhibitor DOT1L plus an inhibitor of SHP2 (DOT1Li-SHP2i combo). This combination was particularly appealing, as the **crosstalk between epigenetic regulation and phosphoproteome** has been noted in cancer treatment (
+
+To explore the predictive power of theS2 signatures, we tested the combination in 41KRAS mutant cell lines evenly distributed in three subsets
+
+These results suggested thepredictive utility of our signature to stratify KRAS mutant cancer to DOT1Li- SHP2i combo therapy independent of tissue origins
+
+As CPBA was based on the upregulated phospho-signaling in
+KRAS mutant cells versus the WT ones, this approach was ex- pected to only predict the sensitivity to KRAS mutant tumors
+
+, the therapeutic efficacy of DOT1Li-SHP2i combo
+was assessed in vivo. I
+
+Similar results were observed in a larger panel of cell lines retrieved from GDSC database
+
+DOT1L inhibition results in an induced vulnerability to SHP2 inhibitors in KRAS mutant cancers We
+
+We next examined the molecular basis underlying the therapeu- tic benefit of DOT1Li-SHP2i combo.
+
+Immunoblotting analysis showed that both multiple DOT1L inhibitors and the genetic depletion of DOT1L resulted in the upregulated MAPK and PI3K/AKT
+
+epigenetic modulations could
+give rise to a targetable vulnerability
+
+DOT1L inhibition upregulates MAPK/AKT pathways via transcriptionally regulating PREX1 
+
+To investigate how DOT1L inhibition causes feedback upregula- tion of the MAPK/AKT pathways, we performed a proteomic analysis to systematically examine the proteins affected by DOT1L inhibition
