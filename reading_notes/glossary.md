@@ -1,7 +1,8 @@
 tumor MRD describes can- cer cells that remain following complete clinical and radiological response to therapeutic interventions
 https://insight.jci.org/articles/view/147929
 
-
+Pathways represent a group of biochemical entities (e.g.,
+genes, proteins, etc.), connected by interactions, relations, and reactions (including physical interactions, complex formation, transcriptional regulation, etc.), that lead to a certain product or changes in a cell. Molecular
 
 
 

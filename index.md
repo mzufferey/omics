@@ -171,6 +171,21 @@ fgsea R package
 GSVA, a non-parametric, unsupervised technique is used
 to estimate TR regulon enrichment scores as a function of genes inside and outside the regulons analogously to a competitive gene settest[27].We use the ‘gsva’ function in the ‘gsva’ package
 
+Gene set analysis was performed using Camera (Wu and Smyth, 2012
+) from the limma R package. The Hallmark and cellular components gene ontology gene sets were obtained from the Molecular Signatures Database (Liberzon et al., 2015
+) (downloaded June 25th, 2019) and used as the reference gene sets.
+Signaling pathway impact analysis (Tarca et al., 2009
+) was used to identify the list of KEGG pathways over-represented by the subgroup-specific differentially expressed genes (DEGs) using the iLINCS web-based platform (http://ilincs.org). Only pathways with adjusted p value (SPIA pajd) less than 0.05 were considered, and the status of each enriched pathway was only considered if the topology p value (Top pval) was less than 0.05.
+ESTIMATE analysis was performed using the estimate R package (Yoshihara et al., 2013
+). Log2-TPM values were used as the input, and the analysis was run using default parameters.
+Transcription factor enrichment analysis was performed using the ChEA3 (Keenan et al., 2019
+) web portal (https://maayanlab.cloud/chea3/) using default parameters and the subgroup-specific DEGs.
+
+
+
+Gene set variation analysis was performed using the GSVA R package (Guinney and Castelo, 2019; Hänzelmann et al., 2013
+) using log2-TPM values from protein-coding genes. T
+
 
 
 ##### Pathway and gene network analyses
@@ -799,6 +814,8 @@ BioGRID PPI https://thebiogrid.org/ [14]
 STRING Various https://string-db.org/ [15]
 COXPRESdb Co-expression https://coxpresdb.jp/ [16]
 SEEK Co-expression http://seek.princeton.edu/ [17
+
+public databases have cataloged networks of known and predicted PPIs, such as STRING (Szklarczyk et al., 2019), IntAct (Orchard et al., 2014), CellCircuits (Mak et al., 2007), and PINA (Cowley et al., 2012) [more comprehensive lists are described by Huang et al. (2018) and Miryala et al. (2018)].
 
 
 

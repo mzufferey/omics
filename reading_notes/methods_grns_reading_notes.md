@@ -2513,3 +2513,155 @@ Other interesting examples where hubs of the networks were
 focused on signal molecules (and not just TFs) include approach such as SigMaps [14] or surface receptors i.e. the receptors inter- actome, to identify active ligand-receptors pairs [47]. These stud- ies used ARACNE + VIPER and generalized the concept of MRA to generic signal molecules (not just TFs) as originally intended
 
 To determine the enrichment score with statistical significance for specific TR regulons, we use the ‘fgsea’ function in the ‘fgsea’ package in R
+
+### Mechanism-Centric Approaches for Biomarker Detection and Precision Therapeutics in Cancer
+
+Yu and Mitrofanova 2021
+
+e computational approaches that identify **mechanism-centric** biomarkers elucidated from gene co-expression networks, regulatory networks (e.g., transcriptional regulation), protein–protein interaction (PPI) networks, and molecular pathways.
+
+the majority of biomarkers are identified from **gene-centric approaches** (we will refer to gene/protein/metabolite etc.,-centric approaches as gene-centric approaches for simplicity), where either a specific gene is investigated (based on previous biological assumptions) or a gene(s) is selected based on differential behavior without connection to the upstream and downstream molecular mechanisms. Gene-centric
+
+Gene-centric findings are often limited in mechanistic interpretability and connectivity to other molecular processes, positioning such biomarkers as passengers, rather than drivers, of the biological process and thus are **often dataset specific**
+
+in **white-box** models (e.g., linear regression and decision trees) the relationship between input variables (i.e., genes) and output variables (i.e., disease outcomes) is understandable/explainable as they often identify linear or monotonic relationships (Zhang
+
+**black-box** models (e.g., neural networks, gradient boosting, or ensemble models such as random forest) are able to capture non-linear/non-monotonic relationships, yet often suffer from model interpretability and subsequent limited clinical adoption (Wang
+
+they mostly capture associative relationships when applied as gene-centric approaches and often miss the complexity of mechanisms inherent in biological systems, especially in the context of cancer.
+
+**mechanism-centric approaches**, which are not focused on single genes and take into account complex mechanisms implicated in cancer initiation, progression, and treatment response. In
+
+<u>Gene Co-expression Network Analysis</u>
+
+* Network Construction: 
+  * WGCNA and 
+  * lmQCM
+* Network Mining: 
+  * Centered Concordance Index,
+  * Eigengenes,
+  * Hubs
+
+**WGCNA** calculates correlation between pairs of genes and transforms the correlation measure into a topological overlap measure in order to minimize effects of noise and spurious associations. The
+
+The resulting matrix is subjected to hierarchical clustering to determine groups of co-expressed genes,
+
+genes cannot be assigned to multiple modules, exposing WGCNA’s limitation since many genes participate in multiple biological processes and often perform multiple functions. An
+
+lmQCM algorithm identifies densely connected subnetworks (i.e., quasi-cliques) using a greedy search algorithm which allows module overlaps
+
+can also identify smaller modules, which can highlight more specific and interpretable biological connections as compared to much larger modules of WGCNA that frequently contain over a thousand genes
+
+Co-expression networks can be mined to determine the functional significance of their modules or identify functionally relevant genes. Here,
+
+Centered Concordance Index has been developed to identify
+modules specific to each condition/phenotype.
+
+**CCI** evaluates the concordance of gene expression profiles within a module based on singular value decomposition and is used to identify modules that are highly co-expressed in one condition over another (Han
+
+The CCI is useful in identifying modules specific to phenotype conditions but has yet to be used to associate modules with continuous outcomes.
+
+The **eigengene** approach transforms modules into weighted
+vectors, which mathematically correspond to their contribution to the first principal component in principal component analysis
+
+Eigengenes are then able to be associated with clinical features (including continuous outcomes) using correlation/association measures
+
+The translational applicability ofmodules can be hampered by
+their relatively large size and might benefit from **identification of hub genes** within modules:
+
+**intramodular connectivity** for gene i is defined as the sum of edge weights between gene i and the other genes in the module (Zhang
+
+**betweenness centrality**, which is a network topology metric used to identify
+central nodes in a graph based on a shortest paths algorithm
+
+The betweenness centrality of gene i is a measure of the number of shortest paths connecting any two genes which pass through i.
+
+<u>Regulatory Network Analysis</u>
+
+* Transcriptional Regulatory Networks
+
+  * network construction
+    * ARACNe
+  * network mining
+    * MARINa
+    * VIPER
+
+* Multi-Omic Regulatory Network
+
+  * network construction
+    * RegNetDriver (step 1)
+  * network mining
+    * RegNetDriver (step 2)
+
+  
+
+One of the most known and widely experimentally validated methods for transcriptional network reconstruction is **ARACNe**
+
+This information-theoretic algorithm utilizes tissue-specific gene expression profiles to estimate pairwise mutual information between expression levels of TFs/co-TFs and expression levels of their potential (activated or repressed) targets. The
+
+The advantage of using mutual information to measure such relationships lies in its ability to measure not only linear (which would be captured for example by the Pearson correlation) or monotonic (which would be captured for example by Spearman correlation) relationships, but also non- linear associations
+
+Data processing inequality results in a regulatory network that includes primarily direct TF/co-TF-target interactions
+
+The ARACNe network can be effectively interrogated (i.e., mined) using MARINa (Lefebvre et al., 2010) and VIPER two algorithms that identify TFs/co- TFs as driver biomarkers associated with specific phenotypes
+
+Specifically, **MARINa** (Lim et al., 2009; Lefebvre et al., 2010) requires a differentially expressed signature, defined as a ranked list of genes between any two phenotypes of interest. Then, the activated and repressed targets for each TF/co-TF (as inferred by ARACNe) are assessed for their enrichment in the over- and under-expressed parts of this signature (Lefebvre et al., 2010; Figure 3). 
+
+Such enrichment is referred to as TF/co- TF transcriptional activity, and if it is statistically significant, the TF/co-TF is referred to as a Master Regulator (MR). As a result of this analysis, a TF/co-TF is considered an “activated” MR if its activated targets are significantly enriched in the over-expressed part of the signature and/or its repressed targets are significantly enriched in the under-expressed part of the signature. Conversely, a “repressed” MR exhibits the opposite behavior. 
+
+It is important to note that TF/co-TF transcriptional activity is not defined based on **the differential expression of TFs/co-TFs themselves but instead on the differential expression of their transcriptional targets**. This allows the identification of TFs/co-TFs that are not necessarily differentially expressed but are modified on the post-translational level and would otherwise be missed by traditional association methods.
+
+At the same time, **VIPER** estimates TF/co-TF transcriptional
+activity **on an individual sample-based level**, as opposed to a two-phenotype signature-based level required by MARINa (Alvarez et al., 2016; Figure 3). In fact, while MARINa requires carefully selected multiple samples of the same phenotype to construct a differential expression signature, VIPER is able to utilize **single-sample analysis by scaling the overall patient cohort (to its average expression for each gene).** Furthermore, several advantages of VIPER include estimation of TF/co- TF activity through a so-called **mode of regulation** (taking into account whether targets are activated, repressed, or their direction cannot be determined), inference of regulator-target **interaction confidence**, and accounting for target overlap between different regulators (Alvarez et al., 2016). 
+
+**RegNetDriver** is an algorithm for multi-omic tissue-specific regulatory network construction and analysis (Dhingra
+
+The regulatory network reconstructed by RegNetDriver represents a **two-layered relationship**: (i) connecting TFs to promoter/enhancer regions; and (ii) further connecting promoter/enhancer regions to their corresponding target genes.
+
+To reconstruct relationships between TFs and promoters/enhancers of potential targets, Dhingra et al. utilize tissue-specific (i.e., prostate epithelium) DNase I hypersensitive sites to define accessible regulatory DNA regions and integrate this information with promoter/enhancer annotations from ENCODE (Encode Project Consortium, 2012) and GENCODE
+
+TFs are then connected to promoters/enhancers based on the enrichment of their binding motifs. Promoters/enhancers
+
+Promoters/enhancers are further connected to their target genes through significant correlation of promoter/enhancer region activity signals (ChIP-seq signals) with target gene expression profiles 
+
+This network is then utilized to **identify TF hubs** with genomic and epigenomic alterations that can potentially cause large perturbations in this tissue-specific network. Specifically, TFs are first mined on degree centrality, such that the top 25% of TFs with the greatest number of outgoing edges are defined as hubs. Next, to identify TF hubs significantly affected on genomic and epigenomic levels in prostate cancer, they are evaluated for the presence of prostate-cancer specific genomic alterations (single nucleotide variants and structural variants) and DNA methylation changes in their coding and non-coding regulatory regions. 
+
+<u>Protein–Protein Interaction Network-Based Analysis</u>
+
+* Network construction
+  * Chuang et al., Step 1
+* network mining
+  * Chuang et al., Step 2
+
+a hybrid approach to combine a PPI network with tissue-specific gene expression profiles across patient samples. The PPI network is comprised of nodes representing proteins and edges representing a characterized PPI, utilizing subnetworks from CellCircuits. Tissue-specific gene expression data are then overlaid onto all PPI subnetworks. For each subnetwork, its **activity in each sample/patient is defined as a combination of z-scores for the subnetwork genes**. This defines patient-specific vectors of subnetwork activities, which are then mined for phenotype associations.
+
+Activities of subnetworks are evaluated for their **association with specific phenotypes** (e.g., metastatic and non-metastatic), where associations can be calculated by mutual information, t-score, or Wilcoxon score and is referred to as the **subnetwork discriminative potential/score**. Next, the method selects subnetworks with a locally maximal discriminative score and performs significance testing to ensure subnetworks are non- random and robust. In
+
+<u>Pathway-Based Analysis</u> 
+
+* pathCHEMO 
+* pathER
+
+**Pathways** represent a group of biochemical entities (e.g.,
+genes, proteins, etc.), connected by interactions, relations, and reactions (including physical interactions, complex formation, transcriptional regulation, etc.), that lead to a certain product or changes in a cell. Molecular
+
+**pathCHEMO** was specifically developed to compare poor versus good therapeutic response (as categorical outcomes) in cancer. 
+
+ it evaluates differential behavior of biological pathways on both transcriptomic (RNA expression) and epigenomic (DNA methylation) levels between any two phenotypes of interest (Epsi et al., 2019). 
+
+First, an RNA expression treatment response signature is defined as a list of genes ranked by their differential expression between poor and good treatment response. 
+
+Then, genes in each pathway are evaluated for their enrichment in either over-expressed, under-expressed, or differentially expressed (which includes both over- and under- expressed) part of this signature. 
+
+Enrichment in the over- and under-expressed parts separately allows identification of pathways where the majority of genes exhibit a similar behavior (i.e., are either over- or under-expressed), while enrichment in the differentially expressed part of the signature allows identification of pathways where some genes are over-expressed and some are under-expressed (which depicts a complex interplay ofactivation and repression relationships inside a molecular pathway). This enrichment is referred to as the **RNA expression-based activity level** of a molecular pathway.
+
+**DNA methylation-based activity** for each pathway is estimated in the same manner using a DNA methylation treatment response signature
+
+Pathways that are enriched in the RNA expression treatment response signature and the DNA methylation treatment response signature are then integrated to select those that are significantly affected on both expression and methylation levels (Figure
+
+Activity levels of the candidate pathways are further evaluated as biomarkers of therapeutic response in independent patient cohorts
+
+**pathER** applies a pathway-
+based approach on a **single-patient level**, which allows the association of pathway activity across a patient cohort to a wide range of therapeutic responses
+
+a **multivariable regression Cox proportional hazards** model to associate pathway activity levels with time-to-therapeutic failure, thus capturing poor, good, and medium therapeutic responses.
