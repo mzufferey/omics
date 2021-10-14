@@ -506,6 +506,11 @@ PROGENy, a method that overcomes both limitations by leveraging a large compendi
 
 
 
+GENE-E package (https://software.broadinstitute.org/GENE-E/download.html) was used to cluster the 1× WGS samples according to the similarity of their CCF profiles using Pearson correlation.
+Reporting
+
+
+
 ##### Pathway and gene network analyses
 
 
@@ -856,7 +861,7 @@ review with a huge list of tools and references: Vlachavas et al. 2021
 
 A Detailed Catalogue of Multi-Omics Methodologies for Identification of Putative Biomarkers and Causal Molecular Networks in Translational Cancer Research A Detailed Catalogue of Multi-Omics Methodologies for Identification of Putative Biomarkers and Causal Molecular Networks in Translational Cancer 
 
-
+A list of targetable drivers was provided by the PCAWG driver group (Rheinbay et al., 2020).
 
 *Datasets*
 
@@ -976,7 +981,7 @@ The LINCS project is arguably the most comprehensive systematic perturba- tion d
 
 
 
-
+. For substitutions, structural variants and copy number events, these included a set of genes compiled from the TARGET database from the Broad Institute and multiple sequencing datasets for EAC1
 
 ##### Drug drug sensitivity and perturbation datasets
 
