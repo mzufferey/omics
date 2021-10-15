@@ -127,7 +127,7 @@ Sankey diagrams in R https://christophergandrud.github.io/networkD3/#sankey
 
 * treemap using the treemap library
 
-
+Heatmaps were drawn using the superheat (https://github.com/rlbarter/superheat) and ComplexHeatmap R package
 
 ##### Single-cell
 
@@ -508,6 +508,19 @@ PROGENy, a method that overcomes both limitations by leveraging a large compendi
 
 GENE-E package (https://software.broadinstitute.org/GENE-E/download.html) was used to cluster the 1× WGS samples according to the similarity of their CCF profiles using Pearson correlation.
 Reporting
+
+
+
+https://ecotyper.stanford.edu;/  EcoTyper as a broadly applicable framework for
+high-throughput identification of cell states and multicellular
+
+communities from primary tissue specimens. It consists of three
+
+key steps: digital purification of cell-type-specific gene expres-
+sion profiles from bulk tissue transcriptomes, identification and
+quantitation of transcriptionally defined cell states, and co-
+
+assignment of cell states into multicellular communities 
 
 
 
