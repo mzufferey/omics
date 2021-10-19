@@ -837,6 +837,12 @@ public databases have cataloged networks of known and predicted PPIs, such as ST
 
 
 
+
+
+some tissue- and cell-specific interaction databases are now available such as TissueNet (Basha et al., 2017), the Integrated Interactions Database (Kotlyar et al., 2019), and HumanBase (Greene et al., 2015). Tissue-specificity
+
+
+
 * Human Protein Reference Database (HPRD): human protein-protein interactions that are manually extracted from the literature by expert biologists;  one of the most com- prehensive protein interaction databases, only covers less than half of human protein-coding genes
 
 * Biological General Repository for Interaction Datasets (BioGRID): protein and genetic interactions of major model organism species

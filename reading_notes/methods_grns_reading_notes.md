@@ -2665,3 +2665,378 @@ Activity levels of the candidate pathways are further evaluated as biomarkers of
 based approach on a **single-patient level**, which allows the association of pathway activity across a patient cohort to a wide range of therapeutic responses
 
 a **multivariable regression Cox proportional hazards** model to associate pathway activity levels with time-to-therapeutic failure, thus capturing poor, good, and medium therapeutic responses.
+
+### DGCA: A comprehensive R package for Differential Gene Correlation Analysis - McKenzie et al. 2016
+
+offers a suite of tools for **computing and analyzing differential correlations between gene pairs across multiple conditions**
+
+minimize parametric assumptions, DGCA computes **empirical p-values via permutation testing.** To
+
+To understand differential correlations at a systems level, DGCA performs **higher-order analyses** such as measuring the average difference in correlation and multiscale clustering analysis of differential correlation networks
+
+Distinct from differential expression, **differential correlation** operates on the level of gene pairs rather than individual genes (Fig.
+
+While differential coexpression analysis has proven useful
+in identifying significantly different modular connectivity patterns, **differential correlation analysis of individual gene pairs** is far more granular. As
+
+Like DiffCorr, DGCA **transforms correlation coefficients to z-scores** and uses **differences in z-scores to calculate p-values** of differential correlation between genes. Like
+
+Like Discordant, DGCA **classifies differentially correlated gene pairs into the nine possible categories**. However,
+
+DGCA differs from the existing differential correlation approaches 
+
+1. DGCA calculates false discovery rate of differential correlations through non-parametric sample permutation.
+2.  DGCA can calculate the average difference in correlation between one gene and a gene set across two conditions
+3.  DCGA integrates with MEGENA to perform multiscale clustering analysis of differential correlation networks to identify gene mod- ules (clusters) and hub genes
+4. DGCA provides comprehensive downstream functional analysis of differen- tial correlation structures including visualization, gene ontology (GO) enrichment, and network tool
+
+DGCA has 3 main inputs 
+
+1. a matrix of **gene expression values**, 
+2. a **design matrix** specifying conditions associated with samples, 
+3. a **specification of the condi- tions** for comparison (Fig.
+
+**central tendency** re- fers to measures of centrality in a distribution, including the arithmetic mean or median,
+
+**dispersion** refers to measures of spread in a distribution, including the standard deviation and the dispersion index
+
+To **stabilize the variance** of sample correlation coefficients in each condition, the **Fisher z-transformation**
+
+**Fisher z-transformation function serves as a normalizing transformation. The**
+
+Using the **difference in z-scores** dz, a **two-sided p-value** can be calculated using the standard normal distribution. Gene pairs can then be ranked on the basis of their relative strength of differential correlation.
+Multiple
+
+several options for adjusting p-values for multiple hypothesis tests, including the conservative Benjamini-Hochberg p-value adjustment method [25, 26] and the local false discovery rate method
+
+difficult to make intuitive sense of the p-values returned because the p-values are originally derived from the difference of z-scores method, which depends on specifying the correct form for the variance of the sample correlation coefficients, andinturnonthebivariatedistributionofthegene expres- sion values. Therefore,
+
+DGCA also offers to generate **per- mutation samples by randomly shuffling the sample labels** across the input conditions and then re-computing the dif- ferential correlation calls
+
+The z-scores from the original and permuted data sets are used to calculate **empirical p-values**, using a reference pool distribution approach
+
+These empirical p-values are used to estimate the proportion of null hypoth- eses in empirical p-values by extrapolating a linear trend from a cubic spline fitted over candidate ranges of the tun- ing parameter lambda [29].
+
+q-values are calculated based on the empirical p-values and the estimated propor- tion of null hypotheses.
+
+At the most basic level, gene pairs can be classified as hav- ing **gain of correlation (GOC) or loss of correlation (LOC)** between one condition compared to another. For
+
+go beyond this binary classification, we also determine if two genes are **significantly correlated in each condition or not**. By
+
+Based upon a **threshold for correlation significance and the sign of correlation in each condition** (i.e., positive or negative), gene-gene correlations in each condition can be **categorized into 3 classes, i.e. significant positive correlation, no significant correlation, and signifi- cant negative correlation**. 
+
+there are **9 classes for differential correlations** between two conditions (Fig.
+
+difference in average correlations of a gene and a set of genes between two conditions.
+
+DGCA **quantifies the median difference in z-transformed correlation coefficients of a gene and a gene set** (henceforth, median difference in z-score) between two conditions. In
+
+a median difference in z-score above 0 indicates a tendency towards a gain of correlation between the given gene and the gene set in the first condi- tion with respect to the second condition, while a median difference in z-score below 0 indicates a tendency towards a loss of correlation. To
+
+To measure the significance of the median change in correlation permu- tation samples to calculate empirical p-values,
+
+DGCA also offers to calcu- late the median difference in z-score between all gene pairs in two conditions.
+
+This approach is similar to the **modular** **differential correlation** calculation that
+
+### CEMiTool: a Bioconductor package for performing comprehensive modular co- expression analyses - Russo et al. 2018
+
+CEMiTool that unifies the **discovery and the analysis of co-expression modules**. 
+
+outperforms existing tools, and provides unique results in a user-friendly html report with high quality graphs
+
+evaluates **whether modules contain genes that are over-represented by specific pathways** or that are **altered in a specific sample group**,
+
+**integrates transcriptomic data with interactome information**, identifying the potential hubs on each network.
+
+WGCNA: 
+
+* following its workflow verbatim is time-consuming and tiresome
+* users are often required to manually select parameters and to filter the input genes prior running WGCNA
+* limited in terms of the func- tional analyses available for the package users
+
+integrating co-expression infor- mation with protein-protein interaction data can be useful to identify main regulators or hubs.
+
+(CEMiTool), an R package that allows users to easily identify and analyze co-expression modules in a fully automated manner
+
+provides users with 
+
+* a novel unsupervised gene filtering method, 
+* automated parameter selection for identifying modules, 
+* enrichment and module func- tional analyses, 
+*  integration with interactome data. 
+*  reports everything in HTML web pages with high-quality plots and interactive tables.
+
+automating within a single R function (cemitool) the entire module discov- ery process - including gene filtering and functional analyses
+
+, gene set enrichment analysis (**GSEA**) [6] can **asso- ciate the activity of a module with the study phenotypes** (i.e. sample group)
+
+. Over-representation analysis (**ORA**) can be used to reveal if a set of co-expressed genes is enriched for genes belonging to known pathways or functions. In
+
+workflow
+
+* gene expression file containing the genes as rows and the samples as columns. This file is the only required input for CEMiTool’s analyses.
+* unsupervised filtering method based on the inverse gamma distribution to select the genes used in the analyses.
+
+* soft-thresholding power β used to determine a similarity criterion between pairs of genes
+* genes are then separated into modules using the Dynamic Tree Cut pack- age
+
+* If an optional file containing **gene interactions** (e.g. protein-protein interaction data) is provided, the package will return network graphs composed of **interact- ing genes within the same module.**
+* if the user provides a sample **annotation file**, perform gene set enrichment analysis (**GSEA**), allowing users to visualize **which modules are induced or repressed in the different phenotypes**. Finally,
+* given an optional file containing **gene sets**, CEMiTool will perform an over rep- resentation analysis (**ORA**) based on the hypergeometric test to determine the **most significant module functions**
+
+over representation analysis (ORA) via the clusterProfiler R package [8].
+
+sample annotation file describing the phenotypes (i.e. disease, healthy, treated, etc) of samples, CEMiTool performs a gene set enrichment analysis using the fgsea (Fast Gene Set Enrichment Analysis) R package; genes from co-expression modules will be treated as gene sets and the z-score normalized expression of the samples within each phenotype will be treated as rankings on the analysis; assess if the activity of a module is altered across dif- ferent phenotypes.
+
+provide a gene interaction file to visualize the interactions between the genes in each co-expression module. This
+
+customize their module graphs according to different interaction databases
+
+Although WGCNA provides a function named pickSoft- Threshold that can automatically select the soft-threshold β value, we have created an alternative algorithm, which is based on the concept of Cauchy sequences [17], that improves the automatic selection of this parameter, allow- ing for more reliable and consistent results. Moreover, our algorithm allows a lower threshold for R2 (R2 >0.8) when compared to WGCNA’s default threshold (R2 >0.85). This, in turn, allows for lower values of β**.Oncea β value is chosen, subsequent steps for creating modules follow standard WGCNA procedure**
+
+### DysPIA: A Novel Dysregulated Pathway Identification Analysis Method - Wang et al. 2021
+
+We adopted the idea of Correlation by Individual Level Product into analysis and performed a fast enrichment analysis.
+
+most of the DC methods relied on the Pearson correlation coefficient (PCC)
+
+The **Correlation by Individual Level Product** (CILP) was proposed in Lea et al. (2019) article to **identify factors associated with interindividual variation in correlation**
+
+can be used to estimate the dysregulated status of each gene pair between case and control samples. In
+
+a unique score for each gene pair in each sample, rather than a summary PCC statistic for a group.
+
+These conventional methods ofpathway analysis focused on gene marginal effects in a pathway and ignored gene interactions that may contribute to a phenotype of interest. For
+
+
+
+* first generation methods: Classical pathway enrichment analysis methods, such as DAVID, based on overrepresented statistical tests (such as Fisher’s exact test and hypergeometric test) to assess whether DE/DV genes were overrepresented in a predefined pathway.
+
+* second-generation methods:  ranking all genes according to their DE levels, and then used the weighted Kolmogorov–Smirnov statistic to test whether genes from a prespecified pathway were significantly overrepresented toward the top or bottom of the ranked gene list (GSEA and later ones)
+
+* third-generation: the pathway topology was incorporated into the analysis. However, this gene regulation information (edge) was just used to adjust the gene (node) value in these methods
+
+  
+
+For two genes in a pathway, neither of them may have an effect on a phenotype of interest. However, when they were jointly considered, they may have a significant effect on the studied phenotype due to the gene–gene interaction. In
+
+the measures of these methods are mainly based on individual gene levels, they can be deemed as node (gene)- centric methods
+
+the gene-pair relationships have not been fully considered.
+
+differential co-expression (DC)-based pathway analysis aimed to identify pathways with more gene regulation differences related to the phenotype ofinterest
+
+we proposed a novel method called
+Dysregulated Pathway Identification Analysis (**DysPIA**) to overcome these shortcomings. 
+
+**A pathway is represented by the regulated gene pairs, but not just a set of genes,** which is used in the traditional pathway analysis. 
+
+We adopted the idea of **CILP** into analysis and performed a **fast GSEA-like enrichment analysis**.
+
+1.  calculate a **Dysregulated Gene Pair Score** (DysGPS) for each gene pair of interest (**individual-level-based statistic** instead of population-level). 
+   * z-score normalization
+   * for each gene-pair Xi and Xj from CILP-like statistic (product of these two genes’ standardized expression values)
+   * dysregulated gene-pair score (DysGPS) calculated based on a two-sample Welch’s t-test between groups
+2. calculate the **Dysregulated Pathway Score** (DysPS) based on a GSEA-like formula (pre-ranked pathway enrichment analysis pipeline)
+   * Rank the N gene pairs in the combined-background set in descending order based on DysGPS to form a gene- pair list
+   * Calculate DysPS for each pathway
+     * gene pairs get different weights based
+       on whether they are in the pathway. 
+   * Randomly permute the sample labels, recalculate the DysGPS in the background, and recalculate the DysPS for each pathway
+3.  permutation-based significant **P-values** estimated and the BH-FDR adjustment performed. 
+
+
+
+### Advantages of CEMiTool for gene co-expression analysis of RNA-seq data - Cheng et al. 2020
+
+we evaluate three co-expression analysis packages (WGCNA, CEMiTool, and coseq) using published RNA-seq datasets derived from ischemic cardiomyopathy and chronic obstructive pulmonary disease. Results show that the packages produced consensus co-expression clusters using default parameters. CEMiTool package outperformed the other two packages and required less computational resource and bioinformatics experience.
+
+groups of co-expressed genes are clustered based on several methods, including hierarchical clustering and K-means clus- tering, which are discussed in detail elsewhere [19].
+
+WGCNA and CEMiTool are both based on hierarchical clustering, while coseq uses K-means clustering. WGCNA
+
+WGCNA and CEMiTool packages are similar in principle, but the latter provides an automated pipeline. CEMiTool
+
+*WGCNA*
+
+WGCNA was used to construct signed weighted gene co-expression
+modules from the top 5000 variable genes
+
+Signed correlations cluster positively and negatively correlated genes into modules.
+
+Module detection was based on the hi- erarchical clustering of adjacencies given by the topological overlap measure. A soft thresholding power β -value
+
+. A series of β -values (ranging between 1 and 30) was screened to evaluate the average connectivity degrees of different modules. A β -value was selected by plotting the R2 against soft threshold β. 
+
+the adjacency matrix was transformed into a topological overlap matrix (TOM) to measure the connectivity of genes within the network
+
+The connectivity of genes is defined as the sum of its adjacency in relation to all other genes in the network
+
+TOM is measured between a value of 0 and 1
+
+Based on TOM, a higher value (towards 1) indicates the set of genes are highly connected, and therefore, the strong interconnectivity will create a meaningful co-expression association
+
+Contrary, when the TOM value is closer to 0, it signifies no connections between genes. A minimum module size was set to 40, highly correlated modules were merged by setting merging modules threshold to 0.2, and
+
+*CEMiTool*
+
+CEMiTool is similar to WGCNA but runs on an automated pipeline.
+
+CEMiTool CEMiTool is similar to WGCNA but runs on an automated pipeline.
+
+CEMiTool implements auto- mated gene filtration on gene expression profiles based on the inverse gamma distribution.
+
+### WGCNA: An R package for weighted correlation network analysis - Langfelder 2008
+
+To calculate the adjacency matrix, an intermediate quantity called the co-expression similarity sij is first defined. The default method defines the co- expression similarity sij as the absolute value of the corre- lation coefficient between the profiles
+
+signed co-expression measure can be
+defined to keep track of the sign of the co-expression information.
+
+Using a thresholding procedure, the co-expression simi- larity is transformed into the adjacency. An
+
+A weighed net- work adjacency can be defined by raising the co-expres- sion similarity to a power
+
+weighted adjacency aij between two genes is proportional to their similarity on a logarithmic scale,
+
+Adjacency functions for both weighted and unweighted networks require the user to choose threshold parameters, for example by applying the approximate scale-free topology criterion
+
+Several measures of network interconnectedness
+
+the topological overlap measure
+
+WGCNA identifies gene modules using unsupervised clus- tering, i.e. without the use of a priori defined gene sets. The user has a choice of several module detection meth- ods. The default method is hierarchical clustering
+
+One drawback of hierarchical clustering is that it can be difficult to determine how many (if any) clusters are present in the data set
+
+A co-expression module may reflect a true biological signal (e.g. a pathway) or it may reflect noise (e.g. a technical artifacts, tissue contamina- tion, or a false positive). To test whether the identified modules are biologically meaningful, gene ontology information (functional enrichment analysis) can be used. Toward this end, we provide an R tutorial that describes how to interface the WGCNA package with rele- vant external software packages and databases.
+
+### BioNERO: an all-in-one R/Bioconductor package for comprehensive and easy biological network reconstruction - Almeida-Silva et al. 2021
+
+BioNERO, an R package that aims to integrate all aspects of network analysis workflows, 6 including expression data preprocessing, gene coexpression and regulatory network 7 inference, functional analyses, and intra and interspecies network comparisons
+
+Users can infer three types of GCNs (signed, signed hybrid or unsigned), and 58 pairwise gene-gene correlations can be calculated with Pearson’s r, Spearman’s ρ, or biweight 59 midcorrelation (median-based, which is less sensible to outliers).
+
+we implemented three widely used GRN inference algorithms: 74 GENIE3 (Huynh-Thu et al., 2010), ARACNE (Margolin et al., 2006), and CLR (Faith et al., 75 2007). However, choosing the most appropriate number of top edges to keep is a persisting 76 bottleneck, and users often pick an arbitrary number. We implemented a method to simulate 77 different networks by splitting the graph in n subgraphs, each containing the top nth quantiles
+
+two network comparison features in BioNERO, 
+
+1.  consensus module 84 identification and module preservation. **Consensus modules are gene modules that co-occur 85 in networks inferred from independent expression sets**, and they can be used to explore core 86 components of the studied phenotype that are not affected by experimental effects or natural 87 biological variation. 
+2. module preservation focuses on the differences, and it can be used to 89 explore patterns of transcriptional divergence within and across species. For
+
+### LeapR: An R Package for Multiomic Pathway Analysis - Danna et al. 2021
+
+leapR package, a framework to rapidly assess biological pathway activity using diverse statistical tests and data sources, allowing facile integration of multisource data
+
+one generally needs to evaluate numerous approaches requiring a unified framework. Furthermore, none support data integration using phosphoproteomics data.	
+
+simplify pathway analysis of multiple different types of
+data, including post-translational modification, we have developed a framework, the layered enrichment analysis of pathways in R (leapR), to represent multiple omics types, perform pathway analysis on the individual sets or combined sets, and analyze and represent the results in a biologically meaningful manner.
+
+Multiomic Pathway Enrichment
+
+our approach focuses on a role-agnostic approach to data integration, which treats the different types of data the same in the enrichment process. Though
+
+### Comparing Statistical Tests for Differential Network Analysis of Gene Modules - Arbet et al. 2021
+
+Differential network analysis (DiNA)
+
+how this network structure differs between two or more groups/phenotypes (
+
+3 common applications of DiNA involve
+
+1. testing whether the connections to a single gene differ between groups, 
+2. testing whether the connection between a pair of genes differs between groups, or 
+3. testing whether the connections within a “module” (a subset of 3 or more genes) differs between groups. 
+
+e focuses on the latter, as there is a lack of studies comparing statistical methods for identifying differentially co-expressed modules (DCMs). Through
+
+The DGCA R package (McKenzie et al., 2016) simply uses the mean (or median) of the differences. A potential problem with this approach is that positive and negative differences can cancel out, thus losing power to detect DCMs where some correlations increase while other correlations decrease between conditions
+
+Many test statistics can be formulated as functions of the difference (or product) in V(gm) between the two groups. For example, the “Dispersion Index” (DI), used by GSCA (Choi and Kendziorski, 2009) and DiffCoEx (Tesson
+
+GSNCA can still be used to test whether the network structure of a module differs between the two groups. Briefly, GSNCA assigns a weight vector to each group of length the absolute differences of the weight vector between the two |Pm| (one weight per gene) and the test statistic is the sum of groups. The ith gene is given a weight wi that is proportional to the sum of the correlations between the ith gene with all other genes. Thus, a gene that is highly correlated with many other genes will be given a larger weight, which indicates the gene may have regulatory importance
+
+The motivation of the PND test is, given a “partially differentially co-expressed module” (a module where some of the correlations, but not all, change between groups), then the higher the exponent p, the less weight is given to the null correlations that do not change between groups. Therefore, we expect the PND test with a large value of p (e.g., p ≥ 4) to be more sensitive for detecting DCMs where only a small proportion of the module correlations change between conditions.
+
+In contrast to unconditional correlation, TOM captures shared relationships or “neighbors” between the two genes,
+
+The intuition behind TOM is that if the two genes i and j are connected to a common set of genes, then the similarity between the two genes, S(gm)
+ij , should increase (i.e., the greater
+the number and strength of the connections that are shared by genes i and j, the larger the TOM value will be for those two genes).
+
+To calculate TOM, one must first calculate the correlation matrix, then convert to an adjacency matrix (aij), and then calculate the TOM matrix
+
+“signed” versions since we want to be able to detect correlations that change from positive to negative between groups, when
+
+
+
+### Mechanism-Centric Approaches for Biomarker Detection and Precision Therapeutics in Cancer - Yu et al. 2021
+
+MECHANISM-CENTRIC COMPUTATIONAL APPROACHES FOR BIOMARKER DISCOVERY
+
+* Gene Co-expression Network Analysis
+
+*Network Construction: WGCNA and lmQCM*
+
+* WGCNA
+  * genes cannot be assigned to multiple modules, exposing WGCNA’s limitation since many genes participate in multiple biological processes and often perform multiple functions. An
+
+* lmQCM
+  * m identifies densely connected subnetworks (i.e., quasi-cliques) using a greedy search algorithm which allows module overlaps (Ou
+  * can also identify smaller modules, which can highlight more specific and interpretable biological connections as compared to much larger modules of WGCNA that frequently contain over a thousand genes
+
+*Network Mining: Centered Concordance Index, Eigengenes, and Hubs*
+
+* CCI
+* eigengene
+* intramodular connectivity
+* betweeness centrality
+
+*Regulatory Network Analysis*
+
+Transcriptional Regulatory Networks
+
+* Network construction: ARACNe
+  * information-theoretic algorithm utilizes tissue-specific gene expression profiles to estimate pairwise mutual information between expression levels of TFs/co-TFs and expression levels of their potential (activated or repressed) targets
+  * ability to measure not only linear (which would be captured for example by the Pearson correlation) or monotonic (which would be captured for example by Spearman correlation) relationships, but also non- linear associations. Another
+  * data processing inequality, which eliminates any “indirect” regulatory relationship through the principle that mutual information on the indirect path cannot exceed mutual information on any part of the direct path
+* Network mining: MARINa and VIPER The
+  *  ARACNe network can be effectively interrogated (i.e., mined) using MARINa (Lefebvre et al., 2010) and VIPER (Alvarez et al., 2016), two algorithms that identify TFs/co- TFs as driver biomarkers associated with specific phenotypes (e.g.,
+  * MARINa (Lim et al., 2009; Lefebvre et al., 2010) requires a differentially expressed signature, defined as a ranked list of genes between any two phenotypes of interest. Then, the activated and repressed targets for each TF/co-TF (as inferred by ARACNe) are assessed for their enrichment in the over- and under-expressed parts of this signature (Lefebvre et al., 2010; Figure 3). Such enrichment is referred to as TF/co- TF transcriptional activity, and if it is statistically significant, the TF/co-TF is referred to as a Master Regulator (MR). As
+  * VIPER estimates TF/co-TF transcriptional
+    activity on an individual sample-based level, as opposed to a two-phenotype signature-based level required by MARIN
+  * MARINa requires carefully selected multiple samples of the same phenotype to construct a differential expression signature, VIPER is able to utilize single-sample analysis by scaling the overall patient cohort (to its average expression for each gene).
+  * several advantages of VIPER include estimation of TF/co- TF activity through a so-called mode of regulation (taking into account whether targets are activated, repressed, or their direction cannot be determined), inference of regulator-target interaction confidence, and accounting for target overlap between different regulators (Alvarez
+
+Multi-Omic Regulatory Network
+
+* RegNetDriver
+
+Protein–Protein Interaction Network-Based Analysis
+
+* Network construction and mining Chuang et al.
+  * hybrid approach to combine a PPI network with tissue-specific gene expression profiles across patient samples.
+  * Tissue-specific gene expression data are then overlaid onto all PPI subnetworks. For each subnetwork, its activity in each sample/patient is defined as a combination of z-scores for the subnetwork genes. This defines patient-specific vectors of subnetwork activities, which are then mined for phenotype associations.
+  * Activities of subnetworks are evaluated for their association with specific phenotypes (e.g., metastatic and non-metastatic), where associations can be calculated by mutual information, t-score, or Wilcoxon score and is referred to as the subnetwork discriminative potential/score. Next, the method selects subnetworks with a locally maximal discriminative score and performs significance testing to ensure subnetworks are non- random and robust. In
+* Pathway-Based Analysis: pathCHEMO and pathER
+  * pathCHEMO was specifically developed to compare poor versus good therapeutic response (as categorical outcomes) in cancer
+    *  it evaluates differential behavior of biological pathways on both transcriptomic (RNA expression) and epigenomic (DNA methylation) levels between any two phenotypes of interest 
+    * an RNA expression treatment response signature is defined as a list of genes ranked by their differential expression between poor and good treatment response
+    *  genes in each pathway are evaluated for their enrichment in either over-expressed, under-expressed, or differentially expressed (which includes both over- and under- expressed) part of this signature. 
+    * Enrichment in the over- and under-expressed parts separately allows identification of pathways where the majority of genes exhibit a similar behavior (i.e., are either over- or under-expressed), while enrichment in the differentially expressed part of the signature allows identification of pathways where some genes are over-expressed and some are under-expressed (which depicts a complex interplay ofactivation and repression relationships inside a molecular pathway). 
+    * this enrichment is referred to as the RNA expression-based activity level of a molecular pathway. 
+    * DNA methylation-based activity for each pathway is estimated in the same manner using a DNA methylation treatment response signature. 
+    * Pathways that are enriched in the RNA expression treatment response signature and the DNA methylation treatment response signature are then integrated to select those that are significantly affected on both expression and methylation levels (Figure 6). 
+  * pathER applies a pathway-
+    based approach on a single-patient level, 
+    *  allows the association of pathway activity across a patient cohort to a wide range of therapeutic responses 
+    * multivariable regression Cox proportional hazards model to associate pathway activity levels with time-to-therapeutic failure, thus capturing poor, good, and medium therapeutic responses. R
+
+
+
+methods that rely on single-patient/sample
+mining (e.g., VIPER, the PPI network-based method by Chuang et al., and pathER) rely on dataset scaling to define its single- sample signatures (defined by comparing each gene to the average of its expression in the dataset of interest) making interpretation of any findings from such analyses dataset-specific
+
+what are the limitations of enrichment based analyses
