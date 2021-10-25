@@ -199,11 +199,13 @@ logical pathway analysis tool able to integrate multi-
 omic data and look for survival-associated gene
 modules
 
-
+Pathway analysis was performed using the R package XGR[35](https://www.nature.com/articles/s41591-019-0734-6#ref-CR35) using the GOBP and Reactome databases. Induced and suppressed  transcripts were analyzed separately against the background of all  tested transcripts
 
 ReactomePA https://yulab-smu.top/biomedical-knowledge-mining-book
 
 
+
+e we propose an ap- proach to systematically identify the set of active recep- tor-mediated signaling pathways within any given cell, by combining PPI and gene expression data. This method is implemented as an open source packaging using the ‘R’ programming language. This open source software is called SPAGI (Signaling
 
 iPAGE for pathway analyses
 
@@ -439,7 +441,7 @@ GO-Elite is designed to identify a minimal non-redundant set of biological Ontol
 PathVisio https://pathvisio.github.io/
 Biological pathway creation and curation softw areu
 
-
+CASCADE_SCAN generates a specific pathway for a list of protein molecules using a steepest descent method. That is, the method takes the input proteins and then finds their interaction partners iteratively based on some evidences
 
 
 
@@ -641,6 +643,9 @@ Moving away from databases acting as phosphosite repositories, many databases ho
 
 
 
+The human PPIs were collected from five public databases (i.e., BioGRID20, DIP21, IntAct22, MINT23 and
+MIPS24
+
 http://www.proteinatlas.org
 
 
@@ -837,7 +842,8 @@ public databases have cataloged networks of known and predicted PPIs, such as ST
 
 
 
-
+The database-driven network graph is taken from the GeneMania
+database (https:// GeneMania.org/) [36]. GeneMania has a large num- ber of interactions and incorporates both gene-to-gene and protein-to- protein interactions. Since
 
 some tissue- and cell-specific interaction databases are now available such as TissueNet (Basha et al., 2017), the Integrated Interactions Database (Kotlyar et al., 2019), and HumanBase (Greene et al., 2015). Tissue-specificity
 
@@ -1033,6 +1039,10 @@ Delora Baptista, Pedro G. Ferreira and Miguel Rocha
 
 two large cancer
 drug screening resources: the Cancer Therapeutics Response Portal (CTRP) v2 and the Genomics of Drug Sensitivity in Cancer (GDSC) database (Seashore-Ludlow et al., 2015; Yang et al., 2013).
+
+
+
+drug-protein interactions from STITCH database
 
 
 

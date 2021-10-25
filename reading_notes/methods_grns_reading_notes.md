@@ -3032,7 +3032,390 @@ Protein–Protein Interaction Network-Based Analysis
   * pathER applies a pathway-
     based approach on a single-patient level, 
     *  allows the association of pathway activity across a patient cohort to a wide range of therapeutic responses 
-    * multivariable regression Cox proportional hazards model to associate pathway activity levels with time-to-therapeutic failure, thus capturing poor, good, and medium therapeutic responses. R
+    * multivariable regression Cox proportional hazards model to associate pathway activity levels with time-to-therapeutic failure, thus capturing poor, good, and medium therapeutic responses. 
+
+
+
+### Network-based classification of breast cancer metastasis - Chuang et al. 2007
+
+we apply a protein- network-based approach that identifies markers not as individual genes but as subnetworks extracted from protein interaction databases.
+
+subnetwork markers are more reproducible than individual marker genes selected without network information, and that they achieve higher accuracy in the classification of metastatic versus non-metastatic tumor
+
+a more effective means of marker identifica- tion may be to combine gene expression measurements over groups of genes that fall within common pathways. Several approaches have been proposed to score known pathways by the coherency of expression changes among their member genes (Pavlidis
+
+a remaining hurdle to pathway-based analysis is that the majority of human genes have not yet been assigned to a definitive pathway
+
+a number of approaches have been demonstrated for extracting relevant subnetworks based on coherent expression patterns of their genes (Ideker et al, 2002; Chen and Yuan, 2006) or on conservation of subnetworks across multiple species
+
+Each subnetwork is suggestive of a distinct functional pathway or complex
+
+identifying markers of metastasis within gene expression profile
+
+not encoded as individual genes or proteins, but as subnetworks of interacting proteins within a larger human protein–protein interaction network
+
+although genes with known breast cancer mutations are typically not detected through analysis of differential expression, such as P53, KRAS, HRAS, HER-2/neu, and PIK3CA, they play a central role in the protein network by interconnecting many expression-responsive genes. Third,
+
+To integrate the expression and network data sets, we
+overlaid the expression values of each gene on its correspond- ing protein in the network and searched for subnetworks whose activities across the patients were highly discriminative of metastasis.
+
+a candidate subnetwork was first scored to assess its activity in each patient, defined by averaging its normalized gene expression values. This
+
+Second, the discriminative potential of a candi- date subnetwork was computed based on the mutual information between its activity score and the metastatic/ non-metastatic disease status over all patients. 
+
+Significantly discriminative subnetworks were identified by comparing their discriminative potentials to those of random networks
+
+A subnetwork is defined as a gene set that induces a single connected component in the protein–protein interaction network
+
+Given a particular subnetwork M, let a represent its vector of activity scores over the tumor samples, and let c represent the corresponding vector of class labels (metastatic or non-metastatic). To
+
+To derive a, expression values gij are normalized to z-transformed score
+
+The individual zij of each membergene in the subnetwork are averaged into a combined z-score, which is designated the activity aj. Many
+
+score the relationship between a and c. In this study, we define the discriminative score S(M) as MI(a0,c), the mutual information MI between a0, a discretized form of a, and c
+
+To derive a0 from a, activity levels are discretized into log 2ð# of samplesÞþ 1bc¼ 9 equally spaced bins
+
+A rationale for using MI in cancer classification is to capture potential heterogeneity of expression in cancer patients (Tomlins et al, 2005), that is, differences not only in the mean but in the variance of expression
+
+Given the discriminative score function S, a greedy search is performed to identify subnetworks within the protein–protein interaction net- work for which the scores are locally maximal.
+
+Candidate subnetworks are seeded with a single protein and iteratively expanded. At each iteration, the search considers addition of a protein from the neighbors of proteins in the current subnetwork and within a specified network distance d from the seed. The addition that yields the maximal score increase is adopted; the search stops when no addition increases the score over a specified improvement rate r
+
+To assess the significance of the identified subnetworks, three tests
+of significance are performed
+
+For the first test, we perform the same search procedure over 100 random trials in which the expression vectors of individual genes are randomly permuted on the network
+
+The second test indexes each real subnetwork score on a ‘local’ null distribution, estimated from the scores of 100 random subnetworks
+
+. Third, we test whether the mutual information with the disease class is stronger than that obtained with random assignments of classes to patients (
+
+
+
+### Convolutional neural network for human cancer types prediction by integrating protein interaction networks and omics data - Chuang et al. 2021
+
+. Here, we collected 6136 human samples from 11 cancer types, and integrated their gene expression profiles and protein–protein interaction (PPI) network to generate 2D images with spectral clustering method. To predict normal samples and 11 cancer tumor types, the images of these 6136 human cancer network were separated into training and validation dataset to develop convolutional neural network (CNN).
+
+Recently, Teppei et al. combined two kinds of biological data, the gene expression profile and human PPI network, to generate 2D representation as the input of the spectral-CNN model17
+
+we integrated PPI network and gene expression profile of 11 cancer types, to generate 6136 network images in 2D representation by using spectral clustering (i.e., Laplacian matrix). Where 1228 network images were used for training and testing in CNN model; and the other 4908 images, gene expression clustering and survival data were used for validation
+
+https:// github. com/ bioxg em/ CNN_ model. git
+
+The human PPIs were collected from five public databases (i.e., BioGRID20, DIP21, IntAct22, MINT23 and
+MIPS24), including 16,433 human proteins and 181,868 PPIs. To combine RNA-Seq and PPIs data, we assigned proteins with gene expression using gene name and gene ID, and finally acquired 14,230 proteins and 152,519 PPIs for further analysis.
+
+We first iden- tified differentially expressed genes (DEGs) between tumors and corresponding normal tissues for 11 cancer types by computing gene expression fold change and modified t-statistic (limma package v.3.38.3). Finally, 12,024 genes were considered as DEGs with |fold change| ≥ 2 and adjust p value < 0.01 in at least one cancer type. By these DEGs, we selected a maximum-subnetwork with 6261 DEGs with 28,439 PPIs and combined the gene expression profiles of 5528 tumors and 608 normal tissues. These cancer networks will be processed with dimensionality reduction utilizing spectral clustering, for cancer prediction and classification in CNN model.
+
+we used a spectral cluster- ing approach, Laplacian (L) matrix to reduce dimensionality of complex cancer networks and applied on CNN techniques. The
+
+the matrix cells were assigned value “− 1” when
+the two proteins had interaction, otherwise the cells were assigned value “0”; whereas the cells in diagonal were assigned value of node degree (the number of edges connected to the node in the network). Next, we obtained the eigenvalue and eigenvector of Laplacian matrix using linear transformation. To retain the network topology and connectivity, we utilized the smallest and second smallest non-negative and non-zero eigenvalues with their corresponding eigenvectors to map the cancer network (6261 DEGs and 28,439 interactions) into 2D spaces with 100 × 100 cells (Fig. 2B)27,28. After the dimensionality reduction for PPI network, the 1849 unique nodes were displayed in 2D representation and assigned with gene expression value of clinical samples (if numerous genes overlapped into a single node, then their gene expression was averaged and assigned to the node). In total, we generated 6136 images of cancer networks for CNN model to predict tumors, normal tissues and cancer types
+
+
+
+### Investigating the relevance of major signaling pathways in cancer survival using a biologically meaningful deep learning model - Feng et al  2021
+
+, deep learning models have recently been proposed in survival prediction, which directly integrates multi-omics data of a large number of genes using the fully connected dense deep neural network layers, which are hard to interpret
+
+investigate potential associations between patient survival and individual signaling pathways, which can help domain experts to understand deep learning models making specific predictions
+
+
+
+we built a simplified and partially biologically meaningful deep neural network, DeepSigSurvNet, for survival prediction. In the model, the gene expres- sion and copy number data of 1967 genes from 46 major signaling pathways were integrated in the model. We
+
+
+
+The cox proportional hazards model (Cox PH) model [1] is the classic model for survival analysis. The Kaplan–Meier estimator curve [2], CoxPH model and logrank test [3] are widely used to display and compare the survival probability over time of patients in different groups or conditions. 
+
+the interpret- able analysis identified the distinct patterns of these signaling pathways, which are helpful in understanding the relevance of signaling pathways in terms of their applica- tion to the prediction of cancer patients’ survival time. These
+
+Compared with the Cox PH model, the deep learning models showed improved pre-
+diction accuracy by flexibly integrating a large number of genomics features without strong parametric assumptions,
+
+To identify the potentially associated signaling pathways of hidden nodes, the
+Pearson’s correlation values between the expression of individual genes and the output
+of the given hidden nodes were calculated to identify the most linearly correlated genes.
+Then, gene set enrichment analysis (GSEA) [13] was employed to link the hidden nodes
+with the enriched signaling pathways. 
+
+instead of using multi-omics data of a large num- ber of genes, a set of cancer signaling pathways were modeled using a simplified and partially biological meaningful deep neural network architecture
+
+investigate the relevance or influence of these signaling pathways within the context of survival outcome prediction using a biologically meaningful and simplified deep learn- ing model, DeepSigSurvNet.
+
+To interpret deep learning models’ prediction, a set of inter- pretation and explaining approaches have been proposed, e.g., the smmothgrad [18] and Layer-Wise Relevance Propagation (LRP) approach [19], to identify the features that can influence the model prediction results. Interestingly, the interpretable analysis using the smoothgrad approach identified distinct probability density distribution patterns of these signaling pathways, which can be helpful in understanding the relevance of the signaling pathways in terms of their association with cancer patients’ survival. 
+
+There are 303 pathways in the KEGG database, and 45 of them are annotated as “signaling pathways”. 
+
+46 signaling pathways (45 signaling pathways + cell cycle) are selected
+
+In the ‘input layer’, there were two input features, i.e., normalized gene expression across TCGA samples and integer copy number variation, for each gene.
+
+Then, the genes’ state were connected to the 46 signaling pathways only if a gene was included in a signal- ing pathway (not a full connection layer). The gene connection matrix and pathway connection matrix were used to design the connections.
+
+The output of the 46 sign- aling pathways was used as the input for the convolution and inception [21] layers
+
+The inception [21] module used multiple kernel filter sizes in each layer, instead of stacking more layers sequentially. It can capture informative features via the dimension reduction and reduce the vanishing gradient problem. The
+
+To better model and predict the survival time of cancer patients, three clinical factors (age, gender and stage) and the vital status were concatenated with the genomics data. To
+
+To investigate the relevance of individual signaling pathways in survival time prediction, we employed the smooth- grad approach, which is available in the “iNNvestigate” package [22].
+
+we employed the ‘iNNvestigate’ package to calculate the relevance scores of the individual signaling pathways on individual cancer patients in each of the four types of cancer
+
+
+
+### Bayesian network model for identification of pathways by integrating protein interaction with genetic interaction data - Fu et al. 2017
+
+probabilistic graphical model to develop a new method that integrates genetic interaction and protein interaction data and infers exquisitely detailed pathway structure. We
+
+the pathway network as Bayesian network and applied this model to infer pathways for the coherent subsets of the global genetic interaction profiles, and the available data set of endoplasmic reticulum genes
+
+a Bayesian model that inte-
+grates high-throughput protein and genetic interaction data to reconstruct detailed biological pathway structures. The model can organize related genes into the corre- sponding pathways, arrange the order of genes within each pathway, and decide the orientation of each intercon- nection. Based
+
+Based on protein interaction network, the model predicts detailed pathway structures by using genetic interaction information to delete redundancy edges and reorient the kept edges in the network. 
+
+our model represents a biological pathway network as a Bayesian network [27], in which **each node presents the activity of a gene product**. Different
+
+introducing protein interaction networks as underlying pathway structures (different from activity pathway network APN)
+
+a scoring func- tion is defined by gene pairwise score,
+
+a pathway network as a Bayesian network that is a directed acyclic graph. The
+
+The activity of a gene is assigned to a node in the network [26].
+
+The edge in the network is an interaction in protein interaction network
+
+it presents the conditional dependency be- tween the nodes connected as well.
+
+we only utilize conditional independence assumptions of the Bayesian network theory to construct a network that can represent independence assumptions hidden in the gene interaction data.
+
+we score it in term of gen- etic interaction quantitative measurement
+
+For every pair of genes, there are four topo- logical structures and their local scores shown
+
+Despite the larger score indicating the more possible local structure for each gene pair, we still need every one of four scores to find the optimal global structure. We computed the four possible scores for each pair of genes
+
+we can com- pute **a local score for every pair of genes in a candidate pathway network** N, and sum up all of the scores for all pairs to define the global score function f(N), to which the Bayesian network posterior probability distribution p(N|D) is proportional
+
+Different from study of Ref. [26], [APN] we do not include
+every edge score in f(N), because **the edge in our network represents protein interaction that insures its existence**. Then, it avoids the dilemma how to adjust the balance between the two scores.
+
+We utilized annealed importance sampling [26, 28] to learn the pathway structure by the above distribu- tion p
+
+The annealed importance sam- pling approach can assign weights to pathway
+networks sampled by simulated annealing schedules, then to evaluate that converge to the real network structure. The
+
+we propose a Bayesian network model to identify pathway structures by integrating protein inter- action with genetic interaction data. Our approach makes use of the complementarity between protein (physical) and genetic (functional) interaction data to refer the biological pathway structures.
+
+#### Identification of active signaling pathways by integrating gene expression and protein interaction data - Kabir et al. 2018
+
+we present a method to simultaneously predict the set of active signaling pathways, together with their pathway structure, by integrating protein-protein interaction network and gene expression data. We
+
+A number of bioinformatics methods have been proposed for the reconstruction of known signaling pathways by using PPI data. For ex- ample, CASCADE_SCAN generates a specific pathway for a list of protein molecules using a steepest descent method. That is, the method takes the input proteins and then finds their interaction partners iteratively based on some evidences (i.e.,
+
+Pathlinker reconstructs the known sig- naling pathways by taking a subnetwork of PPI that con- sists of the Rs and TFs of interest [13].
+
+methods that combine PPI and genetic
+interaction data to identify signaling pathway structure. The activity pathway network (APN) approach utilizes high-throughput genetic interaction data and applies the Bayesian learning method to identify detailed structure of known signaling pathways
+
+All of the above methods aim to restructure the top-
+ologies of known signaling pathways.
+
+no open-source methods have been reported that simultaneously and comprehensively identify the set of active signaling pathways and the likely pathway structures for a gene expression profile
+
+we propose an ap- proach to systematically identify the set of active recep- tor-mediated signaling pathways within any given cell, by combining PPI and gene expression data. [SPAGI]
+
+we collected the known R [receptors], K [kinases] and TF signaling molecules (2134 genes/proteins in total) from public data sets [
+
+* R: from a curated database of the Fantom5
+  project [24].
+* K: from the Uniprot curated database
+* TF: from a database of sequence-spe- cific DNA-binding TFs identified by gene ontology (GO) based annotation
+
+PPI data from STRING database (version 10) [26] to obtain all currently known PPIs for the 2134 known R/K/TF signaling molecules - while
+
+we have considered here all the physical and other inferred (e.g., co-expression) interactions when defining PPIs to maximize our abil- ity to detect the full network structure.
+
+We selected PPIs defined by STRING as ‘high confidence’ (i.e. confidence_score > = 700)
+
+This thresholding yielded 16,550 and 19,502 PPIs for mouse and human respectively. After obtaining these highly scored PPIs both for the human and mouse organisms we have merged all the PPIs by assuming that the molecules have one-to-one homology mapping between the organisms
+
+From the combined high scored PPIs, we collected only the PPIs for the signaling pathways that have interactions able to make full paths from R to K to TF
+
+the word ‘path’ is defined as a single R/K/TF prediction, whereas the word ‘pathway’ is defined as the collection of paths that all start from the same R (i.e., all paths de- fined by a single R constitutes a pathway
+
+For each potential signaling pathway, we first calculated the proportion of active molecules (defined as highly expressed genes based on the above high expression threshold) for each path. We then summed all the pro- portions of all the paths for the pathway and divided the total proportion value by the total number of paths of the pathway. This final value was termed the Activity score (As)
+
+It should be noted that as currently applied, the
+SPAGI method detects receptor-mediated signaling pathways. Modification of the SPAGI approach could be used to identify other cellular control mechanisms involving PPIs independent of TFs. Also, at this stage it is not clear whether the other pathways highly rankedbythe activityscore aretruly active,aspro- tein expression and protein activation state (e.g., via phosphorylation) within a tissue cannot be deter- mined from gene expression data. 
+
+
+
+### Pathway-guided deep neural network toward interpretable and predictive modeling of drug sensitivity - Deng et al. 2020
+
+the biological knowledge of pathways, we reshaped the canonical DNN structure by incorporating a layer of pathway nodes and their connections to input gene nodes, which makes the DNN model more interpretable and predictive compared to canonical DNN
+
+we reshape the canon- ical DNN structure by introducing a layer of pathway nodes and their connections to input gene nodes and drug target nodes. The pathway layer is followed by several fully-connected layers and an output layer. We conducted extensive performance evaluations on multiple independent drug sensitivity data sets, and demonstrated that our model significantly out- performed not only canonical DNN model, but also eight other classical regression models.
+
+Our empirical experiments show that our method successfully makes advantage of both the excellent predictive ability of deep neural network and the biological knowledge of pathways, and achieves pharmacological interpretability and predictive ability in modeling drug sensi- tivity in cancer cells
+
+To explore the pharmacological mechanism of action, we take the pathways to construct a DNN model, by introducing a layer of pathway nodes and their con- nections to input gene nodes. The
+
+The pathway layer is followed by two fully-connected hidden layers and an output layer.
+
+each neuron in the input layer represents a gene (cell line feature or drug target), while the corresponding output is the quantitative drug sensitivity.
+
+for a drug tested on a cell line, the input values of cell line nodes are normalized gene expression levels, and the input values of drug target nodes are the STITCH confidence scores if targeted and zero if not targeted by the assayed drug
+
+The first hidden layer, referred to as the pathway layer, has 323 neurons derived from the KEGG pathway repository. The connections between the input layer and the pathway layer are determined by the associations between genes and pathways. A 323*1278 mask matrix, denoted by M, was used to encode the relation between gene nodes and pathway nodes, in which 1 represents the existence of an association between the gene and pathway node, and 0 otherwise. In the back propagation process, the weights of the edges are iteratively updated using the rule as below:
+Wmask = Wfeedback ∗M
+
+we compared the outputs of the pathway
+nodes with drug treatments to those without drug treatments (corresponding drug target feature nodes set to 0). we observed remarkable decreases in disease-related pathway nodes upon drug treatments. 
+
+the remarkable output decrease of disease-related pathway nodes during forward propagation upon inputs of drug targets can imply the inhibition effect on corre- sponding pathways induced by drug treatment of cancer cells. In
+
+By integration of our current knowledge presented in the form of pathways maps into the
+DNN structure, i.e. the pre-specified connections between the input layer and the pathway layer, our model can extract the features in the pathway level, rather than gene level, to pre- dict higher cellular process and final phenotypical changes via subsequent fully-connected layers. 
+
+, we observed re- markable activity changes of disease-related pathway nodes upon drug input signals, which implies significant impact on disease-related pathways induced by drug treatments with high sensitivity on cancer cells. In contrast, most of irrelevant pathway nodes show trivial changes in their activity. 
+
+### Inference of patient-specific pathway activities from multi-dimensional cancer genomics data using PARADIGM - Vaske et al. 2010
+
+s. A gene is modeled by a factor graph as a set of interconnected variables encoding the expression and known activity of a gene and its products, allowing the incorporation of many types of omic data as evidence. 
+
+The method predicts the degree to which a pathway’s activities (e.g. internal gene states, interactions or high- level ‘outputs’) are altered in the patient using probabilistic inference
+
+a PGM framework based on factor graphs (Kschischang et al., 2001) that can integrate any number of genomic and functional genomic datasets to infer the molecular pathways altered in a patient sample.
+
+A gene family was created whenever the cross-reference for a BioPAX protein listed proteins from distinct genes. Gene families represent collections of genes in which any single gene is sufficient to perform a specific function
+
+We also extracted abstract processes, such as ‘apoptosis,’ that refer to general processes that can be found in the NCI collection.
+
+PARADIGM produces a matrix of integrated pathway activities (IPAs) A where Aij represents the inferred activity of entity i in patient sample j. The matrix A can then be used in place of the original constituent datasets to identify associations with clinical outcomes
+
+We first convert each NCI pathway into a distinct probabilistic model
+
+A pathway diagram from NCI was converted into a factor graph that includes both hidden and observed states. The factor graph integrates observations on gene- and biological process-related state information with a structure describing known interactions among the entities
+
+, we use variables
+to describe the states of entities in a cell, such as a particular mRNA or complex, and use factors to represent the interactions and information flow between these entities.
+
+These variables represent the differential state of each entity in comparison with a ‘control’ or normal level rather than the direct concentrations of the molecular entities. This representation allows us to model many high-throughput datasets
+
+It also allows for many types of regulatory relationships among genes
+
+**The factor graph encodes the state of a cell using a random variable**
+**for each entity X={x1,x2,...,xn} and a set of m non-negative functions, or factors, that constrain the entities to take on biologically meaningful values as functions of one another. **
+
+PARADIGM models various types of interactions across genes including transcription factors to targets (upper-left), subunits aggregating in a complex (upper- right), post-translational modification (lower-left) and sets of genes in a family performing redundant functions (lower-right).
+
+Each entity can take on one of three states corresponding to activated,
+nominal or deactivated relative to a control level (e.g. as measured in normal tissue) and encoded as 1, 0 or −1 respectively. The states may be interpreted differently depending on the type of entity (e.g. gene, protein, etc). For example, an activated mRNA entity represents overexpression, while an activated genomic copy entity represents more than two copies that are present in the genome.
+
+In order to simplify the construction of factors, we first convert the
+pathway into a directed graph, with each edge in the graph labeled with either positive or negative influence. First, for every protein coding gene G, we add edges with a label ‘positive’ from GDNA to GmRNA, from GmRNA to Gprotein and from Gprotein to Gactive to reflect the expression of the gene from its number of copies to the presence of an activated form of its protein product. Every interaction in the pathway is converted to a single edge in the directed graph. Using
+
+Using this directed graph, we then construct a list of factors to specify
+the factor graph. For
+
+
+
+### Prediction and interpretation of cancer survival using graph convolution neural networks - Ramirez et al. 2021
+
+a novel graph convolution neural network (GCNN) approach called Surv_GCNN to predict the survival rate for 13 different cancer types using the TCGA dataset. For each cancer type, 6 Surv_GCNN models with graphs generated by correlation analysis, GeneMania database, and correlation + GeneMania were trained with and without clinical data to predict the risk score (RS)
+
+A novel network-based interpretation of Surv_GCNN was also proposed to identify potential gene markers for breast cancer. The signatures learned by the nodes in the hidden layer of Surv_GCNN were identified and were linked to potential gene markers by network modularization.
+
+The Cox-PH method employs both quantitative vari- ables such as molecular expression levels, age, and weight and cate- gorical variables including sex and different treatment methods. Furthermore, the Cox regression model extends survival analysis methods to assess the effect of several risk factors on survival time simultaneously. However, the Cox-PH method tends to suffer in high- dimensional data, and regression cannot learn any complex non-linear functions.
+
+A previous remedy to this downside is the application of support vector machines in survival analysis [13,14]. Other machine learning methods have also been applied for survival analysis to extract significant molecular predictors for early diagnosis and optimal treat- ment outcomes [11,15]
+
+deep learning has been used to predict survival outcomes
+with the loss function from the Cox regression model
+
+a 1-layer artificial neural network (ANN) to predict sur- vival outcomes
+
+Hoa et al. also created a multilayer model integrating biological pathways and clinical data to predict the Prognostic Index (PI) of each patient
+
+Convolutional Neural Networks (CNNs) have been used to predict the survival of patients
+
+Recurrent Neural Networks were used for time-series data- sets to predict survival outcomes
+
+The challenge of using the CNN method to analyze gene expressions lies in two facts. 
+
+1. Gene expression data is 1-dimensional while CNN needs 2-dimensional (2D) input. 
+   * Different embedding methods have been applied to transform the 1D data into 2D. 
+
+2. Further, the convolutional approach works well on the Euclidean manifold. However, molecular expression data, in essence, represents the outcome of molecular interactions, which are in **non- Euclidian manifold** represented by interaction networks [24].
+   *  On the other hand, the one-dimensional gene expression data is easily **mappa- ble onto a graph and graph convolutional neural networks (GCNN) is a promising approach for the non-Euclidean manifold**, suggesting the
+
+
+
+survival analysis on 13 TCGA cancer types spanning
+5,963 samples with 3 different graphs: 
+
+1. a statistical relationship graph using correlation, 
+2. a database-driven graph from GeneMania including gene-gene and protein–protein interactions, and 
+3. a merged graph including both correlation and GeneMania to examine which graph can generate the best outcome. 
+
+We also incorporated clinical data into our model to increase prediction accuracy and
+
+the GCNN performs a similar operation to the traditional convolu-
+tional neural networks but it learns features from neighboring nodes in a graph
+
+interpreting the model was separated into two parts: finding the significant nodes in the hidden layer contributing to the RS and dissect the relationship between gene expression levels to the hidden layer nodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**aracne + VIPER**
+
+* MI based
+* needs providing TF list
+* 
+* VIPER sample-based; can test DE
+* do not use PPI data 
+
+wgcna/cemi
+
+* co-expr based
+* do not use PPI data (post-hoc only)
+
+causalpath
+
+* starts with the PPI - proteo regulation
+* comparison-based: too sparse; correlation-based: too rich
+
+size of the results ??? 
+
+size of the regulons in aracne (how  many genes)
 
 
 
@@ -3040,3 +3423,4 @@ methods that rely on single-patient/sample
 mining (e.g., VIPER, the PPI network-based method by Chuang et al., and pathER) rely on dataset scaling to define its single- sample signatures (defined by comparing each gene to the average of its expression in the dataset of interest) making interpretation of any findings from such analyses dataset-specific
 
 what are the limitations of enrichment based analyses
+
