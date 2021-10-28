@@ -1,7 +1,5 @@
 ### The Tumor Profiler Study: Integrated, multi-omic, functional tumor profiling for clinical decision support - Irmisch et al. 2020
 
-
-
 a prospective, observational clinical study performed within the **Tumor Profiler (TuPro) Consortium** that aims to show the extent to which such comprehensive information leads to advanced **mechanistic insights** of a patient’s tumor, enables prognostic and predictive **biomarker discovery**, and has the potential to **support clinical decision** making
 
 melanoma, ovarian carcinoma, and acute myeloid leukemia tumors

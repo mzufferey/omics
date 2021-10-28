@@ -5,7 +5,6 @@
 * popular tools: SCENIC, ARACne, VIPER, MARINa, DISCERN, GENIE3, Hotnet2, MOMA; lasso methods
 * knwoledge databases: TF databases, PPI databases, pathways/GOs/signature 
 * most current workflow : Aracne -> VIPER -> GO analysis
-
 * knowledge integration
   * bayesian method: prior on gene-gene weights
   * NN: architecture of NN matching gene pathways
@@ -18,6 +17,45 @@
 * issues:
   * uncomplete knowledge databases
 * most interesting Bio examples: Paull et al. 2021;Walsh et al. 2017; Matsubara et al. 2019; Tapia-Carrillo et al. 2019; Tovar et al. 2015)
+
+
+
+
+
+
+
+**aracne + VIPER**
+
+* MI based
+* needs providing TF list
+* 
+* VIPER sample-based; can test DE
+* do not use PPI data 
+
+wgcna/cemi
+
+* co-expr based
+* do not use PPI data (post-hoc only)
+
+causalpath
+
+* starts with the PPI - proteo regulation
+* comparison-based: too sparse; correlation-based: too rich
+
+size of the results ??? 
+
+size of the regulons in aracne (how  many genes)
+
+
+
+methods that rely on single-patient/sample
+mining (e.g., VIPER, the PPI network-based method by Chuang et al., and pathER) rely on dataset scaling to define its single- sample signatures (defined by comparing each gene to the average of its expression in the dataset of interest) making interpretation of any findings from such analyses dataset-specific
+
+what are the limitations of enrichment based analyses
+
+
+
+
 
 ---
 
@@ -3371,56 +3409,358 @@ tional neural networks but it learns features from neighboring nodes in a graph
 
 interpreting the model was separated into two parts: finding the significant nodes in the hidden layer contributing to the RS and dissect the relationship between gene expression levels to the hidden layer nodes
 
+*Identify prognostic nodes in the hidden layer*
+
+We gathered model parameters from a single run resulting in the
+median C-index (0.7775) for the correlation + GeneMania graph
+
+We collected the values of the hidden layer for each patient along with the weights from the hidden layer to the output RS. **The contribution of each hidden layer node to determine the RS was calculated by multi- plying the value of the node and the weight of the nodes to the RS **for each sample in the breast cancer study.
+
+*Dissect the relationship between genes and hidden layer Nodes*
+
+Two approaches were used to examine the relationship between
+genes and hidden layer nodes. 
+
+A **Spearman correlation analysis between the gene expressions and the values of the top contributing node**s in the hidden layer was performed first to see the contribution of each gene on those significant nodes. We took the top correlated genes with an ab- solute correlation greater than 0.5
 
 
 
+### TPSC : a module detection method based on topology potential and spectral clustering in weighted networks and its application in gene co ‑ expression module discovery - Liu et al. 2021
 
 
 
+Gene co-expression networks are widely studied in the biomedical field, with algorithms such as WGCNA and lmQCM having been developed to detect co-expressed modules. However, these algorithms have limitations such as insufficient granularity and unbalanced module size, which prevent full acquisition of knowledge from data mining. In addition, it is difficult to incorporate prior knowledge in current co-expression module detection algorithms
 
 
 
+a novel module detection algorithm based on topology potential and spectral clustering algorithm to detect co-expressed mod- ules in gene co-expression networks
+
+our novel method can provide more complete coverage of genes, more balanced module size and finer granularity than current methods in detecting modules with significant overall survival difference. In addition, the proposed algorithm can identify modules by incorporating prior knowledge.
+
+the ability to detect more size-balanced and granular modules. In addition, our method can integrate data from different sources. Our
+
+An unweighted gene co-expression network is a traditional binary network, which only keeps relationships between genes above a specified cutoff,
+
+a weighted network is a fully connected network and keeps all relationships as a con- tinuous measurement. Because
+
+WGCNA [13] and lmQCM [14] are the most widely used module detection methods to detect co-expression modules.
+
+have defects such as insufficient granularity, coverage and unbalanced mod- ule size
+
+we improved upon the topology potential and spec-
+tral clustering-based method put
+
+**topology potential** = a metric used to determine essentiality of a node in the network by its relationship with others and has been widely used to identify communities in complex networks.
+
+researchers have tried to find essential proteins in protein– protein interaction (PPI) networks by using topology potential
+
+In the definition of topology potential, there is a **mass element** to describe the properties of nodes, which can **integrate information and knowledge** other than topology properties. 
+
+**Spectral clus- tering** is a commonly used unsupervised learning method that has been widely applied to detect communities or modules from networks and graphs
+
+tradi- tional spectral clustering using the graph Laplacian matrix constructed by the degree adjacency matrix of that graph cannot provide sufficient structural information for com- munity detection
+
+However, the method provided by [16] was designed for traditional unweighted binary networks and is not applicable to our fully connected weighted gene co-expression network. In addition, correction of Laplacian matrix in [16] does not consider the mass of nodes, which will cause asymme- try in the Laplacian matrix. Therefore,
+
+Topology Potential-based Spectral Clustering (TPSC)
+Algorithm, an improved module detection algorithm based on topology potential and spectral clustering and
+
+Depending on whether there are weights on nodes, there are two versions of TPSC, with 
+
+1. TPSC-1 focusing on networks with only weights on the edge 
+2.  TPSC-w being able to accommodate weights on both nodes and edges
+
+**by introducing weighted nodes, our proposed TPSC-w method could select modules with the guidance of prior knowledge**
+
+three parameters, namely the minimum degree of local maximum node dmin , the weight cutoff threshold r and the topology potential impact factor σ . Parameters
+
+the number of modules k decreased as the param- eter dmin increased, regardless of with or without weights on the nodes
+
+Compared with the condition of TPSC-1, TPSC-w detected less modules. This make sense since prior knowledge can contribute to the screening for modules. However,
+
+the number of modules became stable when dmin was set between 5 and 9
+
+The modules generated by lmQCM are generally smaller than the rest of the other methods, but these modules only cov- ered about a quarter of genes we provided. Modules generated by WGCNA covered all genes, but the method generated a large module with more than 1500 genes, i.e. more than one third of all genes in the network. Compared to lmQCM and WGCNA, TPSC generated modules that not only covered all genes, but also contained a more uniform module size
+
+prior knowledge of gene disease associations can influence the module detection
+
+identify pathways in breast cancer associated with patient survival, we performed survival analysis on the modules detected by the previous four methods.
+
+divided all 999 samples into two groups by eigengene value; **Modules with a positive eigengene value implied potential up-regulation while a negative value means down-regulation. We**
+
+four modules showed a significant survival difference in the modules detected by our proposed method without weight of nodes and two modules in each of the other three methods based on Log-rank test p-value
+
+Kaplan–Meier curve of the cell-cycle related gene module led to significant sur- vival difference detected
+
+Biological interpretation of the modules
+
+1. enrichment
+2. survival
+
+**data integration**: since there is a mass element, topol- ogy potential could integrate prior knowledge naturally
+
+We **weighted the nodes** using the GDA scores provided by Dis- GeNET (https ://www.disge net.org/).
+
+t the module identification process becomes more concentrated on genes that have stronger gene-dis- ease associations. The
+
+gene co-expression are highly confounded by locations due to extensive existence of CNVs. And we can take advantage of this phenomenon to infer potential CNV events from transcriptomic data. In this paper, since we began with CNV informa- tion, it is not surprising that some genes are located on the same cytoband
+
+cytobands enriched in modules detected by different methods. Around
+
+### TPQCI: A topology potential-based method to quantify functional influence of copy number variations - Liu et al. 2021
+
+One of the critical steps to solve the problem is to define the in- fluence of CNV 
+
+we provide a topology potential based method, TPQCI, to quantify this kind of influence by integrating statistics, gene regulatory associations, and biological function information.
+
+this metric to detect functionally enriched genes on genomic segments with CNV in breast cancer and multiple myeloma and discovered biological functions influenced by CNV.
+
+we can detect disease-specific genes that are influenced by CNVs.
+
+Most of these current methods only consid- ered the influence of CNV from the angle of gene expression regulation. Actually, functional relationships at the protein level is also an impor- tant factor to be considered but have been long ignored when defining CNV influence.
+
+we need to analyze relationships across different omics levels and integrate multiple types of data. The tools of network analysis are best suited to solve this problem
+
+topology potential is an ideal choice for gauging the downstream influence of CNVs over gene net- works.
+
+**Topology potential** is a metric used to **determine the essentiality of a node in network**,
+
+Utilizing multiple characteristics of the nodes, **the topology potential metric can integrate information and knowledge** beyond topology properties in network analysis. It
+
+measure the impact of CNVs on cancers through the integration of both molecular data including CNV and gene expression with PPI network data
+
+establish relationships be- tween CNVs and gene expressions in these diseases.
+
+we first designed a metric, TPQCI, by using topology potential to quantify the influence of CNVs in each disease. Then, a gene module detection process was performed in PPI network to identify genes strongly influenced by CNVs in both diseases. Enrichment analyses were then carried out to reveal the biological implications of the detected modules.
+
+relationships between CNV and RNA expression can be calculated by correlation between gene level CNV log ratio with RNA expression, and functional relationships among proteins can be represented by PPI networks
+
+Since these factors representing the influence of CNV at different levels, it is possible to construct a network to reveal the influence entirely.
+
+We call this double weighted (i.e. both edges and nodes weighted) network as CNV Influence Network (CIN).
+
+For CINs, network framework is PPI network, weight of edges is correlation between gene level CNV log ratio with RNA expression and weight of nodes is frequency of CNV events occurrence.
+
+the **centrality** of a node measures the importance of a node in the network
+
+centrality of nodes in CIN can be treat as the **quantification of overall influence** of CNV
+
+to make **a better tradeoff between the three factors, we employed topology po- tential as the metric of centrality** in CIN and
+
+the PPI network defined functional associations between genes,
+
+the first-order neighborhood of a CNV gene as its scope of influence.
+
+we use correlation between CNV ratio and gene expression to
+depict regulatory associations, the edges between genes is directed
+
+We used out-degree topology potential to integrate the three factors. To-
 
 
 
+**To- pology potential is a metric of centralization, which is used to describe the interaction and association among network nodes. For**
+
+The multiplication of the node’s properties (e.g., CNV frequency) with the exponential term related to the edge weight (contained in dwi→j
+) effectively integrates the
+two types of information without a direct trade-off.
+
+Since we only consider the first-order neighborhood of CNV genes, we only calculate the topology potential component of the CNV gene itself and its first-order neighbor
+
+we use PCC (i. e., ρ(ci, rj)) between copy number ratio of the CNV gene vi(ci) and expression of its neighbor vj(rj) as the edge weights in
+
+linear relationship onship if the absolute value of PCC is greater than a specific threshold. In biological analysis, the empirical value of the threshold is often set around 0.3.
+
+Once we defined the metric of CNV influence (TPQCI), we can use it
+to identify gene modules that are heavily affected by CNVs in a PPI network. Our
+
+Our module search method is based on the concept of attrac- tion in topology potential
+
+For any node v ∈ V, if there is a path leading to a representative node v* ∈ V and the topology potential of every node on the path increases in turn, then v is said to be attracted by v*. Such a path is named as an **attraction chain**
+
+It is natural that genes with weak influence will be attracted by
+stronger ones. So, if they are attracted in a direct path, this pathway may contribute to some biological process
+
+We proposed a module detection method based on this assumption. 
+
+To explore the biological basis of various modules, we performed
+cytoband enrichment analysis and functional Gene Ontology (GO) enrichment analysis for module genes of each cancer type using Top- pGene (https://toppgene.cchmc.org
+
+### A topology potential-based method for identifying essential proteins from PPI networks - Li et al. 2015
+
+computational approaches proposed for predicting essential proteins based on network topologies. Most of these topology based essential protein discovery methods were to use network centralities. In
+
+o identify essential proteins from a protein-protein interaction (PPI) network
+
+each protein in the network can be viewed as a material particle which creates a potential field around itself and the interaction of all proteins forms a topological field over the network.
+
+By defining and computing the value of each protein’s topology potential, we can obtain a more precise ranking which reflects the importance of proteins from the PPI network.
+
+t topology potential-based methods TP and TP-NC outperform traditional topology measures: degree centrality (DC), betweenness centrality (BC), closeness centrality (CC), subgraph centrality (SC), eigenvector centrality (EC), information centrality (IC), and network centrality (NC) for predicting essential proteins.
+
+EC’s value is calculated based on the adjacency matrix of the PPI network [14]. A protein v’s EC value is defined as the vth component of the principal eigenvector of adjacency matrix. The basic idea of EC is that essential proteins often have essential neighbors. IC
+
+some new computational methods have been
+proposed to predict essential proteins by integrating net- work topological characters and biological information, such as protein function [30], gene expression [31], [32], orthology information [33], protein domains [34], and even multiple biological informations [
+
+t topology potential is used to identify essen- tial proteins from a PPI network. A
+
+we treat the PPI network as a physical system and calculate each protein’s topology potential to determine its essentiality in the network
+
+Then we rank all proteins based on the value of topology potential and select the top 1, 5, 10, 15, 20, and 25 percent to identify the essential proteins.
+
+we treat a PPI network as a physi- cal system. A
+
+an undi- rected graph
+
+an applied field around each protein and any protein will be influenced by joint actions of the other proteins in the field. 
+
+we tend to use Gaussian potential function [41], [47] which represents short-range field and have good mathematical properties to describe the interactions between proteins. We
+
+We call the corresponding field as **the topology potential field.** In this topology potential field, the interactions between proteins have local characteristics and each protein’s influence ability will decrease rapidly with the increase of network distance
+
+in biological networks, we don’t have to use the minimum potential entropy when we predict the essential proteins. According to previous literatures, essential protein has features of clustering and their influence range only includes direct neighbor nodes and indirect neighbor nodes
+
+the optimal impact factor of the PPI network is 0:9428, which is used to make sure that the protein’s influence range is not more than 2.
+
+s the reliability of interaction eðvi;vjÞ calculated by logistic regression model [52]. FSðvi;vjÞ is the reliability of GO semantic similarity computed by the approach of Lin [53].
+
+Based on the definition of edge reliability, we redefine
+the shortest distance dij between protein vi and protein
+
+### dmGWAS: Dense module searching for genome-wide association studies in protein-protein interaction networks - Jia et al. 2011
+
+a dense module searching (DMS) method to identify candidate subnetworks or genes for complex diseases by integrating the association signal from GWAS datasets into the human protein–protein interaction (PPI) network.
+
+The DMS method extensively searches for subnetworks enriched with low P-value genes in GWAS datasets. Compared with pathway-based approaches, this method introduces flexibility in defining a gene set and can effectively utilize local PPI information
+
+a network-based searching method
+by integrating GWAS and PPI information. We first mapped all SNP markers in a GWAS dataset to genes and then weighed genes by the P-values of their mapped markers. Then, weighted genes were loaded onto a comprehensive human PPI network to construct a node-weighted PPI network.
+
+We modified a previous method (Chuang et al., 2007) that was designed for dense module searching (DMS) in gene expression datasets, and used it to search for subnetworks that locally maximize the proportion oflow-P-value genes in the GWAS dataset. This method has the advantage of searching the whole interactome and examining the combined effect of multiple genes in an exhaustive manner. We
 
 
 
+## Multi-omic data interpretation to repurpose subtype specific drug candidates for breast cancer - Turanli et al. 2019
 
+we present an integrated “omics” approach based on the use of transcriptome and interactome data to identify dynamic/active protein-protein interaction networks (PPINs) in TNBC patients
 
+. Based on the functional analyses, we propose that these modules are potential drivers of proliferation and, as such, should be considered candidate molecular targets for drug development or drug repositioning in TNBC.
 
+we used the gene expression profiles of interacting protein pairs and recruited the differential interactome analysis as previously described (Ayyildiz et al., 2017)
 
+categorized into three levels: high (1), moderate (0), and low (-1) expression levels according to comparison ofeach gene expression with the average expression within each sample. The
 
+The probability distributions for any possible co-expression profile of gene pairs (encoding proteins interacting with each other) were estimated, and the uncertainty of determining whether or not a PPI in encountered in a phenotype was estimated through an entropy formulation.
 
+interactions associated with proteins corresponding to DEGs that are up-regulated in basal-like tumors were identified and used to construct up-regulated PPI networks specific to basal-like breast cancer.
 
+Two different topological metrics, **degree**, which is defined by the number of adjacent nodes of a node in the network, and **betweenness centrality**, which characterizes nodes by how often they occur on the shortest path between two other nodes in the network, were simultaneously employed to define hub nodes
 
+convert the identified EED, AURKA, and DHX9 modules to gene expression signatures that can be used to quantify pathway activity in a given sample from independent datasets
 
-**aracne + VIPER**
+the module was converted to a gene list and the mean expression of unweighted gene list was used to calculate a pathway score
 
-* MI based
-* needs providing TF list
-* 
-* VIPER sample-based; can test DE
-* do not use PPI data 
+Analysis of variance (ANOVA) tests were used to quantify differences between the EED-module, DHX9- module and AURKA-module activity scores between breast cancer subtypes in each dataset. A
 
-wgcna/cemi
+To infer the functional roles of these modules, a panel of 270 experimentally derived gene expression signatures that predict activation of various oncogenic signaling pathways, was performed by integrating gene expression data as described previously
 
-* co-expr based
-* do not use PPI data (post-hoc only)
+### Detecting modules in biological networks by edge weight clustering and entropy significance - Lecca and Re 2015
 
-causalpath
+majority of approaches address this task through a network node classification based on topological or external quantifiable properties of network nodes. Conversely, numerical properties of network edges are underused
 
-* starts with the PPI - proteo regulation
-* comparison-based: too sparse; correlation-based: too rich
+a novel technique for network module detection, named WG-Cluster (Weighted Graph CLUSTERing). WG-Cluster’s
 
-size of the results ??? 
+WG-Cluster’s notable features, compared to current approaches, lie in: 
 
-size of the regulons in aracne (how  many genes)
+(1) the simultaneous **exploitation of network node and edge weights** to improve the biological interpretability of the connected components detected,
 
+ (2) the assessment of their statistical significance, and
 
+ (3) the identification of emerging topological properties in the detected connected components.
 
-methods that rely on single-patient/sample
-mining (e.g., VIPER, the PPI network-based method by Chuang et al., and pathER) rely on dataset scaling to define its single- sample signatures (defined by comparing each gene to the average of its expression in the dataset of interest) making interpretation of any findings from such analyses dataset-specific
+three major steps: 
 
-what are the limitations of enrichment based analyses
+1. an unsupervised version of k-means edge-based algorithm detects sub-graphs with similar edge weights,
+2. a fast-greedy algorithm detects connected components which are then scored and selected according to the statistical significance of their scores, and 
+3.  an analysis of the convolution between sub-graph mean edge weight and connected component score provides a summarizing view of the connected components. WG-Cluster
 
+applying WG-Cluster to a PPI network weighted by measurements of differential gene expression permits to explore the changes in network topology under two distinct (normal vs. tumor) conditions
+
+Within WG-Cluster, a module is defined as a connected component where nodes are characterized by homogeneous weights and are connected by edges of homogeneous weights
+
+WG-Cluster combines an edge-based network clustering with a fast-gready algorithm. The
+
+**by the initial edge-based network clustering, network edge weights underlie the subsequent detection and prioritization of the connected components. ,**
+
+the procedural choice adopted by WG-Cluster permits to obtain modules, homogeneous not only in node weights but also in edge weights, without discernible additional cost in computational efficiency
+
+Module prioritization can become particularly useful in applications related to differential network analysis where the primary goal is to identify modules changing across different conditions
+
+the introduction of a measure of the significance of the returned connected components which is based on node weights. WG-Cluster
+
+applied for the analysis of **a differential network, i.e., a network where node and edge weights are defined by the changes observed in node and edge numerical properties between two conditions.** Differential
+
+a differential network, which was obtained by integrating a physical protein–protein interaction (PPI) network with changes in gene expression between a normal and tumor conditions.
+
+A differential co-expression score was computed for each gene pair, by subtracting the pairwise Pearson’s correlation coefficient in the tumor condition from that in the normal condition. Next,
+
+, the IntAct PPI confidence scores were multiplied by the differential co-expression scores to estimate the change in the interaction strength resulting from the differential co-expression of the mRNAs encoding the interacting proteins.
+
+The product between the IntAct score and the differential co-expression score defines the final **weight of an edge** in the differential network. The
+
+The **weight of a node** in the differential network was obtained by computing the ratio between the average values of mRNA expression across samples in the normal and tumor conditions (mRNA fold change).
+
+The algorithm sequentially executes three computational modules.
+
+1. First, it estimates the optimal number of clusters (sub-graphs) that split up the graph (i.e., network) and executes a Lloyd’s K-means clustering (Du et al., 2006) of the edge weights to **detect sub-graphs with edges of similar weights**.
+2.  Second, a fast-greedy modularity optimization procedure (Clauset et al., 2004) finds (if any) the connected components (i.e., modules) in each sub-graph. An **entropy score** is computed for each connected component and is used as a measure of the statistical significance of the connected component. 
+3. Finally, an analysis of the convolution between sub- graph mean edge weight and connected component entropy allows for a summarizing view of both properties in the detected connected components
+
+### Functional network analysis reveals an immune tolerance mechanism in cancer - Mathews et al. 2020
+
+to construct a simplification of a feature network which can be used for interactive data exploration, bio- logical hypothesis generation, and the detection of communities or modules of cofunctional features. These
+
+In the case of genetic networks, traditional pathway analyses tend to assume that, ideally, all genes in a module exhibit very similar function, independent of relationships with other genes. The proposed technique explicitly relaxes this assumption by employing the comparison of relational profile
+
+For example, two genes which always activate a third gene are grouped together even if they never do so concurrently. They have common, but not identical, function. The
+
+The comparison is driven by an average of a certain com- putationally efficient comparison metric between Gaussian mix- ture models. The method has its basis in the local connection struc- ture of the network and the collection of joint distributions of the data associated with nodal neighborhoods. It
+
+The proposed method incorporates relational or functional profiles of neigh- boring variables along multiple common neighbors, which are fitted with Gaussian mixture models and compared using a data metric based on a version of optimal mass transport tailored to Gaussian mixtures
+
+Hierarchical interactive visual- ization of the result leads to effective unbiased hypothesis generation
+
+Once the hierarchy is computed, it is formatted for viewing in the Gephi graph visualization software using a custom plugin
+
+One often finds by informal investigation that **some variables**
+**X and Y have common functional profiles even when X and Y are completely uncorrelated**. To promote this type of informal investigation to objective analysis, one needs a comparison met- ric between joint distributions or scatter plots. To
+
+we first fit Gaussian mixture models (GMMs) to the distribu- tions. This has a smoothing effect, filtering out noise, as well as making the distributions accessible to analytic formulas via the comparatively few fitted parameters. GMMs
+
+The final Gaussian mixture transport (GMT) distance between
+X and Y is calculated as the average GMM/OMT distance between the functional profiles of X and Y along variables Z that are common neighbors of X and Y. The GMT metric may be used thereafter as the input to hierarchical clustering algorithms. We thus employ the GMT metric to create a force- directed graphical representation of the feature network in which close nodes are likely to share a common function with respect to other nearby nodes.
+
+### BioNetStat: A tool for biological networks differential analysis - Jardim et al. 2019
+
+To compare two or more networks simultaneously, we developed BioNetStat, a Bioconductor package with a user-friendly graphical interface. BioNetStat compares correlation networks based on the probability distribution of a feature of the graph (e.g., centrality measures).
+
+or Gene Set Enrichment Analysis (GSEA), to test whether a gene set is differentially expressed between two conditions (Subramanian et al., 2005). However, none of these methods takes into account the relationship among several biological components at the same time. In this sense, methods based on networks represent the association between each pair of components and may help to understand the role each variable plays in the system
+
+to the best of our knowledge, there are only two tools that perform statistical tests to compare two or more networks simultaneously: DiffCoEx and GSCA. However, only GSCA performs tests for predefined groups of variables. GSCA
+
+However, this strategy, in general, gives an inadequate control of type I error; searching for precisely similar structures between two graphs is not an effective strategy to compare the behavior of biological pathway
+
+In the context of functional brain network studies, a
+generalization of CoGA, named by GANOVA, has been proposed to compare more than two populations of graphs (Fujita et al., 2017). This tool is specific for datasets containing several graphs in each biological condition. GANOVA is not useful when only one network is available per condition, such as in the case of physiological or genes correlations networks.
+
+the edge corresponds to the statistical dependence between two variables. To
+
+To measure and detect monotonic relations, BioNetStat includes the Pearson (1920), Spearman (1904), and Kendall (1938) correlation coefficien
+
+Given a measure of statistical dependence, BioNetStat provides 3 scales of association degree:
+
+1. the absolute correlation coefficient, 
+2. one minus the p-value of the dependence test, and 
+3. one minus the p-value adjusted by the False Discovery Rate method (Benjamini andHochberg, 1995). 
+
+Each association degree is a real number varying from zero to one. The

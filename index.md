@@ -105,7 +105,7 @@ All computations were carried out on the R platform. Package “fastICA” which
 
 Clusters were visualized with 2d t-SNE using the R package “tsne.” The number of clusters was determined as equal to number of components extracted at each run of ICA. When the number of samples is small comparing to the number of features, which is usually the case for biological data, it is convenient to retrieve as many as independent signal sources as possible, and the number of compo- nents extracted is equal to sample size
 
-
+https://www.bnlearn.com/   bnlearn - an R package for Bayesian network learning and inference  with books "Bayesian networks in R" and "Bayesian networks with examples in R"
 
 
 
@@ -144,6 +144,12 @@ process local and/or private data, allowing results to be directly compared to a
 together, our tools help biologists maximize the utility of publicly available RNA-seq data, especially to
 improve their understanding of newly collected data. recount3 is available from http://rna.recount.
 bio
+
+
+
+##### Gene annotation
+
+`disgenet2r` is an R package to query and expand DisGeNET data (www.disgenet.org), and to visualize the results within R framework. The disgenet2r is designed to query data for DisGeNET v7.0 (May, 2020).
 
 
 
@@ -189,6 +195,12 @@ Gene set variation analysis was performed using the GSVA R package (Guinney and 
 
 
 ##### Pathway and gene network analyses
+
+
+
+To compare two or more networks simultaneously, we developed BioNetStat, a Bioconductor package with a user-friendly graphical interface. **BioNetStat** compares correlation networks based on the probability distribution of a feature of the graph (e.g., centrality measures).
+
+
 
  We develop an R packagePATHcrosstalk (available from GitHubhttps://github.com/fabotao/PATHcrosstalk) with which users can discoverpathways of interest with crosstalk effect considered
 
@@ -402,7 +414,7 @@ DAVID
 
 ConsensusPathDB allows us to perform overexpression analysis on top of differentially activated MRs to identify signif- icantly enriched molecular functions (M), cellular components (C), biological process (BP), pathways (P) and protein complexes (PC). The advantage of using ConsensusPathDB over a popular tool like DAVID [31]isthatitprovidesthe option to search through multiple databases (different types of interactions) to find enriched pathways, unlike DAVID, which only uses the KEGG database. Moreover,
 
-
+Gene ontology, pathway and cytoband analysis is performed by ToppGene (https ://toppg ene. cchmc .org/)
 
 **Deconvolution**
 
@@ -529,6 +541,8 @@ assignment of cell states into multicellular communities
 ##### Pathway and gene network analyses
 
 
+
+**GraphWeb** is a public web server for graph-based analysis of biological  networks  https://biit.cs.ut.ee/graphweb/welcome.cgi?t=help 
 
 Visualization of cellular processes and pathways http://newteditor.org
 
@@ -838,7 +852,42 @@ STRING Various https://string-db.org/ [15]
 COXPRESdb Co-expression https://coxpresdb.jp/ [16]
 SEEK Co-expression http://seek.princeton.edu/ [17
 
+
+
+e PPIs, we used the high confidence human PPIs (Karagoz et al., 2016), comprising 147,923 interactions among 13,213 proteins. Karagoz and coworkers assembled and integrated physical PPIs of Homo sapiens from six publicly available databases including BioGRID (Chatr-Aryamontri et al., 2015), DIP (Salwinski, 2004), IntAct (Orchard et al., 2014), HIPPIE (Schaefer et al., 2012), HomoMINT (Persico et al., 2005), and HPRD (Prasad et al., 2009). 
+
+
+
+PPIs from the open-access IntAct database which adopts a merging algorithm and a scoring system to provide richly annotated molecular interaction data. IntAct
+
+
+
+Database Species Number of entries URL Reference
+BIND About 1500 species 200 000 interactions http://bind.ca [26]
+DIP 10 species 25 612 proteins and 75 400 interactions http://dip.doe-mbi.ucla.edu [27]
+
+MINT 6 species 35 511 proteins and 241 458 interactions http://mint.bio.uniroma2.it/mint [28]
+
+IntAct Over 15 species 65 200 proteins and 312 217 interactions http://www.ebi.ac.uk/intact [29]
+
+BioGRID 51 species 471 829 interactions http://thebiogrid.org [30]
+
+HPRD Homo Sapiens 30 047 proteins and 41 327 interactions http://hprd.org [31]
+
+STRING Over 1100 species 5 million proteins and 200 million interactions http://string-db.org [32]
+
+HIPPIE Homo Sapiens 72 916 interactions http://cbdm.mdc-berlin.de/tools/hippie [33]
+
+
+
+
+
 public databases have cataloged networks of known and predicted PPIs, such as STRING (Szklarczyk et al., 2019), IntAct (Orchard et al., 2014), CellCircuits (Mak et al., 2007), and PINA (Cowley et al., 2012) [more comprehensive lists are described by Huang et al. (2018) and Miryala et al. (2018)].
+
+
+
+PPI network from PINA 2.0 contained approximately 16,000 nodes
+and 170,000 interactions. Data from PINA comes from six different databases: IntAct, MINT, BioGRID, DIP, HPRD, and MIPS MPact [32].
 
 
 
@@ -918,6 +967,10 @@ Gene Expression Profiling Interactive Analysis (GEPIA) (http://gepia.cancer-pku.
 Oncoprotein-specific molecular interaction maps (SigMaps) for cancer network analyses Broyde et al. 2021
 
 . We introduce SigMaps as context-specific networks, comprising modulators, effectors and cognate binding-partners of a specific oncoprotein. SigMaps are reconstructed de novo by integrating diverse evidence sources—including protein structure, gene expression and mutational profiles—via the OncoSig machine learning framework
+
+
+
+The multiple myeloma data was obtained from the CoMMpass study by the Multiple Myeloma Research Foundation (MMRF) (https://themmrf.org) and
 
 
 
@@ -1024,6 +1077,12 @@ assay and then were processed using the **CLUE** (Subramanian et al., 2017) (sum
 
 
 
+
+
+the Comparative Toxicogenomics Database (CTD) (http://ctdbase.org/; accessed on 1 August 2021), which is a free online database that  provides information including chemical–gene/protein interactions. 
+
+drug IC50 data of breast cancer cell lines and the gene expression data  of these cell lines were obtained from the Genomics of Drug Sensitivity  in Cancer database (GDSC) (https://www.cancerrxgene.org/;
+
 * **Genomics of Drug Sensitivity in Cancer** (CRx) resource (Yang et al., 2013)
 
 * essential survival gene datasets from The Cancer Dependency Map, the latter of which catalogs genes driving cancer progression
@@ -1113,6 +1172,8 @@ Software tools, databases and resources in metabolomics: updates from 2018 to 20
  CR2Cancer: a database for chromatin regulators in human cancer 
 
 
+
+GDA scores provided by Dis- GeNET (https ://www.disge net.org/)
 
 
 
