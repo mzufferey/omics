@@ -854,6 +854,8 @@ SEEK Co-expression http://seek.princeton.edu/ [17
 
 
 
+ANAT3.0, which comes with updated PPI network databases of 544,455 (human) and 155,504 (yeast) interactions, and a new machine-learning layer for refined network elucidation. Together
+
 e PPIs, we used the high confidence human PPIs (Karagoz et al., 2016), comprising 147,923 interactions among 13,213 proteins. Karagoz and coworkers assembled and integrated physical PPIs of Homo sapiens from six publicly available databases including BioGRID (Chatr-Aryamontri et al., 2015), DIP (Salwinski, 2004), IntAct (Orchard et al., 2014), HIPPIE (Schaefer et al., 2012), HomoMINT (Persico et al., 2005), and HPRD (Prasad et al., 2009). 
 
 

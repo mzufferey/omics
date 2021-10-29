@@ -3764,3 +3764,40 @@ Given a measure of statistical dependence, BioNetStat provides 3 scales of assoc
 3. one minus the p-value adjusted by the False Discovery Rate method (Benjamini andHochberg, 1995). 
 
 Each association degree is a real number varying from zero to one. The
+
+### A Graph Feature Auto-Encoder for the Prediction of Unobserved Node Features on Biological Networks - Hasibi et al. 2020
+
+s. Integrating the complementary viewpoints of biological networks and omics data is an important task in bioinformatics, but existing methods treat networks as discrete structures, which are intrinsically difficult to integrate with continuous node features or activity meas- ures
+
+Graph neural networks map graph nodes into a low-dimensional vector space representation, and can be trained to preserve both the local graph structure and the similarity between node features
+
+using gene expression data as node features improves the reconstruction of the graph from the embedding
+
+**representation learning on graphs** has been introduced. In this concept, nodes, subgraphs, or the entire graph are mapped into points in a low-dimensional vector space
+
+These frameworks are known as **graph neural networks** (GNNs), and use **deep auto-encoders to preserve the local structure of the graph around each node in the embedding, without having to specify in advance what “local” means.**
+
+a new framework using graph representation learning on
+biological networks which results in embeddings that are compatible with or inform- ative for molecular profile data
+
+systematically measure the relationship between the structure of a network and the node feature (gene expression) values. This is done using the **Graph Auto-Encoder** (GAE) approach o
+
+**Graph Feature Auto-Encoder** (GFAE) for the predic- tion of expression values utilizing gene network structures, and introduce a new convolution layer named FeatGraphConv using a message passing neural networks (MPNNs) framework,
+
+new approach to gene expression prediction has practical applica- tions in tasks such as imputation of missing values in
+
+### ANAT 3 . 0 : a framework for elucidating functional protein subnetworks using graph ‑ theoretic and machine learning approaches - Signorini et al. 2021
+
+ANAT allows the user to analyze a process of interest in the context of a protein–protein inter- action (PPI) network in four settings: 
+
+1. inferring an anchored network that connects a given set of target proteins (e.g., the results of a genome-wide screen to a designated anchor set of proteins that are thought to mediate the process under study); 
+2.  inferring a general network that connects a given set of proteins to each other; 
+3.  local explora- tion of the neighborhood of a given set of proteins, and
+4.  finding the shortest paths between pairs of proteins
+
+ANAT’s main engine is an algorithm to **reconstruct subnetworks that link protein**
+**nodes of interests (anchors) with target proteins (terminals).** It
+
+f PPI networks, each of which can be viewed as a weighted graph G = (E,V), where E are the edges, representing PPIs, each of which is assigned with a reliability score, and V are the nodes, representing proteins. It
+
+It optimizes the reconstruction of a connected subgraph H(VH,EH) connecting anchors with terminals by simultaneously optimizing the global weight of the resulting network (sum of weights of the edges in EH) and the local length of the shortest path connecting each terminal to one of the anchors
