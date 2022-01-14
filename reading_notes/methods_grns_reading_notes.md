@@ -3801,3 +3801,152 @@ ANAT’s main engine is an algorithm to **reconstruct subnetworks that link prot
 f PPI networks, each of which can be viewed as a weighted graph G = (E,V), where E are the edges, representing PPIs, each of which is assigned with a reliability score, and V are the nodes, representing proteins. It
 
 It optimizes the reconstruction of a connected subgraph H(VH,EH) connecting anchors with terminals by simultaneously optimizing the global weight of the resulting network (sum of weights of the edges in EH) and the local length of the shortest path connecting each terminal to one of the anchors
+
+
+
+
+
+a useful cor2pcor function to convert correlation
+matrices in partial correlation matrices
+
+
+
+##### Cancer subtype classification and modeling by pathway attention and propagation - Lee et al. 2020
+
+an explainable deep-learning model with attention mechanism and network propagation for cancer subtype classification. 
+
+Each pathway is modeled by a graph convolutional network. 
+
+Then, a multi-attention- based ensemble model combines several hundreds of pathways in an explainable manner. 
+
+Lastly, network propaga- tion on pathway–gene network explains why gene expression profiles in subtypes are different. 
+
+Like convolutional neural network (CNN), these GCN can capture localized patterns in data, and unlike CNN, it can be used for non-grid structured data, such as graph
+
+Given a GCN model for each pathway, interactions between
+pathways can be considered as a network of pathways by combining several hundreds of pathway models again
+
+To open up the black-box model, atten- tion mechanism is frequently used (Vaswani et al., 2017). The atten- tion mechanism helps identify features that make the models achieve better performances
+
+how different biological functions among cancer subtypes by extending pathway-level information to gene-level (Jo et al., 2016). In this regard, network propagation is also widely used in the network analysis for biological interpretation
+
+network propa- gation has been successful in aggregating mutation profiles on the molecular interaction networks to detect significant gene modules
+
+a pathway model is generated for each of the pathways by GCN to utilize biological prior knowledge respectively. Then, multiple GCN pathway models are integrated into a single model by multi-atten- tion-based ensemble (MAE). The MAE model consists of two-level attentions to capture complex pathway combinations of cancer data. Finally, to show how different subtypes are in terms of bio- logical functions, we propose a network propagation method with permutation-based normalization for identification of transcription factors (TFs) that influence gene expressions and pathways.
+
+To capture localized gene expression patterns in Gp, a spectral
+convolutional approach is applied on the Laplacian matrix Lp
+
+the spectral convolutional operator
+
+the spectral convolutional operator [Equation (1)] can capture localized expression patterns in K-hop neighbor nodes in a graph. 
+
+Chebyshev polynomial approximation of the spectral convolutional operator
+
+extracted
+patterns are pooled with neighboring nodes using the Graclus algo- rithm.
+
+After convolution and pooling, gene expression profiles are dimensionally reduced into pathway-level vectors. In turn, these vectors are given to a multilayer perceptron (MLP) and then they concerted to subtype-wise probability vectors
+
+a GCN pathway model is built for each pathway.
+
+To combine encoded vectors of hun- dreds of pathways, attention mechanism is used.
+
+Our MAE model operates at two hierarchical levels (Fig. 1c):
+pathway-level attention and ensemble-level attention
+
+The basic mechanism for the pathway-level attention is the same as in Equation (4), but multiple attention mechanisms are used to capture various combinations of pathway encoded vectors.
+
+Our approach of combining hundreds of pathways using multi- attention models does provide some insights on how pathways inter- act differentially among cancer subtypes. Investigation on the differ- ence in gene interaction among subtypes is much more complicated because the number of genes is almost two orders of magnitude larger than the number of pathways
+
+linking pathways and TFs using network propagation with permutation-based normalization.
+
+Network propagation is typically done by performing random
+walks on a network. A random work starts with seed nodes that are pre-selected and the seeds have certain amount of information to be propagated. However, performing a random walk on a long path will dilute the information too much, especially when hub nodes with many edges are involved. To
+
+To avoid this dilution problem, a ran- dom walk with restart algorithm
+
+When performing the network propagation, constructing net-
+work topology and selecting seeds are two most important issues. In
+
+On the pathway-PPI network, seed nodes are selected as the pathway nodes and values are assigned by attention weights from the GCN pathway models with multi-attention. The pathway attention weights are cal- culated using pathway-level attention values and ensemble-level at- tention values. The attention weight corresponding to one pathway is extracted from multiple pathway-level attentions, and the extracted values are summed by considering weights through the ensemble-level attention.
+
+As a result of network propagation, all nodes in a network have
+propagated values. The propagated values are determined by not only the initial values of seed nodes but also the topology of a network
+
+if a node has a high degree, it may have a larger propagated value than other nodes regardless of seed values. To address this prob- lem, a null distribution of propagated values is computed by a permutation-based approach
+
+d performing network propagation on the random patient samples, a permutation-based network propagation values are generated. From
+
+We used TFs that are curated in the literature (Lambert et al.,2018) and TFs are ranked as a result of network propagation and normalization
+
+Pathway attention weights for each patient were determined by a
+weighted sum of pathway-level attention vectors, and these weights were extracted from the ensemble-level attention vector. For BRCA, our GCNþMAE model was able to highlight pathways that are known to be important in breast cancer
+
+By normalized rank from net- work propagation analysis with permutation-based normalization, TFs were ranked by the propagation scores.
+
+, target genes of these top-ranked TFs were determined from a curated data- base (Han et al., 2018), and then biological functions of these target genes were identified by Gene Ontology (GO) term analysis by Enrichr
+
+### Juxtapose: a gene-embedding approach for comparing co-expression networks
+
+, Juxtapose, together with similarity measures that can be utilized for comparative transcriptomics between a set of organisms.
+
+A word embedding strategy commonly used in natural language process- ing was utilized in order to generate gene embeddings based on walks made through- out the GCNs.
+
+Juxtapose is capable of globally aligning synthesized networks as well as identifying areas that are conserved in real gene co-expression networks without reliance on external biological information. Furthermore,
+
+output from a match- ing algorithm that uses cosine distance between GCN embeddings is shown to be an informative measure of similarity that reflects the amount of topological similarity between networks.
+
+a systematic methodology for comparing multi-
+ple co-expression networks using an embedding-based approach. The
+
+without external information
+
+An **embedding** for a word is a vectorized representation, i.e. a point in embedding space.
+
+Word2vec is a neural network-based approach, which aims at learning a distribu- tional representation of words as vectors [36]. The key components of this model are two weight matrices. The rows of the first matrix and the columns of the second matrix embed the input genes and target genes, respectively. The product of these two gene vec- tors is then used to get the probabilities for being a target gene, given the selected input word. A gradient descent approach can be used to learn these weight matrices by maxi- mizing the probabilities of the true target gene(s)
+
+Methods that extend or utilize word2vec to embed graphs such as **node2vec** [32] generate random walks through the networks to generate node representations. When embedding GCNs, a sequence of genes can be generated by conducting a random walk on the network. These walks capture the organization of the genes in the GCN e.g., the more two genes appear in sequence, the closer their gene embedding representations will become during the model training process.
+
+. Gene2vec [39] and G2vec [38] are exam- ples that utilize the word2vec [36] model originally used for natural language processing. Word2vec aims to predict the co-occurrence of a word and its surrounding words, which is called the context for that word. Analogously, in GCNs genes that are co-expressed with a given gene are considered its context. Knowing a gene and its context, these methods try to predict a gene from its context or vice versa.
+
+Walk generation was performed in Juxtapose by converting the weights of the GCNs to a probability of travelling through the edges connecting genes. The higher a correlation value, the more likely a walk would travel through the edge
+
+A word
+embedding was trained by maximizing the probability of gene co-occurrences in con- text, i.e., only a few genes apart in a single walk.
+
+One local and one global measure of similarity between genes was used in order to compare the genes of two co-expression networks. The local similarity measure utilized between all pairs of gene vectors between the two networks was cosine distance, which
+
+With this local distance measure between genes of different networks, it is then
+possible to match genes from one network to the other. A matching algorithm (for- mally, on bipartite graphs) is an algorithm that takes two lists of elements where there is a distance between every element of one list to every element of the other, and constructs a “matching” between the two lists—a matching associates every ele- ment of one list with exactly one element of the other list in such a way that each element only gets associated once—and it does so in such a way that the sum of the distances matched is minimal over all possible associations.  The Hungarian algo- rithm is a well-known matching algorithm that runs in polynomial time complexity
+
+ Biclustering was utilized in order to discover groups of genes that have similar dis-
+tances to each other as well as similar differences to other genes. Spectral Bicluster- ing assumes a checkerboard structure where the same gene can belong to multiple biclusters [52].
+
+
+
+### A unified framework for integrative study of heterogeneous gene regulatory mechanisms - Cao et al. 2020
+
+a flexible framework that can integrate very different types of data for studying their joint effects on gene expression. In this framework, domain knowledge is represented by metapaths, while the manifesta- tions of their effects in actual data are summarized by an embedding of the biological objects in a latent space. We
+
+word2vec, is a one-layer
+artificial neural network called a skip-gram (or ‘Continuous Bag of Words’, CBOW), where model parameters are optimized to maxi- mize the prediction accuracy of the neighbouring words in a sen- tence given the centre word (or, respectively, of the centre word given the neighbouring words). The weights connecting the input nodes to the hidden nodes can then be used as the word vectors
+
+Combining the ideas of metapath and word2vec, the metapath-
+2vec approach creates ‘sentences’ from a heterogeneous network by performing random walks according to metapaths, and then uses a word2vec-based method to identify an embedding of each node which can then be used as features for downstream tasks.
+
+we develop a unified
+framework that learns embeddings of multiple types of biological object in a heterogeneous network such that both their intrinsic features and their relationships according to the metapaths are con- sidered.
+
+Our ‘Gene Expression Embedding frameworK’ (**GEEK**) takes
+such a heterogeneous network as input and converts the informa- tion contained in the network into an embedding of each node in a latent space such that the coordinates of each node in this space form a signature of the node that is useful for modelling gene expression levels
+
+GEEK requires one or more metapaths as domain knowledge input. Based on a metapath, a random walk is carried out in the network to define neighbours of a node (which together form a ‘sentence’), requiring that the random walk must follow the sequence of node/ edge types in the metapath (Fig.
+
+information collected during this random walk is used, together
+with the intrinsic node and edge features, to determine an embed- ding of each node (Fig.
+
+it aims at embedding objects (genes and genomic bins) in the latent space to relate the embeddings (F) and auxiliary vectors (Θ) of the objects (1) in the same sentences, (2) with similar genomic bin features and (3) with similar gene expres- sion levels. The second and third terms demonstrate how node fea- tures can be incorporated in the embedding learning process. In particular, the third term ensures that the resulting gene embedding is relevant to the task of gene expression modelling.
+
+Finally, the embeddings of the genes are used for the downstream
+gene expression inference task using any classification method (Fig. 1a(iii)). If there are multiple metapaths defined, their corre- sponding embeddings will be concatenated to form a single feature vector. Any other input features of the gene nodes can also be con- catenated at this stage to form the overall feature vector

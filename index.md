@@ -129,6 +129,13 @@ Sankey diagrams in R https://christophergandrud.github.io/networkD3/#sankey
 
 Heatmaps were drawn using the superheat (https://github.com/rlbarter/superheat) and ComplexHeatmap R package
 
+To better visualization, the whole attention
+weights were divided at 90th percentile and values of higher than 1 were forced to
+
+
+ChromoMap: an R package for interactive visualization of multi-omics data and annotation of chromosomes
+
+
 ##### Single-cell
 
 R package Scater
@@ -156,6 +163,14 @@ bio
 ##### Gene set and pathway enrichment
 
 Gene Set Enrichment Analysis (GSEA) implemented in the WebGestaltR R-package (Liao et al., 2019) was used to infer signatures of approved drugs (D1, 1,202 gene sets) and kinase inhibitors (D2, 1,220 gene sets) available in the drug signatures database (DSigDB; Yoo et al., 2015; http://dsigdb.tanlab.org/DSigDBv1.0/). Based
+
+
+
+Entrez genes IDs were mapped to NCI pathways [16] using the graphite R-package
+
+
+
+single sample gene set enrichment analysis (ssGSEA) method from the GSVA R package
 
 
 
@@ -199,6 +214,10 @@ Gene set variation analysis was performed using the GSVA R package (Guinney and 
 
 
 To compare two or more networks simultaneously, we developed BioNetStat, a Bioconductor package with a user-friendly graphical interface. **BioNetStat** compares correlation networks based on the probability distribution of a feature of the graph (e.g., centrality measures).
+
+
+
+KEGGgraph R package
 
 
 
@@ -291,6 +310,14 @@ GEO2R -> download and can provide fold changes
 
 
 
+
+
+In this study, we used
+the tumor-normal pairwise non-synonymous (missense) mutations
+for patients using R package TCGA-assembler
+
+
+
  from TCGA obtained via the R Package curatedTCGA
 
 ##### Epigenetic data query and processing
@@ -317,6 +344,16 @@ the web at https://cran.r-project.org/web/packages/SmCCNet/index.html.
 
 
 [molnet](https://cran.r-project.org/package=molnet) v0.1.0: Implements a network analysis pipeline that enables integrative analysis of multi-omics data including metabolomics. It allows for  comparative conclusions between two different conditions, such as tumor  subgroups, healthy vs. disease, or generally control vs. perturbed. The  case study presented in the [vignette](https://cran.r-project.org/web/packages/molnet/vignettes/Molnet_Vignette.html) uses data published by [Krug (2020)](https://www.cell.com/cell/fulltext/S0092-8674(20)31400-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867420314008%3Fshowall%3Dtrue).
+
+
+
+##### Other genomics analyses
+
+Enhancer Linking by Methylation/Expression Relationships analysis was performed using the R/Bioconductor ELMER package
+
+
+
+ oncoPredict: an R package for predicting in vivo or cancer patient drug response and biomarkers from cell line screening data https://doi.org/10.1093/bib/bbab260
 
 
 
@@ -424,7 +461,7 @@ The RNA-based tumor microenvironment inference tool ESTIMATE (Yoshihara et al., 
 
 Weused an established methylation-based deconvolution method, EDec (Onuchic et al., 2016) to dissect the composition of different cell types within the whole bulk tumor. 
 
-
+cell type deconvolution using MuSiC
 
 ##### Data visualization
 
@@ -516,6 +553,10 @@ ProTExA is a web-tool that provides a post-processing workflow for the  analysis
 
 
 
+The TNBCtype web-based tool (http://cbc.mc.vanderbilt.edu/tnbc/) was used to classify each TNBC tumor into four TNBC subtypes
+
+
+
 PROGENy, a method that overcomes both limitations by leveraging a large compendium of publicly available perturbation experiments to yield a common core of Pathway RespOnsive GENes. Unlike pathway mapping methods, PROGENy can (i) recover the effect of known driver mutations, (ii) provide or improve strong markers for drug indications, and (iii) distinguish between oncogenic and tumor suppressor pathways for patient survival. https://www.nature.com/articles/s41467-017-02391-6 Schubert et al. 2018
 
 
@@ -600,7 +641,16 @@ miRTarBase: miRNA target database
 publicly available transcriptomic data from the Genomics of Drug Sensitivity in Cancer (GDSC) database
 
 , an additional validation on the set ofeight datasets
-(BLCA, BRCA, COAD, GBM, HNSC, LUAD, OV and SKCM can- cers) obtained from the PRECOG repository was conducted. F
+(BLCA, BRCA, COAD, GBM, HNSC, LUAD, OV and SKCM can- cers) obtained from the PRECOG repository was conducted. 
+
+housekeeping genes The list of human housekeeping genes was produced by Eisenberg and Levanon78, and we downloaded it from https://www.tau.ac.il/~elieis/HKG/. 
+
+https://www.sciencedirect.com/science/article/pii/S0092867421012794
+A single-cell atlas of chromatin accessibility in the human genome
+we applied single-cell chromatin accessibility assays to 30 adult human tissue types from multiple donors. We integrated these datasets with previous single-cell chromatin accessibility data from 15 fetal tissue types 
+An atlas of ∼1.2 million candidate cis-regulatory elements across 222 cell types
+We created an interactive web atlas to disseminate this resource (cis-element ATLAS [CATLAS]; http://catlas.org/humanenhancer).
+sci-ATAC-seq protocol
 
 ##### Epigenomics
 
@@ -854,6 +904,10 @@ SEEK Co-expression http://seek.princeton.edu/ [17
 
 
 
+**GeneMania** database (https:// GeneMania.org/) [36]. GeneMania has a large number of interactions and incorporates both gene-to-gene and protein-to-protein interactions
+
+
+
 ANAT3.0, which comes with updated PPI network databases of 544,455 (human) and 155,504 (yeast) interactions, and a new machine-learning layer for refined network elucidation. Together
 
 e PPIs, we used the high confidence human PPIs (Karagoz et al., 2016), comprising 147,923 interactions among 13,213 proteins. Karagoz and coworkers assembled and integrated physical PPIs of Homo sapiens from six publicly available databases including BioGRID (Chatr-Aryamontri et al., 2015), DIP (Salwinski, 2004), IntAct (Orchard et al., 2014), HIPPIE (Schaefer et al., 2012), HomoMINT (Persico et al., 2005), and HPRD (Prasad et al., 2009). 
@@ -950,7 +1004,7 @@ A list of targetable drivers was provided by the PCAWG driver group (Rheinbay et
 * Sweden Cancerome Analysis Network-Breast (SCAN-B)
 
 
-
+Lung Cancer Metabolome Database (LCMD), http://cosbi7.ee.ncku.edu.tw/LCMD
 
  Gene expression-based Outcome for Breast cancer Online (GOBO database) [[24](https://www.mdpi.com/2079-7737/10/3/247/htm#B24-biology-10-00247)]. GOBO (http://co.bmc.lu.se/gobo, accessed date 26 February 2021) enables a rapid assessment of gene  expression levels, the identification of co-expressed genes and  association with the outcome for single genes, gene sets, or gene  signatures in an 1881-sample breast cancer data set, generated on  Affymetrix U133A microarrays. 
 
@@ -976,11 +1030,23 @@ The multiple myeloma data was obtained from the CoMMpass study by the Multiple M
 
 
 
+Pediatric Single Cell Cancer Atlas (PedScAtlas), with the goal of developing a pan-leukemia genomics signature as well as highlighting the heterogeneity of different types of leukemia. This resource facilitates exploration and visualization of expression signatures in different leukemias without requiring extensive analysis and bioinformatics support.
+https://bhasinlab.bmi.emory.edu/PediatricSC https://doi.org/10.1182/blood-2021-154282
+ 
+
+Cell-surface proteins (SPs) are a rich source of immune and targeted therapies. By systematically integrating single-cell and bulk genomics, functional studies and target actionability, in the present study we comprehensively identify and annotate genes encoding SPs (GESPs) pan-cancer. We characterize GESP expression patterns, recurrent genomic alterations, essentiality, receptor–ligand interactions and therapeutic potential. We also find that mRNA expression of GESPs is cancer-type specific and positively correlates with protein expression, and that certain GESP subgroups function as common or specific essential genes for tumor cell growth. We also predict receptor–ligand interactions substantially deregulated in cancer and, using systems biology approaches, we identify cancer-specific GESPs with therapeutic potential. We have made this resource available through **the Cancer Surfaceome Atlas** (http://fcgportal.org/TCSA) within the Functional Cancer Genome data portal.
+
+
 *Variant and mutation calling* 
 
 * Cancer-related SAAVs are cataloged in the **CanProvar** and **COSMIC** databases.
 
-* 
+
+
+
+ COSMIC Cancer Gene Census 3D database: understanding the impacts of mutations on cancer targets https://cancer-3d.com/ COSMIC CGC 3D (CGC 3D) database that includes 3D structures for multidomain, homo-oligomeric and multicomponent systems of the human proteome along with the use of 3D structures in the prediction of the impacts of mutations, allowing the identification of rare driver mutations
+
+
 
 *Proteomics*
 
@@ -1059,6 +1125,7 @@ The LINCS project is arguably the most comprehensive systematic perturba- tion d
 
 * The **Human Tumor Atlas** (HTA) (https://humantumoratlas.org/) 
 
+* EcoTyper - https://doi.org/10.1016/j.cell.2021.09.014 - A reference atlas of 69 cell states and 10 ecosystems across 16 types of carcinoma; Here we introduce EcoTyper, a machine learning framework for large-scale identification and validation of cell states and multicellular communities from bulk, single-cell, and spatially resolved gene expression data. When applied to 12 major cell lineages across 16 types of human carcinoma, EcoTyper identified 69 transcriptionally defined cell states
 
 
 . For substitutions, structural variants and copy number events, these included a set of genes compiled from the TARGET database from the Broad Institute and multiple sequencing datasets for EAC1
@@ -1077,7 +1144,9 @@ The LINCS project is arguably the most comprehensive systematic perturba- tion d
 The differentially expressed genes between gene-altered and WT samples were filtered for the 978 genes measured in the L1000
 assay and then were processed using the **CLUE** (Subramanian et al., 2017) (summary connectivity score) and **iLINCS** (Pilarczyk et al., 2019) connectivity algorithms. The resulting drug connectivities were aggregated to the compound level using the summary connec- tivity score in CLUE and the Connected Perturbations Z-score in iLINCS. Target annotations for the ranked compounds were extracted from CLUE and iLINCS and combined in a single list. Level
 
+We harness two principally different types of pharmacogenomics datasets, both retrieved via PharmacoGx R package ([Smirnov *et al.*, 2015](javascript:;)) and PharmacoDB ([Smirnov *et al.*, 2018](javascript:;)). First is a database of sensitivity of cancer cell lines to drug treatment, the Cancer Therapeutic Response Portal (CTRPv2) ([Rees *et al.*, 2016](javascript:;)), that provides relative viability of cell lines at various drug  concentration levels for combination of up to 860 cell lines and 481  drug compounds. Sensitivity of the cell lines to a drug treatment is  quantified by the area above the dose-response curve (AAC), which was  recomputed by PharmacoGx from raw CTRPv2 experimental results. We  further binarized the continuous AAC by the waterfall method ([Barretina *et al.*, 2012](javascript:;); [Haibe-Kains *et al.*, 2013](javascript:;)), turning the sensitivity prediction task into a discrete classification task.
 
+Secondly, we utilized the NIH LINCS Consortium CMap project. The recently extended CMap, termed CMap-L1000v1 ([Subramanian *et al.*, 2017](javascript:;)), screened perturbation effects of 19 811 drug compounds on gene  expression of L1000 landmark genes in up to 77 cell lines. Experiments  in CMap-L1000v1 do not measure the drug treatment sensitivity, however  some of the cell lines were independently tested in CTRPv2 as well. We  cross-referenced these cell lines and assigned the corresponding label  to their perturbation measurements.
 
 
 
@@ -1113,6 +1182,8 @@ been tested across a panel of 39 cell lines (Figure
 PRISM (Profiling Relative Inhibition Simultaneously in Mixtures) 
 GDSC (Genomics of Drug Sensitivity) 
 
+https://platform.opentargets.org/
+
 **Dependency**
 
 DepMap	a compendium of genomics, proteomics, shRNA and CRISPR based gene dependency datasets of hundreds of cell lines.
@@ -1136,6 +1207,10 @@ DepMap	a compendium of genomics, proteomics, shRNA and CRISPR based gene depende
 * essential genes from the online **gene essentiality data- base** (OGEE) and the **Database of Essential genes** (DEG)
 
 * Gene Active Ranking Profile (GARP)-normalized data were obtained from the **COLT** database http://colt.ccbr.utoronto.ca/cancer Genome-wide pooled shRNA  screens enable global identification of the genes essential for cancer  cell survival and proliferation and provide a ‘functional genetic’ map  of human cancer to complement genomic studies. Using a lentiviral shRNA  library targeting approximately 16 000 human genes and a newly developed scoring approach, we identified essential gene profiles in more than 70 breast, pancreatic and ovarian cancer cell lines. We developed a  web-accessible database system for capturing information from each step  in our standardized screening pipeline and a gene-centric search tool  for exploring shRNA activities within a given cell line or across  multiple cell lines. The database consists of a laboratory information  and management system for tracking each step of a pooled shRNA screen as well as a web interface for querying and visualization of shRNA and  gene-level performance across multiple cancer cell lines. COLT-Cancer  Version 1.0 is currently accessible at http://colt.ccbr.utoronto.ca/cancer.
+
+
+
+ in order to characterise and assess the relevance of the so-obtained sets of features, we primarily used **MalaCards** [33], an integrated database of human diseases and their annotations consolidated from 74 source
 
 
 
